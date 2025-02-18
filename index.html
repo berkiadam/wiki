@@ -1,7 +1,93 @@
-Példa fájl. 
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Internetbank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-# M1
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <button onclick="resetFields()" class="mb-4 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">Reset</button>
+    
+    
+        <div class="flex flex-col md:flex-row gap-6">
+        <div class="bg-white shadow-lg rounded-xl w-full max-w-md p-6 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Otp_bank_logo.svg/1024px-Otp_bank_logo.svg.png" 
+                 alt="OTP Bank Logo" class="w-32 mx-auto mb-4">
+            <h1 class="text-2xl font-bold text-green-600">Üdvözöljük az AI Internetbankban</h1>
+            <p class="text-gray-600 mb-4">Beszéljen banki AI asszisztensünkkel!</p>
+            
+            <div class="border border-gray-300 rounded-lg p-4 bg-gray-50 text-left">
+                <div id="chat-box" class="h-[32rem] overflow-y-auto space-y-2">
+                    <p class="text-gray-500">👋 Helló! Miben segíthetek?</p>
+                </div>
+            </div>
+            
+            <textarea id="user-input" rows="4" readonly
+                   placeholder="Írja be a kérdését..." 
+                   class="w-full p-2 mt-4 border rounded-lg focus:ring-2 focus:ring-green-400 outline-none"></textarea>
+            
+            <button onclick="sendMessage()" class="w-full mt-2 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">Küldés</button>
+        </div>
+        
+        <div class="bg-white shadow-lg rounded-xl w-full max-w-md p-6 text-left">
+            <h2 class="text-xl font-bold text-gray-700">Demó kérdések:</h2>
+            <p class="text-gray-600 mt-4">Az alábbi demó user kéréseket lehet beadni a demo AI mobilbanknak. A kérést/kérdést a sor végén lévő "Bemásolom" linkre kattintva lehet beírni. A beíró mező a demóban kézzel nem szerkeszthető.</p>
+            <ul class="list-disc pl-8 space-y-4 text-gray-600 mt-3" id="demo-questions">
+                <li>Tegnap megint kaptam parkolási bírságot az 5. kerületben. Most a Passat kapta, ez a ticket szám: 12345. Fizesd be a bírságot <br><a href="#" onclick="copyToInput(this)" class="text-blue-600 underline">Bemásolom</a></li>
+                <li>Parkolási büntetést kaptam, itt van róla a fotó, fizesd be. [ FOTÓ FELTÖLTÉSE ] <br><a href="#" onclick="copyToInput(this)" class="text-blue-600 underline">Bemásolom</a></li>
+                <li>Szeretnék a Roverre egy autópálya matricát venni mától. Lehet a legrövidebb <br><a href="#" onclick="copyToInput(this)" class="text-blue-600 underline">Bemásolom</a></li>
+                <li>Légyszíves emeld meg a közös költséget 14 ezer forintra. Köszi. <br><a href="#" onclick="copyToInput(this)" class="text-blue-600 underline">Bemásolom</a></li>
+                <li>Az utolsó olasz nyaraláson mennyit költöttem összesen forintban? <br><a href="#" onclick="copyToInput(this)" class="text-blue-600 underline">Bemásolom</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function sendMessage() {
+            let inputField = document.getElementById('user-input');
+            let chatBox = document.getElementById('chat-box');
+            let userMessage = inputField.value.toLowerCase();
+            if (userMessage.trim() === '') return;
+            
+            let userBubble = `<p class='text-right text-green-600'>💬 ${inputField.value}</p>`;
+            chatBox.innerHTML += userBubble;
+            
+            let response = "";
+            if (userMessage.includes("parkolási bírság") || userMessage.includes("bírságot kaptam")) {
+                response = `🤖 AI:<ul class='list-disc pl-5'><li>A Passat rendszáma korábbi vásárlásaid alapján: ABCD-123</li><li>Az 5. kerület Libótváros, belváros</li><li>Az önkormányzat számlaszáma: IBAN-123456-123456</li><li>15 napon belül 8500 Ft a bírság.</li><li>A közleménybe berakom a rendszámodat és a büntetés számát. Indíthatom az utalást?</li></ul><button onclick='confirmAction("Utalás sikeres, új egyenleg: 345 000 Ft")' class='bg-green-500 text-white px-4 py-2 rounded'>IGEN</button> <button class='bg-red-500 text-white px-4 py-2 rounded'>NEM</button>`;
+            } else if (userMessage.includes("büntetést")) {
+                response = `🤖 AI:<ul class='list-disc pl-5'><li>Sajnálom hogy megint megbüntettek.</li><li>A büntetésben szereplő rendszám: ABCD-1234</li><li>Az önkormányzat számlaszáma: IBAN-123456-123456</li><li>15 napon túl vagy sajnos, ezért a bírásg összege 25.000 Ft.</li><li>A közleménybe berakom a rendszámodat és a büntetés számát. Indíthatom az utalást?</li></ul><button onclick='confirmAction("Utalás sikeres, új egyenleg: 345 000 Ft")' class='bg-green-500 text-white px-4 py-2 rounded'>IGEN</button> <button class='bg-red-500 text-white px-4 py-2 rounded'>NEM</button>`;
+            } else if (userMessage.includes("matricát")) {
+                response = `🤖 AI:<ul class='list-disc pl-5'><li>A Rover rendszáma: ABCD-123</li><li>Felségjelzés: HU</li><li>A legrövidebb autópályamatrica jelenleg 4 napos.</li><li>Indíthatom a vásárlást?</li></ul><button onclick='confirmAction("Vásárlás sikeres!")' class='bg-green-500 text-white px-4 py-2 rounded'>IGEN</button> <button class='bg-red-500 text-white px-4 py-2 rounded'>NEM</button>`;
+            } else if (userMessage.includes("költséget")) {
+                response = `🤖 AI:<ul class='list-disc pl-5'><li>Jelenleg a közös költséget állandó megbízással fizeted minden hónap első napján, összege: 11.000 Ft</li><li>Felemelem az összeget 14.000 Ft-ra.</li><li>Indíthatom a módosítást?</li></ul><button onclick='confirmAction("Módosítás sikeres! A következő utalás már az emelt összeggel lesz elindítva.")' class='bg-green-500 text-white px-4 py-2 rounded'>IGEN</button> <button class='bg-red-500 text-white px-4 py-2 rounded'>NEM</button>`;
+            } else if (userMessage.includes("olasz nyaraláson mennyit költöttem")) {
+                response = `🤖 AI: Az utolsó olasz nyaralásodon összesen 432 000 Ft-ot költöttél.`;
+            } else {
+                response = `🤖 AI: Ezt sajnos nem értem. Kérlek, próbáld meg másképp.`;
+            }
+            
+            chatBox.innerHTML += `<p class='text-gray-500'>${response}</p>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+            inputField.value = '';
+        }
 
-## M2
+        function copyToInput(element) {
+            let inputField = document.getElementById('user-input');
+            inputField.value = element.parentElement.textContent.replace("Bemásolom", "").trim();
+        }
+        function confirmAction(message) {
+            let chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<p class='text-blue-500 font-bold'>✅ ${message}</p>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        function resetFields() {
+            document.getElementById('user-input').value = '';
+            document.getElementById('chat-box').innerHTML = '<p class="text-gray-500">👋 Helló! Miben segíthetek?</p>';
+        }
 
-[text](example.txt)
+    </script>
+</body>
+</html>
