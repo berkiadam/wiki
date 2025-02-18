@@ -90,6 +90,8 @@
         }
 
         function copyToInput(element) {
+            let secondDiv = document.getElementById('chat-box');
+            secondDiv.scrollIntoView({ behavior: 'smooth' });
             let inputField = document.getElementById('user-input');
             inputField.value = element.parentElement.textContent.replace("Bemásolom", "").trim();
         }
