@@ -24,7 +24,7 @@
             <p class="text-gray-600 mt-4">Az alábbi demó user kéréseket lehet beadni a demo AI mobilbanknak. A
                 kérést/kérdést a sor végén lévő "Bemásolom" linkre kattintva lehet beírni. A beíró mező a demóban kézzel
                 nem szerkeszthető.</p>
-            <ul class="list-disc pl-8 space-y-4 text-gray-600 mt-3" id="demo-questions">
+                <ul class="list-disc pl-8 space-y-4 text-gray-600 mt-3 max-h-64 overflow-y-auto border border-gray-300 bg-white rounded-lg p-4 shadow-sm" id="demo-questions">
                 <li>Tegnap megint kaptam parkolási bírságot az 5. kerületben. Most a Passat kapta, ez a ticket szám:
                     12345. Fizesd be a bírságot <br><a href="#" onclick="copyToInput(this)"
                         class="text-blue-600 underline">Bemásolom</a></li>
@@ -36,10 +36,13 @@
                         onclick="copyToInput(this)" class="text-blue-600 underline">Bemásolom</a></li>
                 <li>Az utolsó olasz nyaraláson mennyit költöttem összesen forintban? <br><a href="#"
                         onclick="copyToInput(this)" class="text-blue-600 underline">Bemásolom</a></li>
+                <li>Kérek egy diagrammot az előz havi költéseimből kategórák mentén<br><a href="#"
+                            onclick="copyToInput(this)" class="text-blue-600 underline">Bemásolom</a></li>        
             </ul>
         </div>
         <div class="bg-white shadow-lg rounded-xl w-full max-w-md p-6 text-center">
-            <img src="https://berkiadam.github.io/wiki/logo.png" alt="OTP Bank Logo" class="w-32 mx-auto mb-4" style="width: 70px;>
+            <img src="logo.png"
+                alt="OTP Bank Logo" class="w-32 mx-auto mb-4" style="width: 70px;>
             <h1 class="text-2xl font-bold text-green-600">Üdvözöljük az AI Internetbankban</h1>
             <p class="text-gray-600 mb-4">Beszéljen banki AI asszisztensünkkel!</p>
 
@@ -55,6 +58,16 @@
             <button onclick="sendMessage()"
                 class="w-full mt-2 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">Küldés</button>
         </div>
+            <!-- AI Mobilbank Vízió -->
+    <div class="bg-white shadow-lg rounded-xl w-full max-w-md p-6 text-left">
+        <h2 class="text-xl font-bold text-gray-700">AI mobilbank vízió</h2>
+        <ul class="list-disc pl-5 space-y-2 text-gray-600 mt-3">
+            <li>Megalkotjuk az első tisztán AI alapú szoftver interfészt.</li>
+            <li>Mobil bank funkcióknak csak a felhasználó képzelet szabhat határt. Nincsenek előre definiált menüpontok, listák vagy diagramok. A user találja ki, mit akar látni, mit akar csinálni. Pl.: "Mutasd meg, hogy hétköznaponta mennyit költöttem étteremben 10 és 14 óra között." vagy "Minden páros végződésű számlámról utalj át 10 forintot minden páratlan számlámra." Egyikhez sem kell semmit fejleszteni explicit. Nincsenek hardcode-olt folyamatok, bonyolult backendek. Nincsenek többé bonyolult, csili-vili képernyők.</li>
+            <li>Az AI szoftver interfész megértéséhez teljesen el kell felejtsünk mindent, amit eddig gondoltunk egy APP-ról. Az app egy promptból áll, ez nem csak egy chat ablak, ez maga a UX.</li>
+            <li>Az AI mobilbank mindent tud rólunk, amit valaha a bankban csináltunk, + széles ismerete van a bankon kívüli pénzügyi információkról. Ezeknek a segítségével bármilyen legális kérést ki tud szolgálni.</li>
+        </ul>
+    </div>
 
 
     </div>
@@ -78,8 +91,17 @@
                 response = `🤖 AI:<ul class='list-disc pl-5'><li>A Rover rendszáma: ABCD-123</li><li>Felségjelzés: HU</li><li>A legrövidebb autópályamatrica jelenleg 4 napos.</li><li>Indíthatom a vásárlást?</li></ul><button onclick='confirmAction("Vásárlás sikeres!")' class='bg-green-500 text-white px-4 py-2 rounded'>IGEN</button> <button class='bg-red-500 text-white px-4 py-2 rounded'>NEM</button>`;
             } else if (userMessage.includes("költséget")) {
                 response = `🤖 AI:<ul class='list-disc pl-5'><li>Jelenleg a közös költséget állandó megbízással fizeted minden hónap első napján, összege: 11.000 Ft</li><li>Felemelem az összeget 14.000 Ft-ra.</li><li>Indíthatom a módosítást?</li></ul><button onclick='confirmAction("Módosítás sikeres! A következő utalás már az emelt összeggel lesz elindítva.")' class='bg-green-500 text-white px-4 py-2 rounded'>IGEN</button> <button class='bg-red-500 text-white px-4 py-2 rounded'>NEM</button>`;
+            
+            } else if (userMessage.includes("diagrammot")) {
+                response = `🤖 AI:<br>
+                            <p class="text-gray-500">Íme a kért diagram:</p>
+                            <img src="pfm.png" alt="Pénzügyi diagram" class="w-full max-w-xs mx-auto my-3 rounded-lg shadow-lg">
+                            <button onclick='confirmAction("A következő belépéskor a diagram már meg fog jelenni a dashboardon.")' 
+                                class='bg-green-500 text-white px-4 py-2 rounded'>Kirakom a dashboardra</button>`;
             } else if (userMessage.includes("olasz nyaraláson mennyit költöttem")) {
                 response = `🤖 AI: Az utolsó olasz nyaralásodon összesen 432 000 Ft-ot költöttél.`;
+
+                
             } else {
                 response = `🤖 AI: Ezt sajnos nem értem. Kérlek, próbáld meg másképp.`;
             }
@@ -90,8 +112,11 @@
         }
 
         function copyToInput(element) {
+
             let secondDiv = document.getElementById('chat-box');
             secondDiv.scrollIntoView({ behavior: 'smooth' });
+
+
             let inputField = document.getElementById('user-input');
             inputField.value = element.parentElement.textContent.replace("Bemásolom", "").trim();
         }
