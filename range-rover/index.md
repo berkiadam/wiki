@@ -50,13 +50,17 @@ Források:
 # Issues with the TDV6 3.0 Engine
 
 
-![../range-rover/docs/ClipCapIt-241107-221322.PNG](../range-rover/docs/ClipCapIt-241107-221322.PNG) 
+![../range-rover/docs/ClipCapIt-241107-221322.PNG](../range-rover/docs/ClipCapIt-241107-221322.PNG)
+ 
 
 The crankshaft has sliding bearings made up of two half-circles, which do not touch the crankshaft journal during operation; there is a thin oil film between the main bearing and the main bearing journal.
 
-![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)  
-![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)  
-![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG) 
+![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)
+  
+![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)
+  
+![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)
+ 
 
 The lower half-circle has a hole through which oil enters between the bearing and the crankshaft. The crankshaft also has a hole that channels oil to the connecting rod bearing journal via an angled bore. The upper half of the main bearing does not have a hole; it sits in the main bearing cap, which is stronger than the lower part and absorbs most of the force from the piston impacts.
 
@@ -86,7 +90,8 @@ Video: https://www.youtube.com/watch?v=v3moekbW6z8&t=2092
 Despite being a 6-cylinder, 3-liter engine, it is incredibly short. This was achieved by having only 4 bearings supporting the crankshaft, and these bearings are also very narrow.
 
 
-![../range-rover/docs/ClipCapIt-240407-124641.PNG](../range-rover/docs/ClipCapIt-240407-124641.PNG) 
+![../range-rover/docs/ClipCapIt-240407-124641.PNG](../range-rover/docs/ClipCapIt-240407-124641.PNG)
+ 
 
 So, there are two pistons between each bearing.
 
@@ -95,13 +100,16 @@ So, there are two pistons between each bearing.
 Another issue is that the oil passages leading to the pistons are shared for the 4 inner pistons, affecting 2 connecting rod bearings: 
 
 
-![../range-rover/docs/ClipCapIt-240407-125103.PNG](../range-rover/docs/ClipCapIt-240407-125103.PNG) 
+![../range-rover/docs/ClipCapIt-240407-125103.PNG](../range-rover/docs/ClipCapIt-240407-125103.PNG)
+ 
 
 
-![../range-rover/docs/500px-ClipCapIt-241107-223902.PNG](../range-rover/docs/500px-ClipCapIt-241107-223902.PNG) 
+![../range-rover/docs/500px-ClipCapIt-241107-223902.PNG](../range-rover/docs/500px-ClipCapIt-241107-223902.PNG)
+ 
 
 
-![../range-rover/docs/500px-ClipCapIt-241107-230242.PNG](../range-rover/docs/500px-ClipCapIt-241107-230242.PNG) 
+![../range-rover/docs/500px-ClipCapIt-241107-230242.PNG](../range-rover/docs/500px-ClipCapIt-241107-230242.PNG)
+ 
 
 
 The oil enters the crankshaft through a hole located at the center of the main bearing. From there, it travels through angled passages to the connecting rod bearings. However, because there are only 4 mounting points and 6 pistons, the two central bearings (marked with a circle) supply oil to two places, one to the right and one to the left. This is designed so that the crankshaft journal has two holes at these points, offset by 180 degrees. As the crankshaft holes pass over the half-circle of the main bearing where the oil supply port is located, oil can be delivered to the left connecting rod bearing half the time and to the right one the other half. As a result, the oil pressure pulses for the inner 4 connecting rod bearings. It is always the two central bearings that tend to seize. <br>
@@ -126,14 +134,18 @@ There have been 3 iterations of the pump: the second one reinforced the pulley t
 # TDV6 3.0 gondjai
 
 
-![../range-rover/docs/ClipCapIt-241107-221322.PNG](../range-rover/docs/ClipCapIt-241107-221322.PNG) 
+![../range-rover/docs/ClipCapIt-241107-221322.PNG](../range-rover/docs/ClipCapIt-241107-221322.PNG)
+ 
 
 
 A főtengelynek két félkörből álló csúszó csapágyai vannak, amik üzem közben nem érnek hozzá a főtengelyhez (main bearing Journal), egy vékony olajréteg van a main bearing és a main bearing journal között.
 
-![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)  
-![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)  
-![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG) 
+![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)
+  
+![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)
+  
+![../range-rover/docs/ClipCapIt-240402-190900.PNG](../range-rover/docs/ClipCapIt-240402-190900.PNG)
+ 
 
 Az alsó fél körön van egy lyuk, ott jut be az olaj a csapágy és a főtengely közé. A főtengelyen is van egy lyuk, ami elvezeti az olajat a connecting rod bearing journal -hez egy ferde furattal. A main bearing felső félkörében nincs lyuk, az main bering cap-ben ül, ez erősebb mint az alsó rész, ez veszi fel a dugattyúktól érkező ütésekből származó erő nagy részét. 
 
@@ -165,13 +177,15 @@ videó: https://www.youtube.com/watch?v=v3moekbW6z8&t=2092
 ### Nem elégséges kenés a dugattyú csapágyakon (connecting rod bearing)
 A motor 6 hengeres, 3 literes létére hihetetlenül rövid. Ezt úgy érték el, hogy összesen 4 csapágy tartja a főtengelyt és azok is nagyon keskenyek. 
 
-![../range-rover/docs/ClipCapIt-240407-124641.PNG](../range-rover/docs/ClipCapIt-240407-124641.PNG) 
+![../range-rover/docs/ClipCapIt-240407-124641.PNG](../range-rover/docs/ClipCapIt-240407-124641.PNG)
+ 
 Tehát két csapágy között két dugattyú van. 
 <br>
 
 A másik gond, hogy a dugattyúkhoz vezető olaj járatok a 4 belső dugattyú esetében közösek 2 dugattyú csapágynál:
 
-![../range-rover/docs/ClipCapIt-240407-125103.PNG](../range-rover/docs/ClipCapIt-240407-125103.PNG) 
+![../range-rover/docs/ClipCapIt-240407-125103.PNG](../range-rover/docs/ClipCapIt-240407-125103.PNG)
+ 
 A főtengelybe a főtengely csapágy közepén lévő lyukon jut be az olaj. És onnan ferde járatokon jut el dugattyú csapágyakba. De mivel csak 4 felfogási pont van és 6 dugattyú, ezért a középső kettő (körrel megjelölt) két helyre is vezet olajat, egyet jobbra és egyet balra. Ez úgy van megcsinálva, hogy a főtengely journal -on két lyuk van ezeken a pontokon 180 fokban eltolva. Így ahogy a főtengely lyukak elhaladnak a főtengely csapágy azon félköre fölött ahol az olaj betápláló nyílás van, akkor az idő felébe a bal, az idő másik felében a jobb dugattyú csapágyhoz tudnak olajat eljuttatni. Így a középső 4 dugattyú csapágy estében pulzál az olajnyomás. Mindig a középső két csapágy szokott besülni. 
 
 <br>
@@ -250,15 +264,19 @@ Ezek nagyon olcsó alkatrészek, megéri ezeket gyakran cserélni.
 
 
 
-![../range-rover/docs/ClipCapIt-240401-211603.PNG](../range-rover/docs/ClipCapIt-240401-211603.PNG) 
-![../range-rover/docs/ClipCapIt-240401-211603.PNG](../range-rover/docs/ClipCapIt-240401-211603.PNG) 
+![../range-rover/docs/ClipCapIt-240401-211603.PNG](../range-rover/docs/ClipCapIt-240401-211603.PNG)
+ 
+![../range-rover/docs/ClipCapIt-240401-211603.PNG](../range-rover/docs/ClipCapIt-240401-211603.PNG)
+ 
 
 
 
 
 
-![../range-rover/docs/ClipCapIt-240401-211603.PNG](../range-rover/docs/ClipCapIt-240401-211603.PNG) 
-![../range-rover/docs/ClipCapIt-240401-211603.PNG](../range-rover/docs/ClipCapIt-240401-211603.PNG) 
+![../range-rover/docs/ClipCapIt-240401-211603.PNG](../range-rover/docs/ClipCapIt-240401-211603.PNG)
+ 
+![../range-rover/docs/ClipCapIt-240401-211603.PNG](../range-rover/docs/ClipCapIt-240401-211603.PNG)
+ 
 
 
 # Alkatrészek
@@ -266,7 +284,8 @@ Ezek nagyon olcsó alkatrészek, megéri ezeket gyakran cserélni.
 
 ## Rézpaszta
 
-![../range-rover/docs/ClipCapIt-250201-163840.PNG](../range-rover/docs/ClipCapIt-250201-163840.PNG) 
+![../range-rover/docs/ClipCapIt-250201-163840.PNG](../range-rover/docs/ClipCapIt-250201-163840.PNG)
+ 
 https://pumatools.hu/vegyi-anyagok/kenozsirok-pasztak/rez-pasztak/rez-paszta-nagyteljesitmenyu-200-ml-kupferpaste-caramba.html
 
 
@@ -294,13 +313,15 @@ LIQUI MOLY TOP TEC ATF 1800 AUTOMATA VÁLTÓ ÉS SZERVÓOLAJ 1L <br>
 
 https://www.olajwebshop.hu/liqui-moly-top-tec-atf-1800-automata-valto-es-szervoolaj-1-l/olajok/valtoolaj/valtoolaj-automatavaltokhoz/dexron-vi/liqui-moly-p319277.html
 
-![../range-rover/docs/200px-ClipCapIt-241215-165359.PNG](../range-rover/docs/200px-ClipCapIt-241215-165359.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241215-165359.PNG](../range-rover/docs/200px-ClipCapIt-241215-165359.PNG)
+ 
 
 
 #### Ravenol
 https://www.autodoc.hu/ravenol/7668985
 
-![../range-rover/docs/200px-ClipCapIt-241215-171854.PNG](../range-rover/docs/200px-ClipCapIt-241215-171854.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241215-171854.PNG](../range-rover/docs/200px-ClipCapIt-241215-171854.PNG)
+ 
 
 Ezen a dobozon konkrétan rajta van a Land Rover specifikáció: Cold Climate PAS fluid
 
@@ -321,7 +342,8 @@ A tartályt minden olajcserénél ki kell cserélni, mert a benne lévő szűrő
 
 https://www.ebay.com/itm/165534037729
 
-![../range-rover/docs/ClipCapIt-241215-173046.PNG](../range-rover/docs/ClipCapIt-241215-173046.PNG) 
+![../range-rover/docs/ClipCapIt-241215-173046.PNG](../range-rover/docs/ClipCapIt-241215-173046.PNG)
+ 
 
 
 <br>
@@ -348,13 +370,15 @@ https://www.landroverwestchester.com/service/service-tips-tricks/land-rover-rang
 
 A fékfolyadék hidroszkópikus, ezért idővel felvesz vizet, amitől nagyban romlik a fékező képessége, ezért kell pár évente kicserélni. Ha felforr benne a víz, gáz keletkezik, és nem fog fogni a fék. 
 
-![../range-rover/docs/300px-ClipCapIt-241215-175922.PNG](../range-rover/docs/300px-ClipCapIt-241215-175922.PNG) 
+![../range-rover/docs/300px-ClipCapIt-241215-175922.PNG](../range-rover/docs/300px-ClipCapIt-241215-175922.PNG)
+ 
 
 <br>
 
 A nedvesség tartalom műszerrel tesztelhető: 
 
-![../range-rover/docs/200px-ClipCapIt-241215-180203.PNG](../range-rover/docs/200px-ClipCapIt-241215-180203.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241215-180203.PNG](../range-rover/docs/200px-ClipCapIt-241215-180203.PNG)
+ 
 https://www.ebay.com/itm/166720381619
 
 <br>
@@ -372,7 +396,8 @@ Az olaj cseréhez használhatjuk a diagnosztikai eszközöket, használhatunk ny
 ### Tárcsafék
 https://www.autodoc.hu/brembo/8714238
 
-![../range-rover/docs/ClipCapIt-241224-215755.PNG](../range-rover/docs/ClipCapIt-241224-215755.PNG) 
+![../range-rover/docs/ClipCapIt-241224-215755.PNG](../range-rover/docs/ClipCapIt-241224-215755.PNG)
+ 
 
 
 
@@ -382,7 +407,8 @@ https://www.autodoc.hu/brembo/8714238
 ### Kézifék
 felújító készlet: https://www.ebay.com/itm/392451473515?_skw=land+rover+l320+parking+hand+brake+repair+kit&epid=249363483
 
-![../range-rover/docs/200px-ClipCapIt-241224-215625.PNG](../range-rover/docs/200px-ClipCapIt-241224-215625.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241224-215625.PNG](../range-rover/docs/200px-ClipCapIt-241224-215625.PNG)
+ 
 https://www.youtube.com/watch?v=r7j4cLWYZic
 
 
@@ -405,7 +431,8 @@ Kb 1 liter kell
 #### Liqui Moly
 https://www.autodoc.hu/liqui-moly/7889281
 
-![../range-rover/docs/ClipCapIt-241215-173808.PNG](../range-rover/docs/ClipCapIt-241215-173808.PNG) 
+![../range-rover/docs/ClipCapIt-241215-173808.PNG](../range-rover/docs/ClipCapIt-241215-173808.PNG)
+ 
 
 
 
@@ -417,7 +444,8 @@ COMMA DOT 4 BF4ESP1L Fékolaj<br>
 
 https://www.autodoc.hu/comma/12762753
 
-![../range-rover/docs/ClipCapIt-241215-175027.PNG](../range-rover/docs/ClipCapIt-241215-175027.PNG) 
+![../range-rover/docs/ClipCapIt-241215-175027.PNG](../range-rover/docs/ClipCapIt-241215-175027.PNG)
+ 
 
 <br>
 
@@ -473,7 +501,7 @@ A 5W-40 egy széles hőmérséklettartományban használható, többfokozatú mo
 
 
 
-**C3 **: <br>
+**C3**: <br>
 
 Stable, stay-in-grade engine oil with mid-SAPS Level, for aftertreatment system compatibility. Intended for use at
 extended oil drain intervals in passenger car and light-duty gasoline & DI diesel engines designed for engine oils
@@ -539,7 +567,8 @@ Két helyen is megtalálható:
 
 Land rover workshop manual, powertrain: 47. oldal (Lubricants, Fluids, Sealers and Adhesives)
 
-![../range-rover/docs/700px-ClipCapIt-240402-201751.PNG](../range-rover/docs/700px-ClipCapIt-240402-201751.PNG) 
+![../range-rover/docs/700px-ClipCapIt-240402-201751.PNG](../range-rover/docs/700px-ClipCapIt-240402-201751.PNG)
+ 
 
 <br>
 <br>
@@ -552,11 +581,13 @@ https://topix.landrover.jlrext.com/topix/content/document/view?id=145022&groupId
 
 Típus: 
 
-![../range-rover/docs/ClipCapIt-240401-230012.PNG](../range-rover/docs/ClipCapIt-240401-230012.PNG) 
+![../range-rover/docs/ClipCapIt-240401-230012.PNG](../range-rover/docs/ClipCapIt-240401-230012.PNG)
+ 
 
 Kapacitás: 
 
-![../range-rover/docs/ClipCapIt-240401-230314.PNG](../range-rover/docs/ClipCapIt-240401-230314.PNG) 
+![../range-rover/docs/ClipCapIt-240401-230314.PNG](../range-rover/docs/ClipCapIt-240401-230314.PNG)
+ 
 
 
 - https://www.youtube.com/watch?v=Q4NeJrbor4s&t=1536s
@@ -577,7 +608,8 @@ Ezt írja felhasználói kézikönyv:
 
 - CASTROL MAGNATEC C2 5W-30 MOTOROLAJ 4L: https://www.olajwebshop.hu/castrol-magnatec-stop-start-c2-5w-30-motorolaj-4-l/olajok/szemelygepjarmu-olajok/5w-30-motorolaj/castrol-p1223464.html
 
-![../range-rover/docs/200px-ClipCapIt-241215-150304.PNG](../range-rover/docs/200px-ClipCapIt-241215-150304.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241215-150304.PNG](../range-rover/docs/200px-ClipCapIt-241215-150304.PNG)
+ 
 
 
 
@@ -602,10 +634,12 @@ Ezt írja felhasználói kézikönyv:
 
 Fagyálló típus: 
 
-![../range-rover/docs/ClipCapIt-240401-230053.PNG](../range-rover/docs/ClipCapIt-240401-230053.PNG) 
+![../range-rover/docs/ClipCapIt-240401-230053.PNG](../range-rover/docs/ClipCapIt-240401-230053.PNG)
+ 
 Kapacitás: 
 
-![../range-rover/docs/ClipCapIt-240401-230252.PNG](../range-rover/docs/ClipCapIt-240401-230252.PNG) 
+![../range-rover/docs/ClipCapIt-240401-230252.PNG](../range-rover/docs/ClipCapIt-240401-230252.PNG)
+ 
 
 
 
@@ -617,7 +651,8 @@ Videok:
 	- https://www.youtube.com/watch?v=DCLjFyIMlCY 
 	- https://www.youtube.com/watch?v=57hL-edUU8g
 
-![../range-rover/docs/ClipCapIt-240329-115504.PNG](../range-rover/docs/ClipCapIt-240329-115504.PNG) 
+![../range-rover/docs/ClipCapIt-240329-115504.PNG](../range-rover/docs/ClipCapIt-240329-115504.PNG)
+ 
 > **NOTE:**Feltehetőleg gyárilag**DAYCO** márkájú alkatrészek vannak a kocsin
 
 <br>
@@ -628,7 +663,8 @@ Videok:
 
 Ha "Active Stabilization" rendszer is van a kocsiban, akkor annak van egy külön hidraulikus pumpája a bal alsó sarokban: 
 
-![../range-rover/docs/ClipCapIt-240330-004135.PNG](../range-rover/docs/ClipCapIt-240330-004135.PNG) 
+![../range-rover/docs/ClipCapIt-240330-004135.PNG](../range-rover/docs/ClipCapIt-240330-004135.PNG)
+ 
 Ebben az esetben egy hosszabb szíjra van szükség. A feszítők és a görgők ugyanazok. 
 
 > **WARNING:** minden görgőt és és a csavarokat is cserélni kell a szíjjal
@@ -710,11 +746,13 @@ Szerszám:
 
 A Fagyálókat minden gyártó máshogy jelöl, a VW jelölés nagyon elterjedt, a VW használja a G11-13 számozást: 
 
-![../range-rover/docs/ClipCapIt-240421-003650.PNG](../range-rover/docs/ClipCapIt-240421-003650.PNG) 
+![../range-rover/docs/ClipCapIt-240421-003650.PNG](../range-rover/docs/ClipCapIt-240421-003650.PNG)
+ 
 
 Kompatibilitási táblázat: 
 
-![../range-rover/docs/ClipCapIt-240421-003432.PNG](../range-rover/docs/ClipCapIt-240421-003432.PNG) 
+![../range-rover/docs/ClipCapIt-240421-003432.PNG](../range-rover/docs/ClipCapIt-240421-003432.PNG)
+ 
 
 
 
@@ -751,8 +789,10 @@ Források:
 - https://www.youtube.com/watch?v=P-fyJnfxTzk
 
 
-![../range-rover/docs/ClipCapIt-240401-212111.PNG](../range-rover/docs/ClipCapIt-240401-212111.PNG)  
-![../range-rover/docs/ClipCapIt-240401-212111.PNG](../range-rover/docs/ClipCapIt-240401-212111.PNG) 
+![../range-rover/docs/ClipCapIt-240401-212111.PNG](../range-rover/docs/ClipCapIt-240401-212111.PNG)
+  
+![../range-rover/docs/ClipCapIt-240401-212111.PNG](../range-rover/docs/ClipCapIt-240401-212111.PNG)
+ 
 
 > **NOTE:** Van aki nem veszi ki az önindítót és nem fékezi be a lendkereket, mert ha nem tekerjük odébb a motort, magától nem megy odébb. Csak egy fehér alkoholos filccel be kell jelölni pontosan hol állt, mikor levesszük a szíjat
 
@@ -812,7 +852,8 @@ Források:
 ## Vízpumpa
 Forrás: https://www.youtube.com/watch?v=XiYWQjJZiM4&t=816s
 
-![../range-rover/docs/ClipCapIt-240402-125822.PNG](../range-rover/docs/ClipCapIt-240402-125822.PNG) 
+![../range-rover/docs/ClipCapIt-240402-125822.PNG](../range-rover/docs/ClipCapIt-240402-125822.PNG)
+ 
 
 
 
@@ -828,7 +869,8 @@ Források:
 - https://www.youtube.com/watch?v=c3535ajb9xQ&t=318s
 - https://www.youtube.com/watch?v=gL41G1o8nW4
 
-![../range-rover/docs/ClipCapIt-240401-211942.PNG](../range-rover/docs/ClipCapIt-240401-211942.PNG) 
+![../range-rover/docs/ClipCapIt-240401-211942.PNG](../range-rover/docs/ClipCapIt-240401-211942.PNG)
+ 
 
 
 ### Workshop manual:
@@ -856,7 +898,8 @@ Források:
 Szíj cseréhez: 
 - https://www.ebay.com/itm/387682129416
 
-![../range-rover/docs/ClipCapIt-250207-154257.PNG](../range-rover/docs/ClipCapIt-250207-154257.PNG) 
+![../range-rover/docs/ClipCapIt-250207-154257.PNG](../range-rover/docs/ClipCapIt-250207-154257.PNG)
+ 
 - Önindító lock pin (ugyan az mint a front timing belt esetén) 
 
 <br>
@@ -884,7 +927,8 @@ Pulley cseréhez: <br>
 #### Hivatalosan ez kell
 - 310-237 -> https://www.ebay.com/itm/286124554906
 
-![../range-rover/docs/ClipCapIt-250207-154820.PNG](../range-rover/docs/ClipCapIt-250207-154820.PNG) 
+![../range-rover/docs/ClipCapIt-250207-154820.PNG](../range-rover/docs/ClipCapIt-250207-154820.PNG)
+ 
 - https://www.freedomracing.com/100-012-slide-hammer-tool.html
 - https://www.freedomracing.com/310-213-fuel-injector-remover-tool.html
 
@@ -895,12 +939,14 @@ Pulley cseréhez: <br>
 
 - https://www.ebay.com/itm/296485901962
 
-![../range-rover/docs/ClipCapIt-250207-155643.PNG](../range-rover/docs/ClipCapIt-250207-155643.PNG) 
+![../range-rover/docs/ClipCapIt-250207-155643.PNG](../range-rover/docs/ClipCapIt-250207-155643.PNG)
+ 
 
 
 - https://www.ebay.com/itm/296600730870
 
-![../range-rover/docs/ClipCapIt-250207-155559.PNG](../range-rover/docs/ClipCapIt-250207-155559.PNG) 
+![../range-rover/docs/ClipCapIt-250207-155559.PNG](../range-rover/docs/ClipCapIt-250207-155559.PNG)
+ 
 
 
 
@@ -910,7 +956,8 @@ Video:
 - https://www.youtube.com/watch?v=ZdS5PDCwNlQ
 - https://www.youtube.com/watch?v=lRZ37buT4pk&t=1047s
 
-![../range-rover/docs/ClipCapIt-240327-205432.PNG](../range-rover/docs/ClipCapIt-240327-205432.PNG) 
+![../range-rover/docs/ClipCapIt-240327-205432.PNG](../range-rover/docs/ClipCapIt-240327-205432.PNG)
+ 
 Ha még sosem volt cserélve az olajpumpa, a 2. vezérszíj cserénél érdemes lehet kicserélni, ha már teljesen szétszedjük a motor elejét. A nehézség benne:
 - ki kell szedni a főtengelyből a csavart, ami a szíj mozgató csigát tartalmazza. A csavar több mint 300 NM-re van húzva
 - A csavar csak egyszer felhasználható 
@@ -919,7 +966,8 @@ Ha még sosem volt cserélve az olajpumpa, a 2. vezérszíj cserénél érdemes 
 
 A másik ok, ami miatt ki kell cserélni a pumpát a szíj cserével együtt, ha még a régi típusú pumpa van benne, aminek a teteje még nincs megerősítve. Ez a szíj feszítő cseréje után hajlamos letörni, és ha letörik, akkor a motor kuka. 2009 után talán már a megerősített pumpákat rakták bele. 
 
-![../range-rover/docs/ClipCapIt-240327-210615.PNG](../range-rover/docs/ClipCapIt-240327-210615.PNG) 
+![../range-rover/docs/ClipCapIt-240327-210615.PNG](../range-rover/docs/ClipCapIt-240327-210615.PNG)
+ 
 A baloldalon a megerősített nyakú pumpa van, míg a jobb oldalon a régi típusú. 
 Az új típusú pumpák 15%-al nagyobb olajnyomát tudnak elérni, mert vastagabb a rotor bennük. 
 
@@ -969,14 +1017,16 @@ Az új típusú pumpák 15%-al nagyobb olajnyomát tudnak elérni, mert vastagab
 - Crankshaft sill felrakó: két részből áll. Az egyik egy kúp, amivel fel lehet húzni a főtengelyre a tömítést, de ez felesleges, mert adnak ilyet az olajpumpához műanyagból. A másik pedig arra való hogy pontosan a helyére nyomja 1mm mélyen a szigetelést a fészekben: 
 	- OEM szám: 303-1120, 303-1121, 303-1122
 	- 
-![../range-rover/docs/200px-ClipCapIt-240329-105841.PNG](../range-rover/docs/200px-ClipCapIt-240329-105841.PNG) 
+![../range-rover/docs/200px-ClipCapIt-240329-105841.PNG](../range-rover/docs/200px-ClipCapIt-240329-105841.PNG)
+ 
 	- https://www.amazon.com/Crankshaft-compatible-Discovery-303-1121-303-1122/dp/B0CM3FRCZT
 	- https://jlrequipment.service-solutions.com/en-GB/Pages/ItemDetail.aspx?SKU=303-1119
 
 - Flywheel Locking Tool: a gyári leírás szerint ezt kell a lendkerékbe belerakni, hogy befékezze addig, amíg az iszonyatosan sok, 370 NM-eres erővel meghúzzuk a főtengely pulley csavart. Ezzel ellentétben az LR time youtube csatornán csinált egy kör alakú nyeles szerszámot, amit rácsavarozott a crankshaft pulley -ra, amine egy 1 méteres nyele volt, azzal tartott ellent. A starter motor helyére ül be. 
 	- OEM: 303-1123
 	- 
-![../range-rover/docs/200px-ClipCapIt-240329-110237.PNG](../range-rover/docs/200px-ClipCapIt-240329-110237.PNG) 
+![../range-rover/docs/200px-ClipCapIt-240329-110237.PNG](../range-rover/docs/200px-ClipCapIt-240329-110237.PNG)
+ 
 	- https://www.ebay.com/itm/126411681043
 	- https://www.ebay.com/itm/164459332282 -> 42.000 Ft
 	- https://www.ebay.co.uk/itm/164459332282
@@ -984,20 +1034,23 @@ Az új típusú pumpák 15%-al nagyobb olajnyomát tudnak elérni, mert vastagab
 - Timing Peg: egy kis pin, ami az önindító mögött egy lyukban a lendkereket fékezi be, de nem értem minek, ha a flywheel lock-ot is berakjuk, tök ugyan azt fékezzük. Ha csak a timing belt-t cseréljük, akkor csak ez kell. 
 	- OEM: 303-1117
 	- 
-![../range-rover/docs/ClipCapIt-240329-111050.PNG](../range-rover/docs/ClipCapIt-240329-111050.PNG) 
+![../range-rover/docs/ClipCapIt-240329-111050.PNG](../range-rover/docs/ClipCapIt-240329-111050.PNG)
+ 
 	- Része a timing készleteknek, nem kell külön megvenni
 	- https://www.ebay.co.uk/itm/125765478435
 
 - Crankshaft seal removal: Ha csak a főtengely tömítést szeretnénk kicserélni, anélkül, hogy az olajpumpát levennénk, akkor egy spéci eszköz kell, ami kihúzza
 	- OEM: 303-1118
 	- 
-![../range-rover/docs/ClipCapIt-240329-111838.PNG](../range-rover/docs/ClipCapIt-240329-111838.PNG) 
+![../range-rover/docs/ClipCapIt-240329-111838.PNG](../range-rover/docs/ClipCapIt-240329-111838.PNG)
+ 
 	- https://jlrequipment.service-solutions.com/en-GB/Pages/ItemDetail.aspx?SKU=303-1118
 
 - Crankshaft pulley removal (Puller, General Purpose): egy általános lehúzó szerszám, amiből feltehetőleg jó az univerzális is. 
 	- OEM: 303-D121
 	- 
-![../range-rover/docs/ClipCapIt-240329-111751.PNG](../range-rover/docs/ClipCapIt-240329-111751.PNG) 
+![../range-rover/docs/ClipCapIt-240329-111751.PNG](../range-rover/docs/ClipCapIt-240329-111751.PNG)
+ 
 	- https://jlrequipment.service-solutions.com/en-GB/Pages/ItemDetail.aspx?SKU=303-D121
 
 
@@ -1013,8 +1066,10 @@ Gyári megoldás
 - 303-871: https://jlrequipment.service-solutions.com/en-GB/Pages/ItemDetail.aspx?SKU=303-871
 
 
-![../range-rover/docs/ClipCapIt-240428-203232.PNG](../range-rover/docs/ClipCapIt-240428-203232.PNG) 
-![../range-rover/docs/ClipCapIt-240428-203232.PNG](../range-rover/docs/ClipCapIt-240428-203232.PNG) 
+![../range-rover/docs/ClipCapIt-240428-203232.PNG](../range-rover/docs/ClipCapIt-240428-203232.PNG)
+ 
+![../range-rover/docs/ClipCapIt-240428-203232.PNG](../range-rover/docs/ClipCapIt-240428-203232.PNG)
+ 
 
 
 
@@ -1027,14 +1082,16 @@ Ha az olajnyomás szenzor helyére akarjuk berakni, akkor szükség van egy hoss
 - https://www.ebay.com/itm/296356911347
 - https://www.youtube.com/watch?v=qsh3pJ2TKJ0&t=315s
 
-![../range-rover/docs/200px-ClipCapIt-240626-124631.PNG](../range-rover/docs/200px-ClipCapIt-240626-124631.PNG) 
+![../range-rover/docs/200px-ClipCapIt-240626-124631.PNG](../range-rover/docs/200px-ClipCapIt-240626-124631.PNG)
+ 
 
 <br>
 
 --------------------
 
 
-![../range-rover/docs/ClipCapIt-241203-213231.PNG](../range-rover/docs/ClipCapIt-241203-213231.PNG) 
+![../range-rover/docs/ClipCapIt-241203-213231.PNG](../range-rover/docs/ClipCapIt-241203-213231.PNG)
+ 
 https://www.youtube.com/watch?v=MKYovvWWym0 (vége felé) 
 
 
@@ -1043,7 +1100,8 @@ https://www.youtube.com/watch?v=MKYovvWWym0 (vége felé)
 - https://www.ebay.com/sch/i.html?_from=R40&_nkw=oil+pressure+tester&_sacat=0&rt=nc&LH_PrefLoc=5&_oaa=1&_fsrp=1&_dcat=179480
 - https://www.ebay.com/itm/315284939649
 
-![../range-rover/docs/300px-ClipCapIt-240428-204416.PNG](../range-rover/docs/300px-ClipCapIt-240428-204416.PNG) 
+![../range-rover/docs/300px-ClipCapIt-240428-204416.PNG](../range-rover/docs/300px-ClipCapIt-240428-204416.PNG)
+ 
 
 
 <br>
@@ -1054,7 +1112,8 @@ https://www.youtube.com/watch?v=MKYovvWWym0 (vége felé)
 
 ## Camshaft timing chain and camshaft seals
 
-![../range-rover/docs/200px-ClipCapIt-240401-233320.PNG](../range-rover/docs/200px-ClipCapIt-240401-233320.PNG) 
+![../range-rover/docs/200px-ClipCapIt-240401-233320.PNG](../range-rover/docs/200px-ClipCapIt-240401-233320.PNG)
+ 
 https://www.ebay.co.uk/itm/264952167025
 <br>
 
@@ -1078,7 +1137,8 @@ https://www.ebay.co.uk/itm/264952167025
 # Fuel burning heater
 AUXILIARY HEATER / TIMED CLIMATE CONTROL
 
-![../range-rover/docs/ClipCapIt-240401-225244.PNG](../range-rover/docs/ClipCapIt-240401-225244.PNG) 
+![../range-rover/docs/ClipCapIt-240401-225244.PNG](../range-rover/docs/ClipCapIt-240401-225244.PNG)
+ 
 - https://topix.landrover.jlrext.com/topix/content/document/view?id=145022&groupId=1655#006207fc-953e-4d33-b61d-b201c19d77c7!!4!18
 - https://www.youtube.com/watch?v=y4R7oWn7aaM
 
@@ -1104,7 +1164,8 @@ AUXILIARY HEATER / TIMED CLIMATE CONTROL
 
 > **WARNING:** A poliuretán bushing nem jó a disco 3, 4 és range rover l320-hoz, mert nincs külső acél burkuk, túl nagy erőt raknak így az arm gyűrűre, és ráadásul túl puhák: 
 > 
-> ![../range-rover/docs/ClipCapIt-250222-114811.PNG](../range-rover/docs/ClipCapIt-250222-114811.PNG) 
+> ![../range-rover/docs/ClipCapIt-250222-114811.PNG](../range-rover/docs/ClipCapIt-250222-114811.PNG)
+>  
 > 
 
 
@@ -1119,7 +1180,8 @@ all Joint Separator Ball Head Puller/removal
 - https://www.amazon.de/gp/product/B01519ZUOA?ie=UTF8&psc=1&linkCode=sl1&tag=lrtime-21&linkId=c06619e3327dddac504f4ce382fca8c9&language=en_GB&ref_=as_li_ss_tl
 - https://www.autodoc.hu/kunzer/15205481
 
-![../range-rover/docs/ClipCapIt-250201-154635.PNG](../range-rover/docs/ClipCapIt-250201-154635.PNG) 
+![../range-rover/docs/ClipCapIt-250201-154635.PNG](../range-rover/docs/ClipCapIt-250201-154635.PNG)
+ 
 <br>
 
 <br>
@@ -1128,7 +1190,8 @@ all Joint Separator Ball Head Puller/removal
 
 ## Első felfüggesztés
 
-![../range-rover/docs/ClipCapIt-250223-182707.PNG](../range-rover/docs/ClipCapIt-250223-182707.PNG) 
+![../range-rover/docs/ClipCapIt-250223-182707.PNG](../range-rover/docs/ClipCapIt-250223-182707.PNG)
+ 
 
 
 <br>
@@ -1157,7 +1220,8 @@ youtube:
 - https://www.ebay.co.uk/itm/115604506564
 - https://www.autodoc.hu/fai-autoparts/12117625
 
-![../range-rover/docs/ClipCapIt-250201-160452.PNG](../range-rover/docs/ClipCapIt-250201-160452.PNG) 
+![../range-rover/docs/ClipCapIt-250201-160452.PNG](../range-rover/docs/ClipCapIt-250201-160452.PNG)
+ 
 
 
 #### Bushings
@@ -1185,7 +1249,8 @@ youtube:
 
 ### Felső lengőkar
 
-![../range-rover/docs/ClipCapIt-250223-201342.PNG](../range-rover/docs/ClipCapIt-250223-201342.PNG) 
+![../range-rover/docs/ClipCapIt-250223-201342.PNG](../range-rover/docs/ClipCapIt-250223-201342.PNG)
+ 
 
 
 
@@ -1219,8 +1284,10 @@ youtube:
 ## Hátsó felfüggesztés
 
 
-![../range-rover/docs/ClipCapIt-250223-174954.PNG](../range-rover/docs/ClipCapIt-250223-174954.PNG)  
-![../range-rover/docs/ClipCapIt-250223-174954.PNG](../range-rover/docs/ClipCapIt-250223-174954.PNG) 
+![../range-rover/docs/ClipCapIt-250223-174954.PNG](../range-rover/docs/ClipCapIt-250223-174954.PNG)
+  
+![../range-rover/docs/ClipCapIt-250223-174954.PNG](../range-rover/docs/ClipCapIt-250223-174954.PNG)
+ 
 
 
 ### Felső lengőkar
@@ -1229,7 +1296,8 @@ youtube:
 #### Csavar
 
 
-![../range-rover/docs/ClipCapIt-250223-215445.PNG](../range-rover/docs/ClipCapIt-250223-215445.PNG) 
+![../range-rover/docs/ClipCapIt-250223-215445.PNG](../range-rover/docs/ClipCapIt-250223-215445.PNG)
+ 
 - HB2 → Alvázhoz rögzítő csavar, elől: FC114206
 - HB5 → Alvázhoz rögzítő csavar, hátul: FC116216
 - HB3 → top knuckle hub bolt: RYG000384
@@ -1348,18 +1416,21 @@ Minden keréken három dolgot kell állítani:
 
 - **Camber angel**: a kerék befele vagy kifele döl. 
 
-![../range-rover/docs/400px-ClipCapIt-250221-231438.PNG](../range-rover/docs/400px-ClipCapIt-250221-231438.PNG) 
+![../range-rover/docs/400px-ClipCapIt-250221-231438.PNG](../range-rover/docs/400px-ClipCapIt-250221-231438.PNG)
+ 
 
 <br>
 
 - **caster angle**: utánfutás, ami azt mondja meg, hogy a kerék a felső befogási pontjához képest menetirány szerint előre vagy hátra néz. Akkor tud a kerék magától egyenesbe állni, ha kicsit előre áll. 
 
-![../range-rover/docs/400px-ClipCapIt-250221-231238.PNG](../range-rover/docs/400px-ClipCapIt-250221-231238.PNG) 
+![../range-rover/docs/400px-ClipCapIt-250221-231238.PNG](../range-rover/docs/400px-ClipCapIt-250221-231238.PNG)
+ 
 <br>
 
 - **Toe angle**: a kerekek összetartása vagy széttartása. Ha menetirány szerint a kerék eleje széttart, az a negatív irány (toe out) és ha a kerék hátulja tart szét, vagyis a kerék eleje tart össze, az a toe-in, a positive irány. 
 
-![../range-rover/docs/300px-ClipCapIt-250221-231547.PNG](../range-rover/docs/300px-ClipCapIt-250221-231547.PNG) 
+![../range-rover/docs/300px-ClipCapIt-250221-231547.PNG](../range-rover/docs/300px-ClipCapIt-250221-231547.PNG)
+ 
 
 <br>
 
@@ -1368,7 +1439,8 @@ Minden keréken három dolgot kell állítani:
 ### Táblázatok értelmezése
 Miden kerékre és mind a három típusra van egy ilyen táblázat: 
 
-![../range-rover/docs/ClipCapIt-250221-232050.PNG](../range-rover/docs/ClipCapIt-250221-232050.PNG) 
+![../range-rover/docs/ClipCapIt-250221-232050.PNG](../range-rover/docs/ClipCapIt-250221-232050.PNG)
+ 
 - Minden értékre van érték a bal és a jobb kerékre menetirány szerint (left-hand, right-hand) és a kettő különbsége a 3. oszlopban (Total/Balance)
 - Minden kerékre tehát meg van adva az első oszlopban felül az ideális érték: **Nominal**és mellette, hogy ez mennyit térhet el:**Tolerance**
 - Minden kerékre meg van adva a minimum és a maximum dőlés, ami nem más mint a **Nominal**-bol kivonva és hozzáadva a tűrés. 
@@ -1389,7 +1461,8 @@ Nézzük meg az első kerekre vonatkozó **Camber** értéket.
 Ehhez kell egy úgynevezett protractor eszköz: 
 - PRO360 – PRO 360 Digital protractor: https://www.leveldevelopments.com/products/inclinometers/digital-inclinometers/pro360-pro-360-digital-protractor-range-360-resolution-0-1/
 
-![../range-rover/docs/ClipCapIt-250221-224704.PNG](../range-rover/docs/ClipCapIt-250221-224704.PNG) 
+![../range-rover/docs/ClipCapIt-250221-224704.PNG](../range-rover/docs/ClipCapIt-250221-224704.PNG)
+ 
 - https://www.ebay.com/itm/405365107182
 - https://www.conrad.hu/hu/p/laserliner-masterlevel-box-081-260a-digitalis-vizmertek-magnessel-28-mm-3058922.html
 - https://www.conrad.hu/hu/p/digitalis-vizmertek-1-mm-laserliner-digilevel-plus-25-081-249a-2445725.html
@@ -1398,7 +1471,8 @@ Ehhez kell egy úgynevezett protractor eszköz:
 
 A kerék befelé kell dőljön: 
 
-![../range-rover/docs/ClipCapIt-250222-003821.PNG](../range-rover/docs/ClipCapIt-250222-003821.PNG) 
+![../range-rover/docs/ClipCapIt-250222-003821.PNG](../range-rover/docs/ClipCapIt-250222-003821.PNG)
+ 
 
 
 Olyan mérő kell, amit ki lehet nullázni, így nem baj ha nem tökéletesen egyenes talajon van a kocsi. A földre leteszek egy öles lécet, ráteszem a mérőt, és kinullázom, majd utána rakom rá a kerékre, és akkor már levonja/hozzáadja a talaj lejtést. 
@@ -1409,7 +1483,8 @@ Olyan mérő kell, amit ki lehet nullázni, így nem baj ha nem tökéletesen eg
 
 Minden kerék toe érték pozitív, vagyis így kell álljanak, a menetirány szerinti első rész áll össze: 
 
-![../range-rover/docs/ClipCapIt-250222-004057.PNG](../range-rover/docs/ClipCapIt-250222-004057.PNG) 
+![../range-rover/docs/ClipCapIt-250222-004057.PNG](../range-rover/docs/ClipCapIt-250222-004057.PNG)
+ 
 
 Vagyis mind két tengelyen toe in van
 ...
@@ -1442,7 +1517,8 @@ A Land Rover manual-ban érthetetlen módon nincs benne a főtengely csapágyak 
 
 Ezt a Jaguár V6 workshop manualbol lehet kinézni: (JLR 3.0L 24V DOHC V6 TC), 22. oldal. 
 
-![../range-rover/docs/ClipCapIt-240402-200439.PNG](../range-rover/docs/ClipCapIt-240402-200439.PNG) 
+![../range-rover/docs/ClipCapIt-240402-200439.PNG](../range-rover/docs/ClipCapIt-240402-200439.PNG)
+ 
 JLR 3.0 TDV6 - PSA DT20C - Powertrain-workshop-manual.pdf
 
 {{worning|A csavarok nem újra felhasználhatóak}}
@@ -1452,15 +1528,18 @@ JLR 3.0 TDV6 - PSA DT20C - Powertrain-workshop-manual.pdf
 ## Blokk felfúrása: line boar
 https://www.youtube.com/watch?v=YW7YAmcazUs&t=1154s
 
-![../range-rover/docs/ClipCapIt-240402-225637.PNG](../range-rover/docs/ClipCapIt-240402-225637.PNG) 
+![../range-rover/docs/ClipCapIt-240402-225637.PNG](../range-rover/docs/ClipCapIt-240402-225637.PNG)
+ 
 Miért is lehetséges ez? Hiszen ha a blokkot a main bering cap-el felfúrom, nem lesz túl nagy a lyuk? 
 
-![../range-rover/docs/ClipCapIt-240402-230036.PNG](../range-rover/docs/ClipCapIt-240402-230036.PNG) 
+![../range-rover/docs/ClipCapIt-240402-230036.PNG](../range-rover/docs/ClipCapIt-240402-230036.PNG)
+ 
 - A main bearing cap, mikor felforrósodik és megég a körbe forduló csapágyaktól, akkor oválissá válik, a "lábai" közelednek egymáshoz, a teteje (ami a motorban alul van) meg kipúposodik, felül íves lesz a nyílás középpontja körül. 
 - Tehát jobb és bal oldalt csökken az átmérő, felfelé meg nő. 
 - A másik gond, ha karcos lesz a journal a bearing alatt, vagyis ha nem tökéletesen sima, hogy nem fogja tökéletesen átadni a keletkező hőt a blokknak, és így egyre hajlamosabb a megégésre ahogy egyre karcosabbá válik. És ha megég, befékeződik a főtegely és eltörik. 
 
-![../range-rover/docs/ClipCapIt-240402-230155.PNG](../range-rover/docs/ClipCapIt-240402-230155.PNG) 
+![../range-rover/docs/ClipCapIt-240402-230155.PNG](../range-rover/docs/ClipCapIt-240402-230155.PNG)
+ 
 Ha az aljából lemarunk annyit, amennyivel a jobb és a bal oldal beljebb jött összesen, vagyis amennyivel kisebb mint kéne (0.5-0.6mm), akkor a fúró egységesen ki tud szedni anyagot az egész felületből. Az eredeti méret 75 mm kell legen. 
 - Az oldalsó csavarok (a v6-ban oldalt is vannak csavarok a main bearing cap-ben) még engedik hogy 0.6 mm-et lentebb süllyedjen a cap. 
 - Lehet venni vastagabb és vékonyabb csapágyakat is.
@@ -1482,7 +1561,8 @@ Ha az aljából lemarunk annyit, amennyivel a jobb és a bal oldal beljebb jött
 
 EGR blokkoló készlet: https://www.ebay.com/itm/175641412688
 
-![../range-rover/docs/200px-ClipCapIt-241114-142959.PNG](../range-rover/docs/200px-ClipCapIt-241114-142959.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241114-142959.PNG](../range-rover/docs/200px-ClipCapIt-241114-142959.PNG)
+ 
 
 
 
@@ -1499,34 +1579,39 @@ A titkos összetevő: **Natrium hydroxid**(NaOH) vagy más néven**Sodium hydrox
 Mit kell venni: https://www.ebay.com/itm/166914295901
 
 
-![../range-rover/docs/ClipCapIt-241114-150405.PNG](../range-rover/docs/ClipCapIt-241114-150405.PNG) 
+![../range-rover/docs/ClipCapIt-241114-150405.PNG](../range-rover/docs/ClipCapIt-241114-150405.PNG)
+ 
 Drano Power Granulate 
 
 
 ### Mr Muscle lefolyótisztító
 https://www.dm.hu/mr-muscle-lefolyotisztito-granulatum-p8006990010090.html
 
-![../range-rover/docs/100px-ClipCapIt-241114-150911.PNG](../range-rover/docs/100px-ClipCapIt-241114-150911.PNG) 
+![../range-rover/docs/100px-ClipCapIt-241114-150911.PNG](../range-rover/docs/100px-ClipCapIt-241114-150911.PNG)
+ 
 
 
 ### Merülő szivattyú
 https://www.emag.hu/csendes-akvariumi-vizpumpa-jenuosr-800-l-h-15w-220v-2-fuvoka-allithato-szobor-hidroponikus-akvariumhoz-akvariumhoz-tavacskahoz-szokokuthoz-z07hj-03-ygsb-800lh/pd/DNCBSXYBM/
 
-![../range-rover/docs/100px-ClipCapIt-241114-151941.PNG](../range-rover/docs/100px-ClipCapIt-241114-151941.PNG) 
+![../range-rover/docs/100px-ClipCapIt-241114-151941.PNG](../range-rover/docs/100px-ClipCapIt-241114-151941.PNG)
+ 
 <br>
 
 <br>
 
 https://www.emag.hu/ultracsendes-szivattyu-45w-108x92x65mm-aramlasi-sebesseg-2500-l-h-uritesi-magassag-2-5-m-muanyag-fekete-tartozekokkal-emag-yccpk-240726-88111/pd/DM2LRVYBM/?
 
-![../range-rover/docs/150px-ClipCapIt-241114-153134.PNG](../range-rover/docs/150px-ClipCapIt-241114-153134.PNG) 
+![../range-rover/docs/150px-ClipCapIt-241114-153134.PNG](../range-rover/docs/150px-ClipCapIt-241114-153134.PNG)
+ 
 <br>
 
 <br>
 
 https://www.emag.hu/gospodarul-profesionist-felszini-szivattyu-370w-2100-l-h-szivomelyseg-9-m-pmp0001/pd/D0F0VJMBM/?
 
-![../range-rover/docs/150px-ClipCapIt-241114-153158.PNG](../range-rover/docs/150px-ClipCapIt-241114-153158.PNG) 
+![../range-rover/docs/150px-ClipCapIt-241114-153158.PNG](../range-rover/docs/150px-ClipCapIt-241114-153158.PNG)
+ 
 <br>
 
 
@@ -1548,7 +1633,8 @@ Mi kell hozzá:
 	- JOBB: https://www.autodoc.hu/gt-bergmann/20259950#szelepfedel (41.000 Ft)
 
 
-![../range-rover/docs/ClipCapIt-241114-145150.PNG](../range-rover/docs/ClipCapIt-241114-145150.PNG) 
+![../range-rover/docs/ClipCapIt-241114-145150.PNG](../range-rover/docs/ClipCapIt-241114-145150.PNG)
+ 
 
 
 <br>
@@ -1564,9 +1650,11 @@ Mi kell hozzá:
 - https://www.youtube.com/watch?v=SeIk9dtPJIE
 
 
-![../range-rover/docs/600px-ClipCapIt-241116-142220.PNG](../range-rover/docs/600px-ClipCapIt-241116-142220.PNG) 
+![../range-rover/docs/600px-ClipCapIt-241116-142220.PNG](../range-rover/docs/600px-ClipCapIt-241116-142220.PNG)
+ 
 
-![../range-rover/docs/600px-ClipCapIt-241116-142238.PNG](../range-rover/docs/600px-ClipCapIt-241116-142238.PNG) 
+![../range-rover/docs/600px-ClipCapIt-241116-142238.PNG](../range-rover/docs/600px-ClipCapIt-241116-142238.PNG)
+ 
 
 
 
@@ -1589,7 +1677,8 @@ A kompressziót leginkább a glow plug-ok helyén lehet megmérni. Azonban az el
 ## Kamera
 Fontos, hogy olyan legyen a kamera, aminek tényleg mozgatható a vége, ami 30 ezer alatt van, azok csak sima kamerák, nem mozgathatóak. De a szelep vizsgálathoz fontos, hogy vissza tudjon fordulni. Kb ez itt a legolcsóbb olyan ami ezt tudja: 
 
-![../range-rover/docs/200px-ClipCapIt-241215-220355.PNG](../range-rover/docs/200px-ClipCapIt-241215-220355.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241215-220355.PNG](../range-rover/docs/200px-ClipCapIt-241215-220355.PNG)
+ 
 https://www.ebay.com/itm/256528419684
 
 <br>
@@ -1599,7 +1688,8 @@ https://www.ebay.com/itm/256528419684
 ## Füst szivárgás vizsgáló
 https://www.ebay.com/itm/255400859192
 
-![../range-rover/docs/ClipCapIt-241215-221547.PNG](../range-rover/docs/ClipCapIt-241215-221547.PNG) 
+![../range-rover/docs/ClipCapIt-241215-221547.PNG](../range-rover/docs/ClipCapIt-241215-221547.PNG)
+ 
 
 
 <br>
@@ -1607,7 +1697,8 @@ https://www.ebay.com/itm/255400859192
 
 https://www.ebay.com/itm/115732547177
 
-![../range-rover/docs/300px-ClipCapIt-241215-221632.PNG](../range-rover/docs/300px-ClipCapIt-241215-221632.PNG) 
+![../range-rover/docs/300px-ClipCapIt-241215-221632.PNG](../range-rover/docs/300px-ClipCapIt-241215-221632.PNG)
+ 
 
 
 <br>
@@ -1618,7 +1709,8 @@ https://www.ebay.com/itm/115732547177
 https://www.ebay.com/itm/183981939116?_skw=Manual+Vacuum+Pump+with+Gauge+-+Hand+Operated
 
 
-![../range-rover/docs/200px-ClipCapIt-241224-215334.PNG](../range-rover/docs/200px-ClipCapIt-241224-215334.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241224-215334.PNG](../range-rover/docs/200px-ClipCapIt-241224-215334.PNG)
+ 
 
 A füstteszt közben a turbó szelepét át kell kapcsolni, hogy más körbe is eljusson a füst. 
 
@@ -1637,7 +1729,8 @@ A füstteszt közben a turbó szelepét át kell kapcsolni, hogy más körbe is 
 - Nincs hozzá képernyő, telefon vagy tablet kell hozzá
 
 
-![../range-rover/docs/100px-ClipCapIt-240708-195448.PNG](../range-rover/docs/100px-ClipCapIt-240708-195448.PNG) 
+![../range-rover/docs/100px-ClipCapIt-240708-195448.PNG](../range-rover/docs/100px-ClipCapIt-240708-195448.PNG)
+ 
 
 <br>
 
@@ -1648,7 +1741,8 @@ A füstteszt közben a turbó szelepét át kell kapcsolni, hogy más körbe is 
 - https://www.ebay.com/itm/355822950481
 
 
-![../range-rover/docs/300px-ClipCapIt-240628-142025.PNG](../range-rover/docs/300px-ClipCapIt-240628-142025.PNG) 
+![../range-rover/docs/300px-ClipCapIt-240628-142025.PNG](../range-rover/docs/300px-ClipCapIt-240628-142025.PNG)
+ 
 
 - https://www.youtube.com/watch?v=GtQ-g7SalPU
 - https://www.youtube.com/watch?v=xzUvlUf_wOw&t=520s
@@ -1658,7 +1752,8 @@ A füstteszt közben a turbó szelepét át kell kapcsolni, hogy más körbe is 
 ### OTOFIX D1 Lite PRO Diagnostic Tool
 - Közép szint, ez már messze van a belépő szinttől 
 
-![../range-rover/docs/300px-ClipCapIt-240628-142142.PNG](../range-rover/docs/300px-ClipCapIt-240628-142142.PNG) 
+![../range-rover/docs/300px-ClipCapIt-240628-142142.PNG](../range-rover/docs/300px-ClipCapIt-240628-142142.PNG)
+ 
 
 - https://www.ebay.com/itm/375130885627
 
@@ -1680,7 +1775,8 @@ Brake Reservoir cap : LR134994LR -> E20??
 - https://www.temu.com/hu/3-literes-f%C3%A9k-l%C3%A9gtelen%C3%ADt%C5%91-k%C3%A9sz%C3%BCl%C3%A9k-t%C3%B6k%C3%A9letesen-l%C3%A9gtelen%C3%ADtse-a-f%C3%A9keket-az-e20-adapterrel-a-legt%C3%B6bb-eur%C3%B3pai-aut%C3%B3modellhez-g-601099518504452.html?top_gallery_url=https%3A%2F%2Fimg.kwcdn.com%2Fproduct%2FFancyalgo%2FVirtualModelMatting%2F5798002913daa2efe341f60bbf94a1a1.jpg&_web_cover=thumb_url&pic_h=1400&pic_w=1400&spec_gallery_id=4004310968&share_token=bU2cZ1aNspyVSx46oZa7_CHBqr7vX5-knA2EePO7VaV2zfmII49YdR3W7ya7ahXojNW6FhQWM6sGjUGmmkmUhEo3CAOh8LTXvsFQ7Qsq3ZOH_NOG2klzED2MTr8GGRjNw5mdi2G0GsLkk_40JVpPZT&refer_page_el_sn=209279&_x_vst_scene=adg&refer_page_name=kuiper&refer_page_id=14021_1720292830623_ntupmji52p&refer_page_sn=14021&_x_sessn_id=gyoc8gt8h4
 
 
-![../range-rover/docs/300px-ClipCapIt-240708-195950.PNG](../range-rover/docs/300px-ClipCapIt-240708-195950.PNG) 
+![../range-rover/docs/300px-ClipCapIt-240708-195950.PNG](../range-rover/docs/300px-ClipCapIt-240708-195950.PNG)
+ 
 
 <br>
 
@@ -1690,7 +1786,8 @@ Brake Reservoir cap : LR134994LR -> E20??
 
 https://www.ebay.com/itm/135220165957
 
-![../range-rover/docs/200px-ClipCapIt-241105-222203.PNG](../range-rover/docs/200px-ClipCapIt-241105-222203.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241105-222203.PNG](../range-rover/docs/200px-ClipCapIt-241105-222203.PNG)
+ 
 <br>
 <br>
 
@@ -1698,14 +1795,16 @@ https://www.ebay.com/itm/135220165957
 
 https://www.ebay.com/itm/315789681431
 
-![../range-rover/docs/200px-ClipCapIt-241105-221841.PNG](../range-rover/docs/200px-ClipCapIt-241105-221841.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241105-221841.PNG](../range-rover/docs/200px-ClipCapIt-241105-221841.PNG)
+ 
 
 <br>
 <br>
 
 https://www.ebay.com/itm/186707039376
 
-![../range-rover/docs/200px-ClipCapIt-241105-221911.PNG](../range-rover/docs/200px-ClipCapIt-241105-221911.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241105-221911.PNG](../range-rover/docs/200px-ClipCapIt-241105-221911.PNG)
+ 
 
 
 
@@ -1716,7 +1815,8 @@ https://www.ebay.com/itm/186707039376
 ### Motorolaj csere pumpa
 https://www.ebay.com/itm/256694376879
 
-![../range-rover/docs/200px-ClipCapIt-241105-222314.PNG](../range-rover/docs/200px-ClipCapIt-241105-222314.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241105-222314.PNG](../range-rover/docs/200px-ClipCapIt-241105-222314.PNG)
+ 
 
 <br>
 <br>
@@ -1724,7 +1824,8 @@ https://www.ebay.com/itm/256694376879
 
 https://www.ebay.com/itm/135130263584
 
-![../range-rover/docs/200px-ClipCapIt-241105-221517.PNG](../range-rover/docs/200px-ClipCapIt-241105-221517.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241105-221517.PNG](../range-rover/docs/200px-ClipCapIt-241105-221517.PNG)
+ 
 
 TODO...
 
@@ -1737,14 +1838,16 @@ TODO...
 ### Cleaning
 https://www.ebay.com/itm/123610147740
 
-![../range-rover/docs/200px-ClipCapIt-241115-102842.PNG](../range-rover/docs/200px-ClipCapIt-241115-102842.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241115-102842.PNG](../range-rover/docs/200px-ClipCapIt-241115-102842.PNG)
+ 
 <br>
 
 <br>
 
 https://www.ebay.com/itm/395877838546
 
-![../range-rover/docs/200px-ClipCapIt-241115-102931.PNG](../range-rover/docs/200px-ClipCapIt-241115-102931.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241115-102931.PNG](../range-rover/docs/200px-ClipCapIt-241115-102931.PNG)
+ 
 <br>
 
 <br>
@@ -1755,19 +1858,22 @@ o-ring set for injectors:<br>
 
 https://www.ebay.com/itm/315384553889
 
-![../range-rover/docs/200px-ClipCapIt-241115-103022.PNG](../range-rover/docs/200px-ClipCapIt-241115-103022.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241115-103022.PNG](../range-rover/docs/200px-ClipCapIt-241115-103022.PNG)
+ 
 <br>
 
 
 ### Removal
 
-![../range-rover/docs/ClipCapIt-241115-155304.PNG](../range-rover/docs/ClipCapIt-241115-155304.PNG) 
+![../range-rover/docs/ClipCapIt-241115-155304.PNG](../range-rover/docs/ClipCapIt-241115-155304.PNG)
+ 
 <br>
 <br>
 
 https://www.ebay.com/itm/286112992103
 
-![../range-rover/docs/200px-ClipCapIt-241115-155238.PNG](../range-rover/docs/200px-ClipCapIt-241115-155238.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241115-155238.PNG](../range-rover/docs/200px-ClipCapIt-241115-155238.PNG)
+ 
 
 <br>
 <br>
@@ -1798,12 +1904,14 @@ https://www.youtube.com/watch?v=ZnRWBriX3Ag
 
 Bolt joint removal: https://www.ebay.com/itm/363568718846
 
-![../range-rover/docs/200px-ClipCapIt-241119-213953.PNG](../range-rover/docs/200px-ClipCapIt-241119-213953.PNG) 
+![../range-rover/docs/200px-ClipCapIt-241119-213953.PNG](../range-rover/docs/200px-ClipCapIt-241119-213953.PNG)
+ 
 
 <br>
 
 
-![../range-rover/docs/300px-ClipCapIt-241119-214548.PNG](../range-rover/docs/300px-ClipCapIt-241119-214548.PNG) 
+![../range-rover/docs/300px-ClipCapIt-241119-214548.PNG](../range-rover/docs/300px-ClipCapIt-241119-214548.PNG)
+ 
 https://www.autodoc.hu/ridex/12745587
 
 
@@ -1820,7 +1928,8 @@ A crankcase-ben még egy jó motor esetében is fel tud gyűlni légnyomás, sze
 
 Ennek a nyomásnak az eltávolítására szolgál a PCV (Positive Crankcase Ventilation) szelep, ami egy irányba nyit és a crankcase-ből a nyomást visszavezeti az intake manifold -ba. 
 
-![../range-rover/docs/ClipCapIt-241208-195437.PNG](../range-rover/docs/ClipCapIt-241208-195437.PNG) 
+![../range-rover/docs/ClipCapIt-241208-195437.PNG](../range-rover/docs/ClipCapIt-241208-195437.PNG)
+ 
 
 
 
@@ -1834,7 +1943,8 @@ Ennek a nyomásnak az eltávolítására szolgál a PCV (Positive Crankcase Vent
 
 ## AOS (Air - Oil separator)
 
-![../range-rover/docs/ClipCapIt-241208-200105.PNG](../range-rover/docs/ClipCapIt-241208-200105.PNG) 
+![../range-rover/docs/ClipCapIt-241208-200105.PNG](../range-rover/docs/ClipCapIt-241208-200105.PNG)
+ 
 https://www.ebay.com/itm/365039195575<br>
 
 
@@ -1847,7 +1957,8 @@ A TDV6-ban nincs külön PCV eszlep, csak olaj leválasztó. Aminek az a szerepe
 
 We have all seen white smoke coming from car exhausts. This is often the result of the PCV valve staying open and oil vapour entering the inlet manifold. To solve the oil mist problems oil separators are now fitted to many vehicles. Before the gasses are returned to the inlet it is channelled thru a series of baffles or filters slowing the speed of the gas and allowing the oil mist to condense. The oil droplets are then returned to the crankcase. This stops the oil from entering the intake and thereby reducing carbon deposits in the inlet system.  The OSV is normally integrated or mounted on the rocker cover.
 
-![../range-rover/docs/ClipCapIt-241208-200626.PNG](../range-rover/docs/ClipCapIt-241208-200626.PNG) 
+![../range-rover/docs/ClipCapIt-241208-200626.PNG](../range-rover/docs/ClipCapIt-241208-200626.PNG)
+ 
 
 Gyakran a visszatérő olaj a motor hűtő folyadékkal elő van melegítve, mert ha ezt nem tennénk, akkor a hideg olaj, ahogy a meleggel találkozna iszapszerű lerakódást eredményez. 
 
@@ -1856,5 +1967,6 @@ Gyakran a visszatérő olaj a motor hűtő folyadékkal elő van melegítve, mer
 
 ## Cache Can system
 
-![../range-rover/docs/ClipCapIt-241208-201543.PNG](../range-rover/docs/ClipCapIt-241208-201543.PNG) 
+![../range-rover/docs/ClipCapIt-241208-201543.PNG](../range-rover/docs/ClipCapIt-241208-201543.PNG)
+ 
 Ez egy fajta szűrő, csomó járattal, amin áthalad a forró gáz a crankcase-bő, és itt a szűrő falán lecsapódik az olaj, és így össze lehet gyűjteni. De innen nem jut vissza a motorba az olaj, ezt manuálisan üríteni kell időről időre. Ez a fő különbség az AOS hez képest, hogy ott az összegyűjtött olajat automatikusan vissza is vezetik a motorba.
