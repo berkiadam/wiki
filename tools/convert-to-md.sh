@@ -93,7 +93,7 @@ awk -v imgdir="$IMAGE_DIR" '
             sized_filename = sizearr[1] "px-" filename;  # Méret hozzáadása a fájlnév elé
         }
 
-        gsub(/:?[\[File:[^|\]]+\|?[^]]*\]\]/, "![" imgdir "/" sized_filename "](" imgdir "/" sized_filename ") ");
+        gsub(/:?[\[File:[^|\]]+\|?[^]]*\]\]/, "\n![" imgdir "/" sized_filename "](" imgdir "/" sized_filename ") ");
     }
     print;
 }' "$MD_FILE" > temp.md && mv temp.md "$MD_FILE"
