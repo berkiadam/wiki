@@ -80,7 +80,7 @@ Range Rover Sport 2011 TDV6 3.0
 		- [Alsó lengökar](#alsó-lengökar)
 			- [Csavarok](#csavarok)
 			- [Bushings](#bushings)
-			- [Komplett lengőkar bushing-al](#komplett-lengőkar-bushing-al)
+			- [Lengőkar](#lengőkar)
 		- [Felső lengőkar](#felső-lengőkar)
 			- [Csavar:](#csavar)
 			- [Bushing:](#bushing)
@@ -1386,6 +1386,8 @@ all Joint Separator Ball Head Puller/removal
 
 ## Első felfüggesztés
 
+https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobiography--5-0l-v8-gas/suspension--front-suspension
+
 ![docs/ClipCapIt-250223-182707.PNG](docs/ClipCapIt-250223-182707.PNG) 
 <!-- <img src="docs/ClipCapIt-250223-182707.PNG" width="400"> -->
 
@@ -1421,22 +1423,33 @@ Készlet:
 
 #### Bushings
 ![](docs/img22025-02-26-23-44-21img1.png)
-- 5A638 -> hátsó nagy bushing: LR055291,LR025986,LR023715
+- 5A638 -> hátsó nagy bushing: LR055291
   - febi: https://www.autodoc.hu/febi-bilstein/7940443
   - meyle: https://www.autodoc.hu/meyle/9882701 
-- 3068 -> első kicsi: RBX500432, RBX500431, RBX500311
-  - meyer: https://www.autodoc.hu/meyle/8049869
-  - lemfölder: https://www.autodoc.hu/lemforder/1272463
-  - febi: https://www.ebay.co.uk/itm/276849986344
-  - ABS: https://www.autodoc.hu/abs/7805401
-- 3050B -> ball joint: RBK500280
+- 3068 -> első kicsi: LR055288
+  - meyer: https://www.autodoc.hu/meyle/9882701
+- 3050B -> ball joint: RBK500300
 	- Meyer: https://www.autodoc.hu/meyle/7517662
 	- Lemfölder: https://www.autodoc.hu/lemforder/1267753
+	- ABS: https://www.autodoc.hu/abs/7802685
 
 
-#### Komplett lengőkar bushing-al
+#### Lengőkar 
 
-- https://www.autodoc.hu/stark/8346530
+> **WARNING**: | Több méretben van lengőkar a Rage Rover Sport-hoz, az évjárat nagyon fontos. Mindig ellenőrizzük le az OEM számot 
+
+https://landrover.oempartsonline.com/oem-parts/land-rover-lower-control-arm-lr029301?c=bD01Jm49U2VhcmNoIFJlc3VsdHM%3D
+
+- JOBB: OEM: LR029301
+  - https://www.autodoc.hu/stark/8348007
+- BAL: OEM LR029302
+  - https://www.autodoc.hu/stark/8346532
+
+  
+
+Ezek a jó méretek
+
+<img src="docs/image-2025-02-27-15-55-39.png" width=400>
 
 <br>
 
