@@ -81,6 +81,7 @@ Range Rover Sport 2011 TDV6 3.0
 			- [Csavarok](#csavarok)
 			- [Bushings](#bushings)
 			- [Lengőkar](#lengőkar)
+			- [Rods and hubs](#rods-and-hubs)
 		- [Felső lengőkar](#felső-lengőkar)
 			- [Csavar:](#csavar)
 			- [Bushing:](#bushing)
@@ -93,8 +94,8 @@ Range Rover Sport 2011 TDV6 3.0
 		- [Alsó lengőkar](#alsó-lengőkar)
 			- [Csavar](#csavar-2)
 			- [Bushings](#bushings-2)
-			- [Lengőkar alkatrészek](#lengőkar-alkatrészek)
-		- [Rods and hubs](#rods-and-hubs)
+			- [Lengőkar](#lengőkar-1)
+		- [Rods and hubs](#rods-and-hubs-1)
 			- [Csavarok](#csavarok-1)
 			- [Alkatrészek](#alkatrészek-4)
 			- [Bushings](#bushings-3)
@@ -1451,6 +1452,27 @@ Ezek a jó méretek
 
 <img src="docs/image-2025-02-27-15-55-39.png" width=400>
 
+
+<br>
+
+#### Rods and hubs
+
+
+<img src="docs/img22025-02-27-22-28-06img1.png" width=400>
+
+1. Hub & Bearing: LR076692
+2. Knuckle, 
+   - front left: RUB500330
+   - Knuckle, front right: RUB500320
+3. Shock Assembly: LR016415
+
+.11. Stabilizer Bar: LR017423
+12.  Stabilizer Bar Bushing: LR018347
+13.  Bushing Bracket: RBU500042
+7.  Stabilizer Link, left: RBM500150
+8.  Stabilizer Link, righ: RBM500140
+9.  Stabilizer Link Washer: RYF500120
+
 <br>
 
 ### Felső lengőkar
@@ -1462,7 +1484,7 @@ Ezek a jó méretek
 #### Csavar:
 - HB1 -> Csavar 2x alvázhoz, M14 X 80MM: RYG000420 
 - HN3 -> Anya 2 x alvához: FY114056
-- HM1 -> Anya 1 x: FY112056
+- HM1 -> ball joint nut,  1 x: FY112056
 - HN1 -> Anya 1x, 14 mmm: NY214047   
 
 Készlet: 
@@ -1486,7 +1508,8 @@ Készlet:
 
 #### Lengökar:
 
-
+- Left Upper Control Arm: LR063688
+- Right Upper control arm: LR063711
 <br>
 
 <br>
@@ -1499,8 +1522,7 @@ Készlet:
 ![docs/ClipCapIt-250223-174954.PNG](docs/ClipCapIt-250223-174954.PNG) 
 <!-- <img src="docs/ClipCapIt-250223-174954.PNG" width="400"> -->
  
-![docs/ClipCapIt-250223-174954.PNG](docs/ClipCapIt-250223-174954.PNG) 
-<!-- <img src="docs/ClipCapIt-250223-174954.PNG" width="400"> -->
+
 
 
 
@@ -1540,8 +1562,8 @@ Készlet: https://www.ebay.co.uk/itm/316105477430 (megvéve)
 
 
 #### Lengőka
-- bal felős lengőkar: 
-- jobb felső lengőkar: 
+- bal felős lengőkar: LR063718
+- jobb felső lengőkar: LR063719
 ----------------------------------------
 <br>
 
@@ -1563,9 +1585,9 @@ Készet: https://www.ebay.co.uk/itm/225275179043
 
 
 #### Bushings
-- 9F955C -> első: RGX500211 
-	- https://www.autodoc.hu/febi-bilstein/9804666
-- 9F955D -> hátsó : LR054831, RGX500111
+- 9F955C -> első: LR051611
+	- febi: https://www.autodoc.hu/febi-bilstein/9804666
+- 9F955D -> hátsó : LR054831
 	- Mayle: https://www.autodoc.hu/meyle/13586488
 	- Lemförder: https://www.autodoc.hu/lemforder/1272150
 
@@ -1573,9 +1595,9 @@ Készet: https://www.ebay.co.uk/itm/225275179043
 
 
 
-#### Lengőkar alkatrészek
-- Jobb - Rear Right Hand Lower Suspension Arm: LR019977
-- Bal - Rear Right Hand Lower Suspension Arm:
+#### Lengőkar
+- Jobb: LR019977
+- Bal: LR019978
 
 <br>
 
@@ -1584,7 +1606,9 @@ Készet: https://www.ebay.co.uk/itm/225275179043
 
 
 ### Rods and hubs
+https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--hse--5-0l-v8-gas/suspension--rear-suspension
 
+![](docs/img22025-02-27-22-53-00img1.png)
 
 #### Csavarok
 - HS1 -> anti-roll bar bushing mounting point bolt: 
@@ -1600,15 +1624,18 @@ Készet: https://www.ebay.co.uk/itm/225275179043
 
 #### Alkatrészek
 - 3A130 -> stabilizer bar / anti-roll bar: 
-- XXX -> knuckle hub left : 
-- XXX -> knuckle hub right : 
-- 1104 -> wheel hub assembly: 
-- 1225 -> wheel bearing
+- 3 -> knuckle hub left : LR045825
+- 3 -> knuckle hub right : LR045824
+- 1 -> wheel hub assembly: RUC500120
+- 2 -> wheel bearing: LR045917
+- 8 -> Tie Rod Assembly: LR019117
+- 15 -> Stabilizer Bar: LR024072, LR015341 ??
+- 16 -> Stabilizer Link
 
 
 #### Bushings
 
-- 5K792A ->  TOP KNUCKLE HUB BUSHES: RHF500100
+- 5K792A ->  TOP KNUCKLE HUB BUSHING: RHF500100
 	- febi: https://www.autodoc.hu/febi-bilstein/7623985
 	- meyle: https://www.autodoc.hu/meyle/8119742
 - 5k792B -> BOTTOM KNUCKLE HUB BUSHES: LR032644
