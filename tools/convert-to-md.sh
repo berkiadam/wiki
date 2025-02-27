@@ -14,7 +14,7 @@ FOLDER="range-rover"
 WIKI_FILE="../$FOLDER/$WIKI_FILE"
 MD_FILE="../$FOLDER/$MD_FILE"
 MD_FINAL="../$FOLDER/$MD_FINAL"
-IMAGE_DIR="../$FOLDER/$IMAGE_DIR"
+
 
 
 rm $MD_FILE
@@ -80,23 +80,29 @@ awk '
     }
 }' "$MD_FILE" > temp.md && mv temp.md "$MD_FILE"
 
-# Kép hivatkozások átalakítása Markdown formátumba, méretkezeléssel
+# Kép hivatkozások átalakítása Markdown formátumba, méretkezeléssel és HTML kommenttel
 awk -v imgdir="$IMAGE_DIR" '
 {
     while (match($0, /\[\[File:([^|\]]+)\|?([^]]*)\]\]/, arr)) {
         filename = arr[1];
         size = "";
         sized_filename = filename;  # Alapértelmezés szerint a fájlnév változatlan
+        width = "400";  # Alapértelmezett szélesség
 
         if (match(arr[2], /([0-9]+)px/, sizearr)) {
             size = "{width=\"" sizearr[1] "\"}";
             sized_filename = sizearr[1] "px-" filename;  # Méret hozzáadása a fájlnév elé
+            width = sizearr[1];  # HTML img szélesség
         }
 
-        gsub(/:?[\[File:[^|\]]+\|?[^]]*\]\]/, "\n![" imgdir "/" sized_filename "](" imgdir "/" sized_filename ")\n ");
+        markdown_image = "![" imgdir "/" sized_filename "](" imgdir "/" sized_filename ") ";
+        html_comment = "<!-- <img src=\"" imgdir "/" sized_filename "\" width=\"" width "\"> -->";
+
+        gsub(/:?[\[File:[^|\]]+\|?[^]]*\]\]/, "\n" markdown_image "\n" html_comment "\n");
     }
     print;
 }' "$MD_FILE" > temp.md && mv temp.md "$MD_FILE"
+
 
 
 # MediaWiki linkek Markdown formátumra konvertálása
