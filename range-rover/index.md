@@ -24,6 +24,7 @@ Range Rover Sport 2011 TDV6 3.0
 		- [Fuel Injection Pump belt](#fuel-injection-pump-belt)
 - [](#)
 - [Alkatrészek](#alkatrészek)
+	- [Air intake pipe to second turbo](#air-intake-pipe-to-second-turbo)
 	- [Rézpaszta](#rézpaszta)
 	- [Power steering fluid / kormány hidraulika folyadék](#power-steering-fluid--kormány-hidraulika-folyadék)
 		- [Helyettesítések](#helyettesítések)
@@ -445,6 +446,22 @@ Ezek nagyon olcsó alkatrészek, megéri ezeket gyakran cserélni.
 
 # Alkatrészek
 
+
+## Air intake pipe to second turbo 
+
+![](docs/img22025-03-07-21-41-11img1.png)
+- https://landrover.scuderiacarparts.com/part-finder/landrover/discovery/oe/501/5385/107751
+- https://www.jaguarforum.com/threads/can-i-fix-this-bit-of-turbo-supply-line-and-how-old-brittle-plastic-tube-repair.143252/
+- https://www.jaginfo.org/threads/rp-mode-with-hissing-sound-hose-pipe-identification.116417/
+
+
+Sorozatszámok:
+- Land rover: LR015456
+- Jaguar: C2C40100
+
+The OD of the tube is 7.5 mm and the ID is 5.5
+
+> **NOTE:** Mikor ez letörik, csak venni kell sima fekete gumicsövet és rámelegíteni. 
 
 ## Rézpaszta
 
