@@ -1,6 +1,7 @@
 Range Rover Sport 2011 TDV6 3.0 
 
 
+- [Linkek](#linkek)
 - [Mit szeretnék lecserélni](#mit-szeretnék-lecserélni)
 - [Mit cseréljünk ki a timing belt-el egyszerre](#mit-cseréljünk-ki-a-timing-belt-el-egyszerre)
 - [Issues with the TDV6 3.0 Engine](#issues-with-the-tdv6-30-engine)
@@ -94,7 +95,7 @@ Range Rover Sport 2011 TDV6 3.0
 		- [Alsó lengőkar](#alsó-lengőkar)
 			- [Csavar](#csavar-2)
 			- [Bushings](#bushings-2)
-			- [Lengőkar](#lengőkar-1)
+			- [Lengőkar](#lengőkar-2)
 		- [Rods and hubs](#rods-and-hubs-1)
 			- [Csavarok](#csavarok-1)
 			- [Alkatrészek](#alkatrészek-4)
@@ -139,6 +140,11 @@ Range Rover Sport 2011 TDV6 3.0
 	- [Jelei a rossz PVC-nek](#jelei-a-rossz-pvc-nek)
 	- [AOS (Air - Oil separator)](#aos-air---oil-separator)
 	- [Cache Can system](#cache-can-system)
+
+
+# Linkek
+- HU [hátsó vezérmű szíj csere](rear-timing-belt-HU.md)  
+- EN [rear timing belt change](rear-timing-belt-EN.md)
 
 
 # Mit szeretnék lecserélni

@@ -1,6 +1,6 @@
 
-
-[<< back to main](index.md)
+[<< back to main](index.md)<br>
+HU <a href="rear-timing-belt-HU.md"><img src="docs/flag_hu.png" width="30"></a> 
 
 # Bevezető
 
@@ -12,15 +12,25 @@ LR time discoe 3: https://www.youtube.com/watch?v=gL41G1o8nW4
 
 A nagy különbség a Disco 3 és a Range Rover Sport / Disco4 között, hogy a Disco 3-ban a magasnyomású üzemanyag pumpa nem időzített, míg az utóbbi típusokban és attól fölfelé igen, ugyanis az STD6 (gen 2) motorokban ez már mindig időzített, és rear timgig belt-enk hívják. 
 Ez a következőt jelenti: 
-- a pumpa fogaskerék pozíciója nem mindegy hogy áll a camshaft pulley pozíciojához képest, ez előre meg van határozva. 
+- a pumpa fogaskerék pozíciója nem mindegy hogy áll a camshaft pulley pozíciójához képest, ez előre meg van határozva. 
 - a szíj cseréjéhez az első timing belt időzítése tökéletes kell legyen, különben az időzítési hibát átvisszük a hátsó szíjra is. 
 - a szíj cseréjéhez a flywheel-t lockolni kell, amihez ki kell szedni az önindítót 
 - a rear timing belt felrakásához szükség van egy speciális időzítő szerszámra, amivel az üzemanyag pumpa fogaskerekét rögzítjük 
 
 
-Megállapítások:
+## Megállapítások:
 - a cseréhez nem kell levenni a body-t, és a keresztbe menő kábelkötegeket sem kell kikötni a fedélzeti computerből, az aksit sem kell kivenni
 - egy boroszkópos kamera elkerülhetetlen a munkához. 
+
+
+## Alkatrészek: 
+* https://www.autodoc.hu/ina/9885552
+* **LR016656**: szíj, csavar + feszítő
+* **LR006526** / FW9Q6K254AA: tensioner 
+* **LANDCDI002**: timing belt
+* **LR000374**: tensioner bolt
+  
+
 
 
 # Lépések
@@ -35,18 +45,17 @@ Workshop manual: "Accessory Drive - TDV6 3.0L Diesel - Rear End Accessory Drive 
 2. Vegyük ki az egér kereszt hűtő csövét, úgy hogy mind három bilincset kinyitjuk:
    ![](docs/img22025-03-06-22-54-05img1.png)
 
-3. Az ECU-ból (Engine Control Unit) kijöv kábel köteg jobb végét fel kell szavadítani amennyire lehet: 
+3. Az ECU-ból (Engine Control Unit) kijövő kábel köteg jobb végét fel kell szabadítani amennyire lehet: 
     - a három injector csatlakozót le kell húzni (ez a hővédő szivacs alatt van). Mielőtt kiszedjük, számozzuk be őket. 
     - ezt a barna és sárga csatlakozót is: ![](docs/img22025-03-06-23-02-55img1.png)
 
-4.  le kell kötni a diesel input csöveg a pupáról. Ha ezt nem tesszük meg nincs esély a cover kibányászására
+4.  le kell kötni a diesel input csövet a pumpáról. Ha ezt nem tesszük meg nincs esély a cover kibányászására
 5.  A cranck case ventillation tube-ot ki kell kötni az oil separator-bol. Ez a cső szorosan a timing belt cover mögött megy el, ha nem kötjük le, akkor nincs elég helyünk. 
 6.  Most már a ECU kábel kötegét egész balra tudjuk húzni
 7.  A timing belt cover-re szerelt bracke-töl minden csavart szedjünk ki és szedjük le: ![](docs/img22025-03-06-23-34-49img1.png)
-8.  Ha mindent lebontottunk, akkor a crank case ventillation csövet egész hátra tudjuk nyomni
-9.  Nyissuk ki a cover két bilincsiét,és egy csavarhúzóval pattintuk le a cover-t. 
-10. A bal oldalát a covernek előre forgatva, szedjük ki. Épp hogy csak meg lehet csinálni. Közbne vigyázzunk, hogy a kis bilincsek le ne essenek róla. 
-
+8.  Ha mindent lebontottunk, akkor a crank case ventilation csövet egész hátra tudjuk nyomni
+9.  Nyissuk ki a cover két bilincsiét,és egy csavarhúzóval pattintsuk le a cover-t. 
+10. A bal oldalát a covernek előre forgatva, szedjük ki. Épp hogy csak meg lehet csinálni. Közben vigyázzunk, hogy a kis bilincsek le ne essenek róla, mert ahogy kicibáljuk, tuti le fog esni legalább az egyik. 
 
 ## Locking the flywheel
 
@@ -74,7 +83,7 @@ Workshop manual: "Accessory Drive - TDV6 3.0L Diesel - Rear End Accessory Drive 
 6. A szíjon meg van jelölve a pupma és a pulley-n lévő jelölés helye. 
 7. Tegyük fel a szíjat a pupma fogaskerékre, úgy hogy a jel a szíjon pont a fogaskerék jelére essen. A felirat a szíjon felénk nézzen. 
 8. Egy kartonpapirt gyürjünk be a szíj és a keret közé, hogy inentöl kezdve a helyén tartsuk a szíjet a fogaskeréken: ![](docs/img22025-03-07-00-16-13img1.png) (A kartonpapír a is kötöttünk zsinórt) Ehhez persze elengedhetetlen, hogy a kamerán nézzük, hogy mikor kerül a helyére. 
-9. Tegyük a szíjet a pulley wheel-re is rá, úgy hogy a jeölés a helyére essen. Mivel a pulley wheel ki lett lazítva, van egy akkora játéka, hogy tuti nem kerül két fog közé. Itt az az elmélet, hogy mivel a régi szíj lehet megnyult, ezért lehet hogy pont nem jó helyre kerülne. ![](docs/img22025-03-07-00-19-13img1.png). Ide is tömjünk be kartonpapirt, hogy már ez se tudjon lejönni. 
+9. Tegyük a szíjat a pulley wheel-re is rá, úgy hogy a jelölés a helyére essen. Mivel a pulley wheel ki lett lazítva, van egy akkora játéka, hogy tuti nem kerül két fog közé. Itt az az elmélet, hogy mivel a régi szíj lehet megnyúlt, ezért lehet hogy pont nem jó helyre kerülne. ![](docs/img22025-03-07-00-19-13img1.png). Ide is tömjünk be kartonpapírt, hogy már ez se tudjon lejönni. 
     
 
 
@@ -95,4 +104,4 @@ Workshop manual: "Accessory Drive - TDV6 3.0L Diesel - Rear End Accessory Drive 
 11. Szedjük ki a flywheel lock pin-t. 
 12. Vagyük le a timing tool-t a pumpa fogaskerékröl
 13. Most tekerüjk körbe 2x a motort teljes fordulatra, hogy a szíj pont a helyére, középre kerüljün. 
-14. Építsünk mindent vissza. 
+14. Építsünk mindent vissza.
