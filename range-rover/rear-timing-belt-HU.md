@@ -1,6 +1,6 @@
 
 [<< back to main](index.md)<br>
-HU <a href="rear-timing-belt-HU.md"><img src="docs/flag_hu.png" width="30"></a> 
+HU <a href="rear-timing-belt-HU"><img src="docs/flag_hu.png" width="30"></a> 
 
 # Bevezető
 

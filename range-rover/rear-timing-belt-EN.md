@@ -1,5 +1,5 @@
 [<< back to main](index.md)<br>
-EN <a href="rear-timing-belt-EN.md"><img src="docs/flag_en.png" width="30"></a>
+EN <a href="rear-timing-belt-EN"><img src="docs/flag_en.png" width="30"></a>
 
 # Introduction
 
