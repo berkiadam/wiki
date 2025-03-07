@@ -90,7 +90,7 @@ Range Rover Sport 2011 TDV6 3.0
 		- [Felső lengőkar](#felső-lengőkar-1)
 			- [Csavar](#csavar-1)
 			- [Bushings](#bushings-1)
-			- [Lengőka](#lengőka)
+			- [Lengőkar](#lengőkar-1)
 		- [Alsó lengőkar](#alsó-lengőkar)
 			- [Csavar](#csavar-2)
 			- [Bushings](#bushings-2)
@@ -1508,8 +1508,11 @@ Készlet:
 
 #### Lengökar:
 
-- Left Upper Control Arm: LR063688
-- Right Upper control arm: LR063711
+- Bal, első felső: LR063688
+- Jobb, első felső: LR063711
+  - febi: https://www.autodoc.hu/febi-bilstein/17401906
+  - ABS: https://www.autodoc.hu/abs/8160021
+
 <br>
 
 <br>
@@ -1561,7 +1564,7 @@ Készlet: https://www.ebay.co.uk/itm/316105477430 (megvéve)
 
 
 
-#### Lengőka
+#### Lengőkar
 - bal felős lengőkar: LR063718
 - jobb felső lengőkar: LR063719
 ----------------------------------------
@@ -1624,13 +1627,10 @@ https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--hse--5
 
 #### Alkatrészek
 - 3A130 -> stabilizer bar / anti-roll bar: 
-- 3 -> knuckle hub left : LR045825
-- 3 -> knuckle hub right : LR045824
-- 1 -> wheel hub assembly: RUC500120
-- 2 -> wheel bearing: LR045917
-- 8 -> Tie Rod Assembly: LR019117
-- 15 -> Stabilizer Bar: LR024072, LR015341 ??
-- 16 -> Stabilizer Link
+- XXX -> knuckle hub left : LR045825
+- XXX -> knuckle hub right : LR045824
+- 1104 -> wheel hub assembly: RUC500120
+- 1225 -> wheel bearing: LR045917
 
 
 #### Bushings
