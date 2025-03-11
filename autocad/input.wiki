@@ -1,0 +1,845 @@
+:[[File:ClipCapIt-161230-173600.PNG]]
+
+
+===3D modelling menü bekapcsolása===
+
+Telepítés után nem a 3D modellező menüsor van felül a Home fülön, pedig nekünk erre lenne szükségünk: 
+:[[File:ClipCapIt-161228-201354.PNG]]
+
+Be kell kapcsolni a felső menüsort. Ehhez adjuk ki a MENUBAR parancsot, majd 1. Ekkor a felső sorban megjelenik a hagyományos menü. Majd Tools -> Workspaces -> 3D Modeling:
+
+:[[File:ClipCapIt-161228-201633.PNG]]
+
+VAGY
+
+A jobb alsó sarokban válthatunk munkaterületet a kis fogaskerékre kattintva ennél sokkal egyszerűbben: 
+:[[File:ClipCapIt-161229-124752.PNG]]
+
+
+
+===Rétegek kezelése===
+Célszerű sok réteget használni, hogy majd a papírtérben könnyű legyen elrejteni ami nem kell. Válasszunk ki egy vagy több objektumot, majd a Home fülön a Layers szekcióban válasszuk ki melyik rétegre akarjuk rakni: 
+:[[File:ClipCapIt-161229-122502.PNG]]
+
+===Kijelölés===
+
+Ha kattintunk valahol a modelltérben egy üres helyre, majd jobbra és lefele húzzuk az egeret, akkor a kijelölés zöld lesz és szaggatott az oldala, ekkor mindent kijelöl,amit csak keresztezik:
+:[[File:ClipCapIt-170101-202645.PNG]]
+
+Ha kattintunk és balra és felfelé húzzuk, akkor meg kék lesz a kijelölés és teli vonal, így csak azt jelöli ki ami 100%-ban a kijelölésben van: 
+:[[File:ClipCapIt-170101-202743.PNG]]
+
+Ha lenyomva tartjuk az egeret, akkor be lehet karikázni egy szabad területet. Itt ugyan az igaz. Ha balra indulunk, akkor kék lesz a háttér, és csak az lesz kijelölve, ami 100%-ban belűl van, ha jobbra indulunk, akkor meg zöld lesz, és minden ki lesz jelölve, amit keresztez. 
+:[[File:ClipCapIt-170101-202957.PNG]]
+
+==Copy és move ==
+
+===Beállítások/Furcsa jelenségek===
+Ha azt tapasztaljuk, hogy a copy vagy a move 2D-ben nem csak az XY mentén mozgat, akkor lehet hogy a Dynamic Input funkcióval lesz a baj. 
+A "Dynamic Input" jeleníti meg a fehér kis beíró mezőket, és a segéd vonalakat. 
+
+Ez alap esetben nem látszik az alsó csíkon. Kattintsunk a jobb alsó sarkban a csíkokra, és az itt megnyíló menüben pipáljuk be a "Dynamic input"-ot, hogy az is megjelenjen. 
+:[[File:ClipCapIt-161230-131659.PNG]]
+Ezután egy + egy kis dobozzal meg fog jelenni. 
+
+Bal egérrel tudjuk ki be kapcsolni, ha jobb egérrel kattintunk rá, akkor hangolhatjuk:
+:[[File:ClipCapIt-161230-131857.PNG]]
+
+A "Dynamic input settings" -ben három lehetőség van. Vagy csak az első vagy csak a második vagy mindkettő be van kapcsolva (1,2,3). 
+Csak az "Enable Pointer Input" legyen bekapcsolva". 
+:[[File:ClipCapIt-161230-132049.PNG]]
+
+
+Ezen felül még gondot okozhat ha az "Orthomod" és vagy a "Polar tracing" nincsenek bekapcsolva. Az első egy L míg a második egy kör: 
+:[[File:ClipCapIt-161230-132227.PNG]]
+A kör utáni kis négyzet a OSNAP, ami segít kiválasztani az objektumok egyes pontjait, pl ha közelítünk a sarok felé, akkor az bezöldül, vagy a kör középpontját választja ki, vagy egy szakasz közepét. Nem mindegy hogy mi van itt bekapcsolva (lásd lentebb)
+
+Az első korlátozza a mozgást YX tengelyre, míg a második a szögeket. Én azt tanácsolom, hogy a "Polar tracing" legyen bekapcsolva, és 90 fokra legyen korlátozva.
+:[[File:ClipCapIt-161230-132347.PNG]]
+
+
+Copy közben gondot okozhat ha az OSNAP-ban be van kapcsolva a "Perpendicular", ilyenkor láthatunk olyat, hogy másik tengely mentén is elmászik. 
+:[[File:ClipCapIt-161230-174638.PNG]]
+
+===Szabad mozgatás===
+Ha szabadon akarjuk az egyik tengely mentén mozgatni az objektumot, akkor a referencia pontot rakjuk távol minden más objektumtól valahol a szabad térben, és akkor nem fog semmilyen pontra ráizgulni a mozgatás: 
+:[[File:ClipCapIt-170101-202359.PNG]]
+
+==Importálás==
+Az AutoCAD 2014-től kezdve solidWorks formátumú modelleket is lehet importálni (SLDASM és SLDPRT). Menjünk az Import fülre, és ott válasszuk az Import legördülő listából az Impor-ot.
+:[[File:ClipCapIt-161230-154609.PNG]]
+
+Majd válasszuk ki az SLDASM fájlt. Ekkor kiírja, hogy elkezdte  konvertálni a fájlt, tehát  nem jelenik meg azonnal a model térben. 
+:[[File:ClipCapIt-161230-154932.PNG]]
+
+Ha  bezárjuk,akkor a jobb alsó sarokban kiírja, hogy feldolgozás alatt: 
+:[[File:ClipCapIt-161230-155029.PNG]]
+
+És ha kész van, akkor a kék linkre kattintva lehet elhelyezni a modelltérben az objektumot.
+
+Innen lehet nagyon jó modelleket letölteni: https://grabcad.com/library/
+user: lalilali96@gmail.com
+pass: lali_lali96
+
+{{
+
+{{tip|Ha  nem jelenik meg a filebrowser mikor importálni akarunk, írjuk be ezt: '''filedia''', majd 1. }}
+
+==Group==
+Léteznek elnevezett és név nélküli csoportok. 
+
+===Név nélkül===
+
+parancs > '''GRPUP''' majd adjuk hozzá egyenként a csoportokat. 
+
+===Neves csoportok===
+A Home fülön válasszuk ki a Groups lenyílóból a "Group manager"-t
+:[[File:ClipCapIt-161230-173245.PNG]]
+
+Adjunk nevet a csoportnak, majd nyomjunk a "New <" gombra. 
+:[[File:ClipCapIt-161230-173345.PNG]]
+
+Ezután válasszuk ki a csoport objektumait és készen vagyunk.
+
+==Scale==
+Ha arányosan akarjuk átméretezni az egész objektumot, akkor írjuk be az '''SC''' parancsot, majd adjunk meg egy nullánál nagyobb számot a növelésre vagy egy kisebb számot a kicsinyítésre. 
+
+===Scale to exact size két pont megadásával===
+Ha egyenletesen akarunk kicsinyíteni egy összetett objektumot, akkor elsőnek indítsuk el a '''Scale''' parancsot, majd válasszuk ki az objektumot, majd válasszunk Base Point-ot. Viszont itt fontos, hogy nem minden Base Point jó, még nem jöttem re melyik jó, de a lényeg, hogy a Base Point választása után megjelenjen a [Copy, Reference ] lehetőség. Ha nem jelenik meg, akkor valami nem stimmel a Base Point-al. 
+:[[File:ClipCapIt-200930-020400.PNG|400px]]
+Válasszuk a '''Refence''' lehetőséget. Ekkor ugyan nem fogja kiírni hogy pontokat is megadhatunk, de valójában igen. Válasszuk ki azt a két pontot, aminek a távolságáról biztosan tudjuk hogy mekkorára szeretnénk átméretezni. Pl. ha insert-álunk egy 3D tárgyat akkor azt le kell kicsinyíteni akkorára, hogy illeszkedjen a mi világunkba. A specifikációból ha tudjuk, hogy két pontja között az insert-ált tárgy pontosan mekkora, akkor ez a jó módszer. 
+:[[File:ClipCapIt-200930-020550.PNG]]
+A példában kijelöltem a kocka két első-alsó csúcsát. majd ENTER. 
+Ezután vagy beírjuk hogy pontosan mekkora legyen az új távolság, vagy megint csak megadunk két új pontot, ami kijelöli az új távolságát. majd ENTER. 
+Ekkor arányosan le fogja kicsinyíteni az egész objektumot. 
+<br>
+
+===Uneven Skálázás a property ablakban===
+Ha aránytalanul  akarjuk növelni/csökkenteni, akkor a legegyszerűbb ha az objektum "Properties" ablakában a megfelelő tengelyen átírjuk a méretét: 
+:[[File:ClipCapIt-161230-181153.PNG]]
+
+Ugyan ezt érhetjük el, ha megfogjuk az objektum végén lévő kis nyilat és elkezdjük húzni valamerre. Ha számot akarunk beírni, akkor az első beíró az azt tartalmazza, hogy mennyivel legyen kisebb ill. nagyobb számszerűen, nem %-osa, és ha egy TAB-ot nyomunk, akkor meg beírhatjuk hogy pontosan mekkra legyen. 
+
+De ezt csak tud működni, ha primitív objektum típusról van szó, pl egy BOX!!
+
+===Scale by axis===
+..TODO...
+
+=Layout=
+
+Két tér van az AutoCAS-ben: Model tér és Paper tér. Mindig az első fülön van a model tér, a további fülek a Layout-ok, ez a papír tér, itt készítünk a 3D-s modellből tervrajzot: 
+:[[File:ClipCapIt-161228-201842.PNG]]
+{{tip|A Papír tér egy 2D-s rajzlap, amin megjelenik a model képe, amire tetszőleges 2D-s kiegészítéstő rajzokat helyezhetünk el a modeltől függetlenül. }}
+
+Tetszőleges számú Layout-ot hozzá tudunk adni, ezt el is tudjuk nevezni. Minden Layout-on tetszőleges számú úgynevezett Viewport helyezhető el, ami egy ablak a modelltérre, egy pillanatkép, amit aztán kidekorálhatunk feliratokkal, 2D objektumokkal (rajzolás) és méretekkel. 
+
+Új Viewport-ot a Layout fülön adhatunk a Layout-hoz :
+:[[File:ClipCapIt-161228-202500.PNG]]
+
+{{note|Ha új Layout-ot adunk hozzá,  akkor abban mindig egy Viewport lesz, amiben úgy fog állni a model ahogy a modelltérben éppen van. Ha új Viewportot adunk a Layout-hoz, akkor ott mindig alapértelmezetten fog megjelenni, elől vagy felül nézetben (nem tudom mitől függ). A viewport létrehozása után a viewporton belül kell átmenni a modelltérbe, és beállítani a nézetet }}
+
+Lehetőség van előre gyártott elrendezést használni (két vagy három Viewport-al), ahol egyenként kiválaszthatjuk, hogy melyikbe mit mutasson a modellből. Ehhez válasszuk a Layout -> Layout Viewport tab-on a Named lehetőséget: 
+:[[File:ClipCapIt-161228-202705.PNG]]
+
+Majd a megnyíló ablakban válasszuk az első fület. A baloldali listában válasszuk ki az elrendezést, majd a jobboldalon kattintsunk bele a megfelelő viewport-ba, és az ablak alján kiválaszthatjuk, hogy milyen nézetet szeretnénk használni (top, left...) milyen megjelenítéssel (drótváz, realisztikus ...)
+:[[File:ClipCapIt-161228-202905.PNG]]
+
+A viewport belsejéből a négyzethálót úgy tüntethetjük el, hogy belekattintunk a viewport belsejébe, majd megnyomjuk az F7-et.
+
+
+A viewport properties-ben (ehhez a keretet kell kiválasztani, úgy hogy a négy kék négyzet megjelenjen a sarkokban), beállíthatjuk, hogy az egérrel ne lehessen elmozdítani a viewport-ban a modellt, ezen felül a scale adatokat (1:1, 1:10...) is itt adhatjuk meg: 
+:[[File:ClipCapIt-161228-203404.PNG]]
+
+
+Mindig vagy a papír vagy a model térben vagyunk. Ezt az alsó sorban lehet látni. Mellette az is ott van, hogy mekkora a sacale az adott viewport-ban (1:1, 1:20..)
+:[[File:ClipCapIt-161228-213118.PNG]]
+
+==Nézet beállítása a papír térben==
+Kattintsunk duplán a viewporton belülre, ekkor a veiwporban átmegyünk a modelltérbe. Most kattintsunk a Home fülre, és a szokásos nézet állító legördülő listával válasszuk ki a megfelelő nézetet. 
+:[[File:ClipCapIt-161228-225028.PNG]]
+
+{{warning|Figyeljük rá, hogy biztosan a papírtérben legyünk, mikor rajzolgatunk a viewport-ban, pl annotációk, szöveget, stb, nehogy a model-hez adjuk hozzá.}}
+
+==Rétegek kezelése==
+Általánosságban elmondható, hogy ha egy layer-t eldugunk a kis lámpával (On/Off) akkor az az összes viewport-rol eltűnik. Tehát mikor PDF-et csinálunk a Layout-okból, akkor fontos, hogy minden layer be legyen kapcsolva, amit meg akarunk jeleníteni. A layereket a viewportok-ban kell egyenként kikapcsolni (Freez). A modelltérben különbözök a Layers Property képernyő a papírtértől. 
+
+Ha egy Layer-t egy adott viewport-ban nem akarunk megjeleníteni, akkor a VP Freeze-t be kell kapcsolni, vagyis le kell fagyasztani az adott veiw-portra. 
+{{note|A Freeze/Thaws beállítások (tehát nem a "VP Freeze") ugyan úgy eltüntetik a layer-t mint az Off, de egyben be is fagyasztják, tehát nem lehet semmilyen attribútumát szerkeszteni. Az autoCAD még a memóriából is kiszedi, így felgyorsulhat a rendszer. Míg ha csak Off-ba rakunk egy Layer-t akkor csak a képernyőről tünteti el, de a model része marad a memóriában, így nem gyorsítja a rendszert.}}
+
+=== Model tér===
+Ha a model térben vagyunk, akkor a Layers képernyő így néz ki: 
+:[[File:ClipCapIt-161228-215108.PNG]]
+# Olyan layert-t hoz létre, ami automatikusan le van fagyasztva az összes viewport-on. Ez egy kényelmi funkció ami végtelenül hasznos, ha utólag vezetünk be új layereket. Nem kell őket egyenként minden egyes viewportban kikapcsolni. 
+# On/Off: Megjeleníti, vagy eldugja a réteget a modellben. Csak a képernyőről tünteti el, a model része marad a memóriában. Ha egy réteget Off-ba rakunk, akkor az összes viewport-on eltűnik. 
+# Freeze/Thaws: Lefagyaszt egy réteget, ami a memóriából is kiszedi az objektumokat, ezzel erőforrást szabadít fel. Az összes viewport-ból is eltűnik. 
+# New VP Freeze: Kényelmi funkció, ahol bekapcsoljuk, ott az új viewport létrehozásakor az adott réteg nem fog megjelenni, le lesz fagyasztva.
+
+===Papir tér===
+Miden egyes viewport-ban be kell állítsuk, hogy milyen layerek legyenek benne láthatóak, hogy milyen legyen a stílus (drótváz, realisztikus..). Kattintsunk kétszer egy Layout-on egy viewport-ba, ekkor látható alul, hogy átmegyünk a model térbe a viewporton belül, tehát amit itt változtatunk a nézeten, az csak a viewport-ra fog vonatkozni. Nyissuk meg a Layer properties ablakot. Látható, hogy egy csomó új oszlop bejött, amik közül a legfontosabb a "VP freeze" 
+:[[File:ClipCapIt-161228-221248.PNG]]
+
+A "VP Freeze"-el azt állíthatjuk be, hogy az adott viewport-ban milyen layer NE jelenjen meg. 
+Átállíthatjuk a megjelenítési stílust is. Próbáljuk ki, állítsuk át Drótvázra, míg a model térben legyen realisztikus stílus. Látható hogy a viewport beállításai nincsenek hatással a modelltérre.
+
+==Layout-ok másolása==
+
+
+==Renderelt kép a layouton==
+Ha renderelt képet akarunk a layout-ra helyezni, akkor azt előzőleg renderelni kell a Visualize fülön a Render opcióval, majd azt el kell helyezni képként. 
+
+Ehhez nyissuk meg az Insert fület, majd a Reference csoport mellet nyomjuk meg a kis nyilat, ekkor megnyílik a references ablak. 
+:[[File:ClipCapIt-170101-194850.PNG]]
+
+A Reference ablakban a bal  felső sarokban válasszuk a legördülő listából az "Attach image" lehetőséget.
+:[[File:ClipCapIt-170101-195016.PNG]]
+
+Miután a képet  hozzáadtuk mint referencia, kattintsunk rá jobb klikkel és válasszuk az "Attach" lehetőséget:
+:[[File:ClipCapIt-170101-195124.PNG]]
+
+A megnyíló ablakban pipáljuk be, hogy csak a beszúrási  pontot akarjuk a képernyőn megadni, majd OK:
+:[[File:ClipCapIt-170101-195258.PNG]]
+
+Ekkor a kép méretű keret megjelenik a layout fölött, amit el kell helyezzünk: 
+:[[File:ClipCapIt-170101-195506.PNG]]
+
+Ha a layouton a képre sarkára kattintunk, a kép akár csak a viewport ki lesz jelölve, kék négyzetek jelennek meg a sarkokban. Ekkor megjelenik egy új fül, ami csak a kép szerkesztő elemeket tartalmazza:
+:[[File:ClipCapIt-170101-195739.PNG]]
+
+==Exportálás PDF-be==
+Álljunk rá a kinyomtatandó Layout-ra, majd válasszuk az Output fület.
+:[[File:ClipCapIt-161228-222409.PNG]]
+# Állítsuk be a PDF fájl tulajdonságait
+# Exportáljuk a kiválasztott Layout-ot.
+
+==Tippek és trükkök==
+===Méretarány==
+A viewporton belül mindig állítsuk be a méretarányt, ne az egérrel zummoljuk a modellt a helyére. Ha a viewporton belül a modelétreben vagyunk, vagyis kettőt kattintottunk a veiwporton belülre, akkor a bal alsó sarokban megjelenik a méretarány. Itt válasszuk ki a megfelelőt a listából: 
+:[[File:ClipCapIt-170101-201935.PNG]]
+
+===Vizuális stílus===
+A layouton a 3D-s képeket célszerű vagy egy renderelt képpel helyettesíteni, vagy mindig legyen Relalistic, az elölnézet legyen  Conceptual, míg az oldalnézet, vagy ha fontos, hogy lássuk az kitakart elemeket, akkor meg 2D-Wireframe. 
+:[[File:ClipCapIt-170101-203217.PNG]]
+
+
+===Dimension snaps to a zero measurement when dimensioning a 3D solid in paper space===
+
+Issue:
+When dimensioning a 3D solid in paper space, you snap to two different points, but the resulting dimension jumps to a zero distance value. The dimension may even be offset a distance from the object.  
+
+:[[File:ClipCapIt-170808-225832.PNG]]
+
+'''Causes:'''
+A combination of settings can contribute to this behavior: 
+* 3D Object Snaps are disabled
+* Too many 3D Object Snaps are enabled. For example, Nearest may be interfering with trying to select an Endpoint.
+* Too many Object Snaps are enabled. For example, Node may pick up on the origin of another dimension, when you are trying to choose an Endpoint. 
+'''Solution:'''
+Test dimensioning your 3D solids with the following combination: 
+* Enable 3D Object Snaps by hitting the F4 key or typing 3DOSNAP
+* Type 3DOSNAP and disable Nearest to face and Nearest to plane
+* Type OSNAP and disable Node and Nearest while dimensioning
+You may also have better success incorporating the following: 
+* If you would like to leave Node and Nearest OSNAP enabled, you can override your current OSNAP settings to only run with a single selection while the command is active
+** Start a dimension command
+** Click Shift+Right-Click
+** Pick Endpoint
+* Use the select object option for dimensions
+** Start a dimension command
+** Hit enter when prompted "Specify first extension line origin or <select object>"
+** Pick a single segment
+** The dimension will snap to the ends of that segment automatically
+
+=Materials=
+
+
+===Materialok a projekthez adása===
+
+Az anyag szerkesztő a Visualize fülön van: "Material Browser". Az anyag neve melletti kis kék nyíllal adhatjuk a projekthez az anyagot. Ha már hozzáadtuk megjelenik a felső listában, ahol már tudjuk módosítani a tulajdonságait. A lakat az alsó listában azt jelzi, hogy ott nem lehet módosítani. 
+:[[File:ClipCapIt-161230-193131.PNG]]
+
+===Block elemek kezelése===
+
+Mikor importálunk egy solidWorks objektumot, akkor abból egy blokk elem lesz, amire nem lehet közvetlen anyagot hozzáadni, hiába húzzuk rá, nem fog megjelenni. A legegyszerűbb, ha egy külön Layer-re rakjuk a blokk elemet, majd a Layerhez rendeljük az anyagot. 
+
+Ehhez adjuk ki a '''MATERIALATTACH''' parancsot. A baloldalon vannak a projekt anyagai, a jobb oldalon a Layeyrek. Húzzuk rá a blokk layer-ére. 
+:[[File:ClipCapIt-161230-192756.PNG]]
+
+
+=Autodesk Inventor=
+
+:[[File:ClipCapIt-170101-225255.PNG]]
+Szimulációs eszköz
+http://www.autodesk.com/products/inventor/overview
+
+http://www.autodesk.com/education/free-software/autocad
+
+=Flow desing=
+:[[File:ClipCapIt-170101-230016.PNG]]
+
+
+http://www.autodesk.com/education/free-software/flow-design
+
+
+
+
+=Alaprajz készítése=
+
+ 
+==Párhuzamos és merőleges vonalak==
+{{tip|Az itt leírtakra csak akkor van szükség, ha a koordináta rendszerre nem merőlegeseket akarunk rajzolni. Amíg merőlegesek vagyunk a koordináta rendszerre az összes vonallal, addig a 90° fokokat az Orthogonal snap módban (bal alsó sarokból az első) egyszerűen tudjuk rajzolni.}}
+Ez egy nagyon nehéz témakör. A bal also sarokban lévő szög és keresési pont beállításokkal kell trükközni folyamatosan
+:[[File:ClipCapIt-170618-100708.PNG]]
+# A grid legyen kikapcsolva
+# Az Orthomod legyen kikapcsolva, és a polar tracking bekapcsolva 
+# Az object snap tracking legyen bekapcsolva (show snapping reference line) és a "snap cursor to 2D reference point" is legyen bekapcsolva, ezzel kell majd a pont keresése közben trükközni. 
+# Ha a "Paralel" be van kapcsolva, akkor van esély hogy párhuzamosat húzzunk 
+# Ha a "Perpendicular" be van kapcsolva, akkor van esély rá hogy merőlegeset húzzunk, de nagyon nehéz
+
+A legjobb ha csökkentjük az egyéb snap pontok mutatását, mindig csak annyit hagyjunk meg, amennyi tényleg kell. Az "'''Endpoint'''"-ot érdemes mindig bent hagyni, de a többit ha nincs rá szükség kapcsoljuk ki. Ami a legtöbb galibát tudja okozni, az a "'''Nearest'''" mert az mindig be fog jelezni, ahogy elindulunk a vonal felé, amihez párhuzamosat akarunk húzni.
+
+===Instant snap beállítások===
+Fontos megemlíteni, hogy a vonal kezdőpontjának és a végpontjának is a kijelöléséhez is használhatunk instant snap beállításokat. A kezdőpont esetében válasszuk ki a vonal eszközt, de még ne kattintsunk sehova. Shift+ jobb lick-re előjön az instant snap ablak. Itt csak egyet lehet választani, ez felül fogja írni az aktuális object snap beállításokat, csak ez az egy lesz érvényes. 
+:[[File:ClipCapIt-170618-114519.PNG]]
+
+A végpontra ugyan ez érvényes. Ha a kezdőpont már megvan, akkor megint Shift + Jobb click, amit itt választunk, csak az az egy lesz érvényes a pont kiválasztására. 
+
+===Merőleges===
+
+====Merőleges egy külső pontból====
+
+Az a legegyszerűbb, ha egy meglévő vonal'''hoz''' akarunk egy tetszőleges pontról egy párhuzamost húzni. Ez hasznos lehet ha máshogy nem sikerül, mert húzunk elsőkét egy tetőleges helyen lévő párhuzamosat, majd arra húzunk merőlegeset a megfelelő pontban. <br>
+Indítsunk el egy vonalat egy tetőleges  helyről a vonal felé, amire a párhuzamosat akarjuk húzni. Ekkor ha mozgatjuk a vonalon az egeret, előbb utóbb fel fog tűnni egy zöld "L" betű, ami azt jelzi, hogy a kezdőpontból párhuzamosat fog húzni attól függetlenül, hogy most milyen szögben áll a vonal. 
+:[[File:ClipCapIt-170618-103624.PNG]]
+
+Ennek a módszernek az a nagy baja, hogy nem tudjuk milyen hosszú lesz a vonal. 
+
+====Merőleges egy egyenesről====
+Itt egy egyenesre fogunk húzni egy meghatározott hosszúságú merőleges vonalat. A vonal kezdőpontja sajnos valahol egy tetszőleges helyen lesz a kezdő egyenesen, de legalább a hosszát be tudjuk állítani, és később odébb tudjuk mozgatni. 
+
+Válasszuk ki a vonal eszközt, majd Shift+Jobb click-el nyissuk meg a Snap felugró ablakot, ahol válasszuk a '''Perpendicular''' lehetőséget, még azelőtt hogy az első pontot leraknánk. 
+:[[File:ClipCapIt-170618-115124.PNG]]
+
+Most vigyük az egeret a vonal fölé, amire merőlegeset akarunk húzni. Megjelenik a vonalon a kis zöld "L" betű. Sajnos itt sosem fog végpontra ugorni, a kész vonalat majd át kell mozgatni a megfelelő pozícióba. 
+:[[File:ClipCapIt-170618-115306.PNG]]
+
+Most kattintsunk, ekkor a kezdőpont csak az eredeti vonalon fog mozogni, most jöhet a második pont, ami merőleges lesz. Adjuk meg a hosszát: 
+:[[File:ClipCapIt-170618-115447.PNG]]
+
+
+
+
+
+===Párhuzamos===
+
+Itt is több lehetőségünk van. Rajzolhatjuk párhuzamosra a vonalakat, vagy "'''Parametric/Geometric'''" menüben később párhuzamossá tehetjük őket. 
+
+====Párhuzamosra rajzolás egy meglévő vonallal====
+Ha be van kapcsolva a '''Paralel'''az object snap beállításokban, akkor tegyük le a vonal kezdőpontját, majd keresztezzük azt a vonalat, amivel párhuzamosat akarunk húzni. Addig mozgassuk rajta az egeret, amíg két kis párhuzamos zöld csík nem jelenik meg rajta: 
+:[[File:ClipCapIt-170618-105219.PNG]]
+
+Ha most elhozzuk az egeret, akkor egy zöld kereszt jelzi, hogy párhuzamos vonalnak kijelöltük ezt a vonalat:
+:[[File:ClipCapIt-170618-105604.PNG]]
+
+Most ha közel párhuzamosra mozgatjuk az új vonalat, be fog ugrani párhuzamosra, amit a zöld segédvonal jelezni fog. A kis zöld kereszt átalakul valami mássá. 
+:[[File:ClipCapIt-170618-105809.PNG]]
+
+Most engedjük el az egeret, és írjuk be a hosszát, de fontos, hogy közben a zöld vonal aktív legyen. Tehát ha az egér az elengedése után elmászkál (mint nálam) akkor az nem praktikus. 
+
+Ha a vonal rajzolásakor a "Paralel" nem lenne aktív, akkor a tegyük le az első pontot, majd Shift+Jobb lick -el elő lehet hozni az instant snap választó ablakot. Amit itt kiválasztunk, az csak a következő kattintásig lesz érvényes, ráadásul úgy, hogy minden más snap pontot kikapcsol, így nem fog semmi más bezavarni. 
+:[[File:ClipCapIt-170618-110515.PNG]]
+
+====Párhuzamos egy meglévő vonalon====
+Egy meglévő vonal tetejére akkor van szükség segédvonal húzására, ha távolságot akarunk kimérni a vonalon, ahova aztán rámozgathatunk egy merőlegeset. 
+Ha be van kapcsolva a '''Paralel''' és a '''Endpoint''' snap módok, akkor szúrjuk le az új vonal kezdőpontját a régi elejére, és mozgassuk a második pontot a régi mentén. Ekkor meg fog jelenni a párhuzamost jel, a két kis zöld vonalka:
+:[[File:ClipCapIt-170618-124223.PNG]]
+
+Ha odébb mozgatjuk az egeret ezután, akkor ugyan úgy meg fog jelenni a kis zöld kereszt, jelezve, hogy aktiváltuk a párhuzamos rajzolást: 
+:[[File:ClipCapIt-170618-124350.PNG]]
+
+Ha most a kis zöld kereszt után a régi vonal fölé visszük az egeret, akkor megjelenik a zöld szaggatott segédvonal, jelezvén, hogy párhuzamosat rajzolhatunk. Ha elengedjük az egeret vigyázva, akkor be tudjuk írni a vonal hosszát. 
+:[[File:ClipCapIt-170618-124548.PNG]]
+
+Miután létrejött a párhuzamos vonalunk, még egy kis ficakot húzzunk ki belőle valamilyen irányba, hogy tudjuk hol a vége. Ezeket a segédvonalakat később majd töröljük ki. 
+:[[File:ClipCapIt-170618-124757.PNG]]
+
+Most egy merőleges vonalat már rá tudunk mozgatni az új segédvonal végére, ami pont olyan messze lesz az eredeti vonal elejétől ahogy akartuk: 
+:[[File:ClipCapIt-170618-125050.PNG]]
+
+==További vonal műveletek==
+===Szög kimérése===
+Egy szöget a legegyszerűbben háromszögeléssel mérhetünk ki a helyszínen, amit aztán nagyon egyszerű kimérni Autocad-ben egy segédvonallal és két körrel. 
+# Húzzuk meg azt az alap vonalat, amihez képest a szöget ki szeretnénk mérni. 
+# Húzzunk az alapvonalon egy akkora segédvonalat, amekkora a helyszínen kimért háromszög egyik befogója (húzzunk hozzá egy kis ficakot is, hogy jobban lássuk hol a vége. 
+# Az új segédvonal végétől (ahol a ficak van) húzzunk egy akkora kört, amekkora a háromszög átfogója, amit a helyszínen mértünk. 
+# Húzzunk az eredeti kezdőpontból egy akkora kört, amekkora a háromszög másik befogója volt. 
+# Ahol a két kör metszi egymást, oda kell húzni a vonalat
+:[[File:ClipCapIt-170618-125942.PNG]]
+
+===Dupla fal rajzolása===
+A falakat a legegyszerűbben az '''Offset''' eszközzel rajzolhatjuk meg. Megcsináljuk a belső alaprajzot, majd kitoljuk az összes falat. Írjuk be hogy '''Offs'''
+:[[File:ClipCapIt-170618-130807.PNG]]
+
+Írjuk be a fal vastagságát, vagyis amennyivel el szeretnénk csúsztatni a vonalakat. 
+:[[File:ClipCapIt-170618-131019.PNG]]
+
+Majd kattintsunk a lemásolandó vonalra, ekkor szaggatottal ki lesz jelölve:
+:[[File:ClipCapIt-170618-131210.PNG]]
+
+Mozgassuk az egeret abba az irányba, amerre az új vonalat el szeretnénk helyezni: 
+:[[File:ClipCapIt-170618-131310.PNG]]
+
+Majd kattintsunk, ekkor leraktuk az új vonalat, de még mindig offset üzemmódban vagyunk. Jelöljünk ki egy másik vonalat, és toljuk el azt is: 
+:[[File:ClipCapIt-170618-131404.PNG]]
+
+Ha nem akarunk több vonalat eltolni, akkor ESC.
+
+===Sarkok lezárása===
+Offset eltolás után a sarkokat ki kell tölteni a Fillet eszközzel. 
+:[[File:ClipCapIt-170618-131908.PNG]]
+
+Jelöljük ki azt a két vonalat, amik között sarkot akarunk építeni: 
+:[[File:ClipCapIt-170618-131948.PNG]]
+
+===Vonal extend=== 
+:[[File:ClipCapIt-170612-001212.PNG]]
+1. írjuk be hogy ext (extend)
+2. válasszuk ki azt a vonalat, ami a végét fogja jelenteni a meghosszabbítandó vonalnak, majd enter, majd válasszuk ki a  meghosszabbítandó vonalat. 
+
+===Félkör készítése=== 
+válasszuk ki az arc 3 point-ot: 
+:[[File:ClipCapIt-170612-001435.PNG]]
+Majd nyomjuk le a "c"-t, enter, kattintsunk a két határoló egyenes közepére, 
+:[[File:ClipCapIt-170612-001553.PNG]]
+Ezután pedig határozzuk meg a végpontot.
+
+===Forgatás egy vonalhoz képest===
+Ha egy objektumot egy vonalhoz képest párhuzamosra akarunk elforgatni, akkor azt így kell: 
+# Start the ROTATE command and select the objects that you want to rotate.
+# At the Specify base point: prompt, specify the base point of the object you want to reference to, not the base point of the object you want to rotate. This is point 1 in the above figure.
+# At the Specify rotation angle or [Reference]: prompt, choose the Reference option.
+# At the Specify the reference angle <0>: prompt, pick the point on the object that you want to rotate that corresponds to the base point you just specified. This is point 2 in the figure.
+# At the Specify second point: prompt, pick the second point that, together with the previous point, specifies the angle of the object that you want to rotate. This is point 3 in the figure. Notice the rubber band line from your base point (point 1) connecting to your object as you move the cursor, as shown below:
+:[[File:ClipCapIt-170704-221647.PNG]]
+
+==Vegyes==
+
+
+
+===Terület mérés=== 
+:[[File:ClipCapIt-170612-022158.PNG]]
+
+:[[File:ClipCapIt-170612-022215.PNG]]
+
+:[[File:ClipCapIt-170612-022239.PNG]]
+
+===Blokk felrobbantása===
+- a 2d-s elemet amit importálunk, fel kell robbantani, ha az egy block elem. 
+:[[File:ClipCapIt-170612-001104.PNG]]
+
+===Terület kitöltése (hatch)===
+írjuk be hogy H: 
+:[[File:ClipCapIt-170618-095942.PNG]]
+
+Ekkor megjelenik fent a hatch menü
+:[[File:ClipCapIt-170618-100027.PNG]]
+
+Vigyük az egeret egy körbezárt terület fölé, ekkor besraffozza, ha bele is kattintunk, akkor kitölti: 
+:[[File:ClipCapIt-170618-100133.PNG]]
+
+<hr>
+<br>
+=Dimension ügyek=
+A Dimension nem más mint a méretet jelző nyilak (annotációk) elhelyezése az objektumokon. Ez kellően trükkös tud lenni. Dimension-t rakhatunk az objektumokra a model térben és a papír térben is. Végül is az egész tervrajz készítés arra megy ki, hogy a végén megmutassuk a különböző méretekben hogy a model mekkora. 
+* '''model tér''': A model térben annyival nehezebb rárakni a dimension-öket a modellre, hogy nem egy projektált síkon dolgozunk, ha a mérendő pontok nincsenek egy síkban a nézethez képest, akkor mindenféle furcsa méretet kaphatunk. De cserébe bármelyik viewport-ba is tegyük be a model-t a papírtérben, a deimension mindig fixen ugyan akkora lesz. Ráadásul nem kell minden viewportban újra és újra megrajzolni. Rátehetjük az annotációkat és dimension-öket egy külön rétegre, így könnyű kezelni. Itt csak az lehet a baj, hogy minden viewport-nak más a méretaránya (pl: 1:50 vagy 1:25) így amelyik dimension betűméret jól mutat az egyikben az túl kicsi lehet a másikban. Ezt hivatott automatikusan korrigálni az '''[[#Annotative dimensions]]'''
+* '''papír tér:''' A papír térben a model térrel ellenben egy vetített síkon dolgozunk, így könnyedén meg tudjuk mérni két pont távolságát akkor is ha azok a valóságban nem egy síkban vannak. Viszont a viewport-on elhelyezett annotációk és dimension-ök csak arra az egy viewport-ra vonatkoznak, így minden egyes viewport-on újra és újra meg kell rajzolni őkat ellentétben a modelltérben elhelyezett dimension-ökel. Azonban a papír térben a könnyen belefuthatunk abba, hogy a lemért objektum hossza nem a valós számot mutatja a nyilacskán. Ugyanis a papír térben a dimension mérete a viewport méretarányától függ (scale). Ahogy változik a viewport méretaránya (vagyis ahogy ki vagy be zummolunk, úgy változhat a mért érték is mivel az csak egy relatív érték, a viewport méretében méricskéljük valójában a model egy síkra vetített képét, így tulajdonképpen ennek semmi köze a model valódi méretéhez. Ezt hivatott korrigálni a '''[[#Dim scale linear]]''' értéke a viewport-nak, ami megmondja, hogy milyen számmal kell korrigálni a model vetített képén a mért értékeket, hogy az adott nagyításban a valós értéket kapjuk.
+<br><br>
+===Dimension systle borwser===
+A projektben mindig ki van választva egy aktuális dimension stílus ami megszabja, hogy milyen stílusban, milyen nyíl fajtákkal és betű méretben jelenjenek meg a dimension-ök. Azt is itt lehet beállítani, hogy egy adott stílus annotative (magától skálázódó) legyen e vagy sem (lásd lentebb) és hogy milyen dim scale -el kerüljön megrajzolása (lásd lentebb). A dimension stílusokhoz tartozik egy külön képernyő. A '''DIMSYTLE'''-al nyithatjuk meg a Dimenzió stílus böngészőt. 
+:[[File:ClipCapIt-200930-210511.PNG|300px]]
+A Dimesion stílus böngészőben választhatjuk ki hogy melyik leyen az aktuális dimenzió stílus és annak beállíthatjuk a tulajdonságait: 
+:[[File:ClipCapIt-200930-211231.PNG|500px]]
+Válasszuk ki a '''Standard''' stílus és bal felül nyomjuk meg a '''Set Current''' gombot. 
+<br>
+Nyomjuk meg a '''Modfiy''' gombot.
+
+===Annotative dimensions===
+https://www.thesourcecad.com/understanding-annotation-scale-in-autocad/
+Amit eddig értek: Mielőtt elkészíteniénk a layout (papir space) rajzokat, el kell dönteni, hogy melyik viewport milyen arányú lesz, hány a hányhoz, pl 1:50-hez vagy 1:25-höz. És ezekhez az arányokhoz megfelelő méretű dimension stílus szükséges. De az annotative dimesnion lehetőév teszi, hogy adaptálódjon ezekhez a méretekhez. 
+
+...TODO...
+
+A '''PAGESETUP''' parancs hatására megnyílik a Layaout lista, amiben minden layout-hoz beállíthatjuk a papír méretet és dimension scale-t: 
+:[[File:ClipCapIt-200930-231341.PN|300px]]
+Ha itt kiválasztunk egy Layout-ot, akkor a '''Modify''' gombbal tudunk belépni a beállításaiba. 
+:[[File:ClipCapIt-200930-231832.PNG|600px]]
+Középen van a papír méret állító (tipikus az A3) és középen alul van az arány, ami az adott layout-hoz tartozni fog. 
+
+==Vegyes Dimension beállítások==
+https://www.google.com/search?q=stair+wrong+dimension+scale+autocad&oq=stair+wrong+dimension+scale&aqs=chrome.1.69i57j33.13319j0j9&sourceid=chrome&ie=UTF-8
+{{warning|Ha a Papir térben a dimension-ök rossz értéket mutatnak, akkor tuti hogy az alábbiak egyikével vagy többel is gond van}}
+<br>
+===Dimension style: Scale factor===
+https://knowledge.autodesk.com/support/autocad/troubleshooting/caas/sfdcarticles/sfdcarticles/Linear-dimensions-not-consistent-with-actual-length-of-line.html
+
+DIMSTYLE command -> select dimension style -> Modify -> Primary units -> Measurement scale: 
+
+:[[File:ClipCapIt-201001-010544.PNG]]
+Legyen 1. 
+
+<br>
+===DIMASSOC (System Variable)===
+https://knowledge.autodesk.com/support/autocad/learn-explore/caas/CloudHelp/cloudhelp/2020/ENU/AutoCAD-Core/files/GUID-D77085A3-6E4C-4C18-AD70-21F54ED72492-htm.html<br>
+A system vairable-t úgy kell átállítani, hogy beírjuk a parancsot, és akkor a parancssorban beírhatjuk az új értéket: 
+:[[File:ClipCapIt-200930-234926.PNG]]
+Azt szabályozza, hogy a dimension egy objekutm legyen, vagy különálló darabok (nyil, vonal szöveg). Valamint képes valamilyen szinten együtt mozogni (nőni, csökkeni) az ponttal amire mutat (2-es opció)
+
+* 0: Creates exploded dimensions. There is no association between the various elements of the dimension. The lines, arcs, arrowheads, and text of a dimension are drawn as separate objects.
+* 1: Creates non-associative dimension objects. The elements of the dimension are formed into a single object. If one of the definition points of the dimension moves, the dimension is updated.
+* 2: Creates associative dimension objects. The elements of the dimension are formed into a single object, and one or more definition points of the dimension are coupled with association points on geometric objects. If the association point on the geometric object moves, the dimension location, orientation, and value are updated.
+<br>
+<br>
+Verify if the following variables are set as follows (type these on the command line in AutoCAD):
+* DIMASSOC = 2
+* DIMLFAC = 1 
+
+<br>
+<br>
+===Viewport méretarány (scale) beállítása===
+A méretarány választó csak akkor jelenik meg az alsó sávban lévő vezérlők között, ha egy Layout-on kiválasztunk egy view-port-ot. 
+:[[File:ClipCapIt-201001-002331.PNG|400px]]
+
+A viewport méretarányának a beállítása nagyon fontos, mivel a viewport-ban mért távolságok csak a model egy síkra vetített pontjainak a távolsága, aminek nincs köze a model térben szereplő "valódi" méretekhez. Ezért a viewport-ban a dimension-öket mindig súlyozni kell, hogy ezt korrigáljuk a valódi méretre. Erre szolgál a '''dim scale linear''' (lásd lentebb). Ezt a súlyt a méretarány beállítása után automatikusan beállítja az AutoCAD. 
+Ha ezt nem állítjuk be, akkor előfordulhat, hogy teljesen random értékeket fogunk kapni mikor a viewport-on rakunk dimension-öket az ábrára.
+<br>
+<br>
+
+===Dim scale linear===
+https://knowledge.autodesk.com/support/autocad/getting-started/caas/CloudHelp/cloudhelp/2020/ENU/AutoCAD-Core/files/GUID-30D6D9C8-AB99-47D1-B420-3D4EB6C7B0D1-htm.html#:~:text=Dimension%20scale%20affects%20the%20size,the%20extension%20line%20origin%20offset. <br>
+A '''Dimension scale''' mindennek az alfája és az omegája a papír térben. Mikor a Paper space-ben dimension-t rajzolok, akkor valójában a layout léptékében mérem meg a benne lévő model 2D-s vetületét. Ahhoz hogy egy mérésnél ugyan azt a számot kapjam ami a model térben a model tényleges mérete, be kell állítsam a '''dim scale linear''' értékét minden egyes dimension esetében pont akkorára ami megfelel a layout léptékének. Vagy valami ilyesmi. 
+
+Ha kiválasztok egy tetszőleges dimension-t amit a Papír térben rajzoltam, akkor annak a Properties ablakában láthatom, hogy mekkora volt a méretarány amivel pl. a hosszat számolta: 
+:[[File:ClipCapIt-201001-005722.PNG]]
+Ez azt jelenit, hogy ezzel a számmal szorozta meg a viewport-ban mért hosszt. 
+
+Na most. Ezt nem kell elvileg kézzel állítgatni, hanem mikor a viewport-hoz beállítjuk a méretarányt (lásd fentebb) akkor ezt automatikusan a megfelelő értékre állítja a rendszer. A képen látható -2.5-öt is az AutoCAD állította be. 
+
+{{warning|Ha nicsenek speciális objektumok a model-ben akkor pusztán a viewport-ban történő zoom-olás közben is a '''Dim scale linear'''-t a program automatikusan átállítja. Ellben ha van pl egy lépcső is a model-ben akkor zoom után nem fogja átállítani ezt és véletlen szerű számokat fogunk kapni. Ezzel ellentétben a jobb alul beállítjuk a viewport scale -jét akkor be fogja állítani a program az összes dimension-ben a '''Dim scale linear''' értékét megfelelően. }} 
+
+
+
+<br>
+<br>
+
+=Autocad Architecture=
+
+==Projekt beállítások==
+
+Be kell állítani, hogy méterben számolunk, és hogy a model 1:50 arányú lesz. Ehhez válasszuk a bal felső A -betüt, majd '''Drawing Utilities -> Drawing setup''' 
+:[[File:ClipCapIt-200828-235146.PNG|260px]]
+Itt állítsuk be a Utility fülön hogy méterben és m2-ben számolunk: 
+:[[File:ClipCapIt-200828-235303.PNG|380px]]
+Valamint a Scale fülön a 1:50-es standard arányt: 
+:[[File:ClipCapIt-200828-235427.PNG|380px]]
+
+==Architecutre elemek==
+Az építészeti készlet elsősorban a Home tab-on a Tools legördülő alatt található: 
+:[[File:ClipCapIt-200828-185201.PNG|120px]]
+
+Itt két fontos paletta van. Az egyik a Design Tools, ahol az alap elemeket választhatjuk ki: 
+:[[File:ClipCapIt-200828-185244.PNG|200px]]
+Itt az a baj, hogy nem látjuk az egyes építészeti elemek variánsait. 
+{{note|Régebbi AutoCad verziókban itt voltak további fülek, ahol a variánsokból válogathattunk}}
+Ha további variánsokat akarunk látni, akkor nyissuk meg a Tools legördülő menüből a kis barna ecsetet, a Style Browser-t: 
+:[[File:ClipCapIt-200828-185445.PNG|350px]]
+Itt az Object Type listában ki kell választani az elem típust, pl Wall-assembly, majd láthatjuk alatta a variánsokat. Ezeket valahogy lehet bővíteni, ezek eszköz készletek, amiket külön be lehet tölteni az AutoCad-be.<br>
+A másik lehetőség hogy a Desigen Tool palettán kiválasztott elemnek a Properties palettáján megnyomjuk a Brows gombot, akkor ugyan úgy megnyílik a Style Browser ahol válogathatunk az altípusokból. 
+:[[File:ClipCapIt-200828-190405.PNG|350px]]
+
+<br>
+További objektumokat a '''Design Tool Catalo'''g-ból tudunk kikeresni. Ehhez válasszuk a Home tab-on a Content Browser lehetőséget. A Content Browser-ben meg fog jelenni egy csomó katalógus. Az építészeti objektumok a '''Design Tool Catalog Metrics''' katalógusban vannak. 
+:[[File:ClipCapIt-200828-192828.PNG|400px]]
+
+Kattintsunk rá. Meg fog nyíli egy nagyon béna menü a bal oldalon ahol főkategóriát választhatunk. Pl. Stairs and Railing. Itt ha elmegyünk egy konkrét elemig, és ott job click, akkor hozzáadhatjuk a lokális palettához: 
+:[[File:ClipCapIt-200828-193037.PNG|550px]]
+Ekkor a Style Browser-ben meg fog jelenni ez is ha eddig még nem lett volna ott. (De azért a legtöbb dolog már ott van)
+<br>
+
+Ahhoz hogy a composite view-ban bizonyos falakat eldugjunk, hogy belássunk az épület belsejébe, válasszuk ki az adott falat, vagy alapot, majd a jobb alsó sarokban válasszuk az Isolate Object kockát, és azon belül a Hide-object lehetőséget. 
+:[[File:ClipCapIt-200828-193954.PNG|80px]] [[File:ClipCapIt-200828-193706.PNG|150px]]
+Egymás után több elemet is eldughatunk, majd a végén egy kattintással visszahozhatjuk őket.
+<br>
+===Segéd vonalak===
+A construction lines olyan segédvonalakat jelent, amik végtelen hosszúak, és arra szolgálnak, hogy más objektumokat pozicionálni tudjunk. 
+:[[File:ClipCapIt-200829-174726.PNG|150px]]
+Kék színűek. Relatíve tudjuk őket pozicionálni más objektumokhoz képest. Ha az egeret csomópontok fölé visszük, akkor vagy függőleges vagy vízszintesen jelennek meg. Ekkor ha kattintunk, akkor ahhoz a ponthoz képest lehet eltolni valamerre.
+
+<br>
+<br>
+
+==Style manager==
+===Áttekintés===
+Minden AutoCad Architecture Desigen-tool objektum előre gyártott kategóriába van sorolva, pl Wall, Stairs, Slab, Door, stb. Minden objektum típushoz tartozik egy stílus, ami megszabja az adott objektum tulajdonságait. Pl minden faltípushoz más és más stílus tartozik. 
+Mikor a Conet Browser-ben böngészgetünk, valójában egy stílust fogunk egy kategórián belül kiválasztani. 
+:[[File:ClipCapIt-200930-011229.PNG|130px]]
+A stílusban meg lehetnek határozva szélső értékek, pl méretre tól-ig, hogy mi az amit be szabad állítani. Pl a fa-lépcsőkhöz készített stílusban meg tudjuk mondani, hogy minimum és maximum mekkra lehet egy fok, ami gyártási előírás lehet, és ha ezt a stílust használjuk egy lépcsőre, akkor nem fogja engedni a program hogy ettől eltérjünk. 
+Mikor kiválasztunk egy Elemet a Design Tool palettáról (pl Wall), 
+:[[File:ClipCapIt-200930-010548.PNG|200px]]
+akkor az objektumhoz tartozó Properties ablakban a Design fülön láthatjuk, hogy a főkategórián belül milyen stílus tartozik az adott elemhez. Egy fal esetében ez jelentheti a teljes falszerkezet leírását. 
+:[[File:ClipCapIt-200930-014804.PNG|370px]]
+
+
+A projektünkhöz rendelt stílusokat a Syle Manager-ben tekinthetjük meg vagy hozhatunk létre újat.
+A stílus Manager-t a '''STYLEMANAGER'''' paranccsal nyithatjuk meg. 
+:[[File:ClipCapIt-201003-203557.PNG|300px]]
+
+Tehát itt csak azok jelennek meg amik hozzá vannak rendelve az aktuális projekthez, a '''Design Tool Catalog'''-ben lévők itt nem jelennek meg. 
+Láthatjuk, hogy a baloldali kategória fának a gyökre az aktuális rajzunk. A gyökér alatt vannak az előre gyártott kategóriák és benne a jelenleg létez stílusok. 
+:[[File:ClipCapIt-200930-011809.PNG|300px]]
+Új kategóriát nem, de új stílust létre tudunk hozni. 
+A kategória megszabja a stílus lehetséges TAB-jait és annak attribútumait, vagyis a kategória egyfajta templét. Pl ha kiválasztjuk a lépcső kategórát, és azon belül a Wood-Saddle lépcsőt, akkor láthatjuk hogy a Stairs templéthez olyan beállítások tartoznak, ami csak a lépcsőre értelmezett, mint pl a lending hossza, vagy egyedi számítási szabályok, amivel megszabhatjuk a lépcsőfok hosszának és magasságának a tartományát. 
+:[[File:ClipCapIt-200930-012428.PNG|500px]]
+
+===Falszerkezet létrehozás===
+A fal kategória templétje lehetővé teszi, hogy egy fal stílushoz definiáljuk a falszerkezet rétegit, azok vastagságát és egymástól való távolságát valamint a rétegek anyagát. A Design Tool Catalog-ban lévő összetett fal elemek mindegyike egy ilyen módon előre elkészített fal stílus. 
+A '''Design Tool Catalog'''-ben sok előre gyártott fal típus stílus van favázas falakra is, pl itt egy külső tégla borítású, rains-screen-el ellátott külső szigetelésű fal a katalógusból: 
+:[[File:ClipCapIt-200930-013232.PNG|200px]]
+Ha ezt megnyitjuk a Style Manager-ben, akkor láthatjuk, hogy milyen rétegek vannak hozzá definiálva: 
+:[[File:ClipCapIt-200930-013613.PNG|550px]]
+Láthatjuk, hogy összesen 5 réteg van definiálva a falhoz. Fontos oszlopok a Width és az Edge Offset. A Width azt mondja meg, hogy az adott réteg milyen vastag a szerkezetben, az Offset, hogy mennyivel van eltolva az előzőhöz képest. Ha vastagságnak a BW-t (Base Width) választjuk, akkor a model térbe helyezett falnál az adott réteg vastagsága a Properties fülön beállított Width értékből fog jönni: 
+:[[File:ClipCapIt-200930-014248.PNG|250px]]
+
+A rétegeknél mind a Width-ez mind az Offset-hez képletet is megadhatunk, hogy a BW-hez képest mekkor legyen az értéke. Oszthatunk, szorozhatunk, kivonhatunk ...
+:[[File:ClipCapIt-200930-014226.PNG|150px]]
+
+Az ablakok és az ajtók az összes rétegét át fogják lukasztani a falnaik. 
+
+<br>
+
+==Lépcsők==
+https://knowledge.autodesk.com/support/autocad-architecture/learn-explore/caas/simplecontent/content/adding-stairs-autocad-architecture.html<br>
+A lépcső egy nagyon trükkős objektum, még nem sikerült 100%-ban megfejtenem hogy hogyan működik. Az AutoCAD-ben vannak beépített objektum típusok, amikhez saját tab-okat készít az objektum típus gyártója. Ezek a beépített Architecture objektumok kombinálhatók egymással és együtt tudnak működni, ezért előnye ezeket használni ahelyett hogy magunk modelleznénk le egy adott építészeti elemet. Ilyen kombó pl a stair, slab és railing hármas, amik szépen kombinálhatók. 
+
+===Style manager===
+A Syle manager-ben minden beépített AutoCAD kategóriához hozhatunk létre új stílusokat. A stílus határozza meg minden objektum tulajdonságait (lásd fentebb)
+:[[File:ClipCapIt-201003-203557.PNG|300px]]
+
+
+A Style Manager-ben a lépcső egy külön főkategóra. Itt láthatjuk azon lépcsők stílusát, amit már hozzáadtunk a projekthez: 
+:[[File:ClipCapIt-200930-193505.PNG]]
+
+A lépcsők elkészítése nem egyszerű feladat. Ráadásul egy olyan különleges objektum, ami TOP view-ban csak egy vázlatnak látszik (ahogy a tervrajzon is szerepelne) míg az összes többi nézetben 3D-s objektum. Ezen felül a kívánt forma és méret elkészítése időigényes folyamat lehet (egy kezdőnek, mint én)
+
+Minden lépcső a következő elemekből épül fel: 
+* Tread: fok szélesség (járólap) 
+* Reiser: fok magasság (homloklap) 
+* Landing: pihenő, érkező és induló pihenő
+* Left-edge: lépcső bal széle 
+* Right-edge: lépcső jobb széle. 
+
+{{note|Egy lépcsőnél a stílusa határozza meg az anyag vastágságot és anyag típust, és majd a példányosított objektumban adhatjuk meg a fokok hosszát, magasságát és a lépcső kívánt magasságát és fokszámát, a többit majd a program kikalkulálja}}
+
+Minden lépcső stílusban meghatározhatjuk a fenti 5 elem tulajdonságait, minimum és maximum méretüket, egymáshoz képesti arányukat, vastagságukat és anyagukat. 
+<br>
+<br>
+'''Design rules:'''<br>
+Az első fülön a lépcsőre vonatkozó szabályokat adhatjuk meg. Egy adott anyagból csak bizonyos paramétereknek megfelelő lépcsőt lehet készíteni, ezért ezeket minden lépcső típushoz szabályozni kell. 
+:[[File:ClipCapIt-200930-194718.PNG|500px]]
+Három lejtési szöget adhatunk meg és mind a háromhoz egy maximális fok szélességet. A közbülső értéket interpolálja a rendszer. Ezen felül meg lehet adni szabályt, hogy mekkora a:
+ min < X*fok-magasság + Y*fok-szélesség < max 
+<br>
+<br>
+'''Stringer (hossztartó)'''<br>
+A második fülön tetszőleges számú hossztartót adhatunk a lépcső típushoz aminek meg lehet adni hogy hol fusson (jobb-bal-közép), a szélességét, hogy a mennyire legyen eltolva a megadott vonaltól (offset) hogy milyen mags legyen a fok kivágás alatt és a landing alatt. 
+:[[File:ClipCapIt-200930-195220.PNG|700px]]
+Gyakorlatilag az offset segítségével tetszőleges számú hossztartót betehetünk a lépcső alá. 
+<br>
+<br>
+'''Component'''
+A component fülön állíthatjuk be a fokok és a landing tulajdonságait (kilógás, vastagság). 
+:[[File:ClipCapIt-200930-195546.PNG|500px]]
+<br>
+<br>
+'''Lending extensions''': A pihenő túllógásait adhatjuk meg<br>
+'''Materials''': A felsorolt 5 elem milyen anyagokból van. Egy fa lépcsőnél az összes fa lesz. 
+
+<br>
+<br>
+===Lépcső rajzolása: Típus kiválasztása===
+
+<br>
+<br>
+===Lépcső rajzolása: Turn type===
+A lépcsőknek 4 féle fordulási típusa van (Turn type), amik abban különböznek, hogy merre és mennyit fordul a lépcső mire felér a kívánt helyre. 
+:[[File:ClipCapIt-201003-215237.PNG|250px]]
+* 1/2 landing: A lépcső U alakban visszafordul középen egy pihenővel. Uagyan ezzel a típussal lehet fordulás menetes lépcsőt csinálni középen pihenővel, ami el lehet csúsztatva. 
+* 1/2 turn: A lépcső U alakban visszafordul 
+* 1/4 landing: A lépcső negyedet fordul összesen egy pihenővel középen
+* 1/4 turn: A lépcső negyedet fordul és a közepén nincs pihenő. 
+További lehetőségek: 
+* Körben futó lépcső
+* Egyenes lépcső: se kanyar, se pihenő
+
+A '''Turn type'''-ot a lépcső típus kiválasztása után a '''Properties''' ablakban tudjuk megváltoztatni. 
+<br>
+https://knowledge.autodesk.com/support/autocad-architecture/learn-explore/caas/CloudHelp/cloudhelp/2021/ENU/AutoCAD-Architecture/files/GUID-D0D8657B-A875-4FDD-97BF-57DAD75B0A61-htm.html<br>
+A teljes listája a variációknak az alábbi ábrán látható: 
+:[[File:ClipCapIt-201003-220405.PNG]]
+
+<br>
+
+===Lépcsők rajzolása: model térbe helyezés===
+A lépcső rajzolását mindig TOP nézetben célszerű csinálni. Akár úgy hogy megrajzoljuk a lépcső alaprajzát poly-line-al: 
+:[[File:ClipCapIt-201004-121810.PNG]]
+Majd a rajzolást a a '''STAIRADD''' paranccsal indíthatjuk el. 
+:[[File:ClipCapIt-201004-121922.PNG|700px]]
+Ekkor a parancs sorban megjelenik egy rakat beállítási lehetőség, pl a Style megnyomásával beugorhatunk a lépcső stílus szerkesztőbe. 
+A '''Shape''' megnyomásával kiválaszthatjuk a lépcső alakját ami lehet U, egyenes vagy spirális. 
+:[[File:ClipCapIt-201004-122105.PNG|650px]]
+A másik alakot befolyásoló tényező a '''Turn type''' amint már láthattunk a fenti táblázatban. Némi átfedést érzek a kettő között. Az összes alap beállítást megtalálhatjuk a '''Properties''' fülön is: 
+:[[File:ClipCapIt-201004-123300.PNG|400px]]
+# Style és Browse: Kiválaszthatjuk a lépcső típusát. A Browse megnyomásával megnyílik a katalógus, ahol választhatunk fa és kő lépcsők közül. 
+# Shape 
+# Turn type
+# Winder style
+
+
+
+
+
+Mikor a lépcső már ki van választva, akkor a '''Properties/Dimensions''' fülön láthatunk egy kék ábrát A-től F-ig, ahol a lécső elemei vannak megjelölve betűkkel. Minden betűhöz tartozik egy beállítása a Properties fülön: 
+:[[File:ClipCapIt-201003-222427.PNG|220px]]
+Itt a lépcső 5 alapvető tulajdonságát állíthatjuk be. (Hossz, magasság, fok szám, fok mélyság, fok magasság) <br>
+Kicsit lejjebb tekerve a Properties/Floor settings fülön beállíthatjuk a padló alsó és felső magasságát is: 
+:[[File:ClipCapIt-201003-222800.PNG|220px]]
+Ha pl. a felső szinten még lesz egy lépés álló XSP szigetelés és azon egy meleg burkolat, akkor annak a vastagságát bele kell számolni az offset-be. Ugyan ez igaz a földszinten is. 
+
+
+<br>
+<br>
+Nézzük meg, hogy miket kell beállítani egy lépcső létrehozásához: 
+:[[File:ClipCapIt-201003-222215.PNG|680px]]
+# '''Width''': A lépcsőfokok szélessége. Ez nem befolyásolja a hossztartók elhelyezkedését, azt a lépcső stílus határozza meg. 
+# '''Hight''': A lépcső teljes magassága. Ez nagyon fontos paraméter, mer ez határozza meg részben a fokok számát és magasságát. Ebben nincs játékerünk, a magasságot a felső szint magassága határozza meg. 
+# '''Justify''': Mihez legyen igazítva a lépcső. A lépcső jobb oldalához, középvonalához vagy baloldalához. Azt mondom, hogy ha balra fog fordulni a lépcső, akkor a jobboldalhoz igazítsuk, ha jobbra akkor meg a baloldalhoz, így sokkal könnyebb kiszámolni a fordulót. 
+# '''Terminate with''': Mi legyen az utolsó fok: csak egy emelkedés, egy teljes fok, vagy egy pihenő. Ha '''Riser'''-t választunk, akkor csak egy függőleges homlok lappal fog záródni a lépcső és az utolsó fok járólapja már maga felső szint padlója lesz. Ez helytakarékos megoldás. 
+# '''Flight of stairs''': (lépcsőház): Mibe mérjük a lépcső hosszát: hosszban vagy fokokban. Válasszuk a hosszt. 
+# Összefüggő lépcső beállítások, amikből mindig csak 1-et vagy 2-őt állíthatunk, és a másik 2-tőt vagy 3-at a program kalkulálja a beállítások függvényében. (Lásd lentebb). Pl. lehet hogy csak a fok mélységet és a teljes hosszt (C és F) adjuk meg, és a fok számot és fok magasságot a program kalkulálja ki a teljes hossz függvényében. 
+
+<br>
+<br>
+Ha balra fog fordulni a lépcső, akkor állítsuk a '''Justify''' értékét '''Right'''-ra, és az előre elkészített polyline jobb oldalán alul indítsuk el a lépcsőt, és ott ahol azt akarjuk hogy beforduljon (beleszámolva a kanyar utáni szélességet is) tegyük le a következő pontot, majd mozdítsuk balra az egeret, ekkor el fog kanyarodnai balra a lépcső és az lesz a felülnézeti legfelső pontja, ahova a második pontot raktuk, vagyis a vízszintes szárának a felső vonala. 
+
+
+<br>
+<br>
+
+Azt hogy melyik paramétert állíthatjuk be, azt a '''Calculation rules''' -ra kattintva választhatjuk ki: 
+:[[File:ClipCapIt-201004-124054.PNG]]
+Ekkor megnyílik a Calculation Rules ablak. 
+:[[File:ClipCapIt-201003-224720.PNG|400px]]
+Itt a kis villámok és + jelek ki be kapcsolásával választhatjuk ki, hogy melyik paraméter tállítjuk mi, és melyiket a program: 
+:[[File:ClipCapIt-201004-124223.PNG]]
+Itt ki is próbálhatjuk hogy a Stílusban szereplő '''Design Rules'''-nak megfelelnek e a kívánt értékek. (Syle manager -> Star Styles -> .. -> Design rules). Ha nem azonnal figyelmeztetést kapunk. 
+
+Ha olyan lépcsőt gyártunk le ami vagy nem felel meg a design rules-nak vagy a Turn type-nak, akkor fog megjelenni a figyelmeztető háromszög felülnézetben. Lásd lentebb.  
+
+
+Ha egy lépcső ki van választva a model térben, akkor megjelenik a szokásos objektum típus specifikus zöld tab felűl (jelen esetben lépcső specifikus), ahol speciális lépcső beállításokat találhatunk: 
+:[[File:ClipCapIt-201004-125022.PNG]]
+
+
+<br>
+
+===Lépcső rajzolása: ha nem sikerült===
+Ha a lépcső nem megvalósítható a beállítások alapján (nem fordul eleget, vagy nincs benne elég fog, túl alacsonyak a fokok, stb..) akkor egy sárga felkiáltó jel jelenik meg a lécső közepén felülnézetben, és nem fog megjelenni a lécső 3D-s képe a többi nézetben: 
+:[[File:ClipCapIt-201003-220626.PNG]]
+Ha az egeret a felkiáltó jel felé visszük akkor nagy nehezen, ha tényleg a sors is úgy akarja, akkor megjelenik egy magyarázó szöveg, amiben megtudhatjuk hogy mi a baja a lépcsőnek. Ezen a ponton már nem lehet a '''Turn type'''-on választatni.
+
+
+===Szabásminta elkészítése===
+A szabásminta elkészítésének egyik lehetséges módja, hogy a papír térben egy viewport-ban oldal nézetet állítunk be, majd amíg a model tér aktív a viewport belsejében beállítjuk a méretarényt.
+:[[File:ClipCapIt-201003-231243.PNG|180px]]
+{{warning|Ha nem állítjuk be a méretarányt, akkor a program nem fogja nekünk automatikusan beállítani a '''Dim scale linear''' értékét, amivel súlyozza a viewport-on mért értékeket. Ez csak primitív testekből felépülő model esetében nem gond, de ha pl egy lépcső is van a model térben, akkor a méretarány beállítása nélkül nem fogja tudni az AutoCAD automatikusan beállítani a '''Dim sclae linear''' értékét. }}
+
+Majd rajzoljunk rá már a papír térben a lépcsőre, és arra tegyünk dimension-öket és hatch-et. 
+:[[File:ClipCapIt-201003-230435.PNG|380px]]
+
+Szerintem a lépcső valódi tartószerkezetét már nekünk kell megtervezni, ezt a beépített lépcső nem tartalmazza.
+<br>
+<br>
+
+===Lépcső nyílás kivágása a födémben===
+A lépcső nyílás kivágása egy pontos magasságban a lépcsőfokok fölött úgy hogy tutira ne verjük be a fejünket nem olyan egyszerű ha bonyolult a lépcső alakja, plána he tekeredik vagy L alakú. De ezt automatikusan meg tudja csinálni a program a '''slab''' és '''stair''' úgynevezett '''interference''' (kölcsönhatás) segítségével. Ezért jó ha AutoCAD Architecture elemekből építkezünk. Ennek ráadásul az a nagy előnye, hogy ha változik a headroom, akkor a nyílást is automatikusan hozzá fogja igazítani a program. 
+
+Ha a födém '''slab''' objektum típusból van, akkor a lépcső '''Headroom height''' mezője alapján magától megfelelő nyílást tud vágni a slab-ben a program. A lépcső '''interference''' beállításai a lépcső Properties ablakában vannak, ahol megadhatjuk hogy mekkora a fejmagasság és hogy balra és jobbra mennyit kell elhagyni: 
+:[[File:ClipCapIt-201004-174423.PNG|400px]]
+Ez a 'kölcsönhatás' tetszőleges box típusra nem működik, ezért az a legegyszerűbb ha tesztünk egy ideiglenes slab-et a födémbe a nyílás kimérésére, még akkor is ha a slab-et később kidobjuk mert a födém szerkezetet manuálisan modellezzük. Az alábbi képen a slab lila: 
+:[[File:ClipCapIt-201004-174230.PNG]]
+
+
+Ha kiválasztjuk a slab-et (lila) akkor meg fog nyílni a slab custom zöld tab-ja. Itt válasszuk az '''Interference''' -> '''Add''' lehetőséget. 
+:[[File:ClipCapIt-201004-175111.PNG|190px]]
+
+
+Ezzel meg tudjuk mondani, hogy kivel interferáljon a slab objektum. Az Add gomb megnyomása után válasszuk ki a lépcsőt, majd ENTER. Ekkor a parancssorban meg fog jelenni két választási lehetőség:
+:[[File:ClipCapIt-201004-175156.PNG|600px]]
+
+Válasszuk a '''Substract''' lehetőséget. Majd meg fog jelenni a '''Headroom height''' értékének megfelelő kivágás a slab-en. Ezt akár szabásmintának is használhatjuk. 
+:[[File:ClipCapIt-201004-175339.PNG]]
+
+<br>
+<br>
+==Korlát (Railing)==
+A korlát is egy speciális beépített objektum, ami ugyan úgy megjelenik a Style manager-ben mint a lépcső vagy a slab. Akárcsak a slab, szoros szimbiózisban van a lépcső stílussal, de nem csak lépcsőre lehet rakni, készíthetünk szabadon álló korlátot is teraszhoz. 
+===Style manager===
+Ugyan úgy megvannak a saját jellemző tulajdonságai: 
+:[[File:ClipCapIt-201004-222102.PNG|360px]]
+Ugyan úgy ahogy a lépcsők esetében, a Style manager-ben csak azok a korlátok fognak megjelenni, amiket már hozzáadtunk a projekthez, tehát nem minden ami a katalógusban fellelhető. 
+:[[File:ClipCapIt-201004-222313.PNG|150px]]
+A korlátok majdnem minden porcikáját a stílus határozza meg, a példányosított objektumban csak nagyon csekély ráhatásunk van a korlát megjelenésére: 
+:[[File:ClipCapIt-201004-222630.PNG|600px]]
+<br>
+
+===Korlát lépcsőre===
+
+Ha kiválasztottuk a korlát stílusát, akkor elsőre választani kell hozzá egy lépcsőt. Az hogy a lépcső bal vagy jobb oldalára, vagy esetleg középre fog kerülni, a korlát, a '''Properties'''/Location-ben az Anchor beálltással módosíthatjuk. 
+:[[File:ClipCapIt-201004-223029.PNG|280px]]
+Ha rákattintunk az Anchor-ra akkor megnyílik az Anchor beállítás ablak. 
+:[[File:ClipCapIt-201004-222917.PNG|350px]]
+Itt a '''Justify to stairs''' beállítással tudunk tudjuk megmondani, hogy a lépcső melyik oldalán legyen.
+
+<br>
+===Korlát teraszra===
+Lehetőség van rá, hogy szabadon álló korlátot tegyünk teraszra, ami nem kapcsolódik lépcsőhöz. Egyedülálló korlátot bármilyen korlát típusból készíthetünk. Két módszer közül választhatunk: 
+# A korlát létrehozása közbne sorban kiválasztjuk a pontokat amerre a korlát menjen. Ebben kanyarokat is tehetünk. 
+# Egy polyline-ra illesztjük a korlátot. 
+-------------------------------------------------<br>
+Ahhoz hogy tetszőleges pontok mentén végigmenjünk a korláttal, válasszuk ki a megfelelő korlát stílust. Ekkor megjelennek a parancssorban a választható lehetőségek: 
+:[[File:ClipCapIt-201004-230633.PNG|400px]]
+Válasszuk az '''Attache''' lehetőséget, majd a '''None'''-t. 
+:[[File:ClipCapIt-201004-230713.PNG|450px]]
+Ezt akár a Properties ablakban is kiválaszthatjuk. 
+Ekkor elkezdhetünk pontokra rábökni a model térben, ami kijelöli a korlát útját. 
+:[[File:ClipCapIt-201004-230918.PNG|200px]]
+A pontok csak egy síkban lehetnek. 
+<br>
+<br>
+-------------------------------------------------<br>
+A másik lehetőség, hogy rajzolunk egy polyline-t, ami kijelöli a korlát útját. 
+:[[File:ClipCapIt-201004-231029.PNG|150px]]
+Majd a '''Tool Palett'''-en jobb klikk a Railing-re, és válasszuk az '''Apply Tools properties to'''-> '''Polyline''' lehetőséget. 
+:[[File:ClipCapIt-201004-231138.PNG|350px]]
+Ekkor kiválaszthatjuk a polyline-t. Rá fog kérdezni, hogy a vonalat kitörölje e: 
+:[[File:ClipCapIt-201004-231243.PNG|450px]]
+
+
+Felülnézetben tudjuk mozgatni a korlát egyes szakaszait előre vagy hátra ha a korlát szakasz közepén lévő apró kék nézetet megfogjuk és valamerre meghúzzuk. Ekkor számszerűen is megadhatjuk mennyit szeretnénk rajta mozgatni. 
+:[[File:ClipCapIt-201004-233200.PNG]]
+
+
+
+
+
+
+<br>
+<br>
