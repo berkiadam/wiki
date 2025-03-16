@@ -105,3 +105,6 @@ Workshop manual: "Accessory Drive - TDV6 3.0L Diesel - Rear End Accessory Drive 
 12. Vagyük le a timing tool-t a pumpa fogaskerékröl
 13. Most tekerüjk körbe 2x a motort teljes fordulatra, hogy a szíj pont a helyére, középre kerüljün. 
 14. Építsünk mindent vissza.
+
+
+megint enm 
