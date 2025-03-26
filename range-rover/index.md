@@ -1,7 +1,19 @@
 Range Rover Sport 2011 TDV6 3.0 
 
 
+# Linkek
+- HU [hátsó vezérmű szíj csere](rear-timing-belt/rear-timing-belt-HU.md)  
+- EN [rear timing belt change](rear-timing-belt/rear-timing-belt-EN.md)
+
+- [Suspension](suspension-arms/suspension-arm-HU.md)
+
+
+<br>
+------------------------------------------------------------------
+
+
 - [Linkek](#linkek)
+	- [](#)
 - [Mit szeretnék lecserélni](#mit-szeretnék-lecserélni)
 - [Mit cseréljünk ki a timing belt-el egyszerre](#mit-cseréljünk-ki-a-timing-belt-el-egyszerre)
 - [Issues with the TDV6 3.0 Engine](#issues-with-the-tdv6-30-engine)
@@ -22,7 +34,7 @@ Range Rover Sport 2011 TDV6 3.0
 		- [Timing belt and oil pump](#timing-belt-and-oil-pump)
 		- [Termosztát és vízpumpa csere](#termosztát-és-vízpumpa-csere)
 		- [Fuel Injection Pump belt](#fuel-injection-pump-belt)
-- [](#)
+- [](#-1)
 - [Alkatrészek](#alkatrészek)
 	- [Air intake pipe to second turbo](#air-intake-pipe-to-second-turbo)
 	- [Rézpaszta](#rézpaszta)
@@ -76,37 +88,6 @@ Range Rover Sport 2011 TDV6 3.0
 		- [Alkatrészek:](#alkatrészek-3)
 		- [Szerszámok](#szerszámok-3)
 - [Fuel burning heater](#fuel-burning-heater)
-- [Felfüggesztés](#felfüggesztés)
-	- [Szerszámok](#szerszámok-4)
-	- [Első felfüggesztés](#első-felfüggesztés)
-		- [Alsó lengökar](#alsó-lengökar)
-			- [Csavarok](#csavarok)
-			- [Bushings](#bushings)
-			- [Lengőkar](#lengőkar)
-			- [Rods and hubs](#rods-and-hubs)
-		- [Felső lengőkar](#felső-lengőkar)
-			- [Csavar:](#csavar)
-			- [Bushing:](#bushing)
-			- [Lengökar:](#lengökar)
-	- [Hátsó felfüggesztés](#hátsó-felfüggesztés)
-		- [Felső lengőkar](#felső-lengőkar-1)
-			- [Csavar](#csavar-1)
-			- [Bushings](#bushings-1)
-			- [Lengőkar](#lengőkar-1)
-		- [Alsó lengőkar](#alsó-lengőkar)
-			- [Csavar](#csavar-2)
-			- [Bushings](#bushings-2)
-			- [Lengőkar](#lengőkar-2)
-		- [Rods and hubs](#rods-and-hubs-1)
-			- [Csavarok](#csavarok-1)
-			- [Alkatrészek](#alkatrészek-4)
-			- [Bushings](#bushings-3)
-	- [Beállítás](#beállítás)
-		- [Mit kell állítani](#mit-kell-állítani)
-		- [Táblázatok értelmezése](#táblázatok-értelmezése)
-		- [Camber (függőleges, befelé dőlsé)](#camber-függőleges-befelé-dőlsé)
-		- [Toe in/out](#toe-inout)
-		- [Castor](#castor)
 - [Fuel system](#fuel-system)
 - [Crankshaft bearings](#crankshaft-bearings)
 	- [Blokk felfúrása: line boar](#blokk-felfúrása-line-boar)
@@ -118,7 +99,7 @@ Range Rover Sport 2011 TDV6 3.0
 		- [Merülő szivattyú](#merülő-szivattyú)
 	- [Inlet manifold csere/tisztítás](#inlet-manifold-cseretisztítás)
 - [Fuel System diagnoses](#fuel-system-diagnoses)
-- [Szerszámok](#szerszámok-5)
+- [Szerszámok](#szerszámok-4)
 	- [Compression test](#compression-test)
 	- [Kamera](#kamera)
 	- [Füst szivárgás vizsgáló](#füst-szivárgás-vizsgáló)
@@ -143,9 +124,7 @@ Range Rover Sport 2011 TDV6 3.0
 	- [Cache Can system](#cache-can-system)
 
 
-# Linkek
-- HU [hátsó vezérmű szíj csere](rear-timing-belt-HU.md)  
-- EN [rear timing belt change](rear-timing-belt-EN.md)
+
 
 
 # Mit szeretnék lecserélni
