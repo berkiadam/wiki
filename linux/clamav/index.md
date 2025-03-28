@@ -90,7 +90,10 @@ A célunk, hogy a ClamAV víruskereső termékcsalád segítségével Linux desk
 
 A ClamAV egy nyílt forráskódú (GPLv2) vírusirtó eszközkészlet, amelyet különösen e-mail átjárók e-mailjeinek vizsgálatára terveztek. Számos segédprogramot biztosít, beleértve egy rugalmas és skálázható több szálú démont, egy parancssori szkennert és egy fejlett eszközt az automatikus adatbázis-frissítésekhez. 
 
-> **Tipp:** A ClamAV nem egy hagyományos vírusirtó vagy végpontbiztonsági csomag. Egy teljes funkcionalitású modern végpontbiztonsági csomaghoz nézze meg a Cisco Secure Endpoint-et. További részletekért lásd az "kapcsolódó termékek" részt alább.
+> **Tipp:** A ClamAV nem egy hagyományos vírusirtó vagy végpontbiztonsági csomag. Egy teljes funkcionalitású modern végpontbiztonsági csomaghoz nézze meg a Cisco Secure Endpoint-et. a ClamAV nem olyan jellegű vírusirtó, mint például a Windows Defender, Avast vagy más "végpontbiztonsági (endpoint security) csomagok", amelyek a gépet komplex módon védik (pl. viselkedésalapú védelem, tűzfal, sandbox, heurisztikus motor, webvédelmi modul, automatikus válasz, stb.).
+>
+>A ClamAV: elsősorban fájlalapú víruskereső (signature alapú), nem tartalmazza a végpontbiztonsági megoldásokhoz tartozó extra modulokat (pl. automatikus incidenskezelés, gépi tanulásos fenyegetésdetektálás, felhőalapú intelligencia),
+ezért nem nyújt teljes körű védelmet egy gépen önmagában.
 
 A ClamAV-ot a Cisco Systems, Inc. hozta létre.
 
