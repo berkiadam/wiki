@@ -3,11 +3,13 @@
 ![](docs/image-2025-03-26-10-36-52.png)
 
 
-- [Bevezető](#bevezető)
+- [Alapelvek](#alapelvek)
+- [Mi a ClamAV](#mi-a-clamav)
 - [Installálás](#installálás)
 - [Automatikus vírus db frissítés](#automatikus-vírus-db-frissítés)
   - [Első manuális frissítés:](#első-manuális-frissítés)
   - [Frissítési gyakoriság beállítása](#frissítési-gyakoriság-beállítása)
+  - [Frissítések ellenörzése](#frissítések-ellenörzése)
 - [ClamAV demon beállítása](#clamav-demon-beállítása)
   - [Milyen user nevében fusson a clamd?](#milyen-user-nevében-fusson-a-clamd)
     - [Miért nem rootként fut alapból a clamd?](#miért-nem-rootként-fut-alapból-a-clamd)
@@ -24,31 +26,63 @@
   - [Időzített rendszeres ellenőrzés futtatása](#időzített-rendszeres-ellenőrzés-futtatása)
   - [SELinux](#selinux)
 - [On-Access scanning](#on-access-scanning)
+  - [Bevezető](#bevezető)
+    - [Mi a fanofiy](#mi-a-fanofiy)
+    - [fanofity képesség ellenőrzése](#fanofity-képesség-ellenőrzése)
+    - [Hogyan működik a clamonacc](#hogyan-működik-a-clamonacc)
+    - [Karantén használata](#karantén-használata)
   - [Socket beállítások](#socket-beállítások)
-  - [Clamonacc indító service módosítása](#clamonacc-indító-service-módosítása)
-  - [scan.conf változtatások](#scanconf-változtatások)
-  - [Socket Tesztelés](#socket-tesztelés)
-  - [Karantén használata](#karantén-használata)
-- [Finomhangolás](#finomhangolás)
-    - [Milyen mappákat vizsgáljon](#milyen-mappákat-vizsgáljon)
-    - [Email-ek vizsgálata](#email-ek-vizsgálata)
-    - [Config finomhangolása](#config-finomhangolása)
-- [Értesítés virus eseményről](#értesítés-virus-eseményről)
   - [Karantén létrehozása](#karantén-létrehozása)
+  - [Clamonacc indító service módosítása](#clamonacc-indító-service-módosítása)
+    - [Mit fogunk módosítani](#mit-fogunk-módosítani)
+      - [--fdpass beállítások](#--fdpass-beállítások)
+      - [Karantén használat bekapcsolása](#karantén-használat-bekapcsolása)
+    - [Hogyan módosítsuk](#hogyan-módosítsuk)
+  - [scan.conf változtatások](#scanconf-változtatások)
+  - [Ellenőrzés:](#ellenőrzés)
+    - [Service tesztelése](#service-tesztelése)
+    - [Socket Tesztelés](#socket-tesztelés)
+- [Finomhangolás](#finomhangolás)
+  - [Milyen mappákat vizsgáljon](#milyen-mappákat-vizsgáljon)
+  - [Config finomhangolása](#config-finomhangolása)
+    - [Email-ek vizsgálata](#email-ek-vizsgálata)
+      - [Tesztelés](#tesztelés)
+    - [Dokumentumok vizsgálata](#dokumentumok-vizsgálata)
+    - [Futtatható állományok vizsgálata](#futtatható-állományok-vizsgálata)
+    - [Heuristic Alerts](#heuristic-alerts)
+    - [Tömörített](#tömörített)
+    - [Fájl méretek és szál számok](#fájl-méretek-és-szál-számok)
+- [Értesítés virus eseményről](#értesítés-virus-eseményről)
   - [Virus esemény script](#virus-esemény-script)
   - [ClamD config módosítás](#clamd-config-módosítás)
-  - [Tesztelés](#tesztelés)
-    - [Vírusos fájl: lockolt eset (nincs karantén)](#vírusos-fájl-lockolt-eset-nincs-karantén)
-    - [Vírusos fájl: lockolás nélküli művelet](#vírusos-fájl-lockolás-nélküli-művelet)
-- [GUI használata](#gui-használata)
-- [Tesztelés](#tesztelés-1)
-  - [Hogyan látom épp mit csinál a clamd](#hogyan-látom-épp-mit-csinál-a-clamd)
-- [Troubleshooting](#troubleshooting)
+  - [Tesztelés](#tesztelés-1)
+    - [Vírusos fájl teszt](#vírusos-fájl-teszt)
+    - [Vírusos zip teszt](#vírusos-zip-teszt)
+- [GUI használata (ClamTk)](#gui-használata-clamtk)
+
+<br>
+
+
+
+----------------------------------------------------------------------------------
+# Alapelvek 
+
+A célunk, hogy a ClamAV víruskereső termékcsalád segítségével Linux desktopokon, single user környezetben biztosítsunk valós idejű virus védelmet: 
+* minden fájlművelet esetén lefut a víruskeresés
+* a HOME mappán figyelése, kivéve: config mappák és git repokat tartalmazó mappák
+* minden fertőzött fájlt karanténba kell helyezni és értesíteni kell erről a user-t. 
+* ha van email vastagkliens a gépen, az email mappát is figyelni kell
+* be kell legyen állítva az automatikus virus db frissítés
+* vizsgálni kell a tömörített fájlokat is. 
+* tesztelni kell a működést az **eicar** teszt vírussal mind normál, mind archivált fájlokra. 
+  
+
+
 
 <br>
 
 ----------------------------------------------------------------------------------
-# Bevezető 
+# Mi a ClamAV 
 
 * https://docs.clamav.net/manual/Usage/Scanning.html
 * https://linuxcapable.com/install-clamav-on-fedora-linux/#:~:text=To%20customize%20ClamAV%20settings%2C%20such,conf%20.
@@ -77,14 +111,10 @@ Alap szoftver installáció:
 $ sudo dnf install clamav clamd clamav-update
 ```
 
-GUI: 
-```
-$ sudo dnf install clamtk
-```
-![](docs/image-2025-03-10-18-28-43.png)
+<br>
 
 
-Mappa rekurzív sacnnaelése: 
+Első példa futtatás: 
 ```
 clamscan -r otpbank/
 ...
@@ -144,13 +174,27 @@ $ sudo systemctl enable --now clamav-freshclam
 ```
 
 
+## Frissítések ellenörzése
+
+```
+$ sudo freshclam 
+[sudo] password for adam: 
+
+ClamAV update process started at Fri Mar 28 13:29:29 2025
+daily.cld database is up-to-date (version: 27591, sigs: 2074276, f-level: 90, builder: raynman)
+main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+bytecode.cld database is up-to-date (version: 336, sigs: 83, f-level: 90, builder: nrandolp)
+```
+
+>**WARNING**: nagyon fontos, hogy a frissítések rendre megjöjjenek, több egymást követő napon is ellenőrizzük, hogy tényleg működik e. 
+
 
 <br>
 
 ----------------------------------------------------------------------------------
 # ClamAV demon beállítása
 
-Config fájl: /etc/clamd.d/scan.conf
+Config fájl: **/etc/clamd.d/scan.conf**
 
 A clamd démon futtatása attól függ, hogy milyen módon szeretnéd használni a ClamAV-t:
 
@@ -425,15 +469,77 @@ sudo usermod -aG virusgroup adam
 
 ----------------------------------------------------------------------------------------------
 # On-Access scanning 
+
 - https://docs.clamav.net/manual/Usage/Scanning.html#on-access-scanning
 - https://docs.clamav.net/manual/OnAccess.html
 
+
 <br>
+
+## Bevezető
+
+A ClamAV clamonacc egy valós idejű víruskereső démon, amely a Linux kernel fanotify API-ját használja arra, hogy figyelje a fájlhozzáféréseket a rendszerben.
+
+### Mi a fanofiy
+
+A fanotify egy Linux kernel szintű API, amely lehetővé teszi, hogy a felhasználói térből futó programok értesítést kapjanak fájlrendszer-eseményekről, például amikor fájlokat nyitnak meg, olvasnak, írnak vagy végrehajtanak.
+
+A fanotify különlegessége, hogy nemcsak passzívan figyelhet eseményeket (mint az inotify), hanem interaktívan be is avatkozhat, például megtilthat egy fájlhoz való hozzáférést — ez teszi alkalmassá antivírus programok (pl. ClamAV clamonacc) számára a valós idejű ellenőrzésre.
+
+A működéséhez root jogosultság és speciális mount opciók is szükségesek (pl. fanotify engedélyezett legyen az adott fájlrendszeren).
+
+
+### fanofity képesség ellenőrzése
+
+
+Az alábbi módon ellenőrizhetjük, hogy a kernelünk támogatja e a fanofity-t: 
+```
+$ grep FANOTIFY /boot/config-$(uname -r)
+
+CONFIG_FANOTIFY=y
+CONFIG_FANOTIFY_ACCESS_PERMISSIONS=y
+```
+
+Ha ezt látod: 
+```
+CONFIG_FANOTIFY_ACCESS_PERMISSIONS is not set
+```
+Íme a kijelölt rész fordítása magyarra:
+
+Ha ezt látja...
+```
+CONFIG_FANOTIFY_ACCESS_PERMISSIONS nincs beállítva
+```
+akkor a ClamAV valós idejű fájlvizsgálója továbbra is működni fog, normál módon vizsgálja és figyelmeztet a fájlokra valós időben. Azonban nem lesz képes blokkolni a rosszindulatú fájlokhoz való hozzáférési kísérleteket. 
+
+Az OnAccessIncludePath opció nem fogadja el a `/` útvonalat érvényes útvonalként mert ez blokkolná a kernel modulok betöltését. 
+
+
+### Hogyan működik a clamonacc
+
+A működése a következő elven alapul:
+
+A clamonacc feliratkozik egy vagy több könyvtár figyelésére (pl. /home).
+
+Amikor egy folyamat megpróbál megnyitni vagy olvasni egy fájlt ezekben a könyvtárakban, a kernel fanotify segítségével értesíti a clamonacc-ot.
+
+A clamonacc ezután átküldi a fájlt a clamd démonnak ellenőrzésre a Unix socketen keresztül.
+
+Ha a fájl vírusos, a clamd visszajelzése alapján a clamonacc meg tudja tagadni a hozzáférést (ha --fdpass opcióval indították), és opcionálisan futtathat egy parancsot (pl. értesítés vagy karanténba helyezés).
+
+A clamonacc tehát a fanotify révén mielőtt a fájl elérhetővé válna az adott alkalmazás számára, lehetőséget kap annak vizsgálatára — így megakadályozhatja a fertőzött fájl használatát. Ehhez a clamd démonnal szorosan együttműködve működik, amely ténylegesen végrehajtja a víruskeresést.
 
 > **WARNING**: On-Access requires a kernel version >= 3. This is because it leverages a kernel api called fanotify to block processes from attempting to access malicious files. This prevention occurs in kernel-space, and thus offers stronger protection than a purely user-space solution.
 
-clamonacc program segítségével lehet on-access scanning-et futtatni. 
 
+### Karantén használata
+
+Az on-access szkennelés esetében a karanténba helyezés nem triviális feladat, hiszen egy program megpróbálja ilyenkor lock-ot szerezni egy fájlon, ami kiváltja a **fanofity** eseményt. Ezért egy egyszerű **mv** művelettel ha megpróbálnánk ilyenkor elmozgatni a vírusos fájlt, akkor az egész X-ünket le tudjuk fagyasztani. 
+
+Viszont a **clamonacc**-be van egy beépített karanténba helyezés, ami biztonságosan meg tudja oldani a fájl áthelyezését ha az a calmd szerint vírusos. 
+
+
+<br>
 
 
 ## Socket beállítások
@@ -447,7 +553,7 @@ Reláció a clamonacc és a clamd között:
 | Komponens     | Jogosultság             | Feladat                                |
 |---------------|--------------------------|-----------------------------------------|
 | `clamonacc`   | `root`                   | eseményfigyelés (`fanotify`)            |
-| `clamd`       | `clamav` vagy `clamscan` | fájlok megnyitása és vírusvizsgálata   |
+| `clamd`       | `saját user` vagy `clamscan` | fájlok megnyitása és vírusvizsgálata   |
 
 
 Socket létrehozása az on-access vizsgálathoz: 
@@ -486,9 +592,43 @@ $ ss -lx | grep clamd
 u_str LISTEN 0      200       /run/clamd.scan/clamd.sock 24800              * 0   
 ```
 
+<br>
+
+## Karantén létrehozása
+
+Hozzuk létre a karantén számára egy olyan mappát, ami kívül esik a vizsgált mappákon. 
+A tulajdonos a működés szempontjából mindegy, mert a clamonacc root nevében fut. Viszont ahhoz hogy bele tudjunk nézni adjuk a saját user-ünk tulajdonába. 
+
+```
+sudo mkdir -p /var/quarantine
+sudo chown adam:adam /var/quarantine
+sudo chmod 700 /var/quarantine
+```
+
+<br>
+
 ## Clamonacc indító service módosítása
 
+### Mit fogunk módosítani
+#### --fdpass beállítások
+
+
 A clamonacc gyári indításából hiányzik a --fdpass, ami szükséges, ha clamonacc nem clamd nevében fut. 
+A --fdpass kapcsoló a clamonacc számára azt teszi lehetővé, hogy a fájlhoz való hozzáférést visszatartsa addig, amíg a clamd le nem ellenőrzi azt. Technikai szempontból ez azt jelenti, hogy a clamonacc átadja a fájlleíró (file descriptor) jogát a clamd démonnak.
+
+Ez azért fontos, mert:
+* a clamd olvasni tudja a fájlt akkor is, ha azt egy másik felhasználó próbálja megnyitni,
+* a clamonacc blokkolni tudja a hozzáférést a fájl vírusos voltának megállapításáig,
+* valós idejű védelmet tud nyújtani: ha vírusos a fájl, a hozzáférés egyszerűen megtagadható, mielőtt a felhasználó vagy folyamat kárt okozna.
+
+<br>
+
+#### Karantén használat bekapcsolása
+
+A karantént a --move=MAPPA NEVE parancssori kapcsolóval lehet megadni a clamonacc indító script-jében. 
+
+
+### Hogyan módosítsuk
 
 ```
 sudo EDITOR=mcedit systemctl edit clamav-clamonacc.service
@@ -502,6 +642,7 @@ ExecStart=
 ExecStart=/usr/sbin/clamonacc -F --fdpass --config-file=/etc/clamd.d/scan.conf
 ### Edit below 
 ```
+
 Az első ExecStart= sor kinullázza az eredetit, így nem lesz duplikált.
 
 Mentés után ezt látjuk: 
@@ -520,7 +661,8 @@ sudo systemctl daemon-reload
 
 ## scan.conf változtatások
 
-on-Access beállítása a **/etc/clamd.d/scan.conf** fájlban: 
+A clamonacc is a **/etc/clamd.d/scan.conf** fájlbol dolgozik, ide kell hozzáadni az on-access specifikus beállításokat. 
+
 ```
 OnAccessMaxFileSize 10M
 OnAccessIncludePath /home
@@ -538,8 +680,14 @@ OnAccessExcludeRootUID yes
 
 # Kizárja a `clamd` felhasználót a szkennelésből
 OnAccessExcludeUname clamscan
+
+#Vírusos fájlhoz való hozzáférés tiltása (clamd döntés alapján)
+OnAccessPrevention yes	
+# Sikertelen ellenőrzés esetén engedélyezi a fájlhoz férést
+OnAccessDisableDDD yes	
 ```
 
+>**WARNING**: Az utolsó két beállítás elég veszélyes tud lenni, mert ha be van kapcsolva a fájl hozzáférés blokkolás, de jogosultság gondok vannak a socket körül, akkor lefagyhat az X. Ugyan ez igaz a DDD kapcsolóra is. 
 
 
 
@@ -553,7 +701,19 @@ Clamonacc újraindítása:
 sudo systemctl restart clamonacc
 ```
 
-Ellenőrzés: 
+<br>
+
+Automatikus indítása a clamonacc-nek: 
+```
+$ sudo systemctl enable --now clamonacc 
+```
+
+<br>
+
+
+## Ellenőrzés: 
+
+### Service tesztelése
 ```
 # sudo systemctl status clamav-clamonacc.service
 ● clamav-clamonacc.service - ClamAV On-Access Scanner
@@ -585,7 +745,7 @@ Láthatjuk, hogy
 * jó helyről szedi fel a configot: /etc/clamd.d/scan.conf
 * szerepel a **--fdpass** az indító parancsban
 * a /home mappát figyeli
-* a .config mappa kivétel
+* vannak kivétel mappák
 
 <br>
 
@@ -595,15 +755,6 @@ $ ps -C clamonacc -o pid,euser,egroup,cmd
     PID EUSER    EGROUP   CMD
  162360 root     root     /usr/sbin/clamonacc -F --config-file=/etc/clamd.d/scan.conf
 ```
-
-<br>
-
-Automatikus indítása a clamonacc-nek: 
-```
-$ sudo systemctl enable --now clamonacc 
-```
-
-
 
 
 <br>
@@ -620,7 +771,7 @@ Mar 24 15:16:16 fedora clamonacc[22116]: ClamInotif: excluding '/home/adam/.conf
 
 
 
-## Socket Tesztelés
+### Socket Tesztelés
 
 Nézzük meg folyik a kommunikáció a local socket-en, ehhez a **strace** programot fogjuk használni: 
 ```
@@ -643,11 +794,6 @@ read(6, "\0", 1025)                     = 1
 ```
 
 
-
-
-## Karantén használata 
-sudo clamonacc --move=/var/quarantine --log=/var/log/clamonacc.log --fdpass
-
 <br>
 
 ----------------------------------------------------------------------------------------------
@@ -657,7 +803,7 @@ Az **on-access scanning** borzasztó erőforrás igényes, ha nem korlátozzuk l
 
 <br>
 
-### Milyen mappákat vizsgáljon
+## Milyen mappákat vizsgáljon
 Az összes olyan mappát excludálni kell az on-access scannelés alól, ami: 
 * config fájlokat tartalmaz, tipikusan a . kezdetű mappák 
 * GIT repókat tartalmazó mappák
@@ -672,52 +818,138 @@ OnAccessExcludePath /home/adam/repositories
 ...
 ```
 
+## Config finomhangolása
+
 
 ### Email-ek vizsgálata
 
-Ha használunk email vastag klienst, pl Evolution, akkor figyelni kell rá, hogy az email kezelő email mappáját szintén figyelje az on access clamAV. 
+![](docs/image-2025-03-28-14-20-41.png)
 
-... TODO...
+>**WARNING**: Nekem ez nem működik, mert ha elhelyeztem egy vírust az email mappákban, akkor belefagyott az evolution, valószínűleg azért mert a karanténba mozgatásba belehal. 
+
+Ha van email vastag kliens a gépen, akkor be kell kapcsolni az emailek részletes vizsgálatát. Ha ez be van kapcsolva, akkor 
+* az email fájlokba ágyazott csatolmányokat is külön át tudja vizsgálni vírust keresve
+* Fishing tartalmú üzeneteket karanténba tudja helyezni
+* Fishing URL-eket tartalmazó URL-eket karanténba tudja helyezni
+
+<br>
+
+A **flatpak** -ként futtatott Evolution itt tárolja 
+* ~/.var/app/org.gnome.Evolution/cache/evolution/mail
+
+<br>
+
+Vegyük ki a /etc/clamd.d/scan.conf-bol a .var mappát: 
+```
+#OnAccessExcludePath /home/adam/.var
+```
+
+<br>
+
+Kapcsoljuk be az email vizsgálatot (fishing-re is)
+```
+ScanMail yes
+PhishingSignatures yes
+PhishingScanURLs yes
+```
+
+<br>
+
+Újraindítás: 
+```
+$ sudo systemctl restart clamd@scan
+```
 
 
-### Config finomhangolása
+#### Tesztelés
+
+Nem tudom hogy lehetne letesztelni, mert minden email szerver ezeket az emaileket eleve megfogja. 
 
 
+### Dokumentumok vizsgálata 
 
-* Miket excludáljunk
+```
+# This option enables scanning of OLE2 files, such as Microsoft Office
+# documents and .msi files.
+# If you turn off this option, the original files will still be scanned, but
+# without additional processing.
+# Default: yes
+ScanOLE2 yes
 
-* Mit scanneljen és hogy? 
-  * Data Loss Prevention (DLP)  
-  * Mail files
-  * scan Documents
-  * Executable files
-  * Heuristic Alerts
+# This option enables scanning within PDF files.
+# If you turn off this option, the original files will still be scanned, but
+# without decoding and additional processing.
+# Default: yes
+ScanPDF yes
+
+# This option enables scanning within SWF files.
+# If you turn off this option, the original files will still be scanned, but
+# without decoding and additional processing.
+# Default: yes
+ScanSWF yes
+
+# This option enables scanning xml-based document files supported by libclamav.
+# If you turn off this option, the original files will still be scanned, but
+# without additional processing.
+# Default: yes
+ScanXMLDOCS yes
+
+# This option enables scanning of HWP3 files.
+# If you turn off this option, the original files will still be scanned, but
+# without additional processing.
+# Default: yes
+ScanHWP3 yes
+```
 
 
-* #VirusEvent /opt/send_virus_alert_sms.sh
+### Futtatható állományok vizsgálata 
+
+```
+ScanPE yes
+DisableCertCheck no
+ScanELF yes
+```
 
 
+### Heuristic Alerts
+
+...TODO...
+
+
+### Tömörített 
+
+```
+ScanArchive yes
+```
+
+
+### Fájl méretek és szál számok
+
+
+>**WARNING**: Ez nagyon fontos, hogy jól be legyen állítva, hogy ne lassítsuk le túlságosan a gépet. 
+
+
+TODO...
+
+**Limits** szekció a configban: 
+
+Itt a ChatGPT mondott egy csomó mit hogy kéne beállítani...
+
+* Hány szál kell a CPU-hoz képest a clamonacc-nek és a clamd-nek? 
+* Mekkorák legyenek a max fájl méretek ? 
 
 <br>
 
 ----------------------------------------------------------------------------------------------
 # Értesítés virus eseményről
 
-Alapértelmezetten, ha az on access scan hatására a clamAV vírust talál, akkor arról csak a system logból értesülhetünk. Viszont a ClamAV biztosít egy script futtatási lehetőséget virus eseménykor. Ebben a script-ben tudunk GNOME alertet küldeni, vagy akár emailt, amire szükségünk van, és ebben a script-ben tudjuk áthelyezni karanténba a fertőzött fájlt, mert alapértelmezetten a clamonacc csak blokkolni fogja a hozzáférést. 
+Alapértelmezetten, ha az on access scan hatására a clamAV vírust talál, akkor arról csak a system logból értesülhetünk. Viszont a ClamAV biztosít egy script futtatási lehetőséget virus eseménykor. Ebben a script-ben tudunk GNOME alertet küldeni, vagy akár emailt, amire szükségünk van
 
 A fertőzött fájl neve és a vírus neve az alábbi két környezeti változóba kerül mindig beállításra, mielőtt a clamd meghívná a vírus esemény scriptet: 
 - $CLAM_VIRUSEVENT_FILENAME
 - $CLAM_VIRUSEVENT_VIRUSNAME
 
-<br>
 
-## Karantén létrehozása
-
-```
-sudo mkdir -p /var/quarantine
-sudo chown adam:adam /var/quarantine
-sudo chmod 700 /var/quarantine
-```
 
 
 ## Virus esemény script
@@ -729,13 +961,7 @@ $ id -u
 ```
 
 <br>
-
-* Fontos, hogy használatban lévő fájlt nem tudunk karanténba helyezni, mert a teljes X-et be tudja fagyasztani, ezért meg kell vizsgálni, hogy nincs e használatban. Pl Ha meg akarom nyitni olvasásra, az használatnak számít, ilyenkor nem tudom mozgatni. 
-* Azt a fájlt amit nem fog senki, pl csak átmásolom egy mappából egy másikba, azt tudom karanténba rakni
-* A megnyitás alatt lévő fáj tartalmát sem tudjuk módosítani, nem tudjuk beleírni, hogy virusos volt
-* Lehetne azt csinálni, hogy kilőjük azt a programot, ami fogja a fájlt, de ez adatvesztéshez vezethet, ez túl veszélyes. 
-
-
+ 
 
 /usr/local/bin/clamav-alert.sh
 ```bash
@@ -753,33 +979,26 @@ FILENAME="${CLAM_VIRUSEVENT_FILENAME}"
 VIRUSNAME="${CLAM_VIRUSEVENT_VIRUSNAME}"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
-# --- Ellenőrzés ---
-if [ -z "$FILENAME" ] || [ -z "$VIRUSNAME" ]; then
-    echo "$TIMESTAMP [ERROR] Missing required environment variables." >> "$LOGFILE"
-    exit 1
-fi
-
-# --- Ellenőrizzük, hogy a fájlt használja-e valami ---
-if lsof "$FILENAME" > /dev/null 2>&1; then
-    echo "$TIMESTAMP [WARN] File in use, skipping quarantine: $FILENAME" >> "$LOGFILE"
-    notify-send -u normal -a ClamAV "⚠️ Virus detected" "In use: $FILENAME\nVirus: $VIRUSNAME"
-    exit 0
-fi
-
-# --- Mozgatás karanténba ---
-BASENAME=$(basename "$FILENAME")
-TARGET="$QUARANTINE_DIR/$BASENAME.$(date +%s)"
-
-if mv "$FILENAME" "$TARGET"; then
-    echo "$TIMESTAMP [INFO] Moved infected file to quarantine: $TARGET (virus: $VIRUSNAME)" >> "$LOGFILE"
-    notify-send -u critical -a ClamAV "☣️ Virus Found!" "File quarantined:\n$TARGET\nVirus: $VIRUSNAME"
-else
-    echo "$TIMESTAMP [ERROR] Failed to move file: $FILENAME" >> "$LOGFILE"
-    notify-send -u critical -a ClamAV "☣️ Virus Found!" "Failed to quarantine:\n$FILENAME\nVirus: $VIRUSNAME"
-fi
-
+echo "$TIMESTAMP [INFO] Moved infected file to quarantine: $TARGET (virus: $VIRUSNAME)" >> "$LOGFILE"
+notify-send -u critical -a ClamAV "☣️ Virus Found!" "File quarantined:\n$FILENAME\nVirus: $VIRUSNAME"
 ```
 
+<br>
+
+Mire kellenek ezek:
+```
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+```
+A notify-send nem egy egyszerű "ablakot nyitó" parancs, hanem a háttérben a D-Bus segítségével kommunikál a grafikus értesítési demonnal (gnome-shell).
+* DISPLAY=:0: 
+  * Ezzel mondod meg, hogy melyik X szerver felé menjen az üzenet.
+  * Ha több felhasználó van bejelentkezve, ez lehet :1, :2, stb.
+* DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+  * Ezzel adod meg, hogy melyik felhasználóhoz tartozó D-Bus buszon küldje el az értesítést.
+  * Itt a 1000 az a UID, amelyik a bejelentkezett grafikus felhasználóé.
+
+<br>
 <br>
 
 Jogosultságok beállítása: annak a felhasználónak a birtokába kell adni, akinek a nevében fut a clamd, ami az esetükben a saját user-ünk:  
@@ -806,17 +1025,9 @@ $ sudo systemctl restart clamd@scan
 
 <br>
 
-
->**NOTE:** A karanténba mozgatást már natívan támogatja az 1.2-es ClamAV, azonban a cikk írásakor ez még nem volt elérhető Fedora telepítő csomagként: 
-> ```
-> $ clamd --version
-> ClamAV 1.0.8/27590/Thu Mar 27 10:00:11 2025
-> ```
-> Az új verzióban az alábbi beállítások már elérhetőek: OnInfected, QuarantineDirectory
-
-
 ## Tesztelés
 
+### Vírusos fájl teszt
 Hozzunk létre egy virus fájlt a hivatalos teszt vírus tartalommal, valahol a /home/adam mappa alatt, amit figyel a clamonacc. 
 
 /home/adam/test-virus.txt
@@ -826,82 +1037,46 @@ X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
 
 Ezt minden víruskereső ismeri. 
 
-### Vírusos fájl: lockolt eset (nincs karantén)
 
 Nyissuk meg egy grafikus szövegszerkesztővel a vírusos fájlt: 
 ```
-$ gedit /home/adam/tmp/test-virus.txt
+$ gedit /home/adam/tmp/test-virus7.txt
 ```
 
-![](docs/image-2025-03-27-15-33-06.png)
+![](docs/image-2025-03-28-13-13-45.png)
 
-Ekkor nem fogja tudni karanténba tenni, mert fogja a gedit a megnyitás alatt lévő fájlt. 
+<br>
 
->**IMPORTANT**: Amikor clamonacc egyszer már felismerte a vírust, nem engedi többé hozzáférni a fájlhoz, onnantól kezdve minden műveletet blokkolni fog vele, tehát ez a fájl már akkor sem fog tudni átkerülni karanténba, ha olyan műveletet végeznénk rajta, ami nem lockolja a fájlt, pl egy cat. 
+Az clamavonacc át fogja helyezni a fájlt a karanténba: 
+```
+# ls -l /var/quarantine/
+total 28
+-rw------- 1 root root 69 Mar 28 13:13 test-virus7.txt
+```
+
+### Vírusos zip teszt
+
+Állítsuk le a **clamonacc**-t, hogy létre tudjunk hozni egy zip fájlt, amiben benne van a teszt vírus egy txt fájlban. 
+
+Tegyük a fertőzött zip fájlt a /home/adam mappa egy figyelt pontjára. 
+
+Majd indítsuk el újra a **clamonacc**-t. Másoljuk át egy másik mappába a vírusos zip fájlt: 
 
 
-### Vírusos fájl: lockolás nélküli művelet
+![](docs/image-2025-03-28-15-55-02.png)
 
-Ilyen van?? TODO...
 
 
 <br>
 
 ----------------------------------------------------------------------------------------------
-# GUI használata
+# GUI használata (ClamTk)
 
+A GUI segítségével manuálisan tudunk scanneléseket futtatni. 
 
-----------------------------------------------------------------------------------------------
-# Tesztelés
-
-## Hogyan látom épp mit csinál a clamd
-
+TODO: szerintem nem használja a clamd conf-ot, ezt meg kéne vizsgálni. ...
 
 ```
-sudo strace -p $(pidof clamd | cut -d" " -f1) -s 200 -e trace=recvfrom,sendto
-...
-...
---- SIGPIPE {si_signo=SIGPIPE, si_code=SI_USER, si_pid=2038, si_uid=1000} ---
-sendto(5, "<183>Mar 26 00:24:48 clamd[2038]: Client disconnected (FD 11)", 61, MSG_NOSIGNAL, NULL, 0) = 61
-sendto(11, "", 0, 0, NULL, 0)           = -1 EPIPE (Broken pipe)
---- SIGPIPE {si_signo=SIGPIPE, si_code=SI_USER, si_pid=2038, si_uid=1000} ---
-sendto(5, "<183>Mar 26 00:24:48 clamd[2038]: Client disconnected (FD 11)", 61, MSG_NOSIGNAL, NULL, 0) = 61
-
-
+$ sudo dnf install clamtk
 ```
-
-
-Honnan látom, hogy tényleg átvizsgálta e a megnyitott fájlt? 
-
-
-Példa vírus letöltése: 
-
-
-<br>
-
-
-TODO: mi történik ha vírust talál, 
-
-hogy tudom megnézni, hogy mi történt, hogy működik e stb. 
-
-
-
-
-
-
-
-----------------------------------------------------------------------------------------------
-# Troubleshooting
-
-
-
-............................
-
-
-ez mit jelent? 
-
-Mar 24 16:55:04 fedora clamd[1912]: SWF support enabled.
-Mar 24 16:55:04 fedora clamd[1912]: HTML support enabled.
-Mar 24 16:55:04 fedora clamd[1912]: XMLDOCS support enabled.
-Mar 24 16:55:04 fedora clamd[1912]: HWP3 support enabled.
-Mar 24 16:55:04 fedora clamd[1912]: Self checking every 600 seconds.
+![](docs/image-2025-03-10-18-28-43.png)
