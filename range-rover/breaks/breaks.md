@@ -34,4 +34,6 @@ https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52939.53000.2924
   * https://www.ebay.com/itm/325005924042
 * HC1: klipp a wheel hub oldalán: EJP7813
   * https://parts.jaguarlandroverclassic.com/ejp7813-clamp.html?code=29249
-  * 
+* HC2:
+* HC3
+* HC4:
