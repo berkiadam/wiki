@@ -4,7 +4,9 @@
 
 
 - [Alapelvek](#alapelvek)
-- [Mi a ClamAV](#mi-a-clamav)
+- [Bevezető](#bevezető)
+  - [Mi a ClamAV](#mi-a-clamav)
+  - [Alapkomponensek](#alapkomponensek)
 - [Installálás](#installálás)
 - [Automatikus vírus db frissítés](#automatikus-vírus-db-frissítés)
   - [Első manuális frissítés:](#első-manuális-frissítés)
@@ -26,7 +28,7 @@
   - [Időzített rendszeres ellenőrzés futtatása](#időzített-rendszeres-ellenőrzés-futtatása)
   - [SELinux](#selinux)
 - [On-Access scanning](#on-access-scanning)
-  - [Bevezető](#bevezető)
+  - [Bevezető](#bevezető-1)
     - [Mi a fanofiy](#mi-a-fanofiy)
     - [fanofity képesség ellenőrzése](#fanofity-képesség-ellenőrzése)
     - [Hogyan működik a clamonacc](#hogyan-működik-a-clamonacc)
@@ -59,6 +61,10 @@
     - [Vírusos fájl teszt](#vírusos-fájl-teszt)
     - [Vírusos zip teszt](#vírusos-zip-teszt)
 - [GUI használata (ClamTk)](#gui-használata-clamtk)
+- [Diagnosztikai eszközök](#diagnosztikai-eszközök)
+  - [clamconf: telejs config megjelenítése ellenőrzésre](#clamconf-telejs-config-megjelenítése-ellenőrzésre)
+  - [ClamdTop](#clamdtop)
+  - [Socket Tesztelés](#socket-tesztelés-1)
 
 <br>
 
@@ -82,7 +88,8 @@ A célunk, hogy a ClamAV víruskereső termékcsalád segítségével Linux desk
 <br>
 
 ----------------------------------------------------------------------------------
-# Mi a ClamAV 
+# Bevezető
+## Mi a ClamAV 
 
 * https://docs.clamav.net/manual/Usage/Scanning.html
 * https://linuxcapable.com/install-clamav-on-fedora-linux/#:~:text=To%20customize%20ClamAV%20settings%2C%20such,conf%20.
@@ -103,6 +110,31 @@ A ClamAV gyors fájlvizsgálatra lett tervezve.
 Valós idejű védelem (csak Linux). A ClamOnAcc kliens a ClamD szkennelő démonhoz valós idejű szkennelést biztosít a modern Linux verziókon. Ez magában foglalja az opcionális képességet, hogy a fájlhozzáférést blokkolja, amíg a fájl nem lett átvizsgálva (valós idejű megelőzés).
 A ClamAV milliónyi vírust, férget, trójait és egyéb rosszindulatú programot észlel, beleértve a Microsoft Office makró vírusokat, mobil rosszindulatú programokat és egyéb fenyegetéseket.
 A ClamAV bytecode aláírási futtatókörnyezete, amelyet vagy az LLVM, vagy a saját bytecode értelmezőnk hajt végre, lehetővé teszi a ClamAV aláírásírók számára, hogy nagyon összetett észlelési rutinokat hozzanak létre és terjesszenek, valamint távolról javítsák a szkenner funkcionalitását.
+
+
+## Alapkomponensek
+
+<img src="docs/image-2025-03-28-17-40-16.png" width=700>
+
+A ClamAV (desktop) szoftvercsomag 3 fő komponensből áll:
+- **ClamD**: a háttérben futó víruskereső démon, amely a fájlok vírusellenőrzését végzi. A ClamD memóriában tartja a vírusadatbázist, és helyi socketen keresztül várja a szkennelési kéréseket. Ha egy fájlt vizsgálni kell, a ClamD betölti annak tartalmát, majd a vírusminták alapján eldönti, hogy fertőzött-e.
+- **Freshclam**: a vírusadatbázis automatikus frissítéséért felelős komponens. Rendszeres időközönként letölti a legfrissebb vírusmintákat a ClamAV szervereiről, és frissíti azokat a ClamD által használt adatbázisban.
+- **Clamonacc**: az on-access szkennelésért felelős folyamat. A Linux kernel fanotify alrendszerét használja, hogy figyelje a fájlműveleteket (pl. megnyitás, olvasás). Ha egy fájlt elér egy felhasználó vagy alkalmazás, a Clamonacc azonnal továbbítja a fájl nevét a ClamD-nak ellenőrzésre a helyi UNIX socketen keresztül.
+
+Ez a működésmenet biztosítja, hogy:
+- a rendszer valós időben észlelje a fájlműveleteket,
+- minden fájl megnyitása előtt megtörténhessen annak vírusellenőrzése,
+
+A ClamAV így egy moduláris, jól integrálható nyílt forráskódú antivírus-megoldást kínál Unix-alapú rendszerekhez.
+
+
+<br>
+További komponensek: 
+
+- **clamscan**: A clamscan egy parancssoros víruskereső eszköz, amely lehetővé teszi a felhasználónak, hogy manuálisan szkenneljen fájlokat és könyvtárakat. Nem használja a ClamD démon szolgáltatásait, hanem önállóan betölti a vírusadatbázist, ezért lassabb, de függetlenül is használható. A ClamTk gui is ezt használja. 
+- **clamconf**: A clamconf egy diagnosztikai eszköz, amely összegyűjti és megjeleníti a ClamAV komponenseinek beállításait (clamd, freshclam, stb.). Segítségével könnyen ellenőrizhető, hogy melyik konfigurációs fájlok töltődtek be, milyen beállítások aktívak, és hogy vannak-e hibák.
+- **clamtop**: Ez egy interaktív, curses-alapú (grafikus terminálos) eszköz, amely a clamd démonhoz kapcsolódik a local socketen keresztül, és valós időben jeleníti meg a clamd működését. Sajnos a socket alapú kommunikációból származó vírus kereső aktivitást nem tudja mutatni 😢 Így desktop üzemmódban nem vesszük nagy hasznát. 
+
 
 <br>
 
@@ -1083,3 +1115,100 @@ TODO: szerintem nem használja a clamd conf-ot, ezt meg kéne vizsgálni. ...
 $ sudo dnf install clamtk
 ```
 ![](docs/image-2025-03-10-18-28-43.png)
+
+
+# Diagnosztikai eszközök
+
+## clamconf: telejs config megjelenítése ellenőrzésre
+
+
+```
+$ sudo clamconf
+[sudo] password for adam: 
+Checking configuration files in /etc
+
+Config file: clamd.d/scan.conf
+------------------------------
+AlertExceedsMax disabled
+PreludeEnable disabled
+PreludeAnalyzerName disabled
+LogFile = "/var/log/clamd.scan"
+LogFileUnlock disabled
+...
+
+OLE2BlockMacros disabled
+ArchiveBlockEncrypted disabled
+
+Config file: freshclam.conf
+---------------------------
+LogFileMaxSize = "1048576"
+LogTime disabled
+...
+
+
+mail/clamav-milter.conf not found
+
+Software settings
+-----------------
+Version: 1.0.8
+Optional features supported: MEMPOOL AUTOIT_EA06 BZIP2 LIBXML2 PCRE2 ICONV JSON 
+
+Database information
+--------------------
+Database directory: /var/lib/clamav
+main.cvd: version 62, sigs: 6647427, built on Thu Sep 16 14:32:42 2021
+bytecode.cld: version 336, sigs: 83, built on Mon Mar 24 20:29:20 2025
+daily.cld: version 27591, sigs: 2074276, built on Fri Mar 28 10:10:50 2025
+Total number of signatures: 8721786
+
+Platform information
+--------------------
+uname: Linux 6.13.7-200.fc41.x86_64 #1 SMP PREEMPT_DYNAMIC Thu Mar 13 17:46:13 UTC 2025 x86_64
+OS: Linux, ARCH: x86_64, CPU: x86_64
+zlib version: 1.3.1.zlib-ng (1.3.1.zlib-ng), compile flags: a9
+platform id: 0x0a21a8a808000000020e0201
+
+Build information
+-----------------
+GNU C: 14.2.1 20250110 (Red Hat 14.2.1-7) (14.2.1)
+sizeof(void*) = 8
+Engine flevel: 168, dconf: 168
+
+```
+
+
+
+## ClamdTop
+Sajnos a ClamdTop a socket alapú kommunikációt nem tudja mutatni
+![](docs/image-2025-03-28-17-51-32.png)
+
+
+## Socket Tesztelés
+
+Nézzük meg hogy figyel e a socket-en: 
+```
+$ ss -lx | grep clamd
+u_str LISTEN 0      200       /run/clamd.scan/clamd.sock 24800              * 0   
+```
+
+<br>
+
+Nézzük meg folyik a kommunikáció a local socket-en, ehhez a **strace** programot fogjuk használni: 
+```
+$ sudo dnf install strace
+```
+
+<br>
+
+Majd hallgassunk bele. A localsocket-en bináris forgalom közlekedik, így csak azt fogjuk látni, hogy zajlik az élet, hogy milyen fájlokat küld át a clamonacc, azt nem :
+```
+$ sudo strace -p $(pidof clamd) -s 100 -e trace=read,write
+strace: Process 1784 attached
+read(6, "\0", 1025)                     = 1
+read(6, "\0", 1025)                     = 1
+read(6, "\0", 1025)                     = 1
+read(6, "\0", 1025)                     = 1
+read(6, "\0", 1025)                     = 1
+read(6, "\0", 1025)                     = 1
+....
+```
