@@ -31,9 +31,17 @@
   - [Karantén használata](#karantén-használata)
 - [Finomhangolás](#finomhangolás)
     - [Milyen mappákat vizsgáljon](#milyen-mappákat-vizsgáljon)
+    - [Email-ek vizsgálata](#email-ek-vizsgálata)
     - [Config finomhangolása](#config-finomhangolása)
+- [Értesítés virus eseményről](#értesítés-virus-eseményről)
+  - [Karantén létrehozása](#karantén-létrehozása)
+  - [Virus esemény script](#virus-esemény-script)
+  - [ClamD config módosítás](#clamd-config-módosítás)
+  - [Tesztelés](#tesztelés)
+    - [Vírusos fájl: lockolt eset (nincs karantén)](#vírusos-fájl-lockolt-eset-nincs-karantén)
+    - [Vírusos fájl: lockolás nélküli művelet](#vírusos-fájl-lockolás-nélküli-művelet)
 - [GUI használata](#gui-használata)
-- [Tesztelés](#tesztelés)
+- [Tesztelés](#tesztelés-1)
   - [Hogyan látom épp mit csinál a clamd](#hogyan-látom-épp-mit-csinál-a-clamd)
 - [Troubleshooting](#troubleshooting)
 
@@ -420,6 +428,8 @@ sudo usermod -aG virusgroup adam
 - https://docs.clamav.net/manual/Usage/Scanning.html#on-access-scanning
 - https://docs.clamav.net/manual/OnAccess.html
 
+<br>
+
 > **WARNING**: On-Access requires a kernel version >= 3. This is because it leverages a kernel api called fanotify to block processes from attempting to access malicious files. This prevention occurs in kernel-space, and thus offers stronger protection than a purely user-space solution.
 
 clamonacc program segítségével lehet on-access scanning-et futtatni. 
@@ -662,6 +672,14 @@ OnAccessExcludePath /home/adam/repositories
 ...
 ```
 
+
+### Email-ek vizsgálata
+
+Ha használunk email vastag klienst, pl Evolution, akkor figyelni kell rá, hogy az email kezelő email mappáját szintén figyelje az on access clamAV. 
+
+... TODO...
+
+
 ### Config finomhangolása
 
 
@@ -679,6 +697,152 @@ OnAccessExcludePath /home/adam/repositories
 * #VirusEvent /opt/send_virus_alert_sms.sh
 
 
+
+<br>
+
+----------------------------------------------------------------------------------------------
+# Értesítés virus eseményről
+
+Alapértelmezetten, ha az on access scan hatására a clamAV vírust talál, akkor arról csak a system logból értesülhetünk. Viszont a ClamAV biztosít egy script futtatási lehetőséget virus eseménykor. Ebben a script-ben tudunk GNOME alertet küldeni, vagy akár emailt, amire szükségünk van, és ebben a script-ben tudjuk áthelyezni karanténba a fertőzött fájlt, mert alapértelmezetten a clamonacc csak blokkolni fogja a hozzáférést. 
+
+A fertőzött fájl neve és a vírus neve az alábbi két környezeti változóba kerül mindig beállításra, mielőtt a clamd meghívná a vírus esemény scriptet: 
+- $CLAM_VIRUSEVENT_FILENAME
+- $CLAM_VIRUSEVENT_VIRUSNAME
+
+<br>
+
+## Karantén létrehozása
+
+```
+sudo mkdir -p /var/quarantine
+sudo chown adam:adam /var/quarantine
+sudo chmod 700 /var/quarantine
+```
+
+
+## Virus esemény script
+
+Keressük meg a saját UserID-nakt, mert fontos, hogy annak a nevében fusson majd a script
+```
+$ id -u
+1000
+```
+
+<br>
+
+* Fontos, hogy használatban lévő fájlt nem tudunk karanténba helyezni, mert a teljes X-et be tudja fagyasztani, ezért meg kell vizsgálni, hogy nincs e használatban. Pl Ha meg akarom nyitni olvasásra, az használatnak számít, ilyenkor nem tudom mozgatni. 
+* Azt a fájlt amit nem fog senki, pl csak átmásolom egy mappából egy másikba, azt tudom karanténba rakni
+* A megnyitás alatt lévő fáj tartalmát sem tudjuk módosítani, nem tudjuk beleírni, hogy virusos volt
+* Lehetne azt csinálni, hogy kilőjük azt a programot, ami fogja a fájlt, de ez adatvesztéshez vezethet, ez túl veszélyes. 
+
+
+
+/usr/local/bin/clamav-alert.sh
+```bash
+#!/bin/bash
+
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+# --- Beállítások ---
+QUARANTINE_DIR="/var/quarantine"
+LOGFILE="/var/log/clamav-alert.log"
+
+# --- Környezeti változók ---
+FILENAME="${CLAM_VIRUSEVENT_FILENAME}"
+VIRUSNAME="${CLAM_VIRUSEVENT_VIRUSNAME}"
+TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+
+# --- Ellenőrzés ---
+if [ -z "$FILENAME" ] || [ -z "$VIRUSNAME" ]; then
+    echo "$TIMESTAMP [ERROR] Missing required environment variables." >> "$LOGFILE"
+    exit 1
+fi
+
+# --- Ellenőrizzük, hogy a fájlt használja-e valami ---
+if lsof "$FILENAME" > /dev/null 2>&1; then
+    echo "$TIMESTAMP [WARN] File in use, skipping quarantine: $FILENAME" >> "$LOGFILE"
+    notify-send -u normal -a ClamAV "⚠️ Virus detected" "In use: $FILENAME\nVirus: $VIRUSNAME"
+    exit 0
+fi
+
+# --- Mozgatás karanténba ---
+BASENAME=$(basename "$FILENAME")
+TARGET="$QUARANTINE_DIR/$BASENAME.$(date +%s)"
+
+if mv "$FILENAME" "$TARGET"; then
+    echo "$TIMESTAMP [INFO] Moved infected file to quarantine: $TARGET (virus: $VIRUSNAME)" >> "$LOGFILE"
+    notify-send -u critical -a ClamAV "☣️ Virus Found!" "File quarantined:\n$TARGET\nVirus: $VIRUSNAME"
+else
+    echo "$TIMESTAMP [ERROR] Failed to move file: $FILENAME" >> "$LOGFILE"
+    notify-send -u critical -a ClamAV "☣️ Virus Found!" "Failed to quarantine:\n$FILENAME\nVirus: $VIRUSNAME"
+fi
+
+```
+
+<br>
+
+Jogosultságok beállítása: annak a felhasználónak a birtokába kell adni, akinek a nevében fut a clamd, ami az esetükben a saját user-ünk:  
+```
+sudo chown adam:adam /usr/local/bin/clamav-alert.sh
+sudo chmod 750 /usr/local/bin/clamav-alert.sh
+```
+
+
+## ClamD config módosítás
+
+Állítsuk be a **/etc/clamd.d/scan.conf**-ba:
+
+```
+VirusEvent /usr/local/bin/clamav-alert.sh
+```
+
+<br>
+
+Indítsuk újra a clamd-t: 
+```
+$ sudo systemctl restart clamd@scan
+```
+
+<br>
+
+
+>**NOTE:** A karanténba mozgatást már natívan támogatja az 1.2-es ClamAV, azonban a cikk írásakor ez még nem volt elérhető Fedora telepítő csomagként: 
+> ```
+> $ clamd --version
+> ClamAV 1.0.8/27590/Thu Mar 27 10:00:11 2025
+> ```
+> Az új verzióban az alábbi beállítások már elérhetőek: OnInfected, QuarantineDirectory
+
+
+## Tesztelés
+
+Hozzunk létre egy virus fájlt a hivatalos teszt vírus tartalommal, valahol a /home/adam mappa alatt, amit figyel a clamonacc. 
+
+/home/adam/test-virus.txt
+```
+X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
+```
+
+Ezt minden víruskereső ismeri. 
+
+### Vírusos fájl: lockolt eset (nincs karantén)
+
+Nyissuk meg egy grafikus szövegszerkesztővel a vírusos fájlt: 
+```
+$ gedit /home/adam/tmp/test-virus.txt
+```
+
+![](docs/image-2025-03-27-15-33-06.png)
+
+Ekkor nem fogja tudni karanténba tenni, mert fogja a gedit a megnyitás alatt lévő fájlt. 
+
+>**IMPORTANT**: Amikor clamonacc egyszer már felismerte a vírust, nem engedi többé hozzáférni a fájlhoz, onnantól kezdve minden műveletet blokkolni fog vele, tehát ez a fájl már akkor sem fog tudni átkerülni karanténba, ha olyan műveletet végeznénk rajta, ami nem lockolja a fájlt, pl egy cat. 
+
+
+### Vírusos fájl: lockolás nélküli művelet
+
+Ilyen van?? TODO...
 
 
 <br>
