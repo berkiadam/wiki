@@ -1,3 +1,45 @@
+- [Bevezető](#bevezető)
+- [Szerszámok](#szerszámok)
+- [Első felfüggesztés](#első-felfüggesztés)
+  - [Front, lower suspension arms](#front-lower-suspension-arms)
+    - [Replacemnt procedudre](#replacemnt-procedudre)
+      - [Removal](#removal)
+      - [Installation](#installation)
+    - [Csavarok](#csavarok)
+    - [Bushings](#bushings)
+    - [Lengőkar](#lengőkar)
+  - [Rods and hubs](#rods-and-hubs)
+  - [Felső lengőkar](#felső-lengőkar)
+    - [Csavar:](#csavar)
+    - [Bushing:](#bushing)
+    - [Lengökar:](#lengökar)
+  - [Steering Gear Linkage](#steering-gear-linkage)
+    - [Alkatrészek](#alkatrészek)
+    - [Szerszámok](#szerszámok-1)
+- [Hátsó felfüggesztés](#hátsó-felfüggesztés)
+  - [Felső lengőkar](#felső-lengőkar-1)
+    - [Replacement procedure](#replacement-procedure)
+      - [Removal](#removal-1)
+      - [Installation](#installation-1)
+    - [Csavar](#csavar-1)
+    - [Bushings](#bushings-1)
+    - [Lengőkar](#lengőkar-1)
+  - [Alsó lengőkar](#alsó-lengőkar)
+    - [Csavar](#csavar-2)
+    - [Bushings](#bushings-2)
+    - [Lengőkar](#lengőkar-2)
+  - [Rods and hubs](#rods-and-hubs-1)
+    - [Csavarok](#csavarok-1)
+    - [Bushings](#bushings-3)
+- [Beállítás](#beállítás)
+    - [Mit kell állítani](#mit-kell-állítani)
+    - [Táblázatok értelmezése](#táblázatok-értelmezése)
+    - [Camber (függőleges, befelé dőlsé)](#camber-függőleges-befelé-dőlsé)
+    - [Toe in/out](#toe-inout)
+    - [Castor](#castor)
+
+
+
 
 # Bevezető
 
@@ -34,12 +76,28 @@ https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobi
 
 ## Front, lower suspension arms
 
-### Removal
+### Replacemnt procedudre
+
+>**Before you begin**: 
+> * Mindig vegyünk új csavarokat
+> * 24mm-es hosszított dugúkulcs kell 
+> * Biztosan szükség lesz futómű állításra, mert minden lengökar egy picit más méretű. 
+> * Legyen 24mm-es crowfoot spanner-ünk. 
+> * Készüljünk fel rá, hogy a tie-rod mind két részét cserélni kell (ha be van rohadva) tehát ezeket előre vegyük meg. 
+> * A tie-rod cseréhez legyen removal tool-unk, amivel a kormányműböl ki lehet tekerni
+> * Legyen kék loctite a tie-rod visszarakásához 
+
+
+>**WARNING**: A tie-rod lock nut nem metrikus, hanem finom menet, sima nut-al nem helyettesíthető. 
+
+
+
+#### Removal
 
 1. Tegyük az autót access height -ba.
 2. Csak előre tegyünk rámpát, hátra ne. 
 3. Álljunk fel a rámpára, és ha tudjuk engedjük ki a levegőt a légrugókból és a tartályból is az iCarsoft-al. 
-4. Tegyünk a kerekek mögé ékeket, hogy ne tudjon hátra gurulni 
+4. Tegyünk a blue loctitehátsó kerekek mögé ékeket, hogy ne tudjon hátra gurulni 
 5. <span style="color: red; ">Húzzuk be a kéziféket !!! és ellenőrizzük, hogy a hátsó kerekek mögött van e ék!!!</span>
 6. Mindig csak egy kereket vegyünk le egyszerre, mind két oldalon ezt ne együk meg. 
 7. Emeljük föl bőven annyira az autót, hogy legyen annyi lelógása a keréknek, hogy 'ride height'-ba tudjuk tenni. (462 mm). Tehát ennél magasabbra kell emelni azt az oldalt, amelyik kereket le akarjuk venni, mondjuk 480 mm-re. Az emeléssel párhuzamosan a bakot folyamatosan húzzuk felfelé már a helyén tartva. Mindig nagyon figyeljünk rá, hogy az emelő nem csúszik e le az alvázról. 
@@ -48,22 +106,60 @@ https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobi
 10. Vegyük ki a rámpát a kerék alól, majd engedjük vissza a kereket. 
 11. Vegyük le a kereket. 
 12. Szedjük le a ball-join anyáját.
-13. Ha nem akarjuk megtartani a ball-joint-tot, akkor a legjobb, ha levágjuk sarkok csiszolóval a wheel knuckle -ból lefelé kilógó részét, mert akkor klasszisokkal egyszerűbb lesz kiszedni. 
-14. Szedjük ki az air-struts csavarját. Ez lehet hogy nagyon nehezen fog kimenni, ha túl sok levegő maradt a rendszerben. A szétszedésnek talán ez a legnehezebb része 
+13. Ha nem akarjuk megtartani a ball-joint-tot, akkor a legjobb, ha levágjuk sarokcsiszolóval a wheel knuckle -ból lefelé kilógó részét, mert akkor klasszisokkal egyszerűbb lesz kiszedni. 
+14. Szedjük ki az air-strut csavarját. Ez lehet hogy nagyon nehezen fog kimenni, ha túl sok levegő maradt a rendszerben. A szétszedésnek talán ez a legnehezebb része 
 15. Jelöljük meg fehér jelölővel az alvázhoz rögzítő csavar és az anyákat is, és számozzuk őket be egytől négyig. Ezeket majd át kell jelölni az új csavarokra és anyákra.  
 16. Szedjük ki az alvázhoz rögzítő csavarokat 
-17. Forgassuk ki a lengőkart a helyről. Ha az air-struts-ba túl sok levegő van, akkor ki nagyon ki fog lógni elfelé és nehéz róla lemozgatni. 
+17. Forgassuk ki a lengőkart a ball-joint-ból. Ha az air-strut-ba túl sok levegő van, akkor nagyon ki fog lógni elfelé és nehéz róla lemozgatni. 
 
 
 
 
-### Installation
+#### Installation
 
-1. Ha nagyon kilóg az air-struts lefelé, akkor elsőként húzzuk rá a lengőkart
+>**WARNING**: Copper greast csak a csavarok perselyben lévő részére szabad tenni, a menetre nem. Nagy nyomatékra húzott csavarok esetén ez tilos. 
+>**WARNING**: Mindenképpen tegyük copper greast minden csavar szárára !
+>**WARNING**: Minden olyan bushing-ot ami gumi-fém kapcsolat, csak ride-height-ban szabad nyomatékra húzni. 
+
+1. Ha nagyon kilóg az air-strut lefelé, akkor elsőként húzzuk rá a lengőkart
 2. Tegyük be a ball-join csavarját, amit nagyon nehéz bejátszani. 
-   * Ha nagyon nehezen megy be, akkor le kell belőle vágni egy picit felx-el
+   * Ha nagyon nehezen megy be, akkor le kell belőle vágni egy picit felx-el (hasonlítsuk össze a régivel, ha hosszabb, le kell belőle vágni)
    *  van benne egy belső imbusz, ami a meghúzást segíti, de nem baj, ha az nem marad meg
    * úgy is meg lehet majd húzni, hogy megfeszítjük. Lényeg, hogy vágjuk le akkorára, hogy beférjen, mert van olyan márkájú ball-join, ami túl hosszú :( 
+3. Tegyük be a lengökart az alvábhoz tartó fülekbe. 
+4. Kenjük be jó alaposan "copper grease"-el a csavarok perselyben lévő részét. De a menetre SEMMI képpen se kenjünk !! A nagy nyomatékra húzott csavarok esetén nem szabad sosem a menetre tenni !! mert túlfeszítheti !!
+5. Jelöljük át az új csavarokra a pozocítiót. 
+6. Tegyük be az alváz csavarokat a helyére és lazán tekerjük rá az anyákat. Ne felejtsük el, hogy alátétet kell rakni az anya alá!
+7. Tegyük be az air-strut csavarját. Ha kilóg lefelé, akkor: 
+    * Tegyünk rá egy racsnis spanifert, és húzzuk a másik kerék felé. 
+    * Az alvázon rengeteg lyuk van, ahova be lehet akasztani 
+    * Egy emelővel emeljük a helyére. 
+    * A spanifert pont annyira kell meghúzni, hogy pont akkor legyen a lyukhoz igazítva, amikor felér a helyére az emelés hatására, ezt több körben lehet csak kitapasztalni. 
+8. Tegyük rá az air-strut anyáját, de azt se húzzuk meg. 
+9. Emeljük egy emelővel a tengleyt ride-hight-ba. 
+10. Húzzuk meg az air-strut csavarját nyomatékra. 
+11. Állítsuk be nagyjából a pozíciót, 
+12. Egy digitális protractor-al (szögmérővel) állítsuk be a manuálban előírt dőlést a kereken
+    * A kocsi aljára nyomjunk fel egy vízmértéket
+    * a vízmérték aljára tegyük rá a szögmérőt és nullázzuk ki
+    * Tegyünk a féktárcsára egy fém derékszöget, és tegyük rá a szögmérőt
+    * Addig állítgassuk az első csavart amíg nem lesz az előrt tartományon belül (a hátsó csavar az utánfutást állítja)
+13. majd huzzuk nyomatékra az alváz csavarokat. 
+     * A bal lengőkaron a hátsó csavart nem lehet nyomatékra húzni a kipuffogó dobtól. 
+     * Elképzelhető hogy egy 24mm-es crowfoot spanner-el meg lehet húzni. 
+14.   Lazítsuk ki a tie-rod lock-nut-ját, hogy felkészüjünk a kerék beállításra.  
+    * A rudat nem kell hozzá megfogni villáskulcsal, a ball-join ütközésig el fog közben tekeredni, aztán megfeszül. 
+    * Ehhez a legjobb ha egy 24mm-es crowfoot spanner-t használunk. (A megbeszítéshez feltételn kell majd)
+    * Ha nem jön, akkor fákjázzuk meg és úgy próbáljuk. Ha úgy se jön, akkor sajnos le kell vágni és új tie-rod kell. 
+    * Ha ki kell szedni a tie-rod outer részét, vagyis a ball-joint akkor abból is újat kell venni, mert nem fog visszamenni a helyére, ha már túl rozsás. 
+15.  Tegyük fel a kereket, majd tegyük vissza alá a rámpát
+16.  Vegyünk ki mindent az autó alól. Engedjük le az autót.   
+17.  Végezzük el a futómű állítási procedurát. 
+18.  Huzzuk meg a kerék anyákat 
+
+
+>**WARNING**: Ne felejtsük el meghúzni nyomatékra a tie-rod lock nut-ot és a kerék csavarokat !!!!
+
 
 
 
@@ -241,6 +337,33 @@ A **locking nut** csavarásához egy 24mm-es crowfoot wrench kell, aminek magyar
 
 
 ## Felső lengőkar
+
+### Replacement procedure
+
+>**Before you begin**: 
+> * Mindig vegyünk új csavarokat
+> * Legyen 21mm-es crowfoot spanner-ünk az alváz csavarokhoz
+> * Legyne 11mm-es crwofoot spanner-ünk a fékcső levételéhez
+> * 24mm-es hosszított dugúkulcs kell 
+> * Legyen 2db M10x1x10mm -es (vagyis 1 mm-es, finom emelkedésű csavar) amivel a fékcsöveket ledugozzuk a szerelés idejére. 
+> * Kell szorító fogó, a fékcső átmeneti összeszorítására, amig ledugozzuk
+> * Kell két szett orrfürszélap fémhez a csavarok esetleges kivágásához
+> * Biztosan szükség lesz futómű állításra, mert minden lengökar egy picit más méretű. 
+> * Legyen pót fékcső: a kemény szakasz [](../breaks/breaks.md). Ez nagyon gyakran elrohad és általában cserélni kell. 
+> * Legyen új tie-rod és stabilizer link
+> * Legyen kék loctite a tie-rod visszarakásához 
+
+
+#### Removal 
+1. Szorítsuk el a fékcső felső részét egy szorító fogóval, hogy ne follyon ki sok fékfojadék
+2. Csavarjuk ki a fékcsö két végét, a meglazítást a crowfoot spanner-el csináljuk. 
+3. Dugozzuk le mind a két szabadon maradt részt az M10x1x10-es finom menetemelkedésű csavarral 
+4. Szigetelő szalaggal ragassszuk le a kivett fékcső darab mind két végét, nehogy kosz menjen bele. 
+5. Vegyük le a az abs és sebesség szenzorokat. 
+6. Jelöljük meg a pozícióját a wheel knockle bushing bolt -nak és alátétenk. Ezek is állító csavarok, ezek állítják a bedölést.  
+
+
+#### Installation 
 
 
 ### Csavar
