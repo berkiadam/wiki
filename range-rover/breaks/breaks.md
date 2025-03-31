@@ -42,6 +42,7 @@ https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52939.53000.2924
 
 # Fékcsövek felújítása
 
+* youtube:  https://www.youtube.com/watch?v=-tCIU8ANNzE
 
 ### Flaring tool
 * 4,75 mm, 3/16 DIN
@@ -53,6 +54,17 @@ https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52939.53000.2924
 ![](docs/img22025-03-31-21-50-08img1.png)
 
 
+### Fittings
+
+M10x1 -> 1mm emelkedésű (finom) menet, nem végig menetes!
+
+* https://www.autodoc.hu/ate/193196
+
+![](docs/img22025-03-31-22-10-56img1.png)
+
+![](docs/img22025-03-31-22-07-19img1.png)
+
+
 
 
 ### Break line
@@ -60,3 +72,21 @@ https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52939.53000.2924
   
 * https://www.amazon.de/gp/product/B0779FBJVB/ref=as_li_tl
 * https://www.autodoc.hu/quick-brake/14643323
+
+
+### Csőhajlító
+* 4-10 mm
+
+* https://www.amazon.de/gp/product/B001IL96LY/ref=as_li_t
+* https://www.autodoc.hu/yato/18090213
+
+![](docs/img22025-03-31-21-54-48img1.png)
+
+
+### Cső vágó
+
+* https://www.amazon.de/gp/product/B014R5RVXM/ref=as_li_tl
+* https://www.autodoc.hu/yato/15206554
+* https://www.autodoc.hu/hazet/9262115
+
+![](docs/img22025-03-31-21-56-00img1.png)
