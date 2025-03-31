@@ -37,3 +37,26 @@ https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52939.53000.2924
 * HC2:
 * HC3
 * HC4:
+
+
+
+# Fékcsövek felújítása
+
+
+### Flaring tool
+* 4,75 mm, 3/16 DIN
+  
+* https://quatros.hu/Quatros-fekcso-peremezo-keszlet-475-mm-3-16-sae-QS
+* https://www.amazon.de/gp/product/B01B5GJ6KW/ref=as_li_tl
+* https://www.ebay.com/itm/167353257864
+* 
+![](docs/img22025-03-31-21-50-08img1.png)
+
+
+
+
+### Break line
+* 4.75 mm Steel
+  
+* https://www.amazon.de/gp/product/B0779FBJVB/ref=as_li_tl
+* https://www.autodoc.hu/quick-brake/14643323

@@ -43,8 +43,7 @@
 
 # Bevezető
 
-> **WARNING:** A poliuretán bushing nem jó a disco 3, 4 és range rover l320-hoz, mert nincs külső acél burkuk, túl nagy erőt raknak így az arm gyűrűre, és ráadásul túl puhák: 
-> ![docs/ClipCapIt-250222-114811.PNG](docs/ClipCapIt-250222-114811.PNG) 
+> **WARNING:** A poliuretán bushing nem jó a disco 3, 4 és range rover l320-hoz, mert nincs külső acél burkuk, túl nagy erőt raknak így az arm gyűrűre, és ráadásul túl puhák
 
 
 
@@ -341,18 +340,22 @@ A **locking nut** csavarásához egy 24mm-es crowfoot wrench kell, aminek magyar
 ### Replacement procedure
 
 >**Before you begin**: 
-> * Mindig vegyünk új csavarokat
+> * Mindig vegyünk új csavar készletet
+> * A wheel nockle perselyeket eséllyel szét kell vágni. A kiszedésükhöz speciális szerszám kell, ezek legyenek meg, meg az új perselyek is. 
 > * Legyen 21mm-es crowfoot spanner-ünk az alváz csavarokhoz
 > * Legyne 11mm-es crwofoot spanner-ünk a fékcső levételéhez
 > * 24mm-es hosszított dugúkulcs kell 
 > * Legyen 2db M10x1x10mm -es (vagyis 1 mm-es, finom emelkedésű csavar) amivel a fékcsöveket ledugozzuk a szerelés idejére. 
 > * Kell szorító fogó, a fékcső átmeneti összeszorítására, amig ledugozzuk
-> * Kell két szett orrfürszélap fémhez a csavarok esetleges kivágásához
+> * Kell 2-4 szett orrfürszélap fémhez a csavarok esetleges kivágásához
 > * Biztosan szükség lesz futómű állításra, mert minden lengökar egy picit más méretű. 
 > * Legyen pót fékcső: a kemény szakasz [](../breaks/breaks.md). Ez nagyon gyakran elrohad és általában cserélni kell. 
 > * Legyen új tie-rod és stabilizer link
 > * Legyen kék loctite a tie-rod visszarakásához 
+> * A művelet végén légteleníteni kell majd a fékrendszert. 
 
+
+>**NOTE**: Ha a bushing belseje együtt forog a csavarral, ahogy a lengőkart, vagy a csavart forgatjuk, akkor az bele van rohadva, azt a bushingot ki kell vágni, tuti nem fog kijönni. Az ilyen bushing már nem tompít, mert le van szakadva a külső részről. 
 
 #### Removal 
 1. Szorítsuk el a fékcső felső részét egy szorító fogóval, hogy ne follyon ki sok fékfojadék
@@ -361,6 +364,8 @@ A **locking nut** csavarásához egy 24mm-es crowfoot wrench kell, aminek magyar
 4. Szigetelő szalaggal ragassszuk le a kivett fékcső darab mind két végét, nehogy kosz menjen bele. 
 5. Vegyük le a az abs és sebesség szenzorokat. 
 6. Jelöljük meg a pozícióját a wheel knockle bushing bolt -nak és alátétenk. Ezek is állító csavarok, ezek állítják a bedölést.  
+7. Vegyük le a kopás jelző, ABS és sebesség jelző vezetékeket (az egyik oldalon 3 van a másik oldalon 2)
+8. Ha a wheel nocke bushing be van rohadva, azt is orrfürészel tudjuk kivágni. Nagyon vigyázzunk, hogy nehogy belevágjunk az alvázba vagy a lengőkarba. 
 
 
 #### Installation 
