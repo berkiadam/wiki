@@ -125,17 +125,40 @@ Majd válasszuk ki a felső menüben a megfelelő sraffozást:
 
 Állítsuk be a sraffozás nagyítását, hogy 
 
-![](docs/2025-03-20-01-01-11.png)
 
 
-![](docs/2025-03-18-09-39-18.png)
 
-![](docs/2025-03-18-09-39-57.png)
+<img src="docs/2025-03-20-01-01-11.png" width=270>
+
+
+<img src="docs/2025-03-18-09-39-18.png" width=70>
+
+<img src="docs/2025-03-18-09-39-57.png" width=270>
 
 
 ## Metszet jelölése
 
+A metszet a két végén egy-egy nyillal kell jelölni, amit szaggatot vonalnak kell összekötnie. 
+
+![](docs/2025-03-31-23-49-20.png)
+
+Állítólag ezt manuálisan kell elkészíteni. Ehhez huzzunk viztintas vonalat. A vonal típusát elsősorban a layer határozza meg. Hozzunk létre egy új layert (a példában center line):
+
+<img src="docs/2025-03-31-23-52-43.png" width=400>
+
+Kattintsunk a **Linetype** cellára. Ekkor mengnyílik a **Select leny type** ablak: 
+
+<img src="docs/2025-03-31-23-56-45.png" width=350>
+
+Itt **Load...** gombbal tudunk új stílusokat betölteni, majd kiválasztani. 
+
+A nyilakat és fölé a betűjelölést manuálisan kell elkészítsük. 
+
+
 ## Vonal vastagságok beállítása
+
+A vonalvastagság csak a (pdf-be) nyomtatott dokumentumon fog látszani, mint a többi CAD programban. 
+
 
 
 # Dimensions
