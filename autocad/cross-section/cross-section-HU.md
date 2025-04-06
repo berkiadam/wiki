@@ -3,6 +3,7 @@
 
 
 - [Mit szeretnénk elérni](#mit-szeretnénk-elérni)
+- [Projekt beállítások](#projekt-beállítások)
 - [Flatshot létrehozása](#flatshot-létrehozása)
 - [Metszet létrehozása](#metszet-létrehozása)
 - [Dekorálás](#dekorálás)
@@ -14,9 +15,17 @@
   - [Dimension vonalak elhelyezése](#dimension-vonalak-elhelyezése)
     - [Új stílus létrehozása](#új-stílus-létrehozása)
     - [Betű és nyil méret](#betű-és-nyil-méret)
-    - [Vonalak és betűk súlya (vastagsága):](#vonalak-és-betűk-súlya-vastagsága)
+    - [Vonalak súlya (vastagsága):](#vonalak-súlya-vastagsága)
+    - [Betűk súlya és stílusa](#betűk-súlya-és-stílusa)
   - [Feliratok iránya](#feliratok-iránya)
 - [Pdf nyomtatás](#pdf-nyomtatás)
+  - [2D rajz export](#2d-rajz-export)
+    - [Papir méret beállítása](#papir-méret-beállítása)
+    - [Lépték beállítása](#lépték-beállítása)
+    - [Lépték címke elhelyezése](#lépték-címke-elhelyezése)
+    - [Szaggatot vonalak léptéke](#szaggatot-vonalak-léptéke)
+    - [Export](#export)
+  - [3D rajz export](#3d-rajz-export)
 
 
 
@@ -24,6 +33,12 @@
 # Mit szeretnénk elérni
 Három 3D-s modelleknek szeretnénk elkészíteni a 2D-s nézeteket tartalmazó dwg fájlját ahova a méreteket fel tudjuk jelölni. Ehhez szükségünk van a különböző oldal és felül nézetek 2D-s drótvázas megjelenitcsére és metszetekre. 
 
+# Projekt beállítások
+
+
+<img src="docs/2025-04-06-22-53-47.png" width=350>
+
+<img src="docs/2025-04-06-22-54-40.png" width=300>
 
 
 # Flatshot létrehozása
@@ -40,8 +55,12 @@ Az elmentett 2D rajzot nyissuk meg egy új fülön:
 
 <img src="docs/2025-03-16-00-03-47.png" width=300>
 
-Forgassuk 
+Forgassuk el vizszintesre az ábrát. Jelöljük ki a teljes rajzot, majd: **ROTATE**
 
+![](docs/2025-04-06-21-18-11.png)
+
+
+---------------------------------------------
 
 # Metszet létrehozása
 
@@ -63,6 +82,7 @@ Kattintsunk rá a metszeti síkja, hogy kijelöléjük:
 ![](docs/2025-03-15-21-47-01.png)
 
 <br>
+
 A felső menüben válasszuk a Section Plane tabot, majd kattintsunk a **Generate Section Block** menüpontra. 
 
 <img src="docs/2025-03-15-21-50-03.png" width=400>
@@ -100,6 +120,10 @@ Töröljük ki a metszeti síkot.
 Másoljuk át a metszeti lenyomatot a korábban létrehozott 2D fájlba: 
 
 ![](docs/2025-03-16-00-07-22.png)
+
+Majd a 3D fájlból töröljük ki a metszet lenyomatát is. Majd segédvonalak segítségével rendezzük pontosan a felül nézet alá a metszetet. 
+
+--------------------------------------------------
 
 # Dekorálás
 
@@ -185,19 +209,99 @@ Hozzunk létre egy új stílust a **New..** gombbal.
 
 <img src="docs/2025-03-16-00-25-52.png" width=300>
 
-Zárjuk be a **Dimension Style Manager**-t. 
 
-
-### Vonalak és betűk súlya (vastagsága): 
-
-TODO: 
+### Vonalak súlya (vastagsága): 
 
 ![](docs/2025-03-18-11-00-54.png)
 
 ![](docs/2025-03-18-11-00-33.png)
+
+### Betűk súlya és stílusa
+
+A betűk stílusa (vastagság, forma) a **Dimension Style Manager** Text fülén a **Text style** legördülő listából választhajtuk ki. 
+
+![](docs/2025-04-06-23-40-59.png)
+
+Ha mellette a ...-ra kattintunk, akkor megnyílik a **Text Style** editor. 
+
+<img src="docs/2025-04-06-23-42-42.png" width=600>
+
+A betű súlya a font fajtától és a font stílustól fog függeni. 
+
+* Artifact Element Hair: nagyon végkony lesz
+* Arial Narrow: Optimális betű méret
 
 
 ## Feliratok iránya
 
 
 # Pdf nyomtatás
+
+## 2D rajz export
+
+>**NOTE:** A layout nézetben a vonalak mindig folytonos, egyenvastagságúnak látszanak attól függetlenül, hogy mik a tulajdonságaik. A szaggot vonal és a vastagság csak PDF export után fog látszani. 
+
+A 2D modelt tartalmazó rajzon válasszuk a **Layout1**-et. 
+
+![](docs/2025-04-06-22-39-45.png)
+
+### Papir méret beállítása
+
+Írjuk be: **PAGESETUP**
+
+Ezzel megnyílik a **Page Setup Manager**:
+
+<img src="docs/2025-04-06-22-41-37.png" width=400>
+
+Válasszuk ki annak a layout-nak a nevét, amit módosítani akarunk, nálunk ez most a **Layout1**. 
+
+Kattintsunk a **Modify..**-ra. 
+
+Állítsuk a **Paper size** értékét ISO A3 fekvőre: 
+
+<img src="docs/2025-04-06-22-45-15.png" width=400>
+
+### Lépték beállítása 
+
+Menjünk át a Layout-on **MODEL** térbe. Majd bal alul válasszuk ki a megfelelő léptéke: 
+
+<img src="docs/2025-04-06-23-15-55.png" width=160>
+
+Ha a lépték nem metrikus, akkor írjuk be a Layout nézetben: **SCALELISTEDIT**
+
+Majd itt kattintsunk a **Reset**-re -> Metric scales
+
+![](docs/2025-04-06-23-10-34.png)
+
+Ha nincs számunkra megfelelő lépték, akkor itt az **Add**-el adhatunk hozzá, vagy később ha a listában kiválasztjuk a **Custom...**-ot. 
+
+### Lépték címke elhelyezése
+
+Ahhoz hogy megjelenítsük a léptéket, létre fogunk hozni egy új mezőt, legyünk papír nézetben, majd írjuk be: **FIELD**
+
+1. A megnyíló ablakban válasszuk az **object**-et a baloldali listából
+2. A kis zöld nyilat nyomjuk meg és válasszuk ki az egész Layout dobozt. 
+3. Válasszuk ki a **Custom scale** lehetőséget. 
+4. Válasszuk a **1:#**-ot a jobboldali listából. 
+
+<img src="docs/2025-04-06-23-28-14.png" width=500>
+
+Kattintsunk az **OK**-ra és helyezzük el a címkét a layout-on: 
+
+![](docs/2025-04-06-23-32-03.png)
+
+
+### Szaggatot vonalak léptéke
+Ha a layout-on és az exportált pdf-ben folyamatos vonalként jelenik meg a szaggatottvonal, akkor az azért van, mert a layout-on kiválasztott léptékben folyamatosnak látszik. Jelöljük ki az összes szaggatot vonalat és állítsuk át a **Linetype scale** értéket olyan kicsire, hogy megjelenjen a szaggatot vonal a layout-on: 
+
+![](docs/2025-04-06-23-57-51.png)
+
+
+### Export
+
+Menjünk az **Output** fülre, és kattintsunk az **Export** gombra. 
+
+<img src="docs/2025-04-06-22-33-09.png" width="160">
+
+
+## 3D rajz export 
