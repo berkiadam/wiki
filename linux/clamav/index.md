@@ -3,7 +3,9 @@
 ![](docs/image-2025-03-26-10-36-52.png)
 
 
-- [Alapelvek](#alapelvek)
+- [Enterprise level Endpoint security with ClamAV](#enterprise-level-endpoint-security-with-clamav)
+    - [Funkciók:](#funkciók)
+    - [Alapelvek:](#alapelvek)
 - [Bevezető](#bevezető)
   - [Mi a ClamAV](#mi-a-clamav)
   - [Alapkomponensek](#alapkomponensek)
@@ -26,7 +28,6 @@
   - [Automatikus indítás](#automatikus-indítás)
   - [Indítás és teszt](#indítás-és-teszt)
   - [Időzített rendszeres ellenőrzés futtatása](#időzített-rendszeres-ellenőrzés-futtatása)
-  - [SELinux](#selinux)
 - [On-Access scanning](#on-access-scanning)
   - [Bevezető](#bevezető-1)
     - [Mi a fanofiy](#mi-a-fanofiy)
@@ -60,6 +61,29 @@
   - [Tesztelés](#tesztelés-1)
     - [Vírusos fájl teszt](#vírusos-fájl-teszt)
     - [Vírusos zip teszt](#vírusos-zip-teszt)
+- [SELinux](#selinux)
+  - [ClamAV szükséges módosítások](#clamav-szükséges-módosítások)
+  - [Működés ellenőrzése](#működés-ellenőrzése)
+  - [Értesítések küldéséhez szükséges módosítások](#értesítések-küldéséhez-szükséges-módosítások)
+  - [Troubleshooting](#troubleshooting)
+    - [Hogy nézzük meg hogy milyen SELinux szabály hiányzik](#hogy-nézzük-meg-hogy-milyen-selinux-szabály-hiányzik)
+    - [SELinux visszakapcsolása](#selinux-visszakapcsolása)
+- [Webebes végpont szűrés](#webebes-végpont-szűrés)
+  - [Alap koncepció](#alap-koncepció)
+  - [Komponensek telepítése](#komponensek-telepítése)
+    - [Squid](#squid)
+    - [C-icap](#c-icap)
+  - [c-icap konfiguráció](#c-icap-konfiguráció)
+    - [Config fájl](#config-fájl)
+    - [Kézi futtatás debug módban](#kézi-futtatás-debug-módban)
+    - [Futtatás daemon-ként](#futtatás-daemon-ként)
+      - [Local UNIX socket](#local-unix-socket)
+      - [TCP socket esetén](#tcp-socket-esetén)
+      - [Indítás és ellenőrzés](#indítás-és-ellenőrzés)
+    - [c-icap  tesztelés](#c-icap--tesztelés)
+      - [NEM vírusos fájl beküldése](#nem-vírusos-fájl-beküldése)
+      - [Vírusos fájl beküldése](#vírusos-fájl-beküldése)
+- [Integritásfigyelés - AIDE, Tripwire, Auditd](#integritásfigyelés---aide-tripwire-auditd)
 - [GUI használata (ClamTk)](#gui-használata-clamtk)
 - [Diagnosztikai eszközök](#diagnosztikai-eszközök)
   - [clamconf: telejs config megjelenítése ellenőrzésre](#clamconf-telejs-config-megjelenítése-ellenőrzésre)
@@ -71,9 +95,20 @@
 
 
 ----------------------------------------------------------------------------------
-# Alapelvek 
+# Enterprise level Endpoint security with ClamAV  
 
-A célunk, hogy a ClamAV víruskereső termékcsalád segítségével Linux desktopokon, single user környezetben biztosítsunk valós idejű virus védelmet: 
+A célunk, hogy a ClamAV víruskereső termékcsalád segítségével Linux desktopokon, single user környezetben biztosítsunk üzleti környezetben is megfelelő végpont védelmet.
+
+### Funkciók: 
+* On-access fájl vírus szűrés
+* Automatikus vírus adatbázis frissítés
+* Időzített fájlrendszer vizsgálat
+* Böngésző forgalom figyelése: víruskeresés, adathalász és spam tartalom blokkolása, veszélyes domain-ek blokkolása
+* Integritásfigyelés, intrusion detection
+* Tűzfal és SELinux megfelelő konfigurálása
+
+
+### Alapelvek: 
 * minden fájlművelet esetén lefut a víruskeresés
 * a HOME mappán figyelése, kivéve: config mappák és git repokat tartalmazó mappák
 * minden fertőzött fájlt karanténba kell helyezni és értesíteni kell erről a user-t. 
@@ -81,6 +116,7 @@ A célunk, hogy a ClamAV víruskereső termékcsalád segítségével Linux desk
 * be kell legyen állítva az automatikus virus db frissítés
 * vizsgálni kell a tömörített fájlokat is. 
 * tesztelni kell a működést az **eicar** teszt vírussal mind normál, mind archivált fájlokra. 
+* SELinux be van kapcsolva és nem blokkolja a vírusirtót
   
 
 
@@ -485,21 +521,6 @@ $ journalctl -xeu clamd@scan
 
 TODO...
 
-
-
-## SELinux
-
-
-Ha a SELinux be van kapcsolva, akkor fontos, hogy beállítsuk a virus kereső működést. 
-
-
-You must tell SELinux about this by enabling the 'antivirus_can_scan_system' boolean:
-```
-setsebool -P antivirus_can_scan_system 1
-sudo usermod -aG virusgroup adam
-```
-
-<br>
 <br>
 
 ----------------------------------------------------------------------------------------------
@@ -1101,8 +1122,400 @@ Majd indítsuk el újra a **clamonacc**-t. Másoljuk át egy másik mappába a v
 ![](docs/image-2025-03-28-15-55-02.png)
 
 
+<br>
+
+
+----------------------------------------------------------------------------------
+# SELinux
+
+
+Ha a SELinux be van kapcsolva, akkor fontos, hogy beállítsuk a virus kereső működést. 
+
+> **WARNING**: minden SELinux policy állítás, modul betöltés után az érintett service-eket újra kell indítani, mert különben még a régi SELinux rendszabásban fognak futni, hiába töltünk be új szabályokat. 
+
+## ClamAV szükséges módosítások
+
+
+
+Ez lehetővé teszi a ClamAV-nak, hogy hozzáférjen a rendszerfájlokhoz SELinux alatt: 
+```
+setsebool -P antivirus_can_scan_system 1
+sudo usermod -aG virusgroup adam
+```
 
 <br>
+
+Socket beállítások: 
+```
+sudo semanage fcontext -a -t antivirus_log_t "/var/log/clamd\.scan"
+sudo restorecon -v /var/log/clamd.scan
+```
+
+
+## Működés ellenőrzése
+
+
+Nézzük meg milyen selinux címke van a socket fájlon. Az alábbi végeredmény az elvárt, ahol a **antivirus_log_t** címke szerepel a socket fájlon. 
+```
+# ls -Z /var/log/clamd.scan
+unconfined_u:object_r:antivirus_log_t:s0 /var/log/clamd.scan
+```
+
+
+## Értesítések küldéséhez szükséges módosítások 
+
+Ahhoz hogy majd a saját notifikációs script-ünk tudjon írni vírusokkal kapcsolatos üzeneteket a d-bus-ra az alábbi SELinux modul létrehozása szükséges:
+
+```
+mkdir .../mySelinuxModules
+sudo dnf install policycoreutils-python-utils
+sudo ausearch -c 'notify-send' --raw | audit2allow -M my-notifysend
+sudo semodule -X 300 -i my-notifysend.pp
+```
+
+(részletek itt: [Értesítés virus eseményről](#értesítés-virus-eseményről))
+
+## Troubleshooting
+
+### Hogy nézzük meg hogy milyen SELinux szabály hiányzik
+Hogyan nézzük meg milyen selinux beállítás hiányzik, ha nem fér hozzá a clamav a socket-hez: 
+```
+[root@fedora ~]# sudo journalctl -t setroubleshoot | grep clamd
+Mar 24 14:51:29 fedora setroubleshoot[20178]: SELinux is preventing clamd from open access on the file /var/log/clamd.scan. For complete SELinux messages run: sealert -l 39f8898b-cf1f-4b39-946d-a82403d81bcd
+Mar 24 14:51:29 fedora setroubleshoot[20178]: SELinux is preventing clamd from open access on the file /var/log/clamd.scan.
+                                              /var/log/clamd.scan default label should be antivirus_log_t.
+                                              # /sbin/restorecon -v /var/log/clamd.scan
+                                              If you believe that clamd should be allowed open access on the clamd.scan file by default.
+                                              # ausearch -c 'clamd' --raw | audit2allow -M my-clamd
+                                              # semodule -X 300 -i my-clamd.pp
+```
+
+Ez a módszer custom SELinux policy modult hoz létre, amely engedélyez egy olyan műveletet, amit az alapértelmezett szabályok nem.
+
+Mikor van rá szükség?
+* Csak akkor, ha a restorecon után továbbra is tiltja a SELinux a hozzáférést.
+* Tipikusan akkor, ha a clamd olyan fájlokat, könyvtárakat vagy műveleteket akar elérni, amelyek nem szerepelnek a hivatalos SELinux policy-ben (pl. egyedi logfájl hely, szokatlan könyvtárszerkezet).
+
+```
+ausearch -c 'clamd' --raw | audit2allow -M my-clamd
+semodule -X 300 -i my-clamd.pp
+```
+
+### SELinux visszakapcsolása
+
+>**WARNING**: Ha simán visszakapcsoljuk a SELinuxot hosszabb idő után, nem fogunk tudni boot-olni, mindig kell relabel-t futtatni. 
+
+Ezzel az újraindítás után automatikusan le fogja futtatni a SELinux az újracímkézést: 
+```
+sudo touch /.autorelabel
+sudo reboot
+```
+
+De ha ezt elmulasztottuk, akkor a grub képernyőn nyomjuk meg az 'e' billentyűt, majd a linux ... sor végére írjuk oda: 
+```
+linux .... setenforcing=0
+```
+Majd nyomjuk meg az F10 -et, ezzel a módosított kernel beállításokkal fog bootolni, és automatikusan el fogja végezni a relabeling-et. 
+
+
+
+
+<br>
+
+
+
+----------------------------------------------------------------------------------------------
+#  Webebes végpont szűrés
+
+![](docs/image-2025-04-07-18-02-06.png)
+
+## Alap koncepció
+
+* https://c-icap.sourceforge.net/
+* https://github.com/c-icap/c-icap-server
+* https://www.squid-cache.org/
+
+
+Az **ICAP (Internet Content Adaptation Protocol)** egy hálózati protokoll, amely lehetővé teszi proxy szerverek számára (pl. Squid), hogy tartalmat (pl. HTTP kérések vagy válaszok) továbbítsanak egy külső tartalomellenőrző szolgáltatásnak – például vírusellenőrzésre, reklámszűrésre vagy DLP (Data Loss Prevention) célokra.
+
+Mire jó az ICAP?
+* Vírusellenőrzés: a proxy a letöltendő fájlokat elküldi egy ICAP szervernek (pl. C-ICAP), amely integrálva van a ClamAV-val.
+* Tartalomszűrés: reklámok, tiltott kulcsszavak, csatolmányok szűrése.
+* Adatvesztés elleni védelem (DLP): pl. nem engedi érzékeny adatok kiszivárgását HTTP-n keresztül.
+
+Az ICAP használatához szükség van egy ICAP szerverre, mint pl. a **C-ICAP** ami képes fogadni a proxy-ktol érkező kéréseket és továbbítani tudják a ClamD és más tartalom szűrök felé. 
+
+
+
+## Komponensek telepítése
+
+### Squid
+Squid proxy telepítése
+```
+sudo dnf install squid
+sudo systemctl enable --now squid
+```
+Alapértelmezetten a Squid a 3128-as porton figyel.
+
+
+### C-icap
+
+c-icap (ICAP szerver) telepítése
+```
+sudo dnf install c-icap c-icap-modules
+sudo systemctl enable --now c-icap
+```
+
+
+
+
+## c-icap konfiguráció 
+
+### Config fájl
+
+
+Nézzük meg, hogy a clamd modult tartalmazza e a c-icap telepítés: 
+```
+# ls /usr/lib64/c_icap/
+clamav_mod.so  dnsbl_tables.so  lmdb_tables.so   srv_content_filtering.so  srv_ex206.so      sys_logger.so
+clamd_mod.so   ldap_module.so   shared_cache.so  srv_echo.so               srv_url_check.so  virus_scan.so
+```
+
+A lényeges modul számunkra a **virus_scan.so**. 
+
+
+Írjuk a fájl elejére: **/etc/c-icap/c-icap.conf**
+```
+
+
+....
+Port 1344
+ModulesDir /usr/lib64/c_icap
+ServicesDir /usr/lib64/c_icap
+Logger file_logger
+...
+# End module: memcached
+Include /etc/c-icap/virus_scan.conf
+```
+
+Magyarázat: 
+* 
+
+<br>
+
+
+**/etc/c-icap/virus_scan.conf**
+```
+Service antivirus_module virus_scan.so
+ServiceAlias srv_clamav virus_scan
+...
+virus_scan.DefaultEngine clamd
+...
+Include clamd_mod.conf
+```
+
+<br>
+
+
+**/etc/c-icap/clamd_mod.conf**
+```
+# TAG: clamd_mod.ClamdSocket
+# Format: clamd_mod.ClamdSocket path
+# Description:
+#	The path of the clamd socket to use
+# Default:
+#	clamd_mod.ClamdSocket /var/run/clamav/clamd.ctl
+clamd_mod.ClamdSocket /run/clamd.scan/clamd.sock
+
+```
+
+
+### Kézi futtatás debug módban
+
+Futtatás debug módban, hogy megnézzük jó e: 
+```
+# sudo /usr/sbin/c-icap -N -D -f /etc/c-icap/c-icap.conf
+Warning, alias is the same as service_name, not adding
+WARNING: Can not check the used c-icap release to build service virus_scan.so
+
+WARNING: Can not check the used c-icap release to build service clamd_mod.so
+recomputing istag ...
+recomputing istag ...
+recomputing istag ...
+```
+
+>**WARNING**:  Tesztelni nem fogjuk tudni manuálisan futtatva, ha a SELinux be van kapcsolva, mert ilyenkor a c-icap kontextusa **unconfined_t**, és a ClamD-nek nem fogja megengedni, hogy a socket-röl olvasson olyan üzenetet, amit egy unconfined_t kontextussal rendelkező írt be. 
+
+>**NOTE**: Ha rout-ként futtatjuk a c-icap szervert, akkor mindig lesz joga írni a clamd socket-et, viszont a daemon futtatás esetén módosítani kell a socket hozzáférést, hogy bele tudjon írni. 
+
+
+### Futtatás daemon-ként
+
+
+#### Local UNIX socket
+Sajnos a c-icap csak akkor tudja írni a UNIX socket-et ha root-ként fut, jobb megoldást nem találtam. Ez még egy érv 
+```
+# ps -o pid,user,group,comm -C c-icap
+    PID USER     GROUP    COMMAND
+  24226 c-icap   c-icap   c-icap
+```
+
+```
+sudo EDITOR=mcedit systemctl edit c-icap
+```
+
+```
+### Anything between ...
+[Service]
+User=rout
+ExecStart=
+ExecStart=/usr/sbin/c-icap -f /etc/c-icap/c-icap.conf
+### Edit below 
+```
+
+<br>
+
+Ha root-ként futtatjuk a c-icap -ot,a kkor kell egy csomó új szabály: 
+```
+cd /home/..saját SELINUX modulok mappa 
+# sudo ausearch -c 'clamd' --raw | audit2allow -M my-clamd-c-icap-root
+# sudo semodule -X 300 -i my-clamd-c-icap-root.pp
+```
+
+
+#### TCP socket esetén
+TCP socket estén nem kell a group-ot módosítani, a TCP socket-be bárki írhat, amit a tűzfal és a SELinux enged.
+
+```
+### Anything between ...
+[Service]
+ExecStart=
+ExecStart=/usr/sbin/c-icap -f /etc/c-icap/c-icap.conf
+### Edit below 
+```
+
+#### Indítás és ellenőrzés
+
+Indítsuk újra a c-icap-ot: 
+```
+sudo systemctl restart c-icap
+```
+
+<br>
+
+Nézzük meg fut e: 
+```
+# sudo systemctl status c-icap
+● c-icap.service - c-icap is an implementation of an ICAP server
+     Loaded: loaded (/usr/lib/systemd/system/c-icap.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf, 50-keep-warm.conf
+             /etc/systemd/system/c-icap.service.d
+             └─override.conf
+     Active: active (running) since Tue 2025-04-08 09:59:29 CEST; 4min 12s ago
+ Invocation: 20def5a0725d4c24b08be3ec91b76121
+   Main PID: 1723 (c-icap)
+      Tasks: 37 (limit: 76569)
+     Memory: 6.4M (peak: 7M)
+        CPU: 41ms
+     CGroup: /system.slice/c-icap.service
+             ├─1723 /usr/sbin/c-icap -f /etc/c-icap/c-icap.conf
+             ├─1724 /usr/sbin/c-icap -f /etc/c-icap/c-icap.conf
+             ├─1725 /usr/sbin/c-icap -f /etc/c-icap/c-icap.conf
+             └─1730 /usr/sbin/c-icap -f /etc/c-icap/c-icap.conf
+
+Apr 08 09:59:29 fedora systemd[1]: Started c-icap.service - c-icap is an implementation of an ICAP server.
+```
+
+>**NOTE**: Ha nem futna, sajnos nagyon kevés hibaüzenetet logol ki, így elég nehéz megtalálni, hogy mi a hiba oka. 
+
+### c-icap  tesztelés
+
+>**NOTE**: Nagyon fontos, hogy daemon-ként fusson a c-icap szerver mikor tesztelünk, ne manuálisan futtassuk, hogy helyes SELinux kontextust kapjon
+
+
+SELinux kontextus ellenőrzése: 
+```
+$ ps -eZ | grep c-icap
+system_u:system_r:unconfined_service_t:s0 77339 ? 00:00:00 c-icap
+```
+
+<br>
+
+A teszteléshez fel kell telepíteni a **c-icap-client** klienst, amivel a squid proxy működését tudjuk emulálni. 
+```
+sudo dnf install c-icap-client
+```
+
+<br>
+
+#### NEM vírusos fájl beküldése
+
+Küldjünk egy nem vírusos fájlt be átvizsgálásra (mint ha böngészőből jött volna)
+```
+$ c-icap-client -i localhost -p 1344 -s "avscan" -f test-file.txt -d 10 -v
+...
+ICAP HEADERS:
+	ICAP/1.0 200 OK
+	Server: C-ICAP/0.6.2
+	Connection: keep-alive
+	ISTag: "CI0001-Ay8bT2eKrhmeDyCVYZfKZgAA"
+	Encapsulated: res-hdr=0, res-body=231
+RESPMOD HEADERS:
+	HTTP/1.0 200 OK
+	Date: Tue, 08 Apr 2025 09:47:19 GMT
+	Last-Modified: Tue, 08 Apr 2025 09:47:11 GMT
+	Content-Length: 7
+	X-C-ICAP-Client-Original-File: test-file.txt
+	Via: ICAP/1.0 YourServerName (C-ICAP/0.6.2 Antivirus service )
+Done
+```
+
+>**NOTE**: Itt két header-t kell lássunk, az egyik az ICAP, a másik amit a ClamD visszaküld. Ha csak az ICAP header van, és 204-es válasz, az azt jelenti, hogy nem érte el a ClamD-t,de úgy van beállítva, hogy ilyenkor mindig 204-et válaszoljon, hogy ne akassza meg a böngésző működését. 
+
+
+
+<br>
+
+#### Vírusos fájl beküldése 
+Küldjünk be egy vírusos fájlt átvizsgálásra. Fontos, hogy ezt ne a **home** mappából tegyük meg, mert a clamonacc azonnal meg fogja fogni. Én a root mappából teszteltem root user-el.
+
+Teszt vírus: https://secure.eicar.org/eicar.com.txt
+```
+X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
+```
+
+<br>
+
+Küldjük be: 
+
+```
+[root@fedora ~]# c-icap-client -i localhost -p 1344 -s "avscan" -f test-virus.txt -d 10 -v
+...
+<h1>VIRUS FOUND</h1>
+...
+RESPMOD HEADERS:
+	HTTP/1.1 403 Forbidden
+	Server: C-ICAP
+	Connection: close
+	Content-Type: text/html
+	Content-Language: en
+	Content-Length: 456
+	Via: ICAP/1.0 YourServerName (C-ICAP/0.6.2 Antivirus service )
+Done
+```
+Láthatjuk, hogy a ClamD megtalálta benne a vírust és 403-at adott vissza. A válaszban az alábbi HTML tartalom van, amit a squid proxy megjelenítene ha mér kész lenne az integráció. 
+
+![](docs/image-2025-04-08-11-36-41.png)
+
+
+<br>
+
+----------------------------------------------------------------------------------------------
+#  Integritásfigyelés - AIDE, Tripwire, Auditd
+
+TODO...
+
 
 ----------------------------------------------------------------------------------------------
 # GUI használata (ClamTk)
@@ -1117,6 +1530,9 @@ $ sudo dnf install clamtk
 ![](docs/image-2025-03-10-18-28-43.png)
 
 
+<br>
+
+----------------------------------------------------------------------------------------------
 # Diagnosztikai eszközök
 
 ## clamconf: telejs config megjelenítése ellenőrzésre
