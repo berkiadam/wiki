@@ -44,6 +44,7 @@ https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52939.53000.2924
 
 * youtube:  https://www.youtube.com/watch?v=-tCIU8ANNzE
 
+## Szerszámok 
 ### Flaring tool
 * 4,75 mm, 3/16 DIN
   
@@ -54,6 +55,25 @@ https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52939.53000.2924
 ![](docs/img22025-03-31-21-50-08img1.png)
 
 
+Magyar források: 
+
+![](docs/image-2025-04-19-20-27-00.png)
+
+* https://selectauto.hu/szerszamok-fekvezetekekhez/3653-fekvezetek-csokeszlet-5901477129858.html
+* https://selectauto.hu/szerszamok-fekvezetekekhez/3649-fekcsohajlito-pres-vagoval-4048769060367.html
+* https://selectauto.hu/szerszamok-fekvezetekekhez/3661-pres-a-fekcsoevek-hajlitasahoz-7435125099043.html
+* https://selectauto.hu/szerszamok-fekvezetekekhez/3667-hidraulikus-peremezo-4026947083100.html
+
+
+
+### Sorjázó
+
+![](docs/image-2025-04-19-20-24-59.png)
+* https://selectauto.hu/szerszamok-fekvezetekekhez/3658-szerszam-belso-fekcsoevek-sorjazasahoz-4048769017187.html
+
+
+
+## Alkatrészek
 ### Fittings
 
 M10x1 -> 1mm emelkedésű (finom) menet, nem végig menetes!
