@@ -32,8 +32,9 @@
     - [Csavarok](#csavarok-1)
     - [Bushings](#bushings-3)
   - [Replacemnt procedudre](#replacemnt-procedudre-1)
-      - [Removal](#removal-2)
-- [Beállítás](#beállítás)
+    - [Removal](#removal-2)
+    - [Installation](#installation-2)
+- [All wheel aligment (futómű beállítás)](#all-wheel-aligment-futómű-beállítás)
     - [Mit kell állítani](#mit-kell-állítani)
     - [Táblázatok értelmezése](#táblázatok-értelmezése)
     - [Camber (függőleges, befelé dőlsé)](#camber-függőleges-befelé-dőlsé)
@@ -501,10 +502,10 @@ https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobi
 >**Before you begin**: 
 > * Mindig vegyünk új csavarokat: suspension arm csavarok, toe link csavar és anya
 > * Legyen legalább 3 penge a sawsaw penge mert a csavarokat azzal kell kivágni 
-> * 24mm-es hosszított dugúkulcs kell 
-> * 18 mm-es hosszíott dugó kulcs kell 
-> * 21 mm-es racsnis csillagkulcs kell 
-> * 19 mm-es varjúláb kulcs kell (crowfoot spanner)
+> * 24mm-es hosszított dugúkulcs kell az alsó suspension bolt-okhoz
+> * 18 mm-es hosszíott dugó kulcs kell az upper ball join meghúzásához
+> * 21 mm-es racsnis csillagkulcs kell az upper rear bolt kivételéhez
+> * 19 mm-es varjúláb kulcs kell swaybar linkekhez (crowfoot spanner)
 > * Biztosan szükség lesz futómű állításra, mert minden lengökar egy picit más méretű. 
 > * Legyen 24mm-es crowfoot spanner-ünk. 
 > * Készüljünk fel rá, hogy a tie-rod mind két részét cserélni kell (ha be van rohadva) tehát ezeket előre vegyük meg. 
@@ -518,16 +519,19 @@ https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobi
 
 
 ### Removal
+
+>**WARNING:** A fékolaj borzasztóan maró anyag, nem szabad hogy bármilyen festett felületen sokáig rajta hagyjuk. Ami kifolyik (már pedig ki fog) azt azonnal le kell mosni ! 
+
 * Szereljük le a fékvezetéket mind két felső lengőkarraol. 
   * Ehhez szükség van egy 11 mm-es crowfoot spanner-re. 
   * Egy 
 
 
-##
+### Installation
 
 
 ---------------------------------------------------------------------------------
-# Beállítás
+# All wheel aligment (futómű beállítás)
 - youtube beállítás lift nélkül: https://www.youtube.com/watch?v=jrA24Rz0O6g
 
 <br>
