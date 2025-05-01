@@ -46,16 +46,19 @@ https://parts.jaguarlandroverclassic.com/parts/index/part/id/23.52939.53000.2924
 
 ## Szerszámok 
 ### Flaring tool
+
+>*WARNING:* | Csak olyat szabad venni, ami tuti hogy jó acélhoz! Az olcsóbbak csak rézhez jók, és az acéltól tönkre mennek. A **VIGOR V4416** peremezőnek van egy belső perselye ezért nem számít, hogy a két fél pofa mennyire zár össze, mert a csavar egy belső perselybe megy. 
+
+
 * 4,75 mm, 3/16 DIN
   
-* https://quatros.hu/Quatros-fekcso-peremezo-keszlet-475-mm-3-16-sae-QS
+* https://www.gafaauto.hu/products/obrubovacie-zariadenie-brzdove-vedenie-2852448
 * https://www.amazon.de/gp/product/B01B5GJ6KW/ref=as_li_tl
-* https://www.ebay.com/itm/167353257864
-* 
-![](docs/img22025-03-31-21-50-08img1.png)
+  
+  ![](docs/img22025-03-31-21-50-08img1.png)
 
 
-Magyar források: 
+További megoldások: 
 
 ![](docs/image-2025-04-19-20-27-00.png)
 
@@ -64,6 +67,10 @@ Magyar források:
 * https://selectauto.hu/szerszamok-fekvezetekekhez/3661-pres-a-fekcsoevek-hajlitasahoz-7435125099043.html
 * https://selectauto.hu/szerszamok-fekvezetekekhez/3667-hidraulikus-peremezo-4026947083100.html
 
+
+
+Csak érzhez: 
+* https://quatros.hu/Quatros-fekcso-peremezo-keszlet-475-mm-3-16-sae-QS
 
 
 ### Sorjázó

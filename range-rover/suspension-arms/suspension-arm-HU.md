@@ -31,6 +31,8 @@
   - [Rods and hubs](#rods-and-hubs-1)
     - [Csavarok](#csavarok-1)
     - [Bushings](#bushings-3)
+  - [Replacemnt procedudre](#replacemnt-procedudre-1)
+      - [Removal](#removal-2)
 - [Beállítás](#beállítás)
     - [Mit kell állítani](#mit-kell-állítani)
     - [Táblázatok értelmezése](#táblázatok-értelmezése)
@@ -329,6 +331,9 @@ A **locking nut** csavarásához egy 24mm-es crowfoot wrench kell, aminek magyar
 
 
 
+
+
+
 <img src="docs/ClipCapIt-250223-174954.PNG" width="400">
  
 
@@ -489,6 +494,37 @@ https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobi
    - lemförder: https://www.autodoc.hu/lemforder/1266991
 
 <br>
+
+
+## Replacemnt procedudre
+
+>**Before you begin**: 
+> * Mindig vegyünk új csavarokat: suspension arm csavarok, toe link csavar és anya
+> * Legyen legalább 3 penge a sawsaw penge mert a csavarokat azzal kell kivágni 
+> * 24mm-es hosszított dugúkulcs kell 
+> * 18 mm-es hosszíott dugó kulcs kell 
+> * 21 mm-es racsnis csillagkulcs kell 
+> * 19 mm-es varjúláb kulcs kell (crowfoot spanner)
+> * Biztosan szükség lesz futómű állításra, mert minden lengökar egy picit más méretű. 
+> * Legyen 24mm-es crowfoot spanner-ünk. 
+> * Készüljünk fel rá, hogy a tie-rod mind két részét cserélni kell (ha be van rohadva) tehát ezeket előre vegyük meg. 
+> * A rear toe link kiszedéséhez legyen removal tool-unk (ugyan az ami a front tie rod kivételéhez kell)
+> * vegyünk új toe link bar-t és új sway bar linkeket 
+> 
+
+
+
+
+
+
+### Removal
+* Szereljük le a fékvezetéket mind két felső lengőkarraol. 
+  * Ehhez szükség van egy 11 mm-es crowfoot spanner-re. 
+  * Egy 
+
+
+##
+
 
 ---------------------------------------------------------------------------------
 # Beállítás
