@@ -35,11 +35,15 @@
     - [Removal](#removal-2)
     - [Installation](#installation-2)
 - [All wheel aligment (futómű beállítás)](#all-wheel-aligment-futómű-beállítás)
-    - [Mit kell állítani](#mit-kell-állítani)
-    - [Táblázatok értelmezése](#táblázatok-értelmezése)
-    - [Camber (függőleges, befelé dőlsé)](#camber-függőleges-befelé-dőlsé)
-    - [Toe in/out](#toe-inout)
-    - [Castor](#castor)
+  - [Bevezetés](#bevezetés)
+  - [Mit is állítunk és miért?](#mit-is-állítunk-és-miért)
+  - [Workshop manula táblázatok értelmezése](#workshop-manula-táblázatok-értelmezése)
+  - [Szerszámok a méréshez](#szerszámok-a-méréshez)
+    - [Digitális szögmérő (protractor)](#digitális-szögmérő-protractor)
+    - [Aluminium zártszelvény](#aluminium-zártszelvény)
+    - [Derékszög vonalzó háromszög](#derékszög-vonalzó-háromszög)
+    - [Elektromos védőcső és damil](#elektromos-védőcső-és-damil)
+  - [Mérés menete](#mérés-menete)
 
 
 
@@ -532,6 +536,8 @@ https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobi
 
 ---------------------------------------------------------------------------------
 # All wheel aligment (futómű beállítás)
+
+## Bevezetés
 - youtube beállítás lift nélkül: https://www.youtube.com/watch?v=jrA24Rz0O6g
 
 <br>
@@ -547,7 +553,7 @@ A workshop manual-ban 5 táblázat bal (LHD) és jobb (RHD) kormányos autókra,
 
 
 
-### Mit kell állítani
+## Mit is állítunk és miért? 
 Minden keréken három dolgot kell állítani: 
 
 - **Camber angel**: a kerék befele vagy kifele döl. 
@@ -575,7 +581,7 @@ Minden keréken három dolgot kell állítani:
 
 
 
-### Táblázatok értelmezése
+## Workshop manula táblázatok értelmezése
 Miden kerékre és mind a három típusra van egy ilyen táblázat: 
 
 ![docs/ClipCapIt-250221-232050.PNG](docs/ClipCapIt-250221-232050.PNG) 
@@ -597,8 +603,10 @@ Nézzük meg az első kerekre vonatkozó **Camber** értéket.
 
 
 
-### Camber (függőleges, befelé dőlsé) 
-Ehhez kell egy úgynevezett protractor eszköz: 
+## Szerszámok a méréshez
+
+### Digitális szögmérő (protractor)
+
 - PRO360 – PRO 360 Digital protractor: https://www.leveldevelopments.com/products/inclinometers/digital-inclinometers/pro360-pro-360-digital-protractor-range-360-resolution-0-1/
 
 ![docs/ClipCapIt-250221-224704.PNG](docs/ClipCapIt-250221-224704.PNG) 
@@ -610,33 +618,28 @@ Ehhez kell egy úgynevezett protractor eszköz:
 - https://www.elektrobot.hu/termek.php?filename=1635.html&i=1635
 - https://hasznostermek.hu/P/19/hw300-digitalis-vizmertek
 
-A kerék befelé kell dőljön: 
-
-![docs/ClipCapIt-250222-003821.PNG](docs/ClipCapIt-250222-003821.PNG) 
-<!-- <img src="docs/ClipCapIt-250222-003821.PNG" width="400"> -->
 
 
 
-Olyan mérő kell, amit ki lehet nullázni, így nem baj ha nem tökéletesen egyenes talajon van a kocsi. A földre leteszek egy öles lécet, ráteszem a mérőt, és kinullázom, majd utána rakom rá a kerékre, és akkor már levonja/hozzáadja a talaj lejtést. 
+Olyan mérő kell, amit ki lehet nullázni, így nem baj ha nem tökéletesen egyenes talajon vagy a kocsi. A földre leteszek egy öles lécet, ráteszem a mérőt, és kinullázom, majd utána rakom rá a kerékre, és akkor már levonja/hozzáadja a talaj lejtést. 
 <br>
 
+### Aluminium zártszelvény
 
-### Toe in/out
+![](docs/img22025-05-03-01-55-28img1.png)
 
-Minden kerék toe érték pozitív, vagyis így kell álljanak, a menetirány szerinti első rész áll össze: 
+### Derékszög vonalzó háromszög
 
-![docs/ClipCapIt-250222-004057.PNG](docs/ClipCapIt-250222-004057.PNG) 
-<!-- <img src="docs/ClipCapIt-250222-004057.PNG" width="400"> -->
-
-
-Vagyis mind két tengelyen toe in van
-...
-
-<br>
+![](docs/img22025-05-03-01-53-50img1.png)
 
 
+### Elektromos védőcső és damil
 
-### Castor
+![](docs/img22025-05-03-02-03-12img1.png)
+
+## Mérés menete
+
+
 <br>
 
 <br>

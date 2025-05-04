@@ -117,3 +117,129 @@ M10x1 -> 1mm emelkedésű (finom) menet, nem végig menetes!
 * https://www.autodoc.hu/hazet/9262115
 
 ![](docs/img22025-03-31-21-56-00img1.png)
+
+
+<br>
+
+
+
+
+
+
+# Féktárcsa és fékpofák
+## Tárcsafék
+https://www.autodoc.hu/brembo/8714238
+
+![](docs/img22025-05-02-12-04-34img1.png)
+
+
+
+
+## Fékpofák
+
+
+## Kézifék
+felújító készlet: https://www.ebay.com/itm/392451473515?_skw=land+rover+l320+parking+hand+brake+repair+kit&epid=249363483
+
+![](docs/img22025-05-02-12-04-56img1.png)
+
+https://www.youtube.com/watch?v=r7j4cLWYZic
+
+
+# Fékolaj
+Shell DOT4 ESL. If unavailable, a low viscosity
+DOT4 brake fluid that meets ISO 4925 class 6
+and Land Rover LRES22BF03 requirements
+may be used.
+
+<br>
+
+Ilyet nem találtam, de ez megfelel neki: 
+
+- ISO 4925 Class 6
+- Class 6
+
+Kb 1 liter kell
+
+
+## ISO 4925 Class 6 – Követelmények összefoglalva
+
+| Paraméter                         | Követelmény          | Megjegyzés                                             |
+|----------------------------------|-----------------------|--------------------------------------------------------|
+| **Típus**                         | DOT 4 LV              | Alacsony viszkozitású (Low Viscosity)                 |
+| **Száraz forráspont (ERBP)**     | ≥ 250 °C              | Equal or higher (száraz állapotban mért forráspont)   |
+| **Nedves forráspont (WERBP)**    | ≥ 165 °C              | 3,5% víztartalom után mért forráspont                  |
+| **Viszkozitás –40 °C-on**        | ≤ 750 mm²/s           | Kritikus ABS/ESP kompatibilitási követelmény          |
+| **Viszkozitás 100 °C-on**        | ~1,5–2,0 mm²/s        | Stabil működés meleg üzemi körülmények között         |
+| **Korrózióteszt**                 | Megfelel 6 fémtípusra | Réz, acél, alumínium, stb.                            |
+| **Gumi-kompatibilitás**          | Kötelező              | Nem lehet duzzadás, repedés az előírt gumitípusokkal  |
+
+
+
+
+## Fékolaj mérése 
+- https://www.youtube.com/watch?v=L7x3VnGflF0 -> fékvezeték csere és tartályos, túlnyomásos bleeding 
+- https://www.youtube.com/watch?v=cRlCBbGuAEU
+- https://www.youtube.com/watch?v=AxX5edYmRus
+
+
+<br>
+
+Milyen gyakran kell cseréni: 50 ezer km<br>
+
+https://www.landroverwestchester.com/service/service-tips-tricks/land-rover-range-rover-maintenance-schedule/
+<br>
+
+<br>
+
+
+A fékfolyadék hidroszkópikus, ezért idővel felvesz vizet, amitől nagyban romlik a fékező képessége, ezért kell pár évente kicserélni. Ha felforr benne a víz, gáz keletkezik, és nem fog fogni a fék. 
+
+* The braking system can absorb 2% of its volume in moisture in 12 months.
+  * A DOT 3 rated brake fluid with a 3% moisture accumulation will encounter a 25% drop in the boiling point.
+  * A DOT 4 rated brake fluid under the same conditions will typically experience a 20% drop in boiling point due to better thermal performance.
+  * A DOT 4 LV (ISO 4925 Class 6) brake fluid offers improved moisture resistance and low-temperature viscosity; with 3% moisture absorption, the boiling point drop is around 15–18%, depending on formulation, while retaining full ABS/ESP responsiveness even at –40 °C.
+<br>
+
+A nedvesség tartalom műszerrel tesztelhető: 
+
+![](docs/img22025-05-02-12-06-41img1.png)
+https://www.ebay.com/itm/166720381619
+
+<br>
+
+Az olaj cseréhez használhatjuk a diagnosztikai eszközöket, használhatunk nyomás tartályt, vagy csak nyomogathatjuk a pedált. Ezeknek mind utána kell nézni. 
+
+
+
+
+## Márkák
+### Liqui Moly
+https://www.autodoc.hu/liqui-moly/7889281
+
+![](docs/img22025-05-02-12-05-20img1.png)
+
+
+
+
+### COMMA
+https://www.youtube.com/watch?v=cRlCBbGuAEU<br>
+
+
+COMMA DOT 4 BF4ESP1L Fékolaj<br>
+
+https://www.autodoc.hu/comma/12762753
+
+![](docs/img22025-05-02-12-05-41img1.png)
+
+## Brambo
+
+PRIME DOT 4.0 LV 1.0L Brake Fluid - L04210
+
+![](docs/img22025-05-02-12-12-35img1.png)
+
+A Brembo DOT 4 LV fékfolyadék forráspontjai is megfelelnek a követelményeknek:
+* Száraz forráspont (ERBP): 260 °C
+* Nedves forráspont (WERBP): 170 °C
+
+Ezek az értékek meghaladják az ISO 4925 Class 6 minimális követelményeit, amelyek 250 °C (száraz) és 165 °C (nedves) forráspontokat írnak elő.
