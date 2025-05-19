@@ -38,21 +38,6 @@
 
 ## Első fékek
 
-https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobiography--5-0l-v8-gas/brakes--front-brakes
-
-![](docs/2025-05-19-20-08-28.png)
-
-* 7 - caliper right: LR047906
-* 7 - caliper left: LR047905
-* 10 - Wear Indicator without supercharger: SEM500080
-* 12 - Brake Hose - right: LR058021
-* 12 - Brake Hose - left: LR058020
-* Disc Brake Caliper Seal Kit: R015580
-* Caliper Mount Kit: LR020489
-* Brake Pads Front - Land-Rover: LR134700
-
-
-
 ## Hátsó fékek
 
 https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobiography--5-0l-v8-gas/brakes--rear-brakes

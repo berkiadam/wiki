@@ -99,7 +99,6 @@ Range Rover Sport 2011 TDV6 3.0
 		- [iCarsoft LR V3.0](#icarsoft-lr-v30)
 		- [OTOFIX D1 Lite PRO Diagnostic Tool](#otofix-d1-lite-pro-diagnostic-tool)
 	- [Olaj csere eszközök](#olaj-csere-eszközök)
-		- [Fékolaj csere szett](#fékolaj-csere-szett)
 		- [Váltó és differenciál olajcsere pumpa](#váltó-és-differenciál-olajcsere-pumpa)
 		- [Motorolaj csere pumpa](#motorolaj-csere-pumpa)
 	- [Injector puller/removal/cleaner](#injector-pullerremovalcleaner)
@@ -1523,29 +1522,6 @@ A füstteszt közben a turbó szelepét át kell kapcsolni, hogy más körbe is 
 
 
 ## Olaj csere eszközök
-
-
-### Fékolaj csere szett
-- range rover brake bleeding set
-- A iCarsoft LR V3.0 segítségével az autót rá lehet venni, hogy az ABS segítségével az adott keréknél kipumpálja az olajat, amit a készletben lévő kis tartállyal fel lehet fogni
-- A nagy tartály nyomás alá tudja helyezni a féktartályt, ezért mindig megfelelő mennyiségű olaj folyik bele, nem kell kézzel utántöltögetni. 
-<br>
-
-Brake Reservoir cap : LR134994LR -> E20??
-<br>
-
-
-- https://www.ebay.com/itm/286145946991
-- https://www.temu.com/hu/3-literes-f%C3%A9k-l%C3%A9gtelen%C3%ADt%C5%91-k%C3%A9sz%C3%BCl%C3%A9k-t%C3%B6k%C3%A9letesen-l%C3%A9gtelen%C3%ADtse-a-f%C3%A9keket-az-e20-adapterrel-a-legt%C3%B6bb-eur%C3%B3pai-aut%C3%B3modellhez-g-601099518504452.html?top_gallery_url=https%3A%2F%2Fimg.kwcdn.com%2Fproduct%2FFancyalgo%2FVirtualModelMatting%2F5798002913daa2efe341f60bbf94a1a1.jpg&_web_cover=thumb_url&pic_h=1400&pic_w=1400&spec_gallery_id=4004310968&share_token=bU2cZ1aNspyVSx46oZa7_CHBqr7vX5-knA2EePO7VaV2zfmII49YdR3W7ya7ahXojNW6FhQWM6sGjUGmmkmUhEo3CAOh8LTXvsFQ7Qsq3ZOH_NOG2klzED2MTr8GGRjNw5mdi2G0GsLkk_40JVpPZT&refer_page_el_sn=209279&_x_vst_scene=adg&refer_page_name=kuiper&refer_page_id=14021_1720292830623_ntupmji52p&refer_page_sn=14021&_x_sessn_id=gyoc8gt8h4
-
-
-![docs/300px-ClipCapIt-240708-195950.PNG](docs/300px-ClipCapIt-240708-195950.PNG) {width="300"}
-<!-- <img src="docs/300px-ClipCapIt-240708-195950.PNG" width="300"> -->
-
-
-<br>
-
-
 
 ### Váltó és differenciál olajcsere pumpa
 
