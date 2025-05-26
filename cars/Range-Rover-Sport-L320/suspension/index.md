@@ -1,3 +1,7 @@
+[![](../../../docs/img22025-05-26-21-58-15img1.png) Switch to English](index-en.md)
+
+<hr>
+
 - [Bevezető](#bevezető)
 - [Szerszámok](#szerszámok)
 - [Első felfüggesztés](#első-felfüggesztés)
