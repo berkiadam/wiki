@@ -2,6 +2,7 @@
 
 <hr>
 
+- [Fék csere leírás](#fék-csere-leírás)
 - [Fékrendszer sorozatszámok](#fékrendszer-sorozatszámok)
   - [Első fékek](#első-fékek)
   - [Hátsó fékek](#hátsó-fékek)
@@ -35,6 +36,10 @@
 
 <br>
 
+# Fék csere leírás
+
+[Bodsys_Brake_Bible_V1.4sml.pdf](Bodsys_Brake_Bible_V1.4sml.pdf)
+
 
 # Fékrendszer sorozatszámok
 
@@ -44,14 +49,29 @@ https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobi
 
 ![](docs/2025-05-19-20-08-28.png)
 
-* 7 - caliper right: LR047906
-* 7 - caliper left: LR047905
+* 7 - caliper 
+  * right: LR047906
+  * left: LR047905
+* 8 - caliper carrier: 
+  * left: LR020371
+  * right: LR020369
+  * Caliper Pin Bolt: SMV500010
+  * Caliper Pin Boot: LR015525
+  * Caliper Bracket Mounting Bolt: SYG500050
+  * Caliper Pin kit (Vezetőcsavar, féknyereg): TRW ST1546
+
+  * 
 * 10 - Wear Indicator without supercharger: SEM500080
 * 12 - Brake Hose - right: LR058021
 * 12 - Brake Hose - left: LR058020
 * Disc Brake Caliper Seal Kit: R015580
 * Caliper Mount Kit: LR020489
 * Brake Pads Front - Land-Rover: LR134700
+
+
+> **WARNING**: A légtelenítő szelep mindig felfele néz, ha felcseréljük a két oldalt, akkor nem fogjuk tudni légteleníteni a fékeket!
+
+>**WARNING**: A féknyereg tartó (caliper carrier) leszedéséhez egy 21mm Bi-Hex (12 pontos) fej kell
 
 
 
@@ -62,10 +82,18 @@ https://landrover.oempartsonline.com/v-2011-land-rover-range-rover-sport--autobi
 ![](docs/image-2025-03-27-22-51-49.png)
 
 
-
-
-...
-21. Brake Hydraulic Hose: LR058009
+* 17 - caliper 
+  * right: SOB500042
+  * left: SOB500052
+* 18 - caliper carrier: 
+  * left: LR032059
+  * right: LR032058
+  * Caliper Pin Bolt: SMV500010
+  * Caliper Pin Boot: LR015525
+  * Caliper Bracket Mounting Bolt: SYG500050
+  * Caliper Pin kit (Vezetőcsavar, féknyereg): TRW ST1389
+* 19 -Brake Pads: LR134696
+* 21 -  Brake Hydraulic Hose: LR058009
 
 
 <br>
