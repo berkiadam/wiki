@@ -9,3 +9,5 @@
 - [Hengerfej](cylinder-head-cover/index.md)
 - [Folyadékok, olajok, szürők](liquids-oils-filters/index.md)
 - [Hengerfej fedél](cylinder-head-cover/index.md)
+- [Csavarok és anyák](bolts-nuts/index.md)
+- [Kipuffogó](exhaust/index.md)
