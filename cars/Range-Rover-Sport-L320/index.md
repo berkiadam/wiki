@@ -11,3 +11,4 @@
 - [Hengerfej fedél](cylinder-head-cover/index.md)
 - [Csavarok és anyák](bolts-nuts/index.md)
 - [Kipuffogó](exhaust/index.md)
+- [LR times okosságok](lr-times-knowledge/index.md)
