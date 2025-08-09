@@ -18,7 +18,7 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwE4DB0zS396YW
 * Első lengéscsillapító:	A1693201430 / A1693200830
 * Toronycsapágy:	A1693200073
 * Porvédő + ütköző szett:	 A 169 323 01 92
-
+* TORSION BAR LINKAGE: A 169 320 09 89	
 
 
 ## Féltengely
@@ -64,6 +64,13 @@ A169370687205
 
 # Hátsó felfüggesztés 
 
+https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwG-ipu1zfn85-nf_cKtluby0tXLurW4uauEt__5yt3JxcPLmZ6OyMjE39_Z2MGbnLnT_fn9zNrOzOTt_ry-u7rGv7y-5-n08u7K8K75qLL3nYCuoajmrrfk_bm3667qqLG-ury_4qa5-c3xqfivsKqXluWgr-Optri6veHj667qqLG9ubm75Om68vvv48z2qP734eXbyc66urS6u-Tqjb67vLm-vqik97akrreourq0urvk-euu_umptq-opPe2rK63qLquoajru_n9rru8ya6hqP62-f2uvKj2AAAAAF3zdGg%3D%24&vid=0&cid=27677&uid=50548&q=WDD1690311J266223
+
+![](docs/image-2025-08-10-01-12-35.png)
+
+* SHOCK ABSORBER: A 169 326 00 00	
+
+
 ### AR32.25-P-0110AK Remove/install rear shock absorber
 
 ![](docs/2025-07-27-12-51-40.png)
@@ -76,3 +83,8 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGPu6qE_MjN1t
 
 * Brake disk: A 169 421 00 12
 * caliper to frame collar: A 169 421 01 86
+* Brake pads:
+  * A 169 420 02 20
+  * A 169 420 10 20	
+  * A 169 420 18 20	
+  * A 169 420 21 20

@@ -1512,7 +1512,7 @@ Láthatjuk, hogy a ClamD megtalálta benne a vírust és 403-at adott vissza. A 
 <br>
 
 ----------------------------------------------------------------------------------------------
-#  Integritásfigyelés - AIDE, Tripwire, Auditd
+#  Integritásfigyelés - AIDE, Tripwire, Auditd, Snort
 
 TODO...
 
