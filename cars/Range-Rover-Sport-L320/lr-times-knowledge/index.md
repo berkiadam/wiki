@@ -51,3 +51,5 @@ A camsaft három helyen jön ki a cylinder head conver alól, ott kell a tetejé
 https://www.youtube.com/watch?v=6UojaXtoLHY&t=711s
 
 ZF 6HP
+
+* Váltó felújító készlet a ZF-töl: 1068.298.062
