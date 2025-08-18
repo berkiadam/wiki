@@ -53,3 +53,4 @@ https://www.youtube.com/watch?v=6UojaXtoLHY&t=711s
 ZF 6HP
 
 * Váltó felújító készlet a ZF-töl: 1068.298.062
+* https://alkatreszek.hu/1068_298_062_0068_1?st=1068.298.062
