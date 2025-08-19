@@ -43,3 +43,11 @@ A camsaft három helyen jön ki a cylinder head conver alól, ott kell a tetejé
   * ![](docs/2025-07-27-11-40-13.png)
 
 ![](docs/2025-07-27-12-08-25.png) ![](docs/2025-07-27-12-09-02.png) ![](docs/2025-07-27-12-09-40.png)
+
+
+
+# csavar jelölő ragasztó
+
+* schrauben sicherungslack
+* Firatec Threadlocker Varnish
+![](docs/2025-07-28-22-23-57.png)
