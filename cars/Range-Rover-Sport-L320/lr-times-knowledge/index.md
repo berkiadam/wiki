@@ -46,8 +46,20 @@ A camsaft három helyen jön ki a cylinder head conver alól, ott kell a tetejé
 
 
 
+
 # csavar jelölő ragasztó
 
 * schrauben sicherungslack
 * Firatec Threadlocker Varnish
 ![](docs/2025-07-28-22-23-57.png)
+
+
+# Transmission main service
+
+https://www.youtube.com/watch?v=6UojaXtoLHY&t=711s
+
+ZF 6HP
+
+* Váltó felújító készlet a ZF-töl: 1068.298.062
+* https://alkatreszek.hu/1068_298_062_0068_1?st=1068.298.062
+
