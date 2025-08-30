@@ -53,7 +53,7 @@ A169370687205
 * a képen ez a 2-es. 
 
 ### AR33.20-P-0446AK Remove/install flange ball joint
-![](docs/2025-07-27-12-47-23.png)
+
 
 ### AR33.25-P-0400AK Remove/install steering knuckle
 
@@ -71,9 +71,40 @@ A169370687205
 ### AR32.25-P-1017AK Remove/install the suspension strut
 
 ![](docs/2025-07-27-12-50-43.png)
+![](docs/2025-08-19-23-41-01.png)
 
 ### AR32.20-P-0230AK Remove/install rear spring
 
+
+## front lower ball join
+
+- AR33.20-P-0446AK Remove/install flange ball joint -> 625. oldal
+- 
+![](docs/2025-07-27-12-47-23.png)
+
+## Tie rod
+
+- AR46.40-P-0200AK Remove/install track rod -> 889.oldal
+
+![](docs/2025-08-30-01-42-20.png)
+
+## Half shaft 
+
+### boot - kerék oldal
+
+- AR33.30-P-0695AK Remove, install constant velocity joint or boots on front axle shaft -> 635. oldal
+
+### boot - motor oldal
+
+- AR33.30-P-0690AL Remove/install boots on front axle shaft -> 638. oldal
+
+### féltengely kivétel (bal oldal)
+
+- AR33.30-P-0620AK Remove/install front axle shafts -> 644. oldal
+
+### féltengely kivétel (jobb oldal)
+
+- AR33.30-P-0620AL Remove/install front axle shafts -> 647. oldal
 
 # Hátsó felfüggesztés 
 
@@ -88,8 +119,8 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwG-ipu1zfn85-
 
 ![](docs/2025-07-27-12-51-40.png)
 
-
-# FRONT WHEEL BRAKE
+# Brakes
+## FRONT WHEEL BRAKE
 
 ![](docs/2025-07-27-13-15-48.png)
 https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGPu6qE_MjN1tjuzPOcp9fD4-T6i4SJiJq1hs7I--z49PL6qK-_-fn17u7o6fCqrYjizMjM_ev__dXcz42Piov3jo2P1tjFw9_7wZ_ImYPGrLGfkJnXn4bVzIiG2p_bmYCPi42B1ZeIyPzAmMmegZump9SRntKYh4WPitDY2p_bmYCMiIiK1tuLw8re0v3Hmc_G0NTq-P-Li4WLitXbvI-KjYiPj5mVxoeVn4aZi4uFi4rVyNqfz9iYh56ZlcaHnZ-GmYufkJnaisjMn4qN-J-Qmc-HyMyfjZnHAAAAAAl-wvw%3D%24&vid=0&cid=27681&uid=94342&q=WDD1690311J266223
@@ -102,7 +133,9 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGPu6qE_MjN1t
   * A 169 420 18 20	
   * A 169 420 21 20
 
+## Hand brakes
 
+- AR42.20-P-0530AK Remove/install brake shoes of parking brake -> 820. oldal
 
 
 
@@ -121,3 +154,12 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGPu6qE_MjN1t
 
 ### Csak gomb
 * A2218702410 -> ez nagyon nem biztos, de lehet hogy jó a W169-hez is. 
+
+
+
+
+# Üzemanyag rendszer
+
+## Üzemanyag betöltő cső
+
+- AR47.10-P-7541AK Remove/install filler neck of fuel tank -> 903. oldal
