@@ -115,6 +115,12 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwG-ipu1zfn85-
 * SHOCK ABSORBER: A 169 326 00 00	
 
 
+![](docs/2025-09-08-08-22-31.png)
+
+* WHEEL HUB TO REAR bolt: N000000003758
+* WHEEL HUB TO REAR wahser: A1403521376
+
+
 ### AR32.25-P-0110AK Remove/install rear shock absorber
 
 ![](docs/2025-07-27-12-51-40.png)
