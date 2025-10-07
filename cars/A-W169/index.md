@@ -143,7 +143,7 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGPu6qE_MjN1t
 
 - AR42.20-P-0530AK Remove/install brake shoes of parking brake -> 820. oldal
 
-
+- AP42.20-P-4262AK Parking brake - adjusting cable slack adjuster -> 818. oldal
 
 
 
