@@ -24,3 +24,27 @@ https://www.realoem.com/bmw/enUS/partgrp?id=5V71-EUR-04-2019-G20-BMW-320dX&mg=11
 
 - old part number: 11618579245
 - new part number: 11617925777
+
+Gyári sorozatszám: 
+![](docs/2025-10-16-18-20-08.png)
+
+
+# Actuator
+
+![](docs/2025-10-16-18-27-25.png)
+
+Bosch 8570791 01 / 10213510
+
+* https://www.ebay.com/itm/186196689577
+
+## Connector
+
+![](docs/2025-10-16-18-23-11.png)
+![](docs/2025-10-16-18-21-39.png)
+
+### ECU side
+
+![](docs/2025-10-16-18-26-40.png)
+
+### Actuator side
+![](docs/2025-10-16-18-22-34.png)
