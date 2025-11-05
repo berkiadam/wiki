@@ -1,6 +1,7 @@
 # Info: 
 
 - VIN: WBA5V71090FH18206
+- Gyártási év: **2019-06-01**
 - Autó pontos típusa ez: **5V71**
 - Motor: B47D20B (vagy B47D20O1/O2, gyártási évtől függően)
   - Teljesítmény: kb. 190 lóerő (140 kW
@@ -9,6 +10,8 @@
 - Karosszéria-kód: G20 (a 7. generációs 3-as BMW, 2018-tól)
 
 # Linkek
+
+https://www.realoem.com/bmw/enUS/partgrp?id=5V71-EUR-06-2019-G20-BMW-320dX
 
 https://www.realoem.com/bmw/enUS/partgrp?id=5V71-EUR-04-2019-G20-BMW-320dX&mg=11
 
@@ -48,3 +51,25 @@ Bosch 8570791 01 / 10213510
 
 ### Actuator side
 ![](docs/2025-10-16-18-22-34.png)
+
+
+<br>
+
+# Fékek
+
+
+## Első fékek
+
+* négy dugattyús: 
+  * https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=34_2722
+  * méret: 348X36
+  * OEM: 
+    * 34108858705	
+    * 34108858706	
+    * 34106880075	
+    * 34106880076
+  
+* egy dugattyús:
+  * https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=34_2722
+  * méret: 307X24
+  * OEM: 34106877212	
