@@ -10,6 +10,7 @@ Range Rover Sport 2011 TDV6 3.0
 
 
 
+- [Info](#info)
 - [Mit szeretnék lecserélni](#mit-szeretnék-lecserélni)
 - [Mit cseréljünk ki a timing belt-el egyszerre](#mit-cseréljünk-ki-a-timing-belt-el-egyszerre)
 - [Issues with the TDV6 3.0 Engine](#issues-with-the-tdv6-30-engine)
@@ -99,10 +100,19 @@ Range Rover Sport 2011 TDV6 3.0
 	- [Jelei a rossz PVC-nek](#jelei-a-rossz-pvc-nek)
 	- [AOS (Air - Oil separator)](#aos-air---oil-separator)
 	- [Cache Can system](#cache-can-system)
+- [Vegyes](#vegyes)
 
 
 
+# Info
 
+- VIN: SALLSAAG4BA290861
+- motor Gen 1 TDV6 (2009–2012) 306DT
+  - Nyomaték: 600 Nm @ 2000 rpm
+  - Teljesítmény: 254 LE (188 kW) @ 4000 rpm
+- váltó: 6-speed AT ZF 6HP28
+- InteriorEnvironment	Almond/Arabica
+- ExteriorPaint	Nara Bronze
 
 # Mit szeretnék lecserélni
 1. iCarsoft LR V3.0 OBD review
@@ -1476,3 +1486,9 @@ Gyakran a visszatérő olaj a motor hűtő folyadékkal elő van melegítve, mer
 <!-- <img src="docs/ClipCapIt-241208-201543.PNG" width="400"> -->
 
 Ez egy fajta szűrő, csomó járattal, amin áthalad a forró gáz a crankcase-bő, és itt a szűrő falán lecsapódik az olaj, és így össze lehet gyűjteni. De innen nem jut vissza a motorba az olaj, ezt manuálisan üríteni kell időről időre. Ez a fő különbség az AOS hez képest, hogy ott az összegyűjtött olajat automatikusan vissza is vezetik a motorba.
+
+
+
+# Vegyes
+
+* Fuel Filler Cap: RFC396
