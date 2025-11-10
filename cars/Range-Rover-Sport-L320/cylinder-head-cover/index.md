@@ -53,8 +53,33 @@ https://landrover.scuderiacarparts.com/part-finder/landrover/range-rover-sport/o
 * Liqui Moly Pro-Line injektor és gyújtó- izzítógyertya eltávolító spray 400ml LM3379
   * https://frenchautoparts.hu/Liqui-Moly-Pro-Line-injektor-es-gyujto-izzitogyert
 
-* MA PROFESSIONAL injector grease 1400°
+* **MA PROFESSIONAL injector grease 1400°**
+  * A réz alsó gyűrűt mindenképpen nagyon vékonyan be kell kenni, hogy hozzáragadjon az injectorhoz mikor berakjuk, másrészt hogy szigetelje, és nagyon nagyon vékonyan az egész injectort be lehet kenni, hogy legközelebb ne ragadjon be. 
 
 * Tisztító készlet: 
   * https://profibarkacs.hu/yato-befecskendezoszelep-tisztito-keszlet-19-reszes-1-4-inox-muanyag-rez-kefek
    ![](docs/2025-11-09-17-28-58.png)
+
+
+
+# Sarkok szigetelése
+
+## Mivel kell szigetelni
+* Dirko HT - ez a magasabb minőség
+  
+  ![](docs/2025-11-10-18-08-27.png)
+
+<br>
+<br>
+
+* dph gray seal - ez egy gyengébb minőség, de ez is tökéletes
+
+  ![](docs/2025-11-10-18-09-09.png)
+
+
+
+## Hova kell rakni
+
+A camshaft csapágy sarkaira, egy egy pöttyöt, mert ez egy éles váltás, és itt hajlamos szivárogni, mert a gumi nem tudja ezt jól lekövetni. 
+
+  ![](docs/2025-11-10-18-12-24.png)  ![](docs/2025-11-10-18-12-43.png)
