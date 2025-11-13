@@ -69,7 +69,27 @@ Bosch 8570791 01 / 10213510
     * 34106880075	
     * 34106880076
   
-* egy dugattyús:
-  * https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=34_2722
-  * méret: 307X24
-  * OEM: 34106877212	
+### egy dugattyús:
+
+https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=34_2722
+
+![](docs/2025-11-12-21-19-38.png)
+
+méret: **307X24**
+
+- 1. pad: 34116890553	
+- 2. Brake pad wear sensor, front: 
+   - 34356870349
+   - 34106880060			
+   - 34106877212
+- 3. rotor: 34106877212	
+- 10., 7. 	Repair kit bellows and 	Hex bolt	M8
+     - 34116768190
+     - 34207848324	
+
+
+## Hátsófék
+
+
+https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=34_2725
+	
