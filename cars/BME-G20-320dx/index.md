@@ -93,3 +93,31 @@ méret: **307X24**
 
 https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=34_2725
 	
+
+
+# Turbo
+
+https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=11_7701
+
+![](docs/image-2025-11-14-00-18-36.png)
+
+
+
+- 01	RP exhaust turbocharger		1			11658587540			
+- 02	Gasket		1			18308513651			
+- 03	Screw clamp		1			18308512137			
+- 04	Support bracket for turbocharger	TGH	1			11658518738			
+- 05	Hex bolt with washer	M8X16	5			07119905528	$0.62		
+- 06	Support bracket for turbocharger	VGH	1			11658587543			
+- 07	Gasket Asbestos Free		1			11658591888			
+- 08	Clip retainer		1			12517577343			
+- 09	Bypass valve		1			11658587518			
+- 10	Vacumm box		1			11659887132			
+- 11	ISA screw	M6X20-8.8-ZNNIV	7			07129901130	$0.38		
+- 12	Connection pipe		1			11658587520			
+- 13	Not offered by BMW		2			84210300311			ENDED
+- 14	Connection pipe		1			11658587519			
+- 15	Not offered by BMW		2			84210300311			ENDED
+- 16	Sensor, charge-air pressure		1			13628637896			
+- 17	Hex bolt with washer	M6X20	1			07119904527	$0.44	
+- 18	Preformed seal		1			11617796622	$6.65	
