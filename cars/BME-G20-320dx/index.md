@@ -75,17 +75,21 @@ https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&dia
 
 ![](docs/2025-11-12-21-19-38.png)
 
-méret: **307X24**
+info: 
+- méret: **307X24**
+- one piston, floating caliper
 
-- 1. pad: 34116890553	
-- 2. Brake pad wear sensor, front: 
-   - 34356870349
-   - 34106880060			
-   - 34106877212
-- 3. rotor: 34106877212	
-- 10., 7. 	Repair kit bellows and 	Hex bolt	M8
-     - 34116768190
-     - 34207848324	
+
+alkatrészek: 
+- Rotor 307X24:
+  - 34106880060
+  - 34106877212			
+  - 34106877212	
+- Brake pads: 34116890553
+- Brake pad wear sensor, front:	34356870349	
+- bolt, caliper to frame, M8: 	34116768190
+- robber-boot, calliper: 34207848324	
+   
 
 
 ## Hátsófék
@@ -93,6 +97,31 @@ méret: **307X24**
 
 https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=34_2725
 	
+
+méret: **300X20**
+
+
+- rotor:
+  - 34206877213	
+  - 34206880071	
+  - 34206877213	
+- Repair kit, brake pads: 34208844393	
+- bolt, caliper to frame, M8: 34216860562	
+- robber-boots, caliper to frame: 34206894211	
+- bolt frame to wheel hub 	M12X1,5X43 ZNS3	4: 	34108838589	
+- Brake pad wear sensor: 34356870354	
+
+
+
+### Torque
+
+![](docs/2025-11-17-22-18-34.png)
+![](docs/2025-11-17-22-16-20.png)
+![](docs/2025-11-17-22-16-38.png)
+![](docs/2025-11-17-22-17-58.png)
+![](docs/2025-11-17-22-18-56.png)
+
+
 
 
 # Turbo
@@ -121,3 +150,26 @@ https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&dia
 - 16	Sensor, charge-air pressure		1			13628637896			
 - 17	Hex bolt with washer	M6X20	1			07119904527	$0.44	
 - 18	Preformed seal		1			11617796622	$6.65	
+
+
+# Radiator shutter
+
+Codes:
+- 30c400
+- 279B00
+
+https://www.youtube.com/watch?v=6PDPpb6q0_U
+
+![](docs/2025-11-17-23-01-01.png)
+
+https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=51_A424#51745A22C60
+
+
+- Air duct with air flap control, upper: 51745A22C60
+- Air duct with air flap control, lower: 51745A22C64
+
+
+## Csak a motor
+
+- lower: Brose C93091-108 BMW P/N 111466512
+- upper: Brose C93092-113 BMW P/N 111466416
