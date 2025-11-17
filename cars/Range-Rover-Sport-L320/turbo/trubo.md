@@ -26,6 +26,10 @@ https://landrover.scuderiacarparts.com/part-finder/landrover/discovery/oe/501/53
 
 - autodoc: https://www.autodoc.hu/br-turbo/24264687
   - BR Turbo BRX6962 Turbo középrész
+- ebay: 
+  - https://www.ebay.co.uk/itm/254030802913 (MELETT)
+- turborebuild.co.uk:
+  - https://www.turborebuild.co.uk/genuine-melett-uk-turbo-chra-garrett-gtb1749vk-778400-jaguar-xj-land-rover-discovery-4range-rover-sport-30d
 
 <br>
 <br>
@@ -39,7 +43,9 @@ https://www.advancedfactors.co.uk/turbocharger-rh-11683-c --> **ezen van GEN1 é
 ![](docs/image-2025-11-13-22-38-28.png)
 
 
-- Turbocharger assembly – RH, fix geometrás turbó: **LR063777**
+- Turbocharger assembly – RH, fix geometrás turbó: 
+  - **LR063777**
+  - LR128704
 - Turbine inlet gasket, turbó–kipufogócsonk tömítés: **LR013236**
 
 
@@ -53,3 +59,9 @@ https://www.advancedfactors.co.uk/turbocharger-rh-11683-c --> **ezen van GEN1 é
   * ebay összes tömítés + összes csavar + összes stud: https://www.ebay.co.uk/itm/334519584972
 * turbo core: 
   * BR Turbo BRX4629 Turbo középrész: https://www.autodoc.hu/br-turbo/24264564
+
+
+<br>
+<br>
+- turborebuild.co.uk:
+  - https://www.turborebuild.co.uk/genuine-melett-uk-turbo-chra-land-rover-jaguar-30d-garrett-gt1444z-778401-0004-6-8-10-778402-0004-6-8
