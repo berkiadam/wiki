@@ -57,11 +57,13 @@ https://www.advancedfactors.co.uk/turbocharger-rh-11683-c --> **ezen van GEN1 é
   * FEBI BILSTEIN 191745: https://www.autodoc.hu/febi-bilstein/22792130#szerelokeszlet-tolto
   * FA1 KT410110: csavar + stud + tömítés: https://www.autodoc.hu/fa1/13919702#szerelokeszlet-tolto
   * ebay összes tömítés + összes csavar + összes stud: https://www.ebay.co.uk/itm/334519584972
-* turbo core: 
-  * BR Turbo BRX4629 Turbo középrész: https://www.autodoc.hu/br-turbo/24264564
+
 
 
 <br>
 <br>
+
+- turbo core: 
+  - BR Turbo BRX4629 Turbo középrész: https://www.autodoc.hu/br-turbo/24264564
 - turborebuild.co.uk:
   - https://www.turborebuild.co.uk/genuine-melett-uk-turbo-chra-land-rover-jaguar-30d-garrett-gt1444z-778401-0004-6-8-10-778402-0004-6-8
