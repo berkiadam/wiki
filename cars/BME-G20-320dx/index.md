@@ -60,14 +60,6 @@ Bosch 8570791 01 / 10213510
 
 ## Első fékek
 
-* négy dugattyús: 
-  * https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=34_2722
-  * méret: 348X36
-  * OEM: 
-    * 34108858705	
-    * 34108858706	
-    * 34106880075	
-    * 34106880076
   
 ### egy dugattyús:
 
@@ -77,6 +69,7 @@ https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&dia
 
 info: 
 - méret: **307X24**
+- Minimum thickness [mm]: **22,4**
 - one piston, floating caliper
 
 
@@ -97,10 +90,15 @@ alkatrészek:
 
 https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=34_2725
 	
+<br>
 
-méret: **300X20**
+info:
+- méret: **300X20**
+- Minimum thickness [mm]: **18,4**
 
+<br>
 
+Alkatrészek: 
 - rotor:
   - 34206877213	
   - 34206880071	
@@ -178,3 +176,6 @@ https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&dia
 # Kerék csavar
 
 https://www.autodoc.hu/jarmu-alkatreszek/kerek-kerekrogzites-10313/bmw/3er-reihe/3-g20/133249-320-d?fromSearch=1
+
+
+* **M14 / SW17**
