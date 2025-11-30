@@ -1,1 +1,3 @@
 .vscode/settings.json
+books/ai-basic/graphic/__pycache__/*
+books/ai-basic/graphic/media/*

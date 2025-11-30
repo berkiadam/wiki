@@ -1,7 +1,11 @@
-import numpy as np
+import numpy as np  # NumPy: a mátrixműveletek alapkönyvtára (ML-ben minden vektor + mátrix)
 
-# 1. Tanító adatok (alapterület m2-ben, ár millió Ft-ban)
-# Ezek csak példaadatok, de nagyjából lineáris kapcsolatot követnek.
+# -------------------------------------------------------------------
+# 1. TANÍTÓ ADATOK
+# -------------------------------------------------------------------
+# Ezek valós (x, y) párok: x = lakás alapterülete, y = lakás ára.
+# A modell célja: megtanulni a kapcsolatot az x és y között.
+# A valóságban ez sok ezer adat lenne; itt csak 20 példa.
 sizes = np.array([
     35, 40, 42, 45, 48,
     50, 52, 55, 58, 60,
@@ -16,42 +20,112 @@ prices = np.array([
     57, 59, 60, 63, 67
 ], dtype=float)
 
-# 2. Bemeneti mátrix előkészítése (X_design = [x, 1] hogy legyen bias is)
-X = sizes.reshape(-1, 1)                # (20, 1)
-ones = np.ones_like(X)                  # (20, 1)
-X_design = np.hstack([X, ones])         # (20, 2) -> oszlopok: [méret, 1]
+# -------------------------------------------------------------------
+# 2. DESIGN MÁTRIX ELŐKÉSZÍTÉSE (X_design)
+# -------------------------------------------------------------------
+# A lineáris modell alakja:
+#   ŷ = w * x + b
+#
+# A 'b' egy konstans (bias), amely minden predikcióhoz hozzáadódik.
+#
+# Matematikailag sokkal kényelmesebb úgy kezelni,
+# hogy az X mátrixban legyen egy külön oszlop állandó 1-esekkel.
+# Így leírható egyetlen mátrixszorzással:
+#
+#   ŷ = X_design @ theta
+#
+# ahol:
+#   X_design = [ x, 1 ]
+#   theta = [ w, b ]
+#
+# Ez a neurális hálóknál is így működik egyetlen neuron esetén!
+X = sizes.reshape(-1, 1)    # Átalakítjuk (20,) -> (20,1) vektorrá (oszlopvektor)
+ones = np.ones_like(X)      # Készítünk egy (20,1) oszlopot csupa 1-essel a bias számára
+X_design = np.hstack([X, ones])  # Összerakjuk: [méret, 1] => (20,2) mátrix
 
-y = prices                              # (20,)
+y = prices  # A célértékek (árak). Mérete (20,).
 
-# 3. Paraméterek inicializálása: theta = [w, b]
-theta = np.zeros(2)                     # w = theta[0], b = theta[1]
+# -------------------------------------------------------------------
+# 3. PARAMÉTEREK INICIALIZÁLÁSA
+# -------------------------------------------------------------------
+# A theta = [ w, b ] tartalmazza:
+#   w = súly (meredekség)
+#   b = bias (eltolás)
+#
+# Ezeket NEM kézzel állítjuk be.
+# A gépi tanulás célja: megtalálni a legjobb w-t és b-t.
+theta = np.zeros(2)  # Kezdőérték: w=0, b=0
 
-# 4. Tanulási ráta és epoch szám
+# -------------------------------------------------------------------
+# 4. TANULÁSI HYPERPARAMÉTEREK
+# -------------------------------------------------------------------
+# learning_rate = η (eta) — gradient descent lépésnagyság
+# epoch = hányszor fut végig a modell az adatokon
 learning_rate = 1e-4
 epochs = 20000
 
-n = len(X_design)
+n = len(X_design)  # minta elemszáma, itt 20
 
+# -------------------------------------------------------------------
+# 5. GRADIENT DESCENT TANÍTÓ CIKLUS
+# -------------------------------------------------------------------
 for epoch in range(epochs):
-    # Előrejelzés: y_hat = X_design @ theta
-    y_hat = X_design @ theta            # (20,)
 
-    # Hiba
+    # -------------------------------------------
+    # ELŐREJELZÉS (PREDIKCIÓ)
+    # -------------------------------------------
+    # Ez a neurális háló "forward pass"-a:
+    #   ŷ = X_design @ theta
+    #
+    # A @ a mátrixszorzás operátor: (20×2) @ (2,) -> (20,)
+    y_hat = X_design @ theta
+
+    # -------------------------------------------
+    # HIBA (ERROR)
+    # -------------------------------------------
+    # error = ŷ - y
+    #
+    # Ez megmondja, mennyire tér el a modell válasza
+    # a tanító adat valódi értékétől.
     error = y_hat - y
 
-    # Gradiens számítás (MSE deriváltja)
-    grad = (2.0 / n) * (X_design.T @ error)  # (2,)
+    # -------------------------------------------
+    # GRADIENS (A LEJTŐ IRÁNYA)
+    # -------------------------------------------
+    # A veszteségfüggvény: MSE = mean squared error
+    #
+    # Ennek deriváltja (gradiens):
+    #   grad = (2/n) * X_design^T @ error
+    #
+    # Ez mutatja meg, hogy merre kell módosítani a w és b értékeket,
+    # hogy csökkenjen a hiba. Ez a "backpropagation" leegyszerűsített 1D verziója.
+    grad = (2.0 / n) * (X_design.T @ error)
 
-    # Súlyfrissítés (gradient descent)
+    # -------------------------------------------
+    # SÚLYFRISSÍTÉS (GRADIENT DESCENT)
+    # -------------------------------------------
+    # theta = theta - η * grad
+    #
+    # Ez a gépi tanulás lényege:
+    #   - ha a gradiens pozitív → lefelé megyünk → csökkentjük a súlyt
+    #   - ha a gradiens negatív → növeljük a súlyt
     theta -= learning_rate * grad
 
-# A tanult paraméterek
+# -------------------------------------------------------------------
+# 6. TANULT PARAMÉTEREK KICSOMAGOLÁSA
+# -------------------------------------------------------------------
 w, b = theta
+
+print(f"Tanult súly (w): {w:.4f}")
+print(f"Tanult bias (b): {b:.4f}")
 
 print("Betanult modell:")
 print(f"  Ár ≈ {w:.3f} * alapterület + {b:.3f}   (millió Ft)")
 
-# 5. Felhasználói kérdés: új lakás alapterülete
+# -------------------------------------------------------------------
+# 7. ELŐREJELZÉS FELHASZNÁLÓTÓL KAPOTT ADATRA
+# -------------------------------------------------------------------
+# A modell itt már tudása alapján becslést ad egy új adatra.
 while True:
     try:
         user_size = float(input("\nAdd meg a lakás méretét négyzetméterben (pl. 54): "))
