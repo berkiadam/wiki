@@ -1,7 +1,42 @@
 
 # Bevezet
 
-TODO
+A klasszikus, imperatív programozásban lépésről lépésre megmondjuk a számítógépnek hogy mikor mit csináljon: 
+
+```java
+if input > threshold:
+    return X
+else:
+    return Y
+```
+
+Ezzel szemben a "Gépi Tanulás" alapú renszerek lehetővé teszi a számítógépek számára, hogy adatokból "tanuljanak" és anélkül hozzanak döntéseket, hogy erre kifejezetten programozták volna őket. Algoritmusok segítségével mintázatokat azonosít nagy adatállományokban, így a rendszer előrejelzéseket vagy besorolásokat tud készíteni új, korábban nem látott adatokon. Ez a folyamat segíti a feladatok automatizálását, és képessé teszi a rendszereket arra, hogy teljesítményüket idővel javítsák, ahogy egyre több adatot kapnak..”
+
+Ez formálisan azt jelenti:
+
+- Van egy bemenet: 𝑥
+- és egy várt kimenet: 𝑦
+- és mi keresünk egy függvényt:
+
+$$
+f_{\theta}(x) \approx y
+$$
+
+ahol 𝜃 a modell paraméterei, amiket súlyoknak is nevezünk.
+
+> A "gépi tanulás" célja tehát:
+> Megtalálni azt a paraméterkészletet, amely a bemenet → kimenet leképezést a > lehető legpontosabban approximálja.
+
+Az ML modellek egyszerűbb példái:
+- lineáris regresszió,
+- logisztikus regresszió,
+- döntési fák,
+- SVM,
+- random forest,
+- XGBoost.
+
+Ezek mind paraméteres vagy szabályalapú modellek, amelyek adatból tanulnak.
+
 
 # Mi az a gép tanulás
 
@@ -23,7 +58,7 @@ A gépi tanulás elnevezés egy kicsit félrevezető. A koncepció lényege nem 
 - „approximation” → sosem pontos, csak adat-alapú közelítés
 - „optimization” → A paramétereket a modell "tanítása" során állítottuk be, vagyis optimalizáltuk a tesztadatok segítségével, hogy megfelelően végre tudja hajtani a feladatát. 
 
-
+> Tehát, mikor azt mondjuk hogy "ML", akkor egy olyan programról beszélünk, ami az input adatokra közelítéssel meghatározza a végeredményt. Én ezért ezeket "ML programoknak nevezem". 
 
 
 ## Gépi tanulás alapképlete
@@ -93,6 +128,26 @@ $$y=1.8⋅x+32$$
 - A $b$ (bias) pedig a 32.
 
 Ha nem lenne $b$ (tehát $b=0$ lenne), a modell azt hinné, hogy 0°C = 0°F. De tudjuk, hogy ez nem igaz, mert 0°C = 32°F. A bias (32) az a korrekciós szám, ami "helyre teszi" az egyenest a nullapontnál.
+
+
+## Lineáris regresszió, a legegyszerűbb LM
+
+
+A lineáris regresszió egy statisztikai módszer, amely két vagy több változó közötti lineáris kapcsolatot modellez. Célja, hogy megtalálja azt az egyenest (vagy hipersíkot), amely a legjobban írja le a függő változó és a független változók kapcsolatát.
+
+
+
+A lineáris regresszió feltételezi, hogy a kapcsolat így írható le:
+
+$$ 
+𝑦=𝛽_0+𝛽_1x_1+𝛽_2x_2+...+𝛽_nx_n+ε,
+$$
+
+ahol
+* $𝛽_0,𝛽_1x,+𝛽_2,...,𝛽_n$  a becsülendő paraméterek,
+* $ε$ a hibatermék
+
+A modell a paramétereket úgy választja meg, hogy a becsült és a megfigyelt értékek közötti eltérések négyzetösszegét minimalizálja (legkisebb négyzetek módszere).
 
 
 ## Hogyan kérdezünk a betanított modelltöl
@@ -445,6 +500,7 @@ $$
 Egy olyan modellt szeretnénk készíteni, ami meg tudja mondani egy lakás árát a megadott négyzetméter alapján anélkül, hogy explicit megmondanánk a programunknak, hogy a négyzetméterből hogyan kell kiszámolni a lakás árát. 
 
 
+
 <br>
 
 A tanító adatok az alábbiak lesznek (ennél sokkal több adattal): 
@@ -462,8 +518,12 @@ A tanító adatok az alábbiak lesznek (ennél sokkal több adattal):
 Ezek alkotnak adatpárokat, vagyis tanító példákat: 
 $(x_i, y_i)$
 
+Az LM programunkban lineáris regressziót fogunk használni. 
 
 ![](docs/image-2025-11-30-19-03-52.png)
+
+
+Ebben a példában egy egy változós / egy dimenziós lineáris regressziót fogunk használni, vagyis a bement és a kimenet is egy egy dimenziós vektornak is felfogható. 
 
 
 ## 
