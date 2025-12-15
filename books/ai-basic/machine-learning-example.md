@@ -44,7 +44,7 @@ A gépi tanulás elnevezés egy kicsit félrevezető. A koncepció lényege nem 
 
 **Mi a probléma a "Machine Learning" kifejezéssel?**
 - A gép nem „tanul”, csak optimalizál. Nem lesz tudatos, nem tud új fogalmakat alkotni, nem érti a világot.
-- A „machine” szó félrevezető antropomorfizálás. Ez csak matematika számítógépen futtatva.
+- A „machine learning” szó páros félrevezető antropomorfizálás. Ez csak matematika számítógépen futtatva.
 - A „learning” szó emberi tanulást sugall, holott: nincs megértés, nincs szándék, nincs belső reprezentáció „jelentésekről”
 - A laikusok számára a „gépi tanulás” misztikusnak tűnik. A valóságban ez: statisztikai függvények optimalizálása nagy adatmennyiség fölött.
 
@@ -78,9 +78,6 @@ Típusok:
 
 - Lehet neurális háló:
 
-$$
-f_{\theta}(x) = \sigma(W_2 \, \sigma(W_1 x + b_1) + b_2)
-$$
 
 Ahol: 
 - $x$: A bementő paraméter
@@ -152,7 +149,7 @@ A modell a paramétereket úgy választja meg, hogy a becsült és a megfigyelt 
 
 ## Hogyan kérdezünk a betanított modelltöl
 
-A már betanított modellben ahol a paraméterek ($\theta$) már fixek, beadunk egy kérdést a modellnek: $f_θ​(x)$, ahol a kérdést az $x$ szimbolizálja, és a modell a megtanult paraméterek alapján kiszámolja a kimenetet. 
+A betanított modellben ahol a paraméterek ($\theta$) már fixek, beadunk egy kérdést a modellnek: $f_θ​(x)$, ahol a kérdést az $x$ szimbolizálja, és a modell a megtanult paraméterek alapján kiszámolja a kimenetet. 
 
 Ez azt jelenti:
 
@@ -228,7 +225,7 @@ $$
 \hat{y} = w_{actual} x + b_{actual}
 $$
 
-Majd kapott végeredmény ($\hat{y}$) és az elvárt végeredmény ($y$) különbségéből kiszámítjuk a hibát: 
+Majd kapott végeredmény ($\hat{y}$) és az elvárt végeredmény ($y$) különbségéből kiszámítjuk a hiba négyzetét: 
 
 $$
 L = (\,\hat{y} - y\,)^2
@@ -248,7 +245,7 @@ Ahol:
 - $\frac 1 n$: Ettől lesz átlag, mert elosztjuk a minták/hibák számával
 
 
-### A radienscsökkentés kiszámítása általánosságban
+### A gradienscsökkentés kiszámítása általánosságban
 
 
 

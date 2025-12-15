@@ -20,6 +20,19 @@ Sokszor "Macine Learing"-ként (Gépi Tanulás) vagy deep learning models-ként 
 <br>
 
 ---
+
+
+
+$$
+f_{\theta}(x) = \sigma(W_2 \, \sigma(W_1 x + b_1) + b_2)
+$$
+
+
+
+
+
+
+---
 # Machine Learning -> Deep Learing
 
 A fogalmak pontos hierarchiája:
@@ -156,3 +169,14 @@ egy bias hozzáadását,
 és egy nemlineáris aktivációt.
 
 Formailag egy L rétegű háló:
+
+
+
+
+--------------
+
+TODO: bias és weith, cost function, 
+activation , ezek micsodák 
+
+Ez hogy kapcsolódik az eddig példához. 
+- Cost function for Neuron network. 
