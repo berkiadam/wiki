@@ -2,7 +2,7 @@
 
 # Bemeneti és kimeneti fájlok
 
-FOLDER="linux/kafa-with-avro"
+FOLDER="linux/WPA-wifi-pwd"
 WIKI_FILE="input.wiki"
 MD_FILE="output_tmp.md"
 MD_FINAL="index.md"

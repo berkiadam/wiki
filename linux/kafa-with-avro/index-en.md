@@ -1,0 +1,1 @@
+[<< Back](../index.md) | [![](docs/image-2026-02-06-21-32-44.png)Switch to Hungarian](index.md) |

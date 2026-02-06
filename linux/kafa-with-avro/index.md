@@ -1,3 +1,5 @@
+[<< Vissza](../index.md) | [![](../../tools/docs/english-falg.png) Switch to English](index-en.md) | 
+<hr>
 
 ![docs/200px-ClipCapIt-190327-180306.PNG](docs/200px-ClipCapIt-190327-180306.PNG) 
 <!-- <img src="docs/200px-ClipCapIt-190327-180306.PNG" width="200"> -->
@@ -5,28 +7,28 @@
 
 <!-- TOC -->
 
-- [Bevezető](#bevezető)
-  - [Mi az Avro?](#mi-az-avro)
-  - [Környezet](#környezet)
-- [Avro REST interfész](#avro-rest-interfész)
+- [Bevezető](#bevezet%C5%91)
+    - [Mi az Avro?](#mi-az-avro)
+    - [Környezet](#k%C3%B6rnyezet)
+- [Avro REST interfész](#avro-rest-interf%C3%A9sz)
 - [Kafka message = key + value](#kafka-message--key--value)
-  - [Value Avro séma](#value-avro-séma)
-  - [Partition keys Avro séma](#partition-keys-avro-séma)
-- [Java kód generálás](#java-kód-generálás)
+    - [Value Avro séma](#value-avro-s%C3%A9ma)
+    - [Partition keys Avro séma](#partition-keys-avro-s%C3%A9ma)
+- [Java kód generálás](#java-k%C3%B3d-gener%C3%A1l%C3%A1s)
 - [Producers](#producers)
-  - [Java avro-kafak producer](#java-avro-kafak-producer)
-  - [Command line producers](#command-line-producers)
+    - [Java avro-kafak producer](#java-avro-kafak-producer)
+    - [Command line producers](#command-line-producers)
 - [Consumers](#consumers)
-  - [Command line consumer](#command-line-consumer)
-  - [Java consumer](#java-consumer)
-    - [Séma specifikus consumer](#séma-specifikus-consumer)
-    - [Generikus consumer](#generikus-consumer)
-    - [Partition keys](#partition-keys)
-  - [Logstash consumer](#logstash-consumer)
-    - [logstash avro plugin](#logstash-avro-plugin)
-    - [Swarm architektúra](#swarm-architektúra)
-    - [Logstash config](#logstash-config)
-    - [Futtatás](#futtatás)
+    - [Command line consumer](#command-line-consumer)
+    - [Java consumer](#java-consumer)
+        - [Séma specifikus consumer](#s%C3%A9ma-specifikus-consumer)
+        - [Generikus consumer](#generikus-consumer)
+        - [Partition keys](#partition-keys)
+    - [Logstash consumer](#logstash-consumer)
+        - [logstash avro plugin](#logstash-avro-plugin)
+        - [Swarm architektúra](#swarm-architekt%C3%BAra)
+        - [Logstash config](#logstash-config)
+        - [Futtatás](#futtat%C3%A1s)
 
 <!-- /TOC -->
 
