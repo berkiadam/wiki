@@ -7,7 +7,7 @@
 - [Apache Kafka](kafka/index.md)
 - [Apache Kafka + Avro ](kafa-with-avro/index.md)
 - [Selinium 3](selinium3/index.md)
-- [WPA wiki pwd crack](WPA-wifi-pwd/index.md)
+- [WPA wifi pwd crack](WPA-wifi-pwd/index.md)
 - [KVM virtualisation](KVM/index.md)
 - [Redis Cache](redis-cache/index.md)
 - [ElasticSearch - centralized logging](elasticsearch/index.md)
