@@ -78,7 +78,7 @@ Itt fogunk futtatni egy docker stack-et ami tartalmaz majd egy avro schema-regis
 
 
 confluent_swarm.yaml
-<source lang="C++">
+```yaml
 version: '3.2'
 services:
   zookeeper:
@@ -131,7 +131,7 @@ services:
 networks:
   kafka-net:
     driver: overlay
-</source>
+``````
 
 Hozzuk létre a docker stack-et: 
 ```
@@ -220,7 +220,7 @@ $ curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" --data 
 
 
 Szúrjuk be az Avro-ba az alábbi **Employee**sémát. A namespace majd a schema-to-java kód generálásánál lesz érdekes, ez fogja meghatározni a java csomagot generált kódban. A type mező mutatja meg, hogy összetett objektumot, sima stringet, vagy tömböt ír le a séma. A**record**jelenti az összetett objektumot. Az**Employee** nevű objektum négy mezőből áll. 
-<source lang="C++">
+```json
 {"namespace": "hu.alerant.kafka.avro.message",
   "type": "record",  "name": "Employee",
     "fields": [
@@ -230,7 +230,7 @@ Szúrjuk be az Avro-ba az alábbi **Employee**sémát. A namespace majd a schema
         {"name": "phoneNumber",  "type": "string"}  
     ]
 }
-</source>
+```
 
 
 Ennek az escape-elt változata: 
@@ -252,7 +252,7 @@ A válaszban visszakaptuk a séma példány egyedi azonosítóját. Ez nem össz
 
 
 Most próbáljunk az előbbitől tejesen különböző **Company**sémát regisztrálni szintén a**test1** subject alá. 
-<source lang="C++">
+```json
 {"namespace": "hu.alerant.kafka.avro.message",
   "type": "record",  "name": "Company",
     "fields": [
@@ -262,7 +262,7 @@ Most próbáljunk az előbbitől tejesen különböző **Company**sémát regisz
         {"name": "phoneNumber",  "type": "string"}  
     ]
 }
-</source>
+```
 
 Ennek az escape-elt változata az alábbi. 
 ```
@@ -284,7 +284,7 @@ Láthatjuk, hogy nem engedte az Avro a **Company**sémát regisztrálni a**test1
 Láthattuk a /config lekérdezésben, hogy jelenleg a beállított kompatibilitási szint **BACKWARD**, ami azt jelenti, hogy csak olyan sémákat lehet beszúrni ugyan azon subject alá, amivel az összes korábban beszúrt adatot ki lehet olvasni, magyarán csak olyan sémákat lehet egymás után beszúrni, ami részhalmaza az előző sémának. 
 
 Most szúrjuk be az **Employee**sémának egy redukált változatát, amiből hiányzik a**phoneNumber** mező. Erre teljesül hogy visszafelé komatibilis. 
-<source lang="C++">
+```json
 {"namespace": "hu.alerant.kafka.avro.message",
   "type": "record",  "name": "Employee",
     "fields": [
@@ -293,7 +293,7 @@ Most szúrjuk be az **Employee**sémának egy redukált változatát, amiből hi
         {"name": "age",  "type": "int"}
     ]
 }
-</source>
+```
 
 Ennek az escape-elt változata az alábbi: 
 ```
@@ -345,7 +345,7 @@ A fenit .xml sémákat tegyük be a /schemas/ mappába .avsc kiterjesztésben:
 A forrást a /src/main/java/ mappába fogja tenni. Az avro által generált java osztály package a sémában lévő **namespace** értéke lesz. 
 
 pom.xml
-<source lang="xml">
+```xml
 		<!-- Avro code generator -->
 
 		<dependency>
@@ -396,7 +396,7 @@ pom.xml
 			</plugin>
 		</plugins>
 	</build>
-</source>
+```
 
 Buildelés: 
 
@@ -418,7 +418,7 @@ $ mvn install
 A generált osztályba az Avro belegenrőlja a sémát is, ez az amit majd a Kafak topic-ba dobás előtt a producer fel fog küldeni a schema-register szervernek.
 
 Employee.java
-<source lang="java">
+```java
 package hu.alerant.kafka.avro.message;
 
 import org.apache.avro.specific.SpecificData;
@@ -436,7 +436,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
           {\"name\":\"age\",\"type\":\"int\"},{\"name\":\"phoneNumber\",\"type\":\"string\"}]}");
 
 ....
-</source>
+```
 
 
 <br>
@@ -448,11 +448,12 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 ## Java avro-kafak producer
 
 A hagyományos Kafka java producer-hez képest csak pár különbség van a java producer inicializálásban. Egyrészt meg kell adni, hogy mind a kulcsot, mind az üzenetet Avro-val akarjuk serializálni, másrészt meg kell adni az Avro schema-registry URL-jét. A /etc/hosts fájlba felvettük a worker0 swarm node IP címével a **schema-registry** host nevet. 
-<source lang="java">
+
+```java
 props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, io.confluent.kafka.serializers.KafkaAvroSerializer.class);
 props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, io.confluent.kafka.serializers.KafkaAvroSerializer.class);
 props.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://schema-registry:8081");
-</source>
+```
 
 
 Első alkalommal, mikor a producer be akar dobni egy üzenetet a Kafka topic-ba, felküldi a sémát a már látott POST:http://192.168.42.42:8081/subjects/<subject-name>/versions REST hívással, amit az avro java objektumból nyer ki. Ha a séma egy futás alatt nem változik, akkor többször nem küldi fel a sémát a schema-registry-be. A producer az avro subject nevét automatikusan képezi a topoci nevéből. Tehát egy topoc-ba csak a kompatibilitási szabályoknak megfelelő sémáknak megfelelő üzeneteket lehet berakni. Arra nincs mód, hogy bármilyen is megadjuk, hogy az adott objektum melyik subject melyik verziójának kell hogy megfeleljen, ezt teljesen elfedi előlünk az API.
@@ -461,7 +462,7 @@ Első alkalommal, mikor a producer be akar dobni egy üzenetet a Kafka topic-ba,
 
 
 
-<source lang="java">
+```java
 package hu.alerant.kafka.avro;
 
 import java.util.Properties;
@@ -512,7 +513,7 @@ public class AvroProducer {
 	        producer.close();
 	    }
 }
-</source>
+```
 
 A parancssori kafka-avro consumer segítségével fogjuk kiolvasni a java producer által küldött üzeneteket. Futtassuk le a java producer-t majd indítsuk el a parancssori consumer-t. Az avro consumer csak annyiban különbözők a sima parancssori consumer-től, hogy a séma regiszter címét is meg kell adni. 
 ```
@@ -553,9 +554,9 @@ A partíciós kulcsot nem muszáj Avro sémával megadni, ha nem összetett obje
 ```
 
 A fenti példában a kulcs értéke Long, ezért használhatjuk egyszerűen a **LongSerializer** osztályt. 
-<source lang="java">
+```java
 props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, org.apache.kafka.common.serialization.LongSerializer.class);
-</source>
+```
 
 A fenti példa futtatásakor már csak a value sémáját fogja elküldeni a Kafka-ba írás előtt a producer a séma regiszternek. 
 ```
@@ -590,7 +591,7 @@ A **kafka-avro-console-producer** program a /bin mappában található. 4 param�
 
 
 Emlékezzünk rá, hogy az Employee séma az alábbi volt: 
-<source lang="C++">
+```json
 {"namespace": "hu.alerant.kafka.avro.message",
   "type": "record",  "name": "Employee",
     "fields": [
@@ -600,7 +601,7 @@ Emlékezzünk rá, hogy az Employee séma az alábbi volt:
         {"name": "phoneNumber",  "type": "string"}  
     ]
 }
-</source>
+```
 Ezt majd meg kell adjuk egysoros alakban a **kafka-avro-console-producer** parancsban. 
 
 > **NOTE:**A**kafka-avro-console-producer** parancsban a konkrét Avro üzenetet nem lehet megadni. Miután kiadtuk a parancsot, az input-on fogja várni, hogy bárjuk JSON formátumban a sémának megfelelő üzenetet. Minden egyes Enter leütésre megpróbálja elküldeni amit az stdIn-re beírtunk
@@ -659,31 +660,31 @@ Mikor a consumer üzenetet kap, el fog menni a séma regiszterhez, hogy letölts
 ## Java consumer
 
 A Properties map-ben a szokásos Kafka specifikus paramétereken felül meg kell adjuk a séma regiszter URL-jét és a séma használatára vonatkozó beállításokat. 
-<source lang="java">
+```java
 props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class.getName());
 props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class.getName()); 
 props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "true");
 props.put(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://schema-registry:8081"); 
-</source>
+```
 
 
 
 ### Séma specifikus consumer
 Ha a KafkaAvroDeserializerConfig.**SPECIFIC_AVRO_READER_CONFIG**értéke igaz, akkor a választ egy előre meghatározott objektum típusban fogjuk visszakapni, a példában ez lesz a**Employee.java**
-<source lang="java">
+```java
 props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "true");
-</source>
+```
 
 Mikor a consumer-t példányosítjuk, már ott meg kell adni, hogy mi az az Avro típus, amit válaszként várunk. Majd mikor elkérjük a consumer-től az üzenetet, akkor is pontosan meg kell adni a típust. 
-<source lang="java">
+```java
 Consumer<Long, Employee> consumer = createConsumer();
 ...
 final ConsumerRecords<Long, Employee> records = consumer.poll(Duration.ofMillis(100));
-</source>
+```
 
 
 Ez a teljes consumer: 
-<source lang="java">
+```java
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
@@ -737,7 +738,7 @@ public class AvroConsumer {
 		consumer.close();
 	}
 }
-</source>
+```
 
 
 
@@ -758,20 +759,20 @@ test-topic 0 1 {"firstName": "Bob", "lastName": "Jones", "age": 35, "phoneNumber
 
 ### Generikus consumer
 Ha a KafkaAvroDeserializerConfig.**SPECIFIC_AVRO_READER_CONFIG**értéke hamis, akkor a választ a válasz paroszlására a**GenericRecord** nevű általános célú objektumot kell használni, amiből extra munkával lehet csak kinyerni az eredeti objektum mezőit, cserébe nem kell séma specifikus consumer-t írni. 
-<source lang="java">
+```java
 props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "false");
-</source>
+```
 
 Mikor a consumer-t példányosítjuk, meg kell adni a GenericRecord típust. Majd mikor elkérjük a consumer-től az üzenetet, akkor is a **GenericRecord**-t kell megadni: 
-<source lang="java">
+```java
 final Consumer<Long, GenericRecord> consumer = createConsumer();
 ...
 ConsumerRecords<Long, GenericRecord> records = consumer.poll(Duration.ofMillis(100));
-</source>
+```
 
 
 Ez a teljes consumer: 
-<source lang="java">
+```java
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
@@ -820,7 +821,7 @@ public class AvroConsumerGeneric {
 		}
 	}
 }
-</source>
+```
 
 Láthatjuk, hogy a **GenericRecord** példányban ott van a producer által küldött JSON: 
 ```
@@ -832,9 +833,9 @@ offset = 8, key = 123456778, value = {"firstName": "Bob", "lastName": "Jones", "
 
 ### Partition keys
 Akárcsak a producer esetén, a consumer-ben is használható nem Avro-s kulcs. Lényeg, hogy a consumer-ben ugyan azt a kulcs szerializációs eljárást kell használni, mint a producer-ben: 
-<source lang="java">
+```java
 props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, org.apache.kafka.common.serialization.LongDeserializer.class);
-</source>
+```
 
 
 <br>
@@ -929,7 +930,7 @@ A swarm architektúrát bővíteni fogjuk a **rokasovo/logstash-avro2 logstash**
 
 A logstash konfigurációját külső volume-ként fogjuk felcsatolni a netshare plugin használatával (részletek itt: https://wiki.berki.org/index.php/Docker_volume_orchestration) 
 
-<source lang="C++">
+```json
 version: '3.2'
 services:
   zookeeper:
@@ -1007,7 +1008,7 @@ volumes:
     driver: nfs
     driver_opts:
       share: 192.168.42.1:/home/adam/dockerStore/logstash/config/
-</source>
+```
 
 <br>
 
@@ -1082,7 +1083,7 @@ Majd nézzük bele a logstash service logjába. Látnunk kell, hogy hozzá tudod
 
 Majd indítsuk el a **Java avro-kafak producer** fejezetben leírt java producert, ami egy egy Employee objektumot fog beküldeni a test-topic-ba. 
 Emlékezzünk rá, hogy az Employee objektum sémája az alábbi: 
-<source lang="C++">
+```json
 {"namespace": "hu.alerant.kafka.avro.message",
   "type": "record",  "name": "Employee",
     "fields": [
@@ -1092,10 +1093,10 @@ Emlékezzünk rá, hogy az Employee objektum sémája az alábbi:
         {"name": "phoneNumber",  "type": "string"}  
     ]
 }
-</source>
+```
 
 A java producer-ben az Employee objektum példányosítása az alábbi: 
-<source lang="java">
+```java
 ...
 	        Producer<Long, Employee> producer = createProducer();
 	        Employee bob = Employee.newBuilder().setAge(35)
@@ -1104,7 +1105,7 @@ A java producer-ben az Employee objektum példányosítása az alábbi:
 	                .setPhoneNumber("")
 	                .build();
 ...
-</source>
+```
 
 
 Miután a producer beküldte az avro üzenetet a Kafka test-topic-ba, a logstash logban meg kell jelenjen az alábbi üzenet: 
