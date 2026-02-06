@@ -1,2 +1,3 @@
 - [CalmAV](clamav/index.md)
 - [Linux parancsok](commands/index.md)
+- [Kafa + Avro ](kafa-with-avro/index.md)
