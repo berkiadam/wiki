@@ -331,11 +331,86 @@ $ curl -X GET -H "Content-Type: application/vnd.schemaregistry.v1+json" http://1
 
 <br>
 
+# Kafka message = key + value
 
+Egy Kafka üzenet két fő részből áll:
+```
+┌──────────────┬──────────────┐
+│     key      │    value     │
+└──────────────┴──────────────┘
+```
+**Message value**: Ez maga az adat, amit továbbítani akarsz.
+
+Példa:
+```
+{
+  "id": 123,
+  "name": "John Doe",
+  "age": 42
+}
+```
+
+Ez szinte mindig van, és Avro esetén ehhez tartozik a **<topic>-value** subject a Schema Registry-ben.
+
+<br>
+
+**Message key:** Ez egy azonosító, ami meghatározza, hogy az üzenet melyik partícióba kerül.
+
+Példa:
+```
+employeeId = 123
+```
+
+A kulcs lehet összetett objektum is: 
+```
+employeeId = 123
+orderId = 333
+```
+
+
+Mire használja Kafka? azonos key → mindig ugyanabba a partícióba megy 
+így garantálható a sorrendiség adott kulcsra. Ha nincs key: Kafka round-robin módon osztja szét az üzeneteket. 
+
+Mikor érdemes key-t használni?
+* ha az események egy entitáshoz tartoznak
+* ha fontos a sorrendiség (pl. orderId, userId)
+* ha aggregálsz, joinolsz (Kafka Streams)
+
+
+## Value Avro séma
+
+Alapértelmezett (Confluent) beállításnál a subject neve a topic nevéből képződik, mégpedig így:
+```
+<topic-név>-key
+<topic-név>-value
+```
+
+
+Ezért mondjuk azt, hogy a topic neve a subject előtagja (prefixe).
+
+
+Ha van egy **employees** nevű topicod, akkor a Schema Registry-ben automatikusan ezek a subjectek jönnek létre:
+```
+employees-key
+employees-value
+```
+
+* employees-key → a Kafka message key Avro sémája
+* employees-value → a Kafka message value Avro sémája
+
+
+
+## Partition keys Avro séma
+
+A partíciós kulcsot nem muszáj Avro sémával megadni, ha nem összetett objektum, használhatjuk a beépített serializálókat, deserealizálókat. 
+
+
+<br>
+<br>
 
 # Java kód generálás
 
-Van egy maven plugin, amivel a sémából ki lehet genrőlni az Avro-s java osztályokat, amiket majd használni tudunk mind a java producer és consumer-ben. 
+Van egy maven plugin, amivel a sémából ki lehet generálni az Avro-s java osztályokat, amiket majd használni tudunk mind a java producer és consumer-ben. 
 A fenit .xml sémákat tegyük be a /schemas/ mappába .avsc kiterjesztésben: 
 
 - Employee.avsc
@@ -415,7 +490,7 @@ $ mvn install
 
 
 
-A generált osztályba az Avro belegenrőlja a sémát is, ez az amit majd a Kafak topic-ba dobás előtt a producer fel fog küldeni a schema-register szervernek.
+A generált osztályba az Avro belengenerálja a sémát is, ez az amit majd a Kafak topic-ba dobás előtt a producer fel fog küldeni a schema-register szervernek.
 
 Employee.java
 ```java
@@ -437,6 +512,10 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
 ....
 ```
+<br>
+
+
+
 
 
 <br>
@@ -455,9 +534,9 @@ props.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://schema-r
 ```
 
 
-Első alkalommal, mikor a producer be akar dobni egy üzenetet a Kafka topic-ba, felküldi a sémát a már látott POST:http://192.168.42.42:8081/subjects/<subject-name>/versions REST hívással, amit az avro java objektumból nyer ki. Ha a séma egy futás alatt nem változik, akkor többször nem küldi fel a sémát a schema-registry-be. A producer az avro subject nevét automatikusan képezi a topoci nevéből. Tehát egy topoc-ba csak a kompatibilitási szabályoknak megfelelő sémáknak megfelelő üzeneteket lehet berakni. Arra nincs mód, hogy bármilyen is megadjuk, hogy az adott objektum melyik subject melyik verziójának kell hogy megfeleljen, ezt teljesen elfedi előlünk az API.
+Első alkalommal, mikor a producer be akar dobni egy üzenetet a Kafka topic-ba, felküldi a sémát a már látott **POST -> http://192.168.42.42:8081/subjects/<subject-name>/versions** REST hívással, amit az avro java objektumból nyer ki. Ha a séma egy futás alatt nem változik, akkor többször nem küldi fel a sémát a schema-registry-be. A producer az avro subject nevét automatikusan képezi a topoci nevéből. Tehát egy topoc-ba csak a kompatibilitási szabályoknak megfelelő sémáknak megfelelő üzeneteket lehet berakni. Arra nincs mód, hogy megadjuk, hogy az adott objektum melyik subject melyik verziójának kell hogy megfeleljen, ezt teljesen elfedi előlünk az API.
 
-***Összefoglalva, egy adott Kafka topic-ba, amit kommunikációra használnunk (tehát nem a séma tárolására) csak Avro kompatibilis sémáknak megfelelő objektumokat lehet beküldeni. Nem azért mert a topic nem bírna el másik sémából gyártott bináris üzenetet, hanem azért, mert az Avro API a topic nevéből képezi a subject nevét, és egy subject-en belül csak kompatibilis sémákat lehet tárolni.***    	
+*Összefoglalva: egy adott Kafka topic-ba, amit kommunikációra használnunk (tehát nem a séma tárolására) csak Avro kompatibilis sémáknak megfelelő objektumokat lehet beküldeni. Nem azért mert a topic nem bírna el másik sémából gyártott bináris üzenetet, hanem azért, mert az Avro API a topic nevéből képezi a subject nevét, és egy subject-en belül csak kompatibilis sémákat lehet tárolni.*    	
 
 
 
@@ -517,6 +596,7 @@ public class AvroProducer {
 A parancssori kafka-avro consumer segítségével fogjuk kiolvasni a java producer által küldött üzeneteket. Futtassuk le a java producer-t majd indítsuk el a parancssori consumer-t. Az avro consumer csak annyiban különbözők a sima parancssori consumer-től, hogy a séma regiszter címét is meg kell adni. 
 ```
 ./kafka-avro-console-consumer --topic test-topic --zookeeper 192.168.42.42:32181 --property schema.registry.url="http://schema-registry:8081"
+
 SLF4J: Class path contains multiple SLF4J bindings.
 ...
 
@@ -525,7 +605,11 @@ SLF4J: Class path contains multiple SLF4J bindings.
 ```
 
 
-Mikor Java-ból küldünk Avron-n keresztől Kafka üzeneteket, akkor a producer létre fog hozni a topic nevével prefixe-lt subjet-eket, egyet a Kafak kulcsnak és egyet a hozzá tartozó értéknek automatikusan, az első üzenet váltás után. A fenti példa futtatása után listázzuk ki az összes Avro-s subject-et: 
+Amikor Java-ból Avro-n keresztül küldünk üzeneteket Kafka-ba, a producer automatikusan létrehozza a topic nevével prefixált subjecteket: egyet a Kafka-üzenet kulcsához és egyet a hozzá tartozó értékhez. Ezek az első üzenet elküldése után jönnek létre.
+A subject a Schema Registry-ben egy név, ami alá a sémák verziózva vannak eltárolva. Ez nem Kafka topic, hanem egy Schema Registry azonosító.
+
+
+A fenti példa futtatása után listázzuk ki az összes Avro-s subject-et: 
 ```
 $ curl -X GET -H "Content-Type: application/vnd.schemaregistry.v1+json" http://192.168.42.42:8081/subjects/
 
@@ -541,13 +625,11 @@ A log-ban láthatjuk, hogy két POST kéréssel a kliens beküldte a schema-regi
 2019-03-26 17:38:50 DEBUG RestService:118 - Sending POST with input {"schema":"{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"hu.alerant.kafka.avro.message\",\"fields\":[{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"},{\"name\":\"phoneNumber\",\"type\":\"string\"}]}"} to http://schema-registry:8081/subjects/test-topic-value/versions
 ```
 
+<br>
+<br>
 
 
-
-
-### Partition keys
-
-A partíciós kulcsot nem muszáj Avro sémával megadni, ha nem összetett objektum, használhatjuk a beépített serializálókat, deserealizálókat. Láthattuk is, hogy a kulcs sémája egy darab Long típust tartalmazott. 
+Ahogy az látszik, a kulcs sémája egy darab Long típust tartalmazott. 
 ```
 {"schema":"\"long\""}
 ```
@@ -571,6 +653,7 @@ $ curl -X GET -H "Content-Type: application/vnd.schemaregistry.v1+json" http://1
 ["test-topic-value","test-topic-key","test1"]
 ```
 
+
 <br>
 
 <br>
@@ -585,8 +668,8 @@ A **kafka-avro-console-producer** program a /bin mappában található. 4 param�
 - broker-list: itt meg kell adni a Kafka broker URL-jét
 - topic: meg kell adni a Kafka topic nevét, ahova írja az üzeneteket
 - property: itt fel tudunk sorolni tetszőleges paramétereket, nekünk itt kettőt kell kötelezően megadni: 
-	- schema.registry.url: A séma regiszter elérhetősége
-	- value.schema: itt meg kell adni a használni kívánt sémát JSON formátumban (a Java producer esetén a séma bele van kódolva az Avro objektumokban, a példában az Employee objektum elején megtalálhatjuk a sémát. A sémát minden producer indulás elején felküldi a producer a séma regiszterbe, hogy ellenőrizze, hogy változott e vagy sem. )
+- schema.registry.url: A séma regiszter elérhetősége
+- value.schema: itt meg kell adni a használni kívánt sémát JSON formátumban (a Java producer esetén a séma bele van kódolva az Avro objektumokban, a példában az Employee objektum elején megtalálhatjuk a sémát. A sémát minden producer indulás elején felküldi a producer a séma regiszterbe, hogy ellenőrizze, hogy változott e vagy sem. )
 
 
 Emlékezzünk rá, hogy az Employee séma az alábbi volt: 
@@ -757,7 +840,7 @@ test-topic 0 1 {"firstName": "Bob", "lastName": "Jones", "age": 35, "phoneNumber
 
 
 ### Generikus consumer
-Ha a KafkaAvroDeserializerConfig.**SPECIFIC_AVRO_READER_CONFIG** értéke hamis, akkor a választ a válasz paroszlására a **GenericRecord** nevű általános célú objektumot kell használni, amiből extra munkával lehet csak kinyerni az eredeti objektum mezőit, cserébe nem kell séma specifikus consumer-t írni. 
+Ha a KafkaAvroDeserializerConfig.**SPECIFIC_AVRO_READER_CONFIG** értéke hamis, akkor a válasz paroszlására a **GenericRecord** nevű általános célú objektumot kell használni, amiből extra munkával lehet csak kinyerni az eredeti objektum mezőit, cserébe nem kell séma specifikus consumer-t írni. 
 ```java
 props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "false");
 ```
@@ -850,7 +933,7 @@ https://github.com/revpoint/logstash-codec-avro_schema_registry<br>
 https://www.elastic.co/guide/en/logstash/current/plugins-codecs-avro.html<br>
 
 
-A logstash-t tehetjük a Kafka elé és mögé is. Ha a Kafka mögé tesszük, pl. a Kafka és az Elasticsearh közé, akkor a logstash-nek kell elvégezni az Avro deszeralizációt az Elastichsearh-be való írás előtt. Az avro üzenetek feldolgozására nem képes önállóan a Logstash, szükség van egy megfelelő input avro-kafka-logstash plugin-re, ami el tudja végezni a deseralizációt. 
+A logstash-t tehetjük a Kafka elé és mögé is. Ha a Kafka mögé tesszük, pl. a Kafka és az Elasticsearch közé, akkor a logstash-nek kell elvégezni az Avro deszeralizációt az Elasticsearch-be való írás előtt. Az avro üzenetek feldolgozására nem képes önállóan a Logstash, szükség van egy megfelelő input avro-kafka-logstash plugin-re, ami el tudja végezni a deseralizációt. 
 
 
 ![docs/ClipCapIt-190419-125341.PNG](docs/ClipCapIt-190419-125341.PNG) 
@@ -921,7 +1004,7 @@ logstash-codec-cef
 
 ### Swarm architektúra
 
-A swarm architektúrát bővíteni fogjuk a **rokasovo/logstash-avro2 logstash** komponenssel. A logstash a belső **kafka-net** overlay hálózaton fogja elérni a schema-registry-t. Az Elasticsearh-öt már nem tesszük be a swarm stack-be, a logstash által feldolgozott üzeneteket csak ki fogjuk loggolni: 
+A swarm architektúrát bővíteni fogjuk a **rokasovo/logstash-avro2 logstash** komponenssel. A logstash a belső **kafka-net** overlay hálózaton fogja elérni a schema-registry-t. Az Elasticsearch-öt már nem tesszük be a swarm stack-be, a logstash által feldolgozott üzeneteket csak ki fogjuk loggolni: 
 
 ![docs/ClipCapIt-190419-201131.PNG](docs/ClipCapIt-190419-201131.PNG) 
 <!-- <img src="docs/ClipCapIt-190419-201131.PNG" width="400"> -->
