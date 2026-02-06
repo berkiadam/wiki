@@ -78,7 +78,7 @@ Itt fogunk futtatni egy docker stack-et ami tartalmaz majd egy avro schema-regis
 
 
 confluent_swarm.yaml
-```yaml
+```json
 version: '3.2'
 services:
   zookeeper:
@@ -131,7 +131,7 @@ services:
 networks:
   kafka-net:
     driver: overlay
-``````
+```
 
 Hozzuk létre a docker stack-et: 
 ```
@@ -173,7 +173,7 @@ Mivel mind a három komonensünknek egy-egy portját publikáltuk az ingress loa
 
 # Avro REST interfész
 
-Az Avro a **_schemas**nevű Kafka topic-ban tárolja a sémákat az alapértelmezett konfiguráció szerint. A Kafka /bin mappájában található**kafka-topics.sh** topic admin script-el listázzuk ki a topikokat: 
+Az Avro a **_schemas** nevű Kafka topic-ban tárolja a sémákat az alapértelmezett konfiguráció szerint. A Kafka /bin mappájában található **kafka-topics.sh** topic admin script-el listázzuk ki a topikokat: 
 
 
 ```
@@ -219,7 +219,7 @@ $ curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" --data 
 ```
 
 
-Szúrjuk be az Avro-ba az alábbi **Employee**sémát. A namespace majd a schema-to-java kód generálásánál lesz érdekes, ez fogja meghatározni a java csomagot generált kódban. A type mező mutatja meg, hogy összetett objektumot, sima stringet, vagy tömböt ír le a séma. A**record**jelenti az összetett objektumot. Az**Employee** nevű objektum négy mezőből áll. 
+Szúrjuk be az Avro-ba az alábbi **Employee** sémát. A namespace majd a schema-to-java kód generálásánál lesz érdekes, ez fogja meghatározni a java csomagot generált kódban. A type mező mutatja meg, hogy összetett objektumot, sima stringet, vagy tömböt ír le a séma. A **record** jelenti az összetett objektumot. Az **Employee** nevű objektum négy mezőből áll. 
 ```json
 {"namespace": "hu.alerant.kafka.avro.message",
   "type": "record",  "name": "Employee",
@@ -251,7 +251,7 @@ A válaszban visszakaptuk a séma példány egyedi azonosítóját. Ez nem össz
 
 
 
-Most próbáljunk az előbbitől tejesen különböző **Company**sémát regisztrálni szintén a**test1** subject alá. 
+Most próbáljunk az előbbitől tejesen különböző **Company** sémát regisztrálni szintén a **test1** subject alá. 
 ```json
 {"namespace": "hu.alerant.kafka.avro.message",
   "type": "record",  "name": "Company",
@@ -270,20 +270,20 @@ Ennek az escape-elt változata az alábbi.
 ```
 
 
-A **Company**sémát szúrjuk be szintén az**test1** subject alá. 
+A **Company** sémát szúrjuk be szintén az **test1** subject alá. 
 ```
 $ curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"schema" : "{\"namespace\": \"hu.alerant.kafka.avro.message\",  \"type\": \"record\",  \"name\": \"Company\",   \"fields\": [ {\"name\": \"name\", \"type\": \"string\"}, {\"name\": \"address\", \"type\": \"string\"}, {\"name\": \"employCount\",  \"type\": \"int\"},  {\"name\": \"phoneNumber\",  \"type\": \"string\"} ]}"}' http://192.168.42.42:8081/subjects/test1/versions
 
 {"error_code":409,"message":"Schema being registered is incompatible with an earlier schema ...}
 ```
 
-Láthatjuk, hogy nem engedte az Avro a **Company**sémát regisztrálni a**test1**subject alá, mert túl nagy volt az eltérés a**Company**és a**Employee** sémák között. 
+Láthatjuk, hogy nem engedte az Avro a **Company** sémát regisztrálni a **test1** subject alá, mert túl nagy volt az eltérés a **Company** és a **Employee** sémák között. 
 
 
 
 Láthattuk a /config lekérdezésben, hogy jelenleg a beállított kompatibilitási szint **BACKWARD**, ami azt jelenti, hogy csak olyan sémákat lehet beszúrni ugyan azon subject alá, amivel az összes korábban beszúrt adatot ki lehet olvasni, magyarán csak olyan sémákat lehet egymás után beszúrni, ami részhalmaza az előző sémának. 
 
-Most szúrjuk be az **Employee**sémának egy redukált változatát, amiből hiányzik a**phoneNumber** mező. Erre teljesül hogy visszafelé komatibilis. 
+Most szúrjuk be az **Employee** sémának egy redukált változatát, amiből hiányzik a **phoneNumber** mező. Erre teljesül hogy visszafelé komatibilis. 
 ```json
 {"namespace": "hu.alerant.kafka.avro.message",
   "type": "record",  "name": "Employee",
@@ -448,7 +448,6 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 ## Java avro-kafak producer
 
 A hagyományos Kafka java producer-hez képest csak pár különbség van a java producer inicializálásban. Egyrészt meg kell adni, hogy mind a kulcsot, mind az üzenetet Avro-val akarjuk serializálni, másrészt meg kell adni az Avro schema-registry URL-jét. A /etc/hosts fájlba felvettük a worker0 swarm node IP címével a **schema-registry** host nevet. 
-
 ```java
 props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, io.confluent.kafka.serializers.KafkaAvroSerializer.class);
 props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, io.confluent.kafka.serializers.KafkaAvroSerializer.class);
@@ -604,7 +603,7 @@ Emlékezzünk rá, hogy az Employee séma az alábbi volt:
 ```
 Ezt majd meg kell adjuk egysoros alakban a **kafka-avro-console-producer** parancsban. 
 
-> **NOTE:**A**kafka-avro-console-producer** parancsban a konkrét Avro üzenetet nem lehet megadni. Miután kiadtuk a parancsot, az input-on fogja várni, hogy bárjuk JSON formátumban a sémának megfelelő üzenetet. Minden egyes Enter leütésre megpróbálja elküldeni amit az stdIn-re beírtunk
+> **NOTE:** A **kafka-avro-console-producer** parancsban a konkrét Avro üzenetet nem lehet megadni. Miután kiadtuk a parancsot, az input-on fogja várni, hogy bárjuk JSON formátumban a sémának megfelelő üzenetet. Minden egyes Enter leütésre megpróbálja elküldeni amit az stdIn-re beírtunk
 
 
 
@@ -670,7 +669,7 @@ props.put(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://schema
 
 
 ### Séma specifikus consumer
-Ha a KafkaAvroDeserializerConfig.**SPECIFIC_AVRO_READER_CONFIG**értéke igaz, akkor a választ egy előre meghatározott objektum típusban fogjuk visszakapni, a példában ez lesz a**Employee.java**
+Ha a KafkaAvroDeserializerConfig.**SPECIFIC_AVRO_READER_CONFIG** értéke igaz, akkor a választ egy előre meghatározott objektum típusban fogjuk visszakapni, a példában ez lesz a **Employee.java**
 ```java
 props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "true");
 ```
@@ -742,7 +741,7 @@ public class AvroConsumer {
 
 
 
-> **WARNING:**A***org.apache.kafka.clients.consumer.KafkaConsumer.poll(long)***már deprecated. Helyette a**KafkaConsumer.poll(Duration)** metódust kell használni
+> **WARNING:** A ***org.apache.kafka.clients.consumer.KafkaConsumer.poll(long)*** már deprecated. Helyette a **KafkaConsumer.poll(Duration)** metódust kell használni
 
 
 
@@ -758,7 +757,7 @@ test-topic 0 1 {"firstName": "Bob", "lastName": "Jones", "age": 35, "phoneNumber
 
 
 ### Generikus consumer
-Ha a KafkaAvroDeserializerConfig.**SPECIFIC_AVRO_READER_CONFIG**értéke hamis, akkor a választ a válasz paroszlására a**GenericRecord** nevű általános célú objektumot kell használni, amiből extra munkával lehet csak kinyerni az eredeti objektum mezőit, cserébe nem kell séma specifikus consumer-t írni. 
+Ha a KafkaAvroDeserializerConfig.**SPECIFIC_AVRO_READER_CONFIG** értéke hamis, akkor a választ a válasz paroszlására a **GenericRecord** nevű általános célú objektumot kell használni, amiből extra munkával lehet csak kinyerni az eredeti objektum mezőit, cserébe nem kell séma specifikus consumer-t írni. 
 ```java
 props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "false");
 ```
@@ -922,7 +921,7 @@ logstash-codec-cef
 
 ### Swarm architektúra
 
-A swarm architektúrát bővíteni fogjuk a **rokasovo/logstash-avro2 logstash**komponenssel. A logstash a belső**kafka-net** overlay hálózaton fogja elérni a schema-registry-t. Az Elasticsearh-öt már nem tesszük be a swarm stack-be, a logstash által feldolgozott üzeneteket csak ki fogjuk loggolni: 
+A swarm architektúrát bővíteni fogjuk a **rokasovo/logstash-avro2 logstash** komponenssel. A logstash a belső **kafka-net** overlay hálózaton fogja elérni a schema-registry-t. Az Elasticsearh-öt már nem tesszük be a swarm stack-be, a logstash által feldolgozott üzeneteket csak ki fogjuk loggolni: 
 
 ![docs/ClipCapIt-190419-201131.PNG](docs/ClipCapIt-190419-201131.PNG) 
 <!-- <img src="docs/ClipCapIt-190419-201131.PNG" width="400"> -->
@@ -1016,8 +1015,8 @@ volumes:
 ### Logstash config
 A logstash image-en belül a konfigurációs fájl itt található: /usr/share/logstash/pipeline/**logstash.conf**. Ide kell felcsatolni a külső konfigurációs fájlt.<br>
 
-A kafka input-ban a codec-nek meg kell adni a **avro_schema_registry plugin**-t, amit a **rokasovo/logstash-avro2**image már tartalmaz. Az**endpoint** paraméterben kell megadni a schema-registry url-jét. Fontos, hogy itt a belső, kafka-net overlay hálózati nevet adjuk meg, ami megegyezik a stack fájlban a service nevével. Ugyanis a service nevére egy stack-en belül a docker névfeloldást végez. 
-Valamiért a deserializációs osztálynak a **ByteArrayDeserializer**osztályt kell megadni, nem a**KafkaAvroDeserializer** osztályt (A KafkaAvroDeserializer-t nem tartalmazza az avro input plugin)
+A kafka input-ban a codec-nek meg kell adni a **avro_schema_registry plugin**-t, amit a **rokasovo/logstash-avro2** image már tartalmaz. Az **endpoint** paraméterben kell megadni a schema-registry url-jét. Fontos, hogy itt a belső, kafka-net overlay hálózati nevet adjuk meg, ami megegyezik a stack fájlban a service nevével. Ugyanis a service nevére egy stack-en belül a docker névfeloldást végez. 
+Valamiért a deserializációs osztálynak a **ByteArrayDeserializer** osztályt kell megadni, nem a **KafkaAvroDeserializer** osztályt (A KafkaAvroDeserializer-t nem tartalmazza az avro input plugin)
 Az output-ban egyenlőre nem írjuk be Elasticsearch-be az üzeneteket, csak kiírjuk a log-ba. 
 ```
 input {
@@ -1047,7 +1046,7 @@ output {
 }
 ```
 
-Ha a helyére tettük a konfigurációs fájlt, akkor indítsuk el **docker run**paranccsal lokálisan felcsatolva a**/usr/share/logstash/pipeline** mappába a konfigurációs fájlt, hogy ki tudjuk külön próbálni, hogy a konfiguráció megfelelő e. Persze a Kafka-hoz nem fog tudni csatlakozni, de a szintaktikai hibákat tudjuk ellenőrizni. 
+Ha a helyére tettük a konfigurációs fájlt, akkor indítsuk el **docker run** paranccsal lokálisan felcsatolva a **/usr/share/logstash/pipeline** mappába a konfigurációs fájlt, hogy ki tudjuk külön próbálni, hogy a konfiguráció megfelelő e. Persze a Kafka-hoz nem fog tudni csatlakozni, de a szintaktikai hibákat tudjuk ellenőrizni. 
 ```
 9. docker run -d --name logstash --mount type=bind,source=/home/adam/dockerStore/logstash/config/,target=/usr/share/logstash/pipeline rokasovo/logstash-avro2 
 ```

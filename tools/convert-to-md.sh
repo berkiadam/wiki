@@ -2,7 +2,7 @@
 
 # Bemeneti és kimeneti fájlok
 
-FOLDER="range-rover"
+FOLDER="linux/kafa-with-avro"
 WIKI_FILE="input.wiki"
 MD_FILE="output_tmp.md"
 MD_FINAL="index.md"
@@ -10,7 +10,7 @@ IMAGE_DIR="docs"
 
 #--------------- dont edit below this line --------------------
 
-FOLDER="range-rover"
+
 WIKI_FILE="../$FOLDER/$WIKI_FILE"
 MD_FILE="../$FOLDER/$MD_FILE"
 MD_FINAL="../$FOLDER/$MD_FINAL"
@@ -63,6 +63,40 @@ s/\{\{note\|([^}]+)\}\}/> **NOTE:** \1\n/g
 # {{tip|...}} -> > **TIP:** ... (plusz egy üres sor)
 s/\{\{tip\|([^}]+)\}\}/> **TIP:** \1\n/g
 ' "$MD_FILE" > temp.md && mv temp.md "$MD_FILE"
+
+
+
+# <source lang="...">...</source> -> ```lang (C++ -> json, xml/java/json marad)
+awk '
+{
+    if (match($0, /<source[[:space:]]+lang="([^"]+)">/, m)) {
+        lang = m[1]
+
+        # csak ezeket hagyjuk meg, C++-t json-ra váltjuk
+        if (lang == "C++") {
+            lang = "json"
+        } else if (lang == "xml" || lang == "java" || lang == "json") {
+            # marad
+        } else {
+            # ha más, akkor is megtartjuk (vagy állítsd üresre, ha nem kéred)
+            # lang = ""
+        }
+
+        print "```" lang
+        inside_code = 1
+        next
+    }
+
+    if ($0 ~ /<\/source>/) {
+        print "```"
+        inside_code = 0
+        next
+    }
+
+    print
+}
+' "$MD_FILE" > temp.md && mv temp.md "$MD_FILE"
+
 
 
 
@@ -126,8 +160,16 @@ s/^ *= *([^=]+) *= *$/\n# \1/
 # döntöttt és kiemelt szövegetk 
 sed -E "s/'''([^']+)'''/**\1**/g; s/''([^']+)''/*\1*/g" "$MD_FILE" > temp.md && mv temp.md "$MD_FILE"
 
-## a csillagok utáni és előtt space-ek törlése
-sed -E 's/\*\* +([^*]+) +\*\*/**\1**/g' "$MD_FILE" > temp.md && mv temp.md "$MD_FILE"
+
+
+# **...** belsejéből vezető/záró space eltávolítása
+perl -pe 's/\*\*(.*?)\*\*/"**".($1=~s/^\s+|\s+$//gr)."**"/ge' "$MD_FILE" > temp.md && mv temp.md "$MD_FILE"
+
+
+
+
+
+
 
 
 # minden <br> után egy új sor
