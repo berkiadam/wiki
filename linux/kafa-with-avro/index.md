@@ -3,12 +3,36 @@
 <!-- <img src="docs/200px-ClipCapIt-190327-180306.PNG" width="200"> -->
 
 
+<!-- TOC -->
 
+- [Bevezető](#bevezető)
+  - [Mi az Avro?](#mi-az-avro)
+  - [Környezet](#környezet)
+- [Avro REST interfész](#avro-rest-interfész)
+- [Kafka message = key + value](#kafka-message--key--value)
+  - [Value Avro séma](#value-avro-séma)
+  - [Partition keys Avro séma](#partition-keys-avro-séma)
+- [Java kód generálás](#java-kód-generálás)
+- [Producers](#producers)
+  - [Java avro-kafak producer](#java-avro-kafak-producer)
+  - [Command line producers](#command-line-producers)
+- [Consumers](#consumers)
+  - [Command line consumer](#command-line-consumer)
+  - [Java consumer](#java-consumer)
+    - [Séma specifikus consumer](#séma-specifikus-consumer)
+    - [Generikus consumer](#generikus-consumer)
+    - [Partition keys](#partition-keys)
+  - [Logstash consumer](#logstash-consumer)
+    - [logstash avro plugin](#logstash-avro-plugin)
+    - [Swarm architektúra](#swarm-architektúra)
+    - [Logstash config](#logstash-config)
+    - [Futtatás](#futtatás)
+
+<!-- /TOC -->
+
+<br>
 
 # Bevezető
-
-
-
 
 
 ## Mi az Avro?
