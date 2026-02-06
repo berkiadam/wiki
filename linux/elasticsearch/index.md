@@ -3,7 +3,7 @@
 <hr>
 
 ![docs/ClipCapIt-180918-183214.PNG](docs/ClipCapIt-180918-183214.PNG) 
-<!-- <img src="docs/ClipCapIt-180918-183214.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-180918-183214.PNG" width="400"-->
 
 <br>
 <!-- TOC -->
@@ -26,7 +26,6 @@
     - [Telepítés](#telepítés)
   - [Logstash](#logstash-1)
     - [Logstash konfigurációs fájl](#logstash-konfigurációs-fájl)
-- [Remove in production](#remove-in-production)
     - [Telepítés](#telepítés-1)
     - [Testing logstash](#testing-logstash)
   - [Logspout](#logspout-1)
@@ -46,6 +45,94 @@
 - [Aggregáció](#aggregáció)
   - [Metrika aggregáció](#metrika-aggregáció)
     - [single-value numeric metrics aggregation](#single-value-numeric-metrics-aggregation)
+    - [multi-value numeric metrics aggregation](#multi-value-numeric-metrics-aggregation)
+  - [Bucket aggregation](#bucket-aggregation)
+    - [Filter aggregáció](#filter-aggregáció)
+    - [Filters aggregáció](#filters-aggregáció)
+    - [Hisztogram](#hisztogram)
+    - [Szomszédossági mátrix](#szomszédossági-mátrix)
+  - [Pipeline aggregation](#pipeline-aggregation)
+  - [Matrix aggregations](#matrix-aggregations)
+- [Kibana Web interface](#kibana-web-interface)
+- [docker-machine ssh mg0 ifconfig | grep -A 1 eth0 | grep "inet addr"](#docker-machine-ssh-mg0-ifconfig--grep--a-1-eth0--grep-inet-addr)
+  - [Alapok](#alapok-1)
+    - [Indexek kezelése](#indexek-kezelése)
+    - [Discover](#discover)
+  - [Visualize](#visualize)
+  - [Monitoring the ELK stack](#monitoring-the-elk-stack)
+- [Swarm stack](#swarm-stack)
+- [docker stack deploy --compose-file docker-compose.yml logmanager](#docker-stack-deploy---compose-file-docker-composeyml-logmanager)
+- [Elasticsarch cluster](#elasticsarch-cluster)
+  - [Áttekintés](#áttekintés-1)
+  - [Discovery](#discovery)
+  - [Perzisztencia](#perzisztencia)
+    - [Produkciós beállítások](#produkciós-beállítások)
+  - [Egy lehetséges megoldás](#egy-lehetséges-megoldás)
+    - [Közös konfigurációs fájl](#közös-konfigurációs-fájl)
+    - [Coordinating node-ok](#coordinating-node-ok)
+    - [További node-ok definiálása](#további-node-ok-definiálása)
+  - [Docker stack fájl](#docker-stack-fájl)
+
+<!-- /TOC -->
+- [Bevezető](#bevezető)
+  - [ElasticSearch](#elasticsearch)
+  - [Logstash](#logstash)
+  - [Logspout](#logspout)
+  - [Kibana](#kibana)
+- [Elasticsearch bemutatása](#elasticsearch-bemutatása)
+  - [Index](#index)
+  - [Shards \& Replicasedit \& Routing](#shards--replicasedit--routing)
+    - [Alapok](#alapok)
+    - [Shard-ek definiálása](#shard-ek-definiálása)
+    - [Routing vs custom Routing](#routing-vs-custom-routing)
+  - [REST API](#rest-api)
+- [ELK stack telepítése](#elk-stack-telepítése)
+  - [ElasticSearch](#elasticsearch-1)
+    - [Volume plugin](#volume-plugin)
+    - [Telepítés](#telepítés)
+  - [Logstash](#logstash-1)
+    - [Logstash konfigurációs fájl](#logstash-konfigurációs-fájl)
+    - [Telepítés](#telepítés-1)
+    - [Testing logstash](#testing-logstash)
+  - [Logspout](#logspout-1)
+    - [Telepítés](#telepítés-2)
+    - [Tesztelés](#tesztelés)
+  - [Docker logger driver vs logspout](#docker-logger-driver-vs-logspout)
+  - [Kibana](#kibana-1)
+    - [Volume plugin](#volume-plugin-1)
+    - [Telepítés](#telepítés-3)
+- [Elasticsearch REST API](#elasticsearch-rest-api)
+  - [Alap műveletek](#alap-műveletek)
+  - [Join statement](#join-statement)
+    - [Áttekintés](#áttekintés)
+    - [Használat](#használat)
+  - [Bulk műveletek](#bulk-műveletek)
+  - [Query DSL (Domain Specific Language)](#query-dsl-domain-specific-language)
+- [Aggregáció](#aggregáció)
+  - [Metrika aggregáció](#metrika-aggregáció)
+    - [single-value numeric metrics aggregation](#single-value-numeric-metrics-aggregation)
+    - [multi-value numeric metrics aggregation](#multi-value-numeric-metrics-aggregation)
+  - [Bucket aggregation](#bucket-aggregation)
+    - [Filter aggregáció](#filter-aggregáció)
+    - [Filters aggregáció](#filters-aggregáció)
+    - [Hisztogram](#hisztogram)
+    - [Szomszédossági mátrix](#szomszédossági-mátrix)
+  - [Pipeline aggregation](#pipeline-aggregation)
+  - [Matrix aggregations](#matrix-aggregations)
+- [Kibana Web interface](#kibana-web-interface)
+- [docker-machine ssh mg0 ifconfig | grep -A 1 eth0 | grep "inet addr"](#docker-machine-ssh-mg0-ifconfig--grep--a-1-eth0--grep-inet-addr)
+  - [Alapok](#alapok-1)
+    - [Indexek kezelése](#indexek-kezelése)
+    - [Discover](#discover)
+  - [Visualize](#visualize)
+  - [Monitoring the ELK stack](#monitoring-the-elk-stack)
+- [Swarm stack](#swarm-stack)
+- [docker stack deploy --compose-file docker-compose.yml logmanager](#docker-stack-deploy---compose-file-docker-composeyml-logmanager)
+- [Elasticsarch cluster](#elasticsarch-cluster)
+  - [Áttekintés](#áttekintés-1)
+  - [Discovery](#discovery)
+  - [Perzisztencia](#perzisztencia)
+    - [Produkciós beállítások](#produkciós-beállítások)
   - [Egy lehetséges megoldás](#egy-lehetséges-megoldás)
     - [Közös konfigurációs fájl](#közös-konfigurációs-fájl)
     - [Coordinating node-ok](#coordinating-node-ok)
@@ -63,7 +150,7 @@ A cél az, hogy minden a swarm cluster-ben futó konténer logját összegyűjts
 
 
 ![docs/ClipCapIt-180930-152409.PNG](docs/ClipCapIt-180930-152409.PNG) 
-<!-- <img src="docs/ClipCapIt-180930-152409.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-180930-152409.PNG" width="400"-->
 
 
 
@@ -100,31 +187,31 @@ It scales horizontally to handle kajillions of events per second, while automati
 A **Logstash** nem más mint egy log konverter. A LogStash-t fogjuk a logok betöltésére használni az Elasticsarch-be. Csak egyetlen egy példányt kell futtatni belőle az egész cluster-ben. A Logsput-tól meg fogja kapni a docker konténerek system logját, amit konvertálni fog Elasticsarch formátumra, aztán el fogja küldeni az Elastaticsearch-nek. 
 
 Az Elastichsearch-ben a
-Minden megkapott log-sort konvertálni fog Elasticsearch dokumentumra, amit be fog szúrni egy logstash-<dátum> nevű index-be. Minden nap az aznapi index-be. Az Elasticsearch-ben ha egy document-et egy olyan indexbe akarunk beszúrni, ami még nem létezi, akkor létre fogja hozni azt az indexet a beszúrás előtt az Elasticsarch. Így a logstash-nek nem kell külön az index-ekkel bajlódni, minden nap az adott dátummal az alábbi szerkezetű dokumentumokat szúrja be ha log érkezik hozzá a logsput-ol: 
+Minden megkapott log-sort konvertálni fog Elasticsearch dokumentumra, amit be fog szúrni egy logstash-<dátumnevű index-be. Minden nap az aznapi index-be. Az Elasticsearch-ben ha egy document-et egy olyan indexbe akarunk beszúrni, ami még nem létezi, akkor létre fogja hozni azt az indexet a beszúrás előtt az Elasticsarch. Így a logstash-nek nem kell külön az index-ekkel bajlódni, minden nap az adott dátummal az alábbi szerkezetű dokumentumokat szúrja be ha log érkezik hozzá a logsput-ol: 
 
 Ebből az egyszerű logsorból: 
  hello logspout
 
 Az alábbi Elasticsearch REST hívást hajtotta végre a dokumentum beszúrására az aznapra létrehozott index-be:  
-<syntaxhighlight lang="C++">
+```java
 PUT 'elasticsearch:9200/logstash_<dátum>/_doc/
 {
-              "host" => "10.0.0.2",
-        "@timestamp" => 2018-09-19T19:15:00.000Z,
-               "pid" => "6648",
-         "logsource" => "622a2aa183b0",
-           "program" => "ubunto",
-          "severity" => 6,
-           "message" => "hello logspout\n",
-          "@version" => "1",
-          "priority" => 14,
-          "facility" => 1,
-         "timestamp" => "2018-09-19T19:15:00Z",
-    "severity_label" => "Informational",
-     "timestamp8601" => "2018-09-19T19:15:00Z",
-    "facility_label" => "user-level"
+              "host" ="10.0.0.2",
+        "@timestamp" =2018-09-19T19:15:00.000Z,
+               "pid" ="6648",
+         "logsource" ="622a2aa183b0",
+           "program" ="ubunto",
+          "severity" =6,
+           "message" ="hello logspout\n",
+          "@version" ="1",
+          "priority" =14,
+          "facility" =1,
+         "timestamp" ="2018-09-19T19:15:00Z",
+    "severity_label" ="Informational",
+     "timestamp8601" ="2018-09-19T19:15:00Z",
+    "facility_label" ="user-level"
 }
-</syntaxhighlight>
+```
 
 
 **Ezt írták  magukról:** <br>
@@ -194,15 +281,15 @@ https://www.elastic.co/blog/what-is-an-elasticsearch-index<br>
 
 Az ElasticSearch-ben az Index megfelel egy adatbázisnak egy relációs adatbázis kezelőben, RDBM-nek (Relational Database Management System)
 
-- MySQL => Databases => Tables => Columns/Rows
-- Elasticsearch => Indices => Types => Documents with Properties
+- MySQL =Databases =Tables =Columns/Rows
+- Elasticsearch =Indices =Types =Documents with Properties
 
 
 Egy Elasticsearch cluster-ben tehát tetszőleges számú **Index**-et hozhatunk létre (adatbázist), amiben tetszőleges számú **Type** lehet (tábla). A type-okon belül **Document**-ek vannak (ezek a sorok), és a Document-nek vannak tulajdonságai, **Property** (ezek az oszlopok) 
-- Index -> Adatbázis 
-- Type -> Tábla 
-- Document -> Row
-- Properties -> Column
+- Index -Adatbázis 
+- Type -Tábla 
+- Document -Row
+- Properties -Column
 
 Az én értésem szerint a típus bármilyen szó lehet, ez csak particionálja az adott indexbe behelyezett dokumentumokat. Pl: **mycomany/accounting** esetében a **mycompany** az index és az **account**-ing egy típus, amibe olyan dokumentumokat fogok rakni, amik az accounting témakörbe tartoznak. Keresésnél szintén meg lehet adni, hogy melyik típuson belül keresek.  
 
@@ -250,7 +337,7 @@ A shard-ok és replikák számát az index létrehozásakor kell megadni. Ha err
 
 
 ![docs/500px-ClipCapIt-180923-111738.PNG](docs/500px-ClipCapIt-180923-111738.PNG) 
-<!-- <img src="docs/500px-ClipCapIt-180923-111738.PNG" width="500"> -->
+<!-- <img src="docs/500px-ClipCapIt-180923-111738.PNG" width="500"-->
 
 A fenti ábrán egy 3 node-os cluster-t láthatunk, amiben két index van összesen. Az **order** index úgy lett létrehozva, hogy 4 primary (tele zöld) és 4 replica (zöld keret) shard-ből álljon. Tehát 4 felé van particionálva az order index, alapértelmezetten az Elsaticsearch dönti el, hogy egy új dokumentum melyik shard-re kerüljön, ez a user számára átlátszó. Az order index-ben ezen felül minden pirmary shard-nek egy replikája van mindig másik node-on mint ahol a primary van. 
 
@@ -291,7 +378,7 @@ A routing az Elasticsearch világában azt jelenti, hogy melyik (primary) shard-
  shard_num = hash(**_routing**) % num_primary_shards
 A modulo osztás biztosítja, hogy mindig egy valid shard számot kapjunk. 
 
-Ha ezt külön nem adjuk meg, akkor a dokumentum ID -ja lesz a **_routing** változó értéke. A dokumentum ID mezőjét vagy mi adjuk meg a dokumentum beszúrásakor a **_ID** paraméterrel, vagy az Elasticsearch-re bízzuk, hogy vegye elő a következő szabad ID-t. A document id -> routing id behelyettesítés biztosítja, hogy egyenletesen legyenek elosztva a dokumentumok az összes shard között, a keresés és a beszúrás is teljesen átlátszó a felhasználók számára shard szempontból. 
+Ha ezt külön nem adjuk meg, akkor a dokumentum ID -ja lesz a **_routing** változó értéke. A dokumentum ID mezőjét vagy mi adjuk meg a dokumentum beszúrásakor a **_ID** paraméterrel, vagy az Elasticsearch-re bízzuk, hogy vegye elő a következő szabad ID-t. A document id -routing id behelyettesítés biztosítja, hogy egyenletesen legyenek elosztva a dokumentumok az összes shard között, a keresés és a beszúrás is teljesen átlátszó a felhasználók számára shard szempontból. 
 
 
 Mikor rákeresünk egy dokumentumra, alapesetben az Elasticsearch-nek fogalma sincs, hogy melyik shard-ban van a dokumentum, így kiküld egy broadcast üzenetet az összes node-nak, akik ezt továbbítják párhuzamosan az összes shard-re, majd minden shard visszaküldi a keresés eredményét a gateway node-nak. Ez gyors, viszont nagyon erőforrás intenzív. A dokumentum mindig csak 1 darab primary shard-en van. Ha 20 primary shard-et használ az index, akkor ez 19 darab "felesleges" keresés. 
@@ -457,21 +544,23 @@ https://www.elastic.co/guide/en/logstash/6.4/configuration.html<br>
 A logstash alapértelmezett konfigurációja itt van: **/usr/share/logstash/pipeline/logstash.conf**. A pipeline mappában ezen kívül szerencsére nincs semmi, tehát gond nélkül mountolhatunk rá egy NFS meghajtót, ahova berakjuk a saját konfigurációs fájlunkat: <br>
 
 **logstash.conf**
-<syntaxhighlight lang="C++">
+```json
 input {
-  syslog { port => 51415 }
+  syslog { port =51415 }
 }
 
 output {
   elasticsearch {
-    hosts => ["elasticsearch:9200"]
+    hosts =["elasticsearch:9200"]
   }
   # Remove in production
   stdout {
-    codec => rubydebug
+    codec =rubydebug
   }
 }
-</syntaxhighlight>
+```
+
+
 A logstash-t is a **elk** nevű overlay hálózatra fogjuk kapcsolni. Az overlay hálózatokon egyrészt a konténerek közvetlen elérik egymást, így nincs szükség az ingress hálózatra publikált portokra, másrészt a swarm névfeloldást végez. A szolgáltatás nevére indított DNS lekérdezés visszaadja az összes a szolgáltatáshoz tartozó konténer IP címét a közös overlay hálózaton. Fontos, hogy a lekérdezést olyan konténerből indítsuk, ami ugyan arra az overlay hálózatra csatlakozik mint a keresett szolgáltatás. 
 
 Az ElasticSearch a 9200-es porton hallgatózik, amit nem publikáltunk az ingress hálózatra. Viszont a logstash a közös **elk** overlay hálózaton fel tudja oldani az elasticsearch domain nevet, ami megegyezik a szolgáltatás nevével.
@@ -493,10 +582,12 @@ docker service create --name logstash \
 -e "LOGSPOUT=ignore" \
 docker.elastic.co/logstash/logstash:6.4.0
 ```
+
 A **LOGSPOUT=ignore** környezeti változóval azt mondjuk meg a logspout-nak, hogy erről a konténerről ne gyűjtse össze a logokat. 
 
 
 Viszonylag lassan indul el a telepítés után, kb 30 másodperc. Ha végre elindul, akkor az alábbi log sor jelenik meg. Láthatjuk hogy sikeresen kapcsolódott az Elasicsearch-öz a konfigurációban megadott URL-en (amúgy ez az alapértelmezett, magától is itt keresné). 
+
 ```
 11. docker service  logs -f logstash
 ...
@@ -522,23 +613,23 @@ logger -n logstash -P 51415 hello world
 
 
 
-```
+
 12. docker service logs logstash 
-....
+```json
 {
-          "severity" => 0,
-          "@version" => "1",
-              "tags" => [
+          "severity" =0,
+          "@version" ="1",
+              "tags" =[
         [0] "_grokparsefailure_sysloginput"
     ],
-    "severity_label" => "Emergency",
-        "@timestamp" => 2018-09-12T20:24:29.085Z,
-          "priority" => 0,
-    "facility_label" => "kernel",
-           "message" => "<13>1 2018-09-12T20:24:29.013823+00:00 a4f8651665ee root - - 
+    "severity_label" ="Emergency",
+        "@timestamp" =2018-09-12T20:24:29.085Z,
+          "priority" =0,
+    "facility_label" ="kernel",
+           "message" ="<13>1 2018-09-12T20:24:29.013823+00:00 a4f8651665ee root - - 
                                      [timeQuality tzKnown=\"1\" isSynced=\"0\"] hello world",
-              "host" => "10.0.0.2",
-          "facility" => 0
+              "host" ="10.0.0.2",
+          "facility" =0
 }
 ```
 
@@ -609,7 +700,7 @@ Indítsuk el a logstash log-nézőt:
 
 Indítsuk el az ubuntu-t standalone docker konténerként, ami az stdout-ra fog írni a konténeren belül. Ezt az logspout-nak észre kell venni, és el kell küldeni a logstash-nek, aki már be tudja tölteni a megfelelő alakban az ElasticSarch-be. Az ubuntu konténer ahogy kiírta az üzenetet az stdout-ra le fog állni, így kapásból törölhetjük is. Fontos, hogy **-d** kapcsolóval futtassuk az ubuntu konténert, interaktív módban a logspout nem gyűjti be a logokat. 
 ```
-18. docker run -d --name ubuntu ubuntu echo "hello logspout" > /dev/stdout
+18. docker run -d --name ubuntu ubuntu echo "hello logspout" /dev/stdout
 ```
 > **NOTE:** Amikor a --rm kapcsolóval futtattam, akkor mintha nem lett volna ideje a logspout-nak elküldeni a logokat, a --rm kapcsoló használata mellett nem jelent meg semmi a logstash-ben
 
@@ -618,20 +709,20 @@ Indítsuk el az ubuntu-t standalone docker konténerként, ami az stdout-ra fog 
 Szinte azonnal meg kell jelenjen a "hello logspout" üzenet a logstash logjában, amit interaktív módban figyelünk: 
 ```
 logstash.1.ggjdb8navgso@mg1    | {
-logstash.1.ggjdb8navgso@mg1    |           "@version" => "1",
-logstash.1.ggjdb8navgso@mg1    |          "timestamp" => "2018-09-14T20:31:00Z",
-logstash.1.ggjdb8navgso@mg1    |            "program" => "ubunto",
-logstash.1.ggjdb8navgso@mg1    |           "severity" => 6,
-logstash.1.ggjdb8navgso@mg1    |     "facility_label" => "user-level",
-logstash.1.ggjdb8navgso@mg1    |                "pid" => "3291",
-logstash.1.ggjdb8navgso@mg1    |           "priority" => 14,
-logstash.1.ggjdb8navgso@mg1    |         "@timestamp" => 2018-09-14T20:31:00.000Z,
-logstash.1.ggjdb8navgso@mg1    |           "facility" => 1,
-logstash.1.ggjdb8navgso@mg1    |      "timestamp8601" => "2018-09-14T20:31:00Z",
-logstash.1.ggjdb8navgso@mg1    |     "severity_label" => "Informational",
-logstash.1.ggjdb8navgso@mg1    |            "message" => "hello logspout\n",
-logstash.1.ggjdb8navgso@mg1    |               "host" => "10.0.0.5",
-logstash.1.ggjdb8navgso@mg1    |          "logsource" => "836892e1d7fa"
+logstash.1.ggjdb8navgso@mg1    |           "@version" ="1",
+logstash.1.ggjdb8navgso@mg1    |          "timestamp" ="2018-09-14T20:31:00Z",
+logstash.1.ggjdb8navgso@mg1    |            "program" ="ubunto",
+logstash.1.ggjdb8navgso@mg1    |           "severity" =6,
+logstash.1.ggjdb8navgso@mg1    |     "facility_label" ="user-level",
+logstash.1.ggjdb8navgso@mg1    |                "pid" ="3291",
+logstash.1.ggjdb8navgso@mg1    |           "priority" =14,
+logstash.1.ggjdb8navgso@mg1    |         "@timestamp" =2018-09-14T20:31:00.000Z,
+logstash.1.ggjdb8navgso@mg1    |           "facility" =1,
+logstash.1.ggjdb8navgso@mg1    |      "timestamp8601" ="2018-09-14T20:31:00Z",
+logstash.1.ggjdb8navgso@mg1    |     "severity_label" ="Informational",
+logstash.1.ggjdb8navgso@mg1    |            "message" ="hello logspout\n",
+logstash.1.ggjdb8navgso@mg1    |               "host" ="10.0.0.5",
+logstash.1.ggjdb8navgso@mg1    |          "logsource" ="836892e1d7fa"
 logstash.1.ggjdb8navgso@mg1    | }
 ```
 
@@ -727,7 +818,7 @@ Láthatjuk, hogy naponként létrejött egy új index a logstash által begyűjt
 
 
 **Index beszúrása:**
-```
+```json
 22. curl -XPUT http://192.168.123.71:9200/customer?pretty
 {
   "acknowledged" : true,
@@ -747,6 +838,7 @@ yellow open   customer            BgTjrFs1Qh6eZm5B3nPCzA   5   1          0     
 
 
 **Dokumentum hozzáadása az index-hez:**
+
 Az előbb létrehozott customer index-hez adjunk hozzá egy dokumentumot. Fontos, hogy a **-H** header kapcsolóval megadjuk a tartalom típusát, ami JSON kell legyen. Ezen felül a -d kapcsolóval adhatjuk meg a PUT törzsét, ahol a JSON-t adjuk meg. A /_doc/ után kell megadni a dokumentum ID-t, ami az 1-es lesz. Ha nem adunk meg ID-t, akkor egy random ID lesz generálva a dokumentumhoz. 
 ```
 24. curl -XPUT '192.168.123.71:9200/customer/_doc/1?pretty' -H 'Content-Type: application/json' -d '
@@ -757,7 +849,7 @@ Az előbb létrehozott customer index-hez adjunk hozzá egy dokumentumot. Fontos
 
 
 És most kérjük le az 1-es ID-val rendelkező dokumentumot a customer index-en belül: 
-```
+```json
 25. curl -XGET http://192.168.123.71:9200/customer/_doc/1?pretty
 {
   "_index" : "customer",
@@ -777,7 +869,7 @@ Az előbb létrehozott customer index-hez adjunk hozzá egy dokumentumot. Fontos
 **Dokumentum update-elése**<br>
 
 A meglévő dokumentumot a _doc/<ID>/_update-el lehet frissíteni, új mezőket hozzáadni. 
-```
+```json
 curl -XPOST '192.168.123.71:9200/customer/_doc/1/_update?pretty' -H 'Content-Type: application/json' -d '
 {
   "doc": { "name": "Jane Doe", "age": 20 }
@@ -803,7 +895,7 @@ A joint kapcsolatot nem szabad relációs adatbázis kapcsolatként használni. 
 
 ### Használat
 Az alábbi példában létrehozzuk a **mycompany** nevű index-et, miben definiálunk egy relációt, ahol azt mondjuk meg, hogy a **question** a szülője az answer-nek. Ezek it nem szigorú értelembe vett dokumentum típusok, tehát nem kell hogy *mycompany/question* ill *mycomapany/answer* -be hozzuk őket létre. Ezek sokkal inkább egyfajta címkék, amiket majd rá kell aggatni a szülőre ill a gyerekre. Lényeg, hogy mikor majd létrehozzuk a szülő dokumentumot, akkor abban lennie kell majd egy **my_join_field** nevű mezőnek, aminek az értéke vagy question vagy és a gyerek dokumentumban pedig szintén lennie kell majd egy **my_join_field** nevű mezőnek aminek az értéke **answer**.
-```
+```json
 curl -XPUT "192.168.123.71:9200/mycompany" -H 'Content-Type: application/json' -d'
 {
   "mappings": {
@@ -824,7 +916,7 @@ curl -XPUT "192.168.123.71:9200/mycompany" -H 'Content-Type: application/json' -
 
 
 Adjunk hozzá egy szülő dokumentumot: 
-```
+```json
 curl -X PUT "192.168.123.71:9200/mycompany/_doc/2?refresh" -H 'Content-Type: application/json' -d'
 {
   "text": "This is another question",
@@ -835,7 +927,8 @@ curl -X PUT "192.168.123.71:9200/mycompany/_doc/2?refresh" -H 'Content-Type: app
 
 
 Majd két gyerek objektumot. Mivel megkötés, hogy ugyan abba a shar-ba kell kerüljön mint a szülő, ezért ezt nekünk külön kézzel ki kell kényszeríteni. A szülő létrehozásakor nem adtunk meg routing id-t, így ahogy azt már korábban láthattuk, a shard meghatározásához a dokumentum ID-t használta fel az Elasticsearch, ami az **1** volt. Ha nem adnánk most itt meg routing ID-t, akkor a **3**-as és **4**-es ID-t használná fel az Elasticsearch (ami itt a két dokumentum ID), ami isten tudja melyik shard-ba esne. Ezért itt külön meg kell adni a **routing** paraméterrel az 1-es ID-t. 
-```
+
+```json
 curl -XPUT "192.168.123.71:9200/mycompany/_doc/3?routing=1&refresh&pretty" -H 'Content-Type: application/json' -d'
 {
   "text": "This is an answer",
@@ -869,7 +962,7 @@ A relációk megjelennek a dokumentumokon, ha lekérdezzük őket. A lekérdezé
 
 
 Egyszerre több műveletet is végrehajthatunk a _bulk paranccsal. Minden művelet egy vagy két sorból áll. Az első sorban vagy megadunk egy új indexet, vagy egy régit törlünk vagy update-elünk. Az alábbi példában két új dokumentumot adunk a customer index-be, majd a 2-est update-eljük, a 3-ast töröljük. 
-```
+```json
 $ curl -XPOST '192.168.123.71:9200/customer/_doc/_bulk?pretty' -H 'Content-Type: application/json' -d '
 {"index":{"_id":"2"}}
 {"name": "John Doe2" }
@@ -885,16 +978,18 @@ $ curl -XPOST '192.168.123.71:9200/customer/_doc/_bulk?pretty' -H 'Content-Type:
 ```
 
 
-**Bulk betöltés fájlból**<br>
+**Bulk betöltés fájlból**
+
+<br>
 
 Az alábbi példában egy fiktív banki model 1000 dokumentumát fogjuk betölteni. A fájl itten tölthető le: https://github.com/elastic/elasticsearch/blob/master/docs/src/test/resources/accounts.json?raw=true
 
 
-```
+```json
 $ curl -H "Content-Type: application/json" -XPOST "192.168.123.71:9200/bank/_doc/_bulk?pretty&refresh" --data-binary "@accounts.json"
 ```
 Most kérdezzük le az indexeket: 
-```
+```json
 26. curl -XGET "192.168.123.71:9200/_cat/indices?v"
 health status index               uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 ..
@@ -905,12 +1000,13 @@ Láthatjuk, hogy a **bank** indexet az Elasticsearch létrehozta, mert még nem 
 
 
 ## Query DSL (Domain Specific Language)
+
 https://www.elastic.co/guide/en/elasticsearch/reference/current/_introducing_the_query_language.html
 
 A lekérdezést az **<index név>/_search** végponton kell meghívni. Vagy a request URL-ben állítjuk össze a lekérdezést, vagy a request törzsében. 
 
 Az alábbi lekérdezés visszaadja az összes bank indexben lévő dokumentumot ascending sorrendben. 
-```
+```json
 $ curl -XGET "192.168.123.71:9200/bank/_search?q=*&sort=account_number:asc&pretty"
 ```
 - q=query 
@@ -918,7 +1014,7 @@ $ curl -XGET "192.168.123.71:9200/bank/_search?q=*&sort=account_number:asc&prett
 
 
 Ugyan ez a lekérdezés a GET törzsében megadva: 
-```
+```json
 $ curl -H "Content-Type: application/json" -XGET '192.168.123.71:9200/bank/_search?pretty' -d '
 {
   "query": { "match_all": {} },
@@ -930,7 +1026,7 @@ $ curl -H "Content-Type: application/json" -XGET '192.168.123.71:9200/bank/_sear
 
 
 A keresés eredmény mindig egy összefoglalóval kezdődik: 
-```
+```json
 {
   "took" : 571,
   "timed_out" : false,
@@ -952,7 +1048,7 @@ A keresés eredmény mindig egy összefoglalóval kezdődik:
 
 
 Ha külön nem adjuk meg, mindig az első 10 találatot fogja visszaadni. A **size** és a **from**-al lehet ezt szabályozni: 
-```
+```json
 $ curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
 {
   "query": { "match_all": {} },
@@ -963,10 +1059,12 @@ $ curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: applic
 ```
 
 
-**Szűkítés mezőkre**<br>
+**Szűkítés mezőkre**
+
+<br>
 
 Beállíthatjuk, hogy a document source-bol milyen mezőket adjon csak vissza a **_source** paraméterrel. Az alábbi példa csak az account_number-t és a balance-ot fogja visszaadni. 
-```
+```json
 curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
 {
   "query": { "match_all": {} },
@@ -976,10 +1074,12 @@ curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: applicat
 ```
 
 
-**Keresés mező értékre**<br>
+**Keresés mező értékre**
+
+<br>
 
 A **match** paraméterrel lehet megadni mező szintű keresési feltételeket. Az alábbi példában csak azt a dokumentumot keressük, ahol az account_number = 20. Egy ilyen lesz. Az eredményt szűkítjük két mezőre. 
-```
+```json
 curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
 {
   "query": { "match": { "account_number": 20 } },
@@ -989,10 +1089,12 @@ curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: applicat
 ```
 
 
-**Logikai ÉS**<br>
+**Logikai ÉS**
+
+<br>
 
 Az alábbi példában csak azokat keressük, ahol mind a két match feltétel teljesül. 
-```
+```json
 curl -X GET "192.168.123.71:9200/bank/_search" -H 'Content-Type: application/json' -d'
 {
   "query": {
@@ -1008,10 +1110,12 @@ curl -X GET "192.168.123.71:9200/bank/_search" -H 'Content-Type: application/jso
 ```
 
 
-**Logikai VAGY**<br>
+**Logikai VAGY**
+
+<br>
 
 Az alábbi példában azokat keressük amire vagy az egyik, vagy a másik match teljesül: 
-```
+```json
 ..
 "query": {
     "bool": {
@@ -1023,10 +1127,12 @@ Az alábbi példában azokat keressük amire vagy az egyik, vagy a másik match 
 ```
 
 
-**Összetett query-k:** <br>
+**Összetett query-k:** 
 
-A bool után több logikai kifejezést is felírhatunk vesszővel elválasztva <must|should|must_not> [..], <must|should|must_not> [..], ...
-```
+<br>
+
+A bool után több logikai kifejezést is felírhatunk vesszővel elválasztva <must|should|must_not[..], <must|should|must_not[..], ...
+```json
 $ curl -X GET "192.168.123.71:9200/bank/_search" -H 'Content-Type: application/json' -d'
 {
   "query": {
@@ -1073,24 +1179,26 @@ A metrika aggregációk olyan függvények, amik a dokumentumok bizonyos mezőin
 
 
 A metrikáknak aggregációnak az alábbi a szintaksisa: 
-<syntaxhighlight lang="C++">
+```json
 POST 192.168.123.71:9200/<kereső kifejezés>
 {
     "aggs" : {
-        "<aggregáció neve>" : { "<aggregáció típusa>" : { <paraméterek> } }
+        "<aggregáció neve>" : { "<aggregáció típusa>" : { <paraméterek} }
     }
 }
-</syntaxhighlight>
+```
+
+
 A végeredmény is egy dokumentum lesz, amiben lesz egy mező név a metrika nevével, amit itt megadtunk a lekérdezésben. Azt hogy ez a lekérdezés egy aggregáció lesz, azt az **aggs** kulcsszó jelöli.
 
 Ha egy lekérdezésben volt aggregáció, akkor a válasz legvégére az Elasticsearch odarakja az aggregations nevű listát. Minden egyes aggregációnak lesz egy külön listaeleme azzal a névvel, amit megadtunk az aggregáció definiálásakor.  
-<syntaxhighlight lang="C++">
+```json
   "aggregations" : {
     "<aggregáció neve>" : {
       "value(s)" : <végeredmény, ami lehet egy vagy több elemű>
     }
   }
-</syntaxhighlight>
+```
 
 
 <br>
@@ -1098,13 +1206,13 @@ Ha egy lekérdezésben volt aggregáció, akkor a válasz legvégére az Elastic
 
 ### single-value numeric metrics aggregation
 A single-value aggregációknál a végeredmény mindig 1 elemű, tehát a végeredmény mindig így néz ki, ahol az XXX egy darab szám. 
-<syntaxhighlight lang="C++">
+```json
   "aggregations" : {
     "<aggregáció neve>" : {
       "value" : XXX
     }
   }
-</syntaxhighlight>
+```
 
 Példák egy értékű aggregációkra: 
 - Átlag (average)
@@ -1114,7 +1222,9 @@ Példák egy értékű aggregációkra:
 
 
 
-**Átlag**<br>
+**Átlag**
+
+<br>
 
 Számoljuk ki, hogy a **bank** indexben tárolt ügyfeleknek mekkora az átlagéletkora. Ez egy **single-value numeric metrics aggregation**, amiben az **avg** függvényt fogjuk használni az **age** mezőre. A **size=0**-val azt érjük el, hogy a **_search**-el megtalált dokumentumokat ne adja vissza, csak az aggregáció végeredményét. Alapértelmezetten az első 10 találatot adná vissza, ahogy azt már láttuk, és a végére tenni oda az aggregáció eredményét. Az aggregációnk neve avg_age lesz, ide bármilyen nevet meg lehet adni, ezzel a névvel lesz a végeredmény a válaszban. Tudjuk hogy a **bank** indexben lévő dokumentumoknak van **age** mezője, erre akarjuk végrehajtani az **avg** függvényt. 
 ```
@@ -1129,7 +1239,7 @@ curl -XPOST "http://192.168.123.71:9200/bank/_search?size=0&pretty" -H 'Content-
 A **missing** paraméter azt mondjuk meg, hogy ilyen értékkel vegye figyelembe azokat a dokumentumokat, amikben nincs ilyen mező, jelen esetben a age. Mert hogy egy index-ben belül sem kell hogy egyezzenek a dokumentumok, bármilyen struktúrájú dokumentumot beszúrhatunk. Ha egy dokumentumban nem lenne **age** mező, akkor azt 20-al venné figyelembe. 
 
 Nézzük meg a végeredményt. Az elején van a szokásos statisztika, láthatjuk, hogy mind az 1000 dokumentumot figyelembe vette, majd jönnek az aggregációs eredmények az **aggregations** listában. 
-```
+```json
 {
   "took" : 6,
   "timed_out" : false,
@@ -1156,7 +1266,9 @@ Egy szem eredmény van benne, az **avg_age**, aminek az értéke 30.171, vagyis 
 
 <br>
 
-**Súlyozott átlag**<br>
+**Súlyozott átlag**
+
+<br>
 
 A súlyozott átlagnál, minden egyes értékét megszorzunk a súllyal, és az eredmények összegét elosztjuk a súlyok összegével. (A normál átlag felfogható súlyozott átlagnak, ahol minden súly = 1):
  ∑(value * weight) / ∑(weight)
@@ -1174,7 +1286,7 @@ A súlyozott átlag aggregációnak már nem csak egy szimpla mező név paramé
 
 
 A következő példában nézzük meg az életkorok átlagát súlyozva a számlák egyenlegévél. Tehát az átlag value mezője továbbra is az **age**, és a súly a **balance**. A missing paraméter ugyan arra szolgál mint az előbb. 
-```
+```json
 curl -XPOST "http://192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
 {
     "size": 0,
@@ -1197,169 +1309,173 @@ curl -XPOST "http://192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: a
 
 
 A válasz nagyon hasonlít az előző példához: 
-```
+```json
   "aggregations" : {
     "waited_avg_age" : {
       "value" : 30.060448837377425
     }
   }
 ```
-**NOTE:** > A dokumentumokban, amit aggregálunk, több ugyan olyan mező is lehet, amit a **value**-ban megadunk, pl lehet akár három darab **age** mező is. Ilyenkor az összeset be fogja számolni a végeredménybe. Viszont a **weight** mezőből csak egy lehet egy dokumentumba, ha több van hibát fogunk kapni. Ilyenkor egy **script**-el lehet megmondani, hogy melyiket vegye figyelembe. 
-> 
-> 
-> 
-> ### multi-value numeric metrics aggregation
-> A multi-value aggregációknál a végeredmény egy eredmény lista, vagy egy előre meghatározott objektum, attól függően, hogy milyen típusú metrika aggregációt használunk. 
-> <syntaxhighlight lang="C++">
->   "aggregations" : {
->     "<aggregáció neve>" : {
->       "values" : { aaa=xxx, bbb=ccc, ...}
->     }
->   }
-> </syntaxhighlight>
-> 
-> 
-> - Stats aggregáció (statisztika egy mezőről)
-> - Extended Stats Aggregation
-> - Percentiles Aggregation
-> - ...
-> 
-> 
-> <br>
-> 
-> **stats**<br>
-> 
-> A legegyszerűbb a **stats** aggregáció, ami nem csinál mást, mint a dokumentum halmazban egy kiválasztott mezőre visszaadja a következő statisztikát: 
-> *darabszám, min, max, átlag, és summa*, tehát ez nem más mint a négy alap single-value aggregáció ötvözése. Maradva a bankos példánál, nézzük meg a **age** mezőre a statisztikát. Nevezzük el az aggregációnkat **age_stats**-nak: 
-> ```
-> curl -X POST "192.168.123.71:9200/bank/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
-> {
->     "aggs" : {
->         "age_stats" : { "stats" : { "field" : "age" } }
->     }
-> }
-> '
-> ```
-> 
-> A válasz 5 előre rögzített mezőt tartalmaz: 
-> ```
-> "aggregations" : {
->     "age_stats" : {
->       "count" : 1000,
->       "min" : 20.0,
->       "max" : 40.0,
->       "avg" : 30.171,
->       "sum" : 30171.0
->     }
->   }
-> ```
-> 
-> 
-> <br>
-> 
-> **Percentiles Aggregation**<br>
-> 
-> Egy mintában a kiugró értékek megkeresésére szolgál. A teljes halmazt növekvő sorrendbe rendezi, majd megmutatja, hogy milyen elem van pl a halmaz hosszának a felénél, a halmaz hosszának a 90%-ánál és a 99%-ánál. Mivel a halmaz  rendezett, tudhatjuk, hogy a 70%-hoz tartozó értéknél a halmazban az elemek 70%-a kisebb. Ezeket a %-okat mi határozhatjuk meg. Tipikusan a nagyobb százalékok lehetnek fontosabbak. A képlet az alábbi: 
->   my_array[count(my_array) * (százalékos érték, pl 70%)/100]  
-> 
-> Ez pl válaszidőknél sokkal személetesebb mint a min/max/átlag, amiből gyakran nem látszik hogy baj van. Pl adott a következő rendezett halmazunk (amik szimbolizáljanak válaszidőket másodpercben): 
->  {1,2,3,4,4,5,5,6,10,20} 
-> Azt szeretnénk tudni, hogy a kérések 70%-át maximum mekkora válaszidővel tudtuk kiszámolni: 
->   my_array[count(my_array) * 0.7] = 6
-> Tehát itt a 7. elemét kell vegyük ehhez a halmaznak, tehát a kérések 70%-át 6 másodpercen belül ki tudtuk szolgálni.  
-> 
-> 
-> A percentiles aggregációt a **percentiles** kulcsszóval kell definiálni. A keresett százalékokat a percents tömbbel kell megadni, itt növekvő sorrendben kell felsorolni számokat 0.1 és 99.9 között. Nézzük a szokásos banki életkor példát. 
-> ```
-> curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
-> {
->     "size": 0,
->     "aggs" : {
->         "age_perc" : {
->             "percentiles" : {
->                 "field" : "age",
->                 "percents" : [1.0, 5.0, 25.0, 50.0, 75.0, 95.0, 99.0]
->             }
->         }
->     }
-> }
-> '
-> ```
-> 
-> 
-> A válaszban a stat aggregációval ellentétben nem egy fix adatszerkezet van, hanem egy dinamikus value lista, minden egyes a percents tömbben megadott százalékhoz tartozik egy érték. A percents tömb megadás nem kötelező, ha nem adjuk meg, pont ez az alapértelmezett felosztás. <br>
-> 
-> Azt láthatjuk, hogy 75% -a a banki ügyfeleknek nem idősebb mint 35 év. És így tovább.  
-> ```
->  "aggregations" : {
->     "age_perc" : {
->       "values" : {
->         "1.0" : 20.0,
->         "5.0" : 21.0,
->         "25.0" : 25.0,
->         "50.0" : 31.0,
->         "75.0" : 35.0,
->         "95.0" : 39.0,
->         "99.0" : 40.0
->       }
->     }
->   }
-> ```
-> 
-> 
-> <br>
-> 
-> 
-> ## Bucket aggregation
-> A vödrös aggregációknál az indexben lévő dokumentumok részhalmazát egy vagy több kategóriába (vödörbe) soroljuk be. Ezekre a vödrökre aztán további aggregációkat alkalmazhatunk, vagy pusztán az érdekel minket, hogy hány dokumentum van egy vödörben (hisztogram típusú aggregációk)
-> 
-> 
-> 
-> 
-> ### Filter aggregáció
-> Egy darab vödröt képez egy szűrési feltétel alapján a megadott indexben. Igazából ez egy egyszerű keresés, aminek az eredményére aztán könnyen futtathatunk metrika típusú aggregációkat. A következő példában elsőnek összegyűjtjük a 30 éves ügyfeleket a filter bucket aggregációval, majd meghívjuk rá az avg metrika aggregációt. 
-> ```
-> curl -X POST "192.168.123.71:9200/bank/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
-> {
->     "aggs" : {
->         "30_year_old_avg" : {
->             "filter" : { "term": { "age" : "30" } },
->             "aggs" : {
->                 "avg_price" : { "avg" : { "field" : "balance" } }
->             }
->         }
->     }
-> }
-> '
-> ```
-> 
-> 
-> És a végeredményben láthatjuk, hogy összesen 47 darab 30 éves ügyfél volt, és az ő egyenlegüknek az átlaga 22841. 
-> ```
->    "aggregations" : {
->     "30_year_old_avg" : {
->       "doc_count" : 47,
->       "avg_price" : {
->         "value" : 22841.106382978724
->       }
->     }
-> ```
-> 
-> 
-> 
-> 
-> ### Filters aggregáció
-> Ez a több vödrös változata a Filter-nek. Az aggregáció során tetszőleges számú vödröt képezhetünk, pl logszintek alapján, pl a warnings kap egy külön vödröt, a debug kap egy külön vödröt, és az infó kap egy külön vödröt. Aztán a végeredményt tetszőlegesen tovább processzálhatjuk. A végeredmény az lesz hogy az összes érintett dokumentum az indexen belül bekerül egy vödörbe. Tegyük külön vödrökbe a 30, 31 és 32 éves banki ügyfeleket: 
-> ```
-> curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
-> {
->   "size": 0,
->   "aggs" : {
->     "messages" : {
->       "filters" : {
->         "other_bucket_key": "other_customers",
->         "filters" : {
->           "30_yers_old" :   { "match" : { "age" : "30"   
+> > **NOTE:** A dokumentumokban, amit aggregálunk, több ugyan olyan mező is lehet, amit a **value**-ban megadunk, pl lehet akár három darab **age** mező is. Ilyenkor az összeset be fogja számolni a végeredménybe. Viszont a **weight** mezőből csak egy lehet egy dokumentumba, ha több van hibát fogunk kapni. Ilyenkor egy **script**-el lehet megmondani, hogy melyiket vegye figyelembe. 
+
+
+
+### multi-value numeric metrics aggregation
+A multi-value aggregációknál a végeredmény egy eredmény lista, vagy egy előre meghatározott objektum, attól függően, hogy milyen típusú metrika aggregációt használunk. 
+```json
+  "aggregations" : {
+    "<aggregáció neve>" : {
+      "values" : { aaa=xxx, bbb=ccc, ...}
+    }
+  }
+```
+
+
+- Stats aggregáció (statisztika egy mezőről)
+- Extended Stats Aggregation
+- Percentiles Aggregation
+- ...
+
+
+<br>
+
+**stats**
+
+<br>
+
+A legegyszerűbb a **stats** aggregáció, ami nem csinál mást, mint a dokumentum halmazban egy kiválasztott mezőre visszaadja a következő statisztikát: 
+*darabszám, min, max, átlag, és summa*, tehát ez nem más mint a négy alap single-value aggregáció ötvözése. Maradva a bankos példánál, nézzük meg a **age** mezőre a statisztikát. Nevezzük el az aggregációnkat **age_stats**-nak: 
+```json
+curl -X POST "192.168.123.71:9200/bank/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
+{
+    "aggs" : {
+        "age_stats" : { "stats" : { "field" : "age" } }
+    }
+}
+'
+```
+
+A válasz 5 előre rögzített mezőt tartalmaz: 
+```json
+"aggregations" : {
+    "age_stats" : {
+      "count" : 1000,
+      "min" : 20.0,
+      "max" : 40.0,
+      "avg" : 30.171,
+      "sum" : 30171.0
+    }
+  }
+```
+
+
+<br>
+
+**Percentiles Aggregation**
+
+<br>
+
+Egy mintában a kiugró értékek megkeresésére szolgál. A teljes halmazt növekvő sorrendbe rendezi, majd megmutatja, hogy milyen elem van pl a halmaz hosszának a felénél, a halmaz hosszának a 90%-ánál és a 99%-ánál. Mivel a halmaz  rendezett, tudhatjuk, hogy a 70%-hoz tartozó értéknél a halmazban az elemek 70%-a kisebb. Ezeket a %-okat mi határozhatjuk meg. Tipikusan a nagyobb százalékok lehetnek fontosabbak. A képlet az alábbi: 
+  my_array[count(my_array) * (százalékos érték, pl 70%)/100]  
+
+Ez pl válaszidőknél sokkal személetesebb mint a min/max/átlag, amiből gyakran nem látszik hogy baj van. Pl adott a következő rendezett halmazunk (amik szimbolizáljanak válaszidőket másodpercben): 
+ {1,2,3,4,4,5,5,6,10,20} 
+Azt szeretnénk tudni, hogy a kérések 70%-át maximum mekkora válaszidővel tudtuk kiszámolni: 
+  my_array[count(my_array) * 0.7] = 6
+Tehát itt a 7. elemét kell vegyük ehhez a halmaznak, tehát a kérések 70%-át 6 másodpercen belül ki tudtuk szolgálni.  
+
+
+A percentiles aggregációt a **percentiles** kulcsszóval kell definiálni. A keresett százalékokat a percents tömbbel kell megadni, itt növekvő sorrendben kell felsorolni számokat 0.1 és 99.9 között. Nézzük a szokásos banki életkor példát. 
+```json
+curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+    "size": 0,
+    "aggs" : {
+        "age_perc" : {
+            "percentiles" : {
+                "field" : "age",
+                "percents" : [1.0, 5.0, 25.0, 50.0, 75.0, 95.0, 99.0]
+            }
+        }
+    }
+}
+'
+```
+
+
+A válaszban a stat aggregációval ellentétben nem egy fix adatszerkezet van, hanem egy dinamikus value lista, minden egyes a percents tömbben megadott százalékhoz tartozik egy érték. A percents tömb megadás nem kötelező, ha nem adjuk meg, pont ez az alapértelmezett felosztás. <br>
+
+Azt láthatjuk, hogy 75% -a a banki ügyfeleknek nem idősebb mint 35 év. És így tovább.  
+```json
+ "aggregations" : {
+    "age_perc" : {
+      "values" : {
+        "1.0" : 20.0,
+        "5.0" : 21.0,
+        "25.0" : 25.0,
+        "50.0" : 31.0,
+        "75.0" : 35.0,
+        "95.0" : 39.0,
+        "99.0" : 40.0
+      }
+    }
+  }
+```
+
+
+<br>
+
+
+## Bucket aggregation
+A vödrös aggregációknál az indexben lévő dokumentumok részhalmazát egy vagy több kategóriába (vödörbe) soroljuk be. Ezekre a vödrökre aztán további aggregációkat alkalmazhatunk, vagy pusztán az érdekel minket, hogy hány dokumentum van egy vödörben (hisztogram típusú aggregációk)
+
+
+
+
+### Filter aggregáció
+Egy darab vödröt képez egy szűrési feltétel alapján a megadott indexben. Igazából ez egy egyszerű keresés, aminek az eredményére aztán könnyen futtathatunk metrika típusú aggregációkat. A következő példában elsőnek összegyűjtjük a 30 éves ügyfeleket a filter bucket aggregációval, majd meghívjuk rá az avg metrika aggregációt. 
+```json
+curl -X POST "192.168.123.71:9200/bank/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
+{
+    "aggs" : {
+        "30_year_old_avg" : {
+            "filter" : { "term": { "age" : "30" } },
+            "aggs" : {
+                "avg_price" : { "avg" : { "field" : "balance" } }
+            }
+        }
+    }
+}
+'
+```
+
+
+És a végeredményben láthatjuk, hogy összesen 47 darab 30 éves ügyfél volt, és az ő egyenlegüknek az átlaga 22841. 
+```json
+   "aggregations" : {
+    "30_year_old_avg" : {
+      "doc_count" : 47,
+      "avg_price" : {
+        "value" : 22841.106382978724
+      }
+    }
+```
+
+
+
+
+### Filters aggregáció
+Ez a több vödrös változata a Filter-nek. Az aggregáció során tetszőleges számú vödröt képezhetünk, pl logszintek alapján, pl a warnings kap egy külön vödröt, a debug kap egy külön vödröt, és az infó kap egy külön vödröt. Aztán a végeredményt tetszőlegesen tovább processzálhatjuk. A végeredmény az lesz hogy az összes érintett dokumentum az indexen belül bekerül egy vödörbe. Tegyük külön vödrökbe a 30, 31 és 32 éves banki ügyfeleket: 
+```json
+curl -X GET "192.168.123.71:9200/bank/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+  "size": 0,
+  "aggs" : {
+    "messages" : {
+      "filters" : {
+        "other_bucket_key": "other_customers",
+        "filters" : {
+          "30_yers_old" :   { "match" : { "age" : "30"   
 
 
           "31_yers_old" :   { "match" : { "age" : "31"   }},
@@ -1375,7 +1491,7 @@ Az összes nemilleszkedő dokumentum a bank indexbőlaz other_customers vödörb
 
 
 És íme a végeredmény- 47 darab 30 éves ügyfél van, 61 darab 31 éves, 52 darab 32 éves, és ezen kívül még 840-en vannak. 
-```
+```json
  "aggregations" : {
     "messages" : {
       "buckets" : {
@@ -1406,7 +1522,7 @@ Ez egy nem kommulált hisztogramot képez automatikusan a megadott indxeben lév
 
 
 Készítsük el a banki ügyfelek korának hisztogramját 10 éves lépésekben: 
-```
+```json
 curl -X POST "192.168.123.71:9200/bank/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
 {
     "aggs" : {
@@ -1423,7 +1539,7 @@ curl -X POST "192.168.123.71:9200/bank/_search?size=0&pretty" -H 'Content-Type: 
 
 
 A végeredményben 3 vödör lesz (három oszlopa lesz a hisztogramnak). Van két bazi magas oszlop, és a végén egy egészen kicsi: 
-```
+```json
 "aggregations" : {
     "prices" : {
       "buckets" : [
@@ -1445,7 +1561,7 @@ A végeredményben 3 vödör lesz (három oszlopa lesz a hisztogramnak). Van ké
 ```
 
 ![docs/450px-ClipCapIt-180926-231841.PNG](docs/450px-ClipCapIt-180926-231841.PNG) 
-<!-- <img src="docs/450px-ClipCapIt-180926-231841.PNG" width="450"> -->
+<!-- <img src="docs/450px-ClipCapIt-180926-231841.PNG" width="450"-->
 
 
 
@@ -1455,16 +1571,16 @@ A végeredményben 3 vödör lesz (három oszlopa lesz a hisztogramnak). Van ké
 
 ### Szomszédossági mátrix
 A szomszédossági mátrix-al véges gráfokat írhatunk le egy kétdimenziós mátrixban. Egy V csúcsszámú gráfban a mátrix |V| × |V| (téglalap). Ha két végpont között fut él, akkor 1 szerepel a mátrixban, ha nem fut él akkor 0. Ha nincsenek hurkok, akkor a diagonális elemek értelem szerűen 0-ák. Ha a hurok is megengedett, akkor a hurok mindig duplán számít, mint az alábbi példában az 1-es végpont. 
-{|
+
 
 ![docs/150px-ClipCapIt-180926-222451.PNG](docs/150px-ClipCapIt-180926-222451.PNG) 
-<!-- <img src="docs/150px-ClipCapIt-180926-222451.PNG" width="150"> -->
+<!-- <img src="docs/150px-ClipCapIt-180926-222451.PNG" width="150"-->
 
 
 ![docs/ClipCapIt-180926-222507.PNG](docs/ClipCapIt-180926-222507.PNG) 
-<!-- <img src="docs/ClipCapIt-180926-222507.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-180926-222507.PNG" width="400"-->
 
-|}
+
 
 ....
 <br>
@@ -1499,6 +1615,7 @@ Pipeline aggregations work on the outputs produced from other aggregations rathe
 # Kibana Web interface
 
 A Kibana konzolt bármelyik node "publikus" IP címén elérjük a 5601-es porton, amit publikáltunk az ingress overlay hálózaton. Keressük meg valamelyik node publikus IP címét. Sajnos a docker-machine ip nem a publikus címet adja vissza, ezért ezt csak a node-on belülről lehet kinyerni: 
+
  # docker-machine ssh mg0 ifconfig | grep -A 1 eth0 | grep "inet addr"
           inet addr:**<span style="color:red">192.168.123.71</span>**  Bcast:192.168.123.255  Mask:255.255.255.0
 
@@ -1513,33 +1630,33 @@ Lépjünk be a Kibana konzolra: http://192.168.123.71:5601/app/kibana#/home?_g=(
 Első lépésben nézzük meg az elérhető indexeket (adatbázisokat) az Elasticsearch-ben. Kattintsunk baloldalon a **Management**-re, majd az **Index Management**-re. 
 
 ![docs/250px-ClipCapIt-180919-220230.PNG](docs/250px-ClipCapIt-180919-220230.PNG) 
-<!-- <img src="docs/250px-ClipCapIt-180919-220230.PNG" width="250"> -->
+<!-- <img src="docs/250px-ClipCapIt-180919-220230.PNG" width="250"-->
 
 
 
 Ekkor megjelenik az index-ek listája. Láthatjuk hogy kétféle index van az adatbázis kezelőben. Egyrészről minden naphoz készített a logstash egy új indexet, másrészt ott van a **bank** index, amivel kísérleteztünk mikor az Elasticsearch -el ismerkedtünk.
 
 ![docs/700px-ClipCapIt-180919-221013.PNG](docs/700px-ClipCapIt-180919-221013.PNG) 
-<!-- <img src="docs/700px-ClipCapIt-180919-221013.PNG" width="700"> -->
+<!-- <img src="docs/700px-ClipCapIt-180919-221013.PNG" width="700"-->
 
 Látatjuk, hogy pontosan 1000 darab dokumentum van benne, amennyit beszúrtunk.
 
 
 
-Adjunk hozzá két új index patter-t. Egyet a **bank**-hoz, egyet pedig a **logstash**-ez. Az index pattern-el több index-re is illeszkedő index csoportot definiálhatunk. Mivel a logstash-hez kapcsolódó index-ek mindig logstash-<dátum> alakúak, létrehozhatjuk a **logstash-*** pattern, ami az összes logstash index-re illeszkedni fog. 
+Adjunk hozzá két új index patter-t. Egyet a **bank**-hoz, egyet pedig a **logstash**-ez. Az index pattern-el több index-re is illeszkedő index csoportot definiálhatunk. Mivel a logstash-hez kapcsolódó index-ek mindig logstash-<dátumalakúak, létrehozhatjuk a **logstash-*** pattern, ami az összes logstash index-re illeszkedni fog. 
 
 ![docs/550px-ClipCapIt-180919-222126.PNG](docs/550px-ClipCapIt-180919-222126.PNG) 
-<!-- <img src="docs/550px-ClipCapIt-180919-222126.PNG" width="550"> -->
+<!-- <img src="docs/550px-ClipCapIt-180919-222126.PNG" width="550"-->
 
 Láthatjuk, hogy a bank index-hez tartozó dokumentumok 24 mezőből állnak. Minden mezőnél ki van írva a mező típusa, hogy kereshető e, és hogy aggregálható e.  
 
 ![docs/480px-ClipCapIt-180919-222357.PNG](docs/480px-ClipCapIt-180919-222357.PNG) 
-<!-- <img src="docs/480px-ClipCapIt-180919-222357.PNG" width="480"> -->
+<!-- <img src="docs/480px-ClipCapIt-180919-222357.PNG" width="480"-->
 
 Míg a logstash-* indexekhez tartozó dokumentumok 31 mezőből állnak: 
 
 ![docs/480px-ClipCapIt-180919-222542.PNG](docs/480px-ClipCapIt-180919-222542.PNG) 
-<!-- <img src="docs/480px-ClipCapIt-180919-222542.PNG" width="480"> -->
+<!-- <img src="docs/480px-ClipCapIt-180919-222542.PNG" width="480"-->
 
 
 
@@ -1548,14 +1665,14 @@ Míg a logstash-* indexekhez tartozó dokumentumok 31 mezőből állnak:
 A Discover fülön egyszerű lekérdezéseket állíthatunk össze a létrehozott index pattern-ekhez. Két index pattern-ünk van, egy logstash-*, ami az összes logstash-es indexet tartalmazza, valamit a bank. A legördülő listából kell kiválasztani, hogy melyikre akarunk lekérdezni. 
 
 ![docs/300px-ClipCapIt-180919-222941.PNG](docs/300px-ClipCapIt-180919-222941.PNG) 
-<!-- <img src="docs/300px-ClipCapIt-180919-222941.PNG" width="300"> -->
+<!-- <img src="docs/300px-ClipCapIt-180919-222941.PNG" width="300"-->
 
 
 
 A lap tetején lévő mezőbe írhatunk be egyszerű lekérdezéseket. Vagy szabad szavasan  kereshetünk, ekkor az összes dokumentumot ki fogja dobni, amiben szerepelt a szó bárhol az adott index pattern-ben, vagy kereshetünk a Lucene Query nyelven. Pl Elsőnek kapcsoljuk be az automata kiegészítést az **Options**-re kattintva: 
 
 ![docs/300px-ClipCapIt-180919-224025.PNG](docs/300px-ClipCapIt-180919-224025.PNG) 
-<!-- <img src="docs/300px-ClipCapIt-180919-224025.PNG" width="300"> -->
+<!-- <img src="docs/300px-ClipCapIt-180919-224025.PNG" width="300"-->
 
 Majd kérdezzük le azokat az ügyfeleket, akinek a balanca kisebb mint 1100:
 
@@ -1563,21 +1680,21 @@ Keressük meg az összes olyan dokumentumot, ahol a balance kisebb mint 1100 és
  balance < 1100 and (city: Tibbie or city : Woodlands)
 
 ![docs/650px-ClipCapIt-180919-230559.PNG](docs/650px-ClipCapIt-180919-230559.PNG) 
-<!-- <img src="docs/650px-ClipCapIt-180919-230559.PNG" width="650"> -->
+<!-- <img src="docs/650px-ClipCapIt-180919-230559.PNG" width="650"-->
 
 
 
 A megjelenített dokumentum melletti kis nyílra kattintva megnézhetjük az egyes találatokat tábla és JSON nézetben is: 
 
 ![docs/450px-ClipCapIt-180919-231046.PNG](docs/450px-ClipCapIt-180919-231046.PNG) 
-<!-- <img src="docs/450px-ClipCapIt-180919-231046.PNG" width="450"> -->
+<!-- <img src="docs/450px-ClipCapIt-180919-231046.PNG" width="450"-->
 
 
 
 A baloldali listában filtereket adhatunk meg, hogy a Dokumentumnak csak a kiválasztott részeit mutassa meg, pl szűkíthetjük a city mezőre a válaszokat: 
 
 ![docs/350px-ClipCapIt-180919-231313.PNG](docs/350px-ClipCapIt-180919-231313.PNG) 
-<!-- <img src="docs/350px-ClipCapIt-180919-231313.PNG" width="350"> -->
+<!-- <img src="docs/350px-ClipCapIt-180919-231313.PNG" width="350"-->
 
 
 
@@ -1586,7 +1703,7 @@ A baloldali listában filtereket adhatunk meg, hogy a Dokumentumnak csak a kivá
 Ha átmegyünk a **logstash-*** index pattern-re akkor megjelenik két új elem a Discover képernyőn. Mivel a logstash-* index tartalmaz egy Timestamp típusú mezőt (kis óra jelzi), ebből a Kibana kapásból egy hisztogramot fog kirajzolni, és meg is jelenik egy idő-intervallum választó a jobb felső sarokban: 
 
 ![docs/1100px-ClipCapIt-180919-231850.PNG](docs/1100px-ClipCapIt-180919-231850.PNG) 
-<!-- <img src="docs/1100px-ClipCapIt-180919-231850.PNG" width="1100"> -->
+<!-- <img src="docs/1100px-ClipCapIt-180919-231850.PNG" width="1100"-->
 
 
 
@@ -1606,7 +1723,7 @@ Listázzuk ki az összes olyan logstash-* indexbe tartozó log bejegyzést, amit
 Vagy szimplán keressünk rá a "hello logspout" üzenetre, amit a tesztelés céljából indított ubuntu konténer küldött be. Mivel szabad szavasan is lehet keresni, csak írjuk be felülre hogy "hello logspout". 
 
 ![docs/ClipCapIt-180929-152229.PNG](docs/ClipCapIt-180929-152229.PNG) 
-<!-- <img src="docs/ClipCapIt-180929-152229.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-180929-152229.PNG" width="400"-->
 
 > **NOTE:** Figyeljünk a jobb felső sarokban keresési intervallum beállításokra. Alapértelmezetten csak 15 perces adatokban keres
 
@@ -1619,13 +1736,13 @@ Vagy szimplán keressünk rá a "hello logspout" üzenetre, amit a tesztelés c�
 A Vizualize felületen 18 féle diagram típusból választhatunk:
 
 ![docs/600px-ClipCapIt-180926-233621.PNG](docs/600px-ClipCapIt-180926-233621.PNG) 
-<!-- <img src="docs/600px-ClipCapIt-180926-233621.PNG" width="600"> -->
+<!-- <img src="docs/600px-ClipCapIt-180926-233621.PNG" width="600"-->
 
 
 Válasszuk ki az indexet: 
 
 ![docs/ClipCapIt-180926-233934.PNG](docs/ClipCapIt-180926-233934.PNG) 
-<!-- <img src="docs/ClipCapIt-180926-233934.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-180926-233934.PNG" width="400"-->
 
 
 
@@ -1639,7 +1756,7 @@ Ehhez válasszuk az X-Axis lehetőséget, majd ott a listából válasszuk ki a 
 
 
 ![docs/ClipCapIt-180926-235343.PNG](docs/ClipCapIt-180926-235343.PNG) 
-<!-- <img src="docs/ClipCapIt-180926-235343.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-180926-235343.PNG" width="400"-->
 
 
 
@@ -1659,7 +1776,7 @@ A Kibana out of the box képes monitorozni a teljes ELK stack minden porcikájá
 
 
 ![docs/800px-ClipCapIt-180928-203046.PNG](docs/800px-ClipCapIt-180928-203046.PNG) 
-<!-- <img src="docs/800px-ClipCapIt-180928-203046.PNG" width="800"> -->
+<!-- <img src="docs/800px-ClipCapIt-180928-203046.PNG" width="800"-->
 
 
 
@@ -1672,7 +1789,7 @@ A Kibana out of the box képes monitorozni a teljes ELK stack minden porcikájá
 # Swarm stack
 
 **elastic-stack.yml**
-<syntaxhighlight lang="C++">
+```json
 version: '3'
 services:
   elasticsearch:
@@ -1765,7 +1882,7 @@ volumes:
     driver: nfs
     driver_opts:
       share: 192.168.42.1:/home/adam/Projects/DockerCourse/persistentstore/kibana/plugins
-</syntaxhighlight>
+```
 
 
  # docker stack deploy --compose-file docker-compose.yml logmanager
@@ -1869,7 +1986,7 @@ A közös konfigurációs fájlba felvesszük az összes cluster tag végpontjá
 Az alábbi fájlt fel fogjuk csatolni az összes service-be NFS megosztással. <br>
 
 /usr/share/elasticsearch/config/**elasticsearc.yml**
-<syntaxhighlight lang="C++">
+```json
 cluster.name: "my-cluster"
 network.host: 0.0.0.0
 
@@ -1880,7 +1997,7 @@ discovery.zen.ping.unicast.hosts:
   - elasticsearch1
   - elasticsearch2
   - elasticsearch3
-</syntaxhighlight>
+```
 
 
 Az összes ES node a közös elk nevű overlay hálózaton tud majd közvetlen kommunikálni egymással. 
@@ -1890,7 +2007,7 @@ Az összes ES node a közös elk nevű overlay hálózaton tud majd közvetlen k
 
 ### Coordinating node-ok
 A Coordinating node-okat több elemű swarm service-ként fogjuk létrehozni. Ezek a node-ok lesznek a ES cluster belépési pontjai. Egyedül ebben a swarm service-ben lesz több mint egy konténer. Data mappát nem is csatolunk fel hozzá. Ahhoz hogy coordinating node-ként viselkedjen egy node be kell állítani, hogy se nem data, se nem master és se nem ingest tevékenységet nem végezhet. Ehhez létrehozhattunk volna egy külön konfigurációs fájlt a coordinating node-oknak,  mi most itt beírtuk környezeti változóba. 3 példányt kértünk belőle. Az ingress hálózaton a 9200 -as porton érhetjük majd el a coordinating node-okat bármelyik swarm node IP címén.
-<syntaxhighlight lang="C++">
+```json
   elasticsearch_coord:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
     ports:
@@ -1907,12 +2024,12 @@ A Coordinating node-okat több elemű swarm service-ként fogjuk létrehozni. Ez
       replicas: 2
       restart_policy:
         condition: on-failure
-</syntaxhighlight>
+```
 
 
 ### További node-ok definiálása
 Mivel most nem akarunk hatalmas cluster-t építeni, három további node-ot fogunk a cluster-hez adni, amik már mind a három szerepkörben benne lesznek (master, data és ingest). Mivel a master és az adat node-oknak már saját data mappára van szüksége, minden node-ot egy külön swarm service-ként fogunk definiálni saját volume plugin megosztással a perzisztens store-ban. Így bárhol is hozza létre őket a swarm, mindig ugyan azt a data mappát fogják megkapni. 
-<syntaxhighlight lang="C++">
+```json
  elasticsearch1,2,3:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
     ports:
@@ -1928,7 +2045,7 @@ Mivel most nem akarunk hatalmas cluster-t építeni, három további node-ot fog
       replicas: 1
       restart_policy:
         condition: on-failure
-</syntaxhighlight>
+```
 A fenti compose blokkot háromszor kell a compose fájlba rakni a megfelelő sorszámmal a service, node és volume megosztás nevében (1,2,3)
 
 
@@ -1938,7 +2055,7 @@ A fenti compose blokkot háromszor kell a compose fájlba rakni a megfelelő sor
 > **WARNING:** Nincs még frissítve...
 
 
-<syntaxhighlight lang="C++">
+```json
 version: '3'
 services:
  ....
@@ -1960,4 +2077,4 @@ volumes:
     driver: nfs
     driver_opts:
       share: 192.168.42.1:/home/adam/Projects/DockerCourse/persistentstore/elasticsearch/data2
-</syntaxhighlight>
+```

@@ -3,7 +3,7 @@
 <hr>
 
 ![docs/ClipCapIt-180930-152752.PNG](docs/ClipCapIt-180930-152752.PNG) 
-<!-- <img src="docs/ClipCapIt-180930-152752.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-180930-152752.PNG" width="400"-->
 
 <br>
 
@@ -59,6 +59,26 @@
         - [List](#list)
         - [Map](#map)
         - [User defined type](#user-defined-type)
+- [Kulcsok és indexek lekérdezésekben](#kulcsok-%C3%A9s-indexek-lek%C3%A9rdez%C3%A9sekben)
+    - [Kulcs használati alapelvek](#kulcs-haszn%C3%A1lati-alapelvek)
+    - [Lekérdezés megkötések Restriction](#lek%C3%A9rdez%C3%A9s-megk%C3%B6t%C3%A9sek-restriction)
+        - [Particionáló kulcsok + indexek](#particion%C3%A1l%C3%B3-kulcsok--indexek)
+        - [Clustering kulcsok](#clustering-kulcsok)
+        - [IN megkötés](#in-megk%C3%B6t%C3%A9s)
+        - [CONTAINS és CONTAINS KEY megkötések](#contains-%C3%A9s-contains-key-megk%C3%B6t%C3%A9sek)
+- [Adatbázis GUI](#adatb%C3%A1zis-gui)
+        - [DevCenter](#devcenter)
+        - [RazorSQL](#razorsql)
+- [Adat model](#adat-model)
+    - [Conceptual Data Modeling](#conceptual-data-modeling)
+    - [Defining Application Queries](#defining-application-queries)
+    - [Logikai adatmodell](#logikai-adatmodell)
+        - [Chebotko logical diagram](#chebotko-logical-diagram)
+    - [Fizikai adatmodell](#fizikai-adatmodell)
+        - [Materialized views](#materialized-views)
+- [Tervezés](#tervez%C3%A9s)
+    - [Partíció mérete](#part%C3%ADci%C3%B3-m%C3%A9rete)
+- [Java kliens](#java-kliens)
 
 <!-- /TOC -->
 
@@ -119,7 +139,10 @@ First normal form enforces these criteria:
 - Identify each set of related data with a primary key
 
 
-**Examples:**<br>
+
+**Examples:** <br>
+
+
 
 https://www.quora.com/What-is-the-difference-between-NF-2NF-and-3NF<br>
 
@@ -152,18 +175,13 @@ Third normal form (3NF) is a normal form that is used in normalizing a database 
 
 An example of a 2NF table that fails to meet the requirements of 3NF is:
 
-{| class="wikitable"
-|+ Tournament Winners
-! <u>Tournament</u> !! <u>Year</u> !! Winner !! Winner Date of Birth
-|-
-|Indiana Invitational||1998||Al Fredrickson||21 July 1975
-|-
-|Cleveland Open||1999||Bob Albertson||28 September 1968
-|-
-|Des Moines Masters||1999||Al Fredrickson||21 July 1975
-|-
-|Indiana Invitational||1999||Chip Masterson||14 March 1977
-|}
+| Tournament              | Year | Winner          | Winner Date of Birth |
+|-------------------------|------|-----------------|----------------------|
+| Indiana Invitational    | 1998 | Al Fredrickson  | 21 July 1975         |
+| Cleveland Open          | 1999 | Bob Albertson   | 28 September 1968    |
+| Des Moines Masters      | 1999 | Al Fredrickson  | 21 July 1975         |
+| Indiana Invitational    | 1999 | Chip Masterson  | 14 March 1977        |
+
 
 Because each row in the table needs to tell us who won a particular Tournament in a particular Year, the composite key {Tournament, Year} is a minimal set of attributes guaranteed to uniquely identify a row. That is, {Tournament, Year} is a candidate key for the table.
 
@@ -171,32 +189,18 @@ The breach of 3NF occurs because the non-prime attribute Winner Date of Birth is
 
 In order to express the same facts without violating 3NF, it is necessary to split the table into two:
 
-{|
-| valign="top" |
-{| class="wikitable"
-|+ Tournament Winners
-! <u>Tournament</u> !! <u>Year</u> !! Winner
-|-
-|Indiana Invitational||1998||Al Fredrickson
-|-
-|Cleveland Open||1999||Bob Albertson
-|-
-|Des Moines Masters||1999||Al Fredrickson
-|-
-|Indiana Invitational||1999||Chip Masterson
-|}
-| valign="top" |
-{| class="wikitable"
-|+ Winner Dates of Birth
-! <u>Winner</u> !! Date of Birth
-|-
-|Chip Masterson||14 March 1977
-|-
-|Al Fredrickson||21 July 1975
-|-
-|Bob Albertson||28 September 1968
-|}
-|}
+| Tournament              | Year | Winner          |
+|-------------------------|------|-----------------|
+| Indiana Invitational    | 1998 | Al Fredrickson  |
+| Cleveland Open          | 1999 | Bob Albertson   |
+| Des Moines Masters      | 1999 | Al Fredrickson  |
+| Indiana Invitational    | 1999 | Chip Masterson  |
+
+| Winner          | Date of Birth        |
+|-----------------|----------------------|
+| Chip Masterson  | 14 March 1977        |
+| Al Fredrickson  | 21 July 1975         |
+| Bob Albertson   | 28 September 1968    |
 
 Update anomalies cannot occur in these tables, because unlike before, **Winner** is now a primary key in the second table, thus allowing only one value for **Date of Birth** for each **Winner**.
 
@@ -211,7 +215,7 @@ When an attempt is made to modify (update, insert into, or delete from) a relati
 - **Insertion anomaly**. There are circumstances in which certain facts cannot be recorded at all. For example, each record in a "Faculty and Their Courses" relation might contain a Faculty ID, Faculty Name, Faculty Hire Date, and Course Code. Therefore, we can record the details of any faculty member who teaches at least one course, but we cannot record a newly hired faculty member who has not yet been assigned to teach any courses, except by setting the Course Code to null. This phenomenon is known as an insertion anomaly. 
 
 ![docs/300px-ClipCapIt-181007-123437.PNG](docs/300px-ClipCapIt-181007-123437.PNG) 
-<!-- <img src="docs/300px-ClipCapIt-181007-123437.PNG" width="300"> -->
+<!-- <img src="docs/300px-ClipCapIt-181007-123437.PNG" width="300"-->
 
 - **Deletion anomaly**. Under certain circumstances, deletion of data representing certain facts necessitates deletion of data representing completely different facts
 
@@ -280,9 +284,10 @@ Cassandra-ban nem úgy kell elképzelni a táblaszerkezetet mint az RDBMS világ
 Tételezzük fel, hogy van egy táblánk, aminek 11 oszlopa van, ahol az oszlop nevek Column1-től mennek Column11-ig. Minden sorba csak azok az oszlopok fognak bekerülni, ahol tényleg van érték: 
 
 ![docs/ClipCapIt-181007-182818.PNG](docs/ClipCapIt-181007-182818.PNG) 
-<!-- <img src="docs/ClipCapIt-181007-182818.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181007-182818.PNG" width="400"-->
 
 Ezzel az adatmodellel helytakarékosan lehet nagyon vegyes hosszúságú sorokat tárolni, pl ha vannak több száz hosszúságú sorok mellet csak pár elemű sorok egy táblában. 
+
 > **NOTE:** Ezért mondják azt, hogy magunk választhatjuk meg, hogy mit akarunk egy adott sorban eltárolni. Persze csak a tábla oszlopainak az értékkészletéből válogathatunk, nincs meg az a szabadság, mint Elasaticsearch-ben, ahol tényleg tetszőleges szerkezetű dokumentumokat dobálhatunk be egy típus/index alá minden fajta séma megkötés nélkül
 
 
@@ -299,7 +304,7 @@ A kulcsok kérdése kicsit komplikált Cassandra-ban. Kulcsokat három feladatra
 Ugyanúgy mint az RDBMS világban, a Cassandra táblákon belül is egyértelműen, egyedi módon azonosítani kell tudni minden egyes sort egy egyedi azonosító alapján. Ez az elsődleges kulcs. Az azonban, hogy hogyan épül fel az elsődleges kulcs, már kicsit bonyolultabb. A **Primary key** (elsődleges kulcs) a két már említett kulcsfajtából épülhet fel. Tartalmaznia kell legalább egy **partition key**-t és 0 vagy több **clustering key**-t. Amennyiben több mint egy kulcsból épül fel (tehát legalább egy **partition key**-ből és valamennyi **clustering key**-ből vagy több mint egy partition kulcsokból) akkor **Compound primary key**-nek hívjuk.
 
 ![docs/ClipCapIt-181007-185315.PNG](docs/ClipCapIt-181007-185315.PNG) 
-<!-- <img src="docs/ClipCapIt-181007-185315.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181007-185315.PNG" width="400"-->
 
 
 
@@ -307,7 +312,7 @@ Ugyanúgy mint az RDBMS világban, a Cassandra táblákon belül is egyértelmű
 ### Partition key
 A Cassandra tipikusan egy sok node-on futó elosztott alkalmazás, a benne tárolt adatok egyenletesen szét vannak szórva a cluster-ben. A szétszórás értelemszerűen nem táblák mentén történik, hanem tábla soronként. Tehát elképzelhető egy egy táblából minden egyes sor más és más node-ra kerül. 
 
-Cassandra-ban a node-ok egy gyűrűbe vannak szervezve. Minden egyes node-nak van egy egyedi azonosítója, egy 64 bites token. (from -2<sup>23</sup> to 2<sup>63</sup>-1)
+Cassandra-ban a node-ok egy gyűrűbe vannak szervezve. Minden egyes node-nak van egy egyedi azonosítója, egy 64 bites token. (from -2<sup>23</supto 2<sup>63</sup>-1)
 Minden node azt a token tartományt tudja magáénak, ami kisebb vagy egyenlő mint az ő tokenje és nagyobb mint a gyűrűben az előző node tokenje.
 
 
@@ -316,7 +321,7 @@ Azt hogy egy partíció (azonos particionáló kulccsal rendelkező sorok össze
 
 Meg tudjuk nézni, hogy egy adott sornak mi a **token**-je a token függvénnyel: 
 ```
-cqlsh:adam> select token(stuid) from marks;               
+cqlsh:adamselect token(stuid) from marks;               
 
  system.token(stuid)
 ----------------------
@@ -356,430 +361,441 @@ CREATE TABLE movies_by_year_genre (
   PRIMARY KEY ((year, genre), movie_name)
 );
 ```
-**NOTE:** > A kulcsok sorrendje a PRIMARY KEY megadásánál kritikus. Ez határozza majd meg, hogy milyen 'sorrendben' kell majd őket szerepeltetni a lekérdezések WHERE szekciójában (lásd [\2](\1) című fejezetet)
-> 
-> 
-> 
-> ### Clustering key
-> A Clustering key (csoportosító kulcs) kizárólag egy partíción belül határozza meg a sorok sorrendjét. Ha a compound primary kulcsunk több clustering kulcsot is tartalmaz, akkor először a listában az leső alapján fog sorrendezni, aztán a második alapján, és így tovább. Megadhatjuk a rendezés irányát is. Fontos ezt már a tábla tervezésekor kitalálni, mert később ezt már nem tudjuk megváltoztatni. 
-> 
-> 
-> A rendezés irányát a WITH CLUSTERING ORDER BY kulcsszóval adhatjuk meg: 
-> ```
-> CREATE TABLE store_by_location (
->    col1 text,
->    col2 text,
->    col3 text,
->    col4 text,
->    PRIMARY KEY (col1, col2, col3)
-> ) WITH CLUSTERING ORDER BY (col2 DESC, col3 ASC);
-> ```
-> A fenti példában a particionáló kulcs a col1 és a két Clustering (csoportosító) kulcs a col2 és col3. A col2 szerint visszafele, a col3 szerint előre rendezünk. Ha nem adjuk meg, akkor az előre rendezés az alapértelmezett. 
-> 
-> 
-> > **NOTE:** A rendezés csak akkor értelmezett egy Clustering key alapján, ha a partitioning kulcsok megegyeznek két sorban, ahol a Clustering kulcsok különböznek (ezért mondtuk, hogy csak egy partíción belül értelmezett). Tehát egy olyan adathalmazban, ahol a particionáló kulcsok értékkészlete unique, ott a Clustering kulcsoknak a sorok sorrendjére nincs hatása. Úgy is mondhatjuk, hogy csak egy node-on belül rendezik a sorokat
-> 
-> 
-> A fenti példában, azokban a sorokban, ahol a **col1** megegyezik, a **col2** szerint lesznek visszafelé rendezve a sorok. És azokban a sorokban, ahol a **col1** és a **col2** is megegyezik, a **col3** szerint előre lesznek rendezve a sorok. 
-> 
-> Pl. beszúrjuk ezeket az alábbi sorrendben: 
->  col1=k1, col2=B, col3=B
->  col1=k1, col2=A, col3=Z
->  col1=k1, col2=C, col3=X
->  col1=k1, col2=B, col3=A
-> 
-> 
-> Akkor a végeredmény a következő lesz, ha lekérdezzük (így is van tárolva). A particionáló kulcsok minden sorban azonosak (tehát ugyan azon a node-on vannak), és a col2 szerint visszafele, a col3 szerint előre rendez: 
->  col1=k1, col2=C, col3=X
->  col1=k1, col2=B, col3=A
->  col1=k1, col2=B, col3=B
->  col1=k1, col2=A, col3=Z 
->  
-> 
-> <br>
-> 
-> A sorrendezésen felül a clustering kulcsoknak a lekérdezés WHERE szekciójában van szerepe, mert felírhatunk rájuk **>, >=, <, <=** operációkat, amiket a particionáló kulcsokra nem írhatunk fel. (lást részletesen a [\2](\1) című fejezetben.
-> 
-> 
-> 
-> 
-> ### Partíció példa
-> A fenti tábla definíció mellett adott a következő adathalmaz: 
->  col1=k1, col2=B, col3=B
->  col1=k1, col2=A, col3=Z
->  col1=k1, col2=C, col3=X
->  col1=k2, col2=B, col3=A
-> 
-> 
-> Két partícióra oszlanak, mivel a col1 a particionáló kulcs:<br>
->  
-> 1. partíció: 
->  col1=k1, col2=B, col3=B
->  col1=k1, col2=A, col3=Z
->  col1=k1, col2=C, col3=X
-> 
-> 2. partíció:
->  col1=k2, col2=B, col3=A
-> 
-> 
-> <br>
-> 
-> 
-> 
-> ## Időbélyegek és Time to Live
-> Minden egyes cellához egy sorban (Partícióban) a Cassandra az oszlop nevén kívül még eltárol egy időbélyeget, ami az utolsó módosítás dátumát tárolja, valamint egy TimeToLive értéket, ami ha lejár, akkor átírja NULL-ra az adott mező értékét. 
-> 
-> ![docs/ClipCapIt-181007-205354.PNG](docs/ClipCapIt-181007-205354.PNG) 
-> <!-- <img src="docs/ClipCapIt-181007-205354.PNG" width="400"> -->
-> 
-> A TTL mező értéke alapértelmezetten nem definiált, értéke null, ha ezt külön nem adjuk meg. 
-> 
-> 
-> Egy mező Timestamp értékét a **writetime(mezőnév)** függvénnyel listázhatjuk ki: 
-> ```
-> cqlsh:adam> SELECT first_name, last_name,
->         ... writetime(last_name) FROM user;
-> 
->  first_name | last_name | writetime(last_name)
-> ------------+-----------+----------------------
->        Mary | Rodriguez |     1538771050876617
->        Bill |    Nguyen |     1538771031333072
-> ```
-> 
-> 
-> A Time To Live értéket egy mezőnek a **USING TTL** -el definiálhatjuk egy update parancsban, és a **TTL(mezőnév)** függvénnyel kérdezhetjük le. 
-> ```
-> UPDATE user USING TTL 3600 SET last_name =
-> 'McDonald' WHERE first_name = 'Mary' ;
-> ```
-> ```
-> cqlsh:adam> SELECT first_name, last_name, TTL(last_name)
->         ... FROM user WHERE first_name = 'Mary';
-> 
->  first_name | last_name | ttl(last_name)
-> ------------+-----------+----------------
->        Mary | Rodriguez |           3588
-> ```
-> 
-> 
-> 
-> <br>
-> 
-> 
-> 
-> ## Másodlagos indexek
-> A másodlagos indexekekkel az a baj, hogy lehet hogy több node-on lesznek szétszorva, mivel az elsődleges index határozza meg hogy melyik node-ra kerül az elem. Mivel több node-on is le kell futtatni a keresést, azért nagyon drága lehet a használata. <br>
-> 
-> Mikor nem szabad másodlagos indexet használni: 
-> - Ha nem túl nagy az elemek kardinalitása. Ha szinte minden elem különbözik egymástól, akkor gyakorlatilag majd az összes node-ot végig kell járni. 
-> - Ha túl kicsi a kardinalitás. Az sem jó ha szinte minden egyes sorban ugyan az az érték van, túl sok lesz a találat. 
-> - Gyakran átírt mezőknél: Ha gyorsabban gyűlnek fel a tombstones-ok mint ahogy azokat a Cassandra fel tudná dolgozni, hibára fog futni az update egy idő után
-> 
-> Példa: a user nevű táblában a last_name-re hozunk létre másodlagos indexet. 
-> ```
-> CREATE INDEX ON user ( last_name );
-> ```
-> 
-> > **NOTE:** Másodlagos indexeket a set, list, map elemeire is létrehozhatunk, akár még a user-defined-type belsejében lévő elemekre is, még akkor is ha egy map belsejében annak
-> 
-> 
-> 
-> 
-> Cassandara 3.4-től használhatjuk az Apple által kifejlesztet SASI másodlagos index implementációt, ami több funkcionalitást tesz lehetővé mint a beépített változat: 
-> - Kisebb, nagyobb -ra keresés
-> - LIKE használata string típusú mezők esetén. 
-> 
-> 
-> Mikor létrehozzuk a másodlagos indexet meg kell mondani, hogy egy custom implementációt szeretnénk használni. 
-> ```
-> CREATE CUSTOM INDEX user_last_name_sasi_idx ON user (last_name)
-> USING 'org.apache.cassandra.index.sasi.SASIIndex';
-> ```
-> 
-> 
-> **INDEX vs Filter:**<br>
-> 
-> Hatékonysági okokból alap esetben a Cassandra csak arra az oszlopra enged lekérdezni, amire van index. Csak akkor lehet index nélküli oszlopra hivatkozni a WHERE kifejezésben ha ezt implicit engedélyezzük az **ALLOW FILTERING** kulcsszóval a lezáró ; előtt. Ugyanis ha egy oszlopon nincs index, akkor a Cassandra az összes sort be fogja olvasni, és filterrel fogja kiválasztani WHERE-ben definiált mezőket. Milliós sorszám esetén ez már problémás lehet. 
-> 
-> https://www.datastax.com/2012/01/getting-started-with-cassandra
-> 
-> <br>
-> 
-> 
-> ## Materialized Views
-> http://cassandra.apache.org/doc/4.0/cql/mvs.html<br>
-> 
-> https://opencredo.com/everything-need-know-cassandra-materialized-views/<br>
-> 
-> A Materialized view az eredeti tálba egy részhalmazának, vagy az egész tálba egy olyan másolata, ahol más kulcsok alapján tesszük kereshetővé ugyan azt az adathalmazt. Ez akkor jó, ha van egy táblánk amit A és B oszlop szerint is keresni akarunk, ilyenkor csinálunk egy táblát, ahol A a kulcs, és egy Materialized view-t, ahol a B a kulcs. Ennek az a nagy előnye azzal szemben, mint ha erre két valódi táblát definiálnánk, hogy mikor az igazi táblába szúrunk be, akkor a materialized view-t is frissíteni fogja a Cassandra, nem nekünk kell manuálisan megcsinálni. 
-> 
-> 
-> Az MW-ban a kulcsokra nagyon komoly megkötés van: 
-> - az alap tábla összes kulcsát tartalmaznia kell
-> - csak egy olyan plusz kulcsot tartalmazhat, ami nem volt kulcs az alaptáblában. 
-> 
-> > **NOTE:** Az MW-ben az alaptábla partícionáló kulcsából általában Clustering kulcsot csinálunk, és az egyik korábban nem kulcs mezőt használjuk föl mint particionáló kulcs, amire a lekérdezéseket akarjuk írni. Tehát a megkötés csak annyi, hogy minden alaptáblabeli kulcs maradjon kulcs, de a típusukat meg szabad változtatni.
-> 
-> 
-> 
-> Ezzel biztosítjuk azt, hogy az MW minden egyes sora pontosan egy sornak felel meg az alaptáblában. Pl adott a következő alaptáblánk: 
-> ```
-> CREATE TABLE t (
->     k int,
->     c1 int,
->     c2 int,
->     v1 int,
->     v2 int,
->     PRIMARY KEY (k, c1, c2)
-> )
-> ```
-> 
-> 
-> Akkor a következő MW-k valid kulccsal rendelkeznek: 
-> ```
-> CREATE MATERIALIZED VIEW mv1 AS
->     SELECT * FROM t WHERE k IS NOT NULL AND c1 IS NOT NULL AND c2 IS NOT NULL
->     PRIMARY KEY (c1, k, c2)  
-> ```
-> Itt a c1 lépett elő partitioning kulccsá és a korábbi partitioning kulcsból (k) Clustering kulcs lett. 
-> 
-> A **not null** a lekérdezésben kötelező elem minden olyan oszlopon, amiből kulcs lesz az MW-ben, hogy elkerüljük a null kulcsok beszúrást. 
-> 
-> ```
-> CREATE MATERIALIZED VIEW mv1 AS
->     SELECT * FROM t WHERE k IS NOT NULL AND c1 IS NOT NULL AND c2 IS NOT NULL
->     PRIMARY KEY (v1, k, c1, c2)
-> ```
-> 
-> 
-> 
-> Mire  kell figyelni: <br>
-> 
-> - Avoid too large partitions
-> - Choose your partition key in a way that distributes the data correctly, avoiding cluster hotspots (the partition key like days of the week is not a good one as it leads to temporal hotspots)
-> 
-> <br>
-> 
-> <br>
-> 
-> 
-> # Architektúra
-> 
-> 
-> ## Alapfogalmak
-> 
-> 
-> ### Gossip (pletykák)
-> 
-> 
-> 
-> 
-> ### Snitches
-> A snitch protokoll segítségével térképezi föl egy node, hogy milyen messze vannak tőle az általa ismert node-ok, hogy ha egy műveletben koordinátor node-ként vesz részt, meg tudja határozni hogy melyik node-okról olvasson (a legközelebbi) és melyik node-okra írjon. 
-> 
-> 
-> 
-> 
-> 
-> ### Lightweight Transactions (check-and-set)
-> Cassandra-ban nem létezik a hagyományos értelembe vett tranzakció kezelés, csak az úgynevezett pehelysúlyú tranzakció (LWT) ami azt biztosítja, hogy egy olvasás és az azt követő írás egy tranzakcióban lesz (**linearizable consistency**). Az olvasással ellenőrizzük, hogy az adott adat szerepel e már az adatbázisban, és ha nem, akkor bírjuk. Ez LWT csak egy partíción belül működik és elég költséges művelet, mivel a végrehajtásához a Cassandra a Paxos nevű konszenzus algoritmust futtatja. A konszenzus kialakításához a partíciót tároló replikák többségének konszenzusra kell jutnia az adott tranzakciót illetően.
-> 
-> 
-> 
-> 
-> 
-> ## Node-ok csoportosítása
-> Cassandrában a node-okat két szinten csoportosíthatjuk: Rack és Data Cener. 
-> 
-> - **Rack**: A rack-ben olyan nodo-kat csoportosítunk, amik tényleg egy fizikai rack-ben vannak, tehát ezek vannak a "legközelebb" egymáshoz. 
-> - **Data Center**: Egy datacenter-ben azokat Rack-eket csoportosítjuk, amik fizikailag egy szerverfarmon vannak. 
-> 
-> ![docs/ClipCapIt-181106-205504.PNG](docs/ClipCapIt-181106-205504.PNG) 
-> <!-- <img src="docs/ClipCapIt-181106-205504.PNG" width="400"> -->
-> 
-> Alapértelmezetten minden node-unk a **RACK1**-be fog tartozni, és a **DC1** datacenterbe. 
-> 
-> 
-> ### Seed Nodes
-> Minden egyes node-nak amit hozzáadnunk a cluster-hez szüksége van egy referencia node-ra, amitől le tudja kérdezni a cluster topológiáját (élő és halott node-ok, távolság..). Ezeket hívják seed-node-nak. 
-> 
-> Minden egyes data-center-ben legalább két seed-node-ot kell létrehozni. A nem seed-node -knak a seed-nodeokat a cassandra.yaml fájlban kell statikusan beállítani. Alapértelmezetten csak a localhost van hozzáadva a listához: 
-> ```
-> - seeds: "127.0.0.1"
-> ```
-> 
-> 
-> # Telepítés
-> 
->  # docker run --name cassandra -p 9042:9042 -d cassandra
-> 
-> A parancssori Cassandra kliens része a telepítőnek, a bin mappában ül. Ezért indítunk még egy cassandra konténert, és abból fogunk csatlakozni a "cassandra" nevű konténerhez a 9042-es porton. 
->  # docker run -it --rm cassandra /bin/bash
-> 
-> 
-> Majd indítsuk el a **cqlsh** programot: cqlsh host port
-> ```
-> root@0ce39e38988a:/# cqlsh 192.168.0.101 9042
-> Connected to Test Cluster at create keyspace dev
-> [cqlsh 5.0.1 | Cassandra 3.11.3 | CQL spec 3.4.4 | Native protocol v4]
-> Use HELP for help.
-> cqlsh> 
-> ```
-> 
-> ....
-> 
-> ...
-> 
-> 
-> # CQL (Cassandra Query Language) alapok
-> https://www.datastax.com/2012/01/getting-started-with-cassandra
-> 
-> 
-> ## Keyspace és cluster info
-> ```
-> cqlsh:adam> DESCRIBE KEYSPACE adam;
-> 
-> CREATE KEYSPACE adam WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
-> 
-> CREATE TABLE adam.emp (
->     empid int PRIMARY KEY,
->     emp_dept text,
->     emp_first text,
->     emp_last text
-> ) WITH bloom_filter_fp_chance = 0.01
->     AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
->     AND comment = ''
->     AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
->  ...
-> ```
-> 
-> 
-> ```
-> cqlsh:adam> DESCRIBE TABLE adam.emp;
-> 
-> CREATE TABLE adam.emp (
->     empid int PRIMARY KEY,
->     emp_dept text,
-> ...
-> ```
-> 
-> 
-> 
-> ## Alap query
-> 
-> Adatbázis létrehozása: 
->  cqlsh> create keyspace adam with replication = {'class':'SimpleStrategy','replication_factor':1};
-> 
-> 
-> Tábla létrehozása: 
->  cqlsh> use adam;
->  cqlsh:adam> create table emp (empid int primary key, emp_first varchar, emp_last varchar, emp_dept varchar);
-> 
-> 
-> Adat beszúrása:
->  cqlsh:adam> insert into emp (empid, emp_first, emp_last, emp_dept)  values (1,'fred','smith','eng');
-> > **WARNING:** A primary key értékét beszúrás után soha többet nem lehet megváltoztatni, mivel az határozza meg, hogy melyik node-ra kerül a row
-> 
-> 
-> 
-> Lekérdezés index-ra: 
-> ```
-> cqlsh:adam> SELECT * FROM adam.emp;
->  empid | emp_dept | emp_first | emp_last
-> -------+----------+-----------+----------
->      1 |      eng |      fred |    smith
->      2 |      eng |      fred |    smith
-> ```
-> 
-> 
-> Lekérdezés filterrel:
-> ```
-> cqlsh:adam> SELECT * FROM adam.emp WHERE emp_last = 'smith' ALLOW FILTERING;
-> 
->  empid | emp_dept | emp_first | emp_last
-> -------+----------+-----------+----------
->      1 |      eng |      fred |    smith
->      2 |      eng |      fred |    smith
-> ```
-> 
-> 
-> 
-> 
-> ## Listák és Map-ek
-> 
-> 
-> ### Sets
-> A set esetében mivel egy elem többször is előfordulhat, hatékonyabb mint a lista, ahol egy elem beszúrásához az egész listát végig kell olvasni. 
-> 
->  cqlsh:adam> ALTER TABLE user ADD emails set<text>;
-> 
-> 
-> ```
-> cqlsh:adam> UPDATE user SET emails = {
->         ... 'mary@example.com', 'mary2@example.com' } WHERE first_name = 'Mary';
-> ```
-> ```
-> cqlsh:adam> SELECT emails FROM user WHERE first_name = 'Mary';
-> 
->  emails
-> -------------------------------------------
->  {'mary2@example.com', 'mary@example.com'}
-> 
-> (1 rows)
-> ```
-> 
-> 
-> 
-> ### List
-> ```
-> cqlsh:adam> ALTER TABLE user ADD
->         ... phone_numbers list<text>;
-> cqlsh:adam> UPDATE user SET phone_numbers = [
->         ... '1-800-999-9999' ] WHERE first_name = 'Mary';
-> cqlsh:adam> SELECT phone_numbers FROM user WHERE
->         ... first_name = 'Mary';
-> 
->  phone_numbers
-> --------------------
->  ['1-800-999-9999']
-> ```
-> ```
-> UPDATE user SET phone_numbers[0] =
-> '480-111-1111' WHERE first_name = 'Mary';
-> ```
-> 
-> 
-> 
-> ### Map
-> ```
-> cqlsh:adam> ALTER TABLE user ADD
->         ... login_sessions map<timeuuid, int>;
-> cqlsh:adam> UPDATE user SET login_sessions =
->         ... { now(): 13, now(): 18} WHERE first_name = 'Mary';
-> cqlsh:adam> SELECT login_sessions FROM user WHERE
->         ... first_name = 'Mary';
-> 
->  login_sessions
-> --------------------------------------------------------------------------------------
->  {601a2e20-c8e3-11e8-8684-6d2c86545d91: 13, 601a2e21-c8e3-11e8-8684-6d2c86545d91: 18}
-> ```
-> 
-> 
-> 
-> ### User defined type
-> ```
-> cqlsh:adam> CREATE TYPE address (street text, city text, state text, zip_code int);
-> 
-> cqlsh:adam> ALTER TABLE user ADD addresses map<text, frozen<address>>;
-> 
-> cqlsh:adam> UPDATE user SET addresses = addresses + {'home': { street: '7712 E. Broadway', city: 'Tucson',
->         ... state: 'AZ', zip_code: 85715} } WHERE first_name = 'Mary';
-> cqlsh:adam> 
-> cqlsh:adam> SELECT addresses FROM user WHERE first_name = 'Mary';
-> 
->  addresses
-> --------------------------------------------------------------------------------------
->  {'home': {street: '7712 E. Broadway', city: 'Tucson', state: 'AZ', zip_code: 85715
+
+> **NOTE:** A kulcsok sorrendje a PRIMARY KEY megadásánál kritikus. Ez határozza majd meg, hogy milyen 'sorrendben' kell majd őket szerepeltetni a lekérdezések WHERE szekciójában (lásd [\2](\1) című fejezetet)
+
+### Clustering key
+A Clustering key (csoportosító kulcs) kizárólag egy partíción belül határozza meg a sorok sorrendjét. Ha a compound primary kulcsunk több clustering kulcsot is tartalmaz, akkor először a listában az leső alapján fog sorrendezni, aztán a második alapján, és így tovább. Megadhatjuk a rendezés irányát is. Fontos ezt már a tábla tervezésekor kitalálni, mert később ezt már nem tudjuk megváltoztatni. 
+
+ 
+A rendezés irányát a WITH CLUSTERING ORDER BY kulcsszóval adhatjuk meg: 
+```
+CREATE TABLE store_by_location (
+    col1 text,
+    col2 text,
+    col3 text,
+    col4 text,
+    PRIMARY KEY (col1, col2, col3)
+ ) WITH CLUSTERING ORDER BY (col2 DESC, col3 ASC);
+```
+
+A fenti példában a particionáló kulcs a col1 és a két Clustering (csoportosító) kulcs a col2 és col3. A col2 szerint visszafele, a col3 szerint előre rendezünk. Ha nem adjuk meg, akkor az előre rendezés az alapértelmezett. 
+
+
+> **NOTE:** A rendezés csak akkor értelmezett egy Clustering key alapján, ha a partitioning kulcsok megegyeznek két sorban, ahol a Clustering kulcsok különböznek (ezért mondtuk, hogy csak egy partíción belül értelmezett). Tehát egy olyan adathalmazban, ahol a particionáló kulcsok értékkészlete unique, ott a Clustering kulcsoknak a sorok sorrendjére nincs hatása. Úgy is mondhatjuk, hogy csak egy node-on belül rendezik a sorokat
+
+
+A fenti példában, azokban a sorokban, ahol a **col1** megegyezik, a **col2** szerint lesznek visszafelé rendezve a sorok. És azokban a sorokban, ahol a **col1** és a **col2** is megegyezik, a **col3** szerint előre lesznek rendezve a sorok. 
+
+Pl. beszúrjuk ezeket az alábbi sorrendben: 
+```
+col1=k1, col2=B, col3=B
+col1=k1, col2=A, col3=Z
+col1=k1, col2=C, col3=X
+col1=k1, col2=B, col3=A
+```
+
+Akkor a végeredmény a következő lesz, ha lekérdezzük (így is van tárolva). A particionáló kulcsok minden sorban azonosak (tehát ugyan azon a node-on vannak), és a col2 szerint visszafele, a col3 szerint előre rendez: 
+```
+col1=k1, col2=C, col3=X
+col1=k1, col2=B, col3=A
+col1=k1, col2=B, col3=B
+col1=k1, col2=A, col3=Z 
+```
+
+<br>
+
+A sorrendezésen felül a clustering kulcsoknak a lekérdezés WHERE szekciójában van szerepe, mert felírhatunk rájuk **>, >=, <, <=** operációkat, amiket a particionáló kulcsokra nem írhatunk fel. (lást részletesen a [\2](\1) című fejezetben.
+
+
+
+
+### Partíció példa
+A fenti tábla definíció mellett adott a következő adathalmaz: 
+```
+col1=k1, col2=B, col3=B
+col1=k1, col2=A, col3=Z
+col1=k1, col2=C, col3=X
+col1=k2, col2=B, col3=A
+```
+
+Két partícióra oszlanak, mivel a col1 a particionáló kulcs:<br>
+
+1. partíció: 
+```
+col1=k1, col2=B, col3=B
+col1=k1, col2=A, col3=Z
+col1=k1, col2=C, col3=X
+```
+
+2. partíció:
+```
+col1=k2, col2=B, col3=A
+```
+
+<br>
+
+
+
+## Időbélyegek és Time to Live
+Minden egyes cellához egy sorban (Partícióban) a Cassandra az oszlop nevén kívül még eltárol egy időbélyeget, ami az utolsó módosítás dátumát tárolja, valamint egy TimeToLive értéket, ami ha lejár, akkor átírja NULL-ra az adott mező értékét. 
+
+![docs/ClipCapIt-181007-205354.PNG](docs/ClipCapIt-181007-205354.PNG) 
+<!-- <img src="docs/ClipCapIt-181007-205354.PNG" width="400"-->
+
+A TTL mező értéke alapértelmezetten nem definiált, értéke null, ha ezt külön nem adjuk meg. 
+
+
+Egy mező Timestamp értékét a **writetime(mezőnév)** függvénnyel listázhatjuk ki: 
+```
+cqlsh:adamSELECT first_name, last_name,
+        ... writetime(last_name) FROM user;
+
+ first_name | last_name | writetime(last_name)
+------------+-----------+----------------------
+       Mary | Rodriguez |     1538771050876617
+       Bill |    Nguyen |     1538771031333072
+```
+
+
+A Time To Live értéket egy mezőnek a **USING TTL** -el definiálhatjuk egy update parancsban, és a **TTL(mezőnév)** függvénnyel kérdezhetjük le. 
+```
+UPDATE user USING TTL 3600 SET last_name =
+'McDonald' WHERE first_name = 'Mary' ;
+```
+```
+cqlsh:adamSELECT first_name, last_name, TTL(last_name)
+        ... FROM user WHERE first_name = 'Mary';
+
+ first_name | last_name | ttl(last_name)
+------------+-----------+----------------
+       Mary | Rodriguez |           3588
+```
+
+
+
+<br>
+
+
+
+## Másodlagos indexek
+A másodlagos indexekekkel az a baj, hogy lehet hogy több node-on lesznek szétszorva, mivel az elsődleges index határozza meg hogy melyik node-ra kerül az elem. Mivel több node-on is le kell futtatni a keresést, azért nagyon drága lehet a használata. <br>
+
+Mikor nem szabad másodlagos indexet használni: 
+- Ha nem túl nagy az elemek kardinalitása. Ha szinte minden elem különbözik egymástól, akkor gyakorlatilag majd az összes node-ot végig kell járni. 
+- Ha túl kicsi a kardinalitás. Az sem jó ha szinte minden egyes sorban ugyan az az érték van, túl sok lesz a találat. 
+- Gyakran átírt mezőknél: Ha gyorsabban gyűlnek fel a tombstones-ok mint ahogy azokat a Cassandra fel tudná dolgozni, hibára fog futni az update egy idő után
+
+Példa: a user nevű táblában a last_name-re hozunk létre másodlagos indexet. 
+```
+CREATE INDEX ON user ( last_name );
+```
+
+> **NOTE:** Másodlagos indexeket a set, list, map elemeire is létrehozhatunk, akár még a user-defined-type belsejében lévő elemekre is, még akkor is ha egy map belsejében annak
+
+
+
+
+Cassandara 3.4-től használhatjuk az Apple által kifejlesztet SASI másodlagos index implementációt, ami több funkcionalitást tesz lehetővé mint a beépített változat: 
+- Kisebb, nagyobb -ra keresés
+- LIKE használata string típusú mezők esetén. 
+
+
+Mikor létrehozzuk a másodlagos indexet meg kell mondani, hogy egy custom implementációt szeretnénk használni. 
+```
+CREATE CUSTOM INDEX user_last_name_sasi_idx ON user (last_name)
+USING 'org.apache.cassandra.index.sasi.SASIIndex';
+```
+
+
+**INDEX vs Filter:**<br>
+
+Hatékonysági okokból alap esetben a Cassandra csak arra az oszlopra enged lekérdezni, amire van index. Csak akkor lehet index nélküli oszlopra hivatkozni a WHERE kifejezésben ha ezt implicit engedélyezzük az **ALLOW FILTERING** kulcsszóval a lezáró ; előtt. Ugyanis ha egy oszlopon nincs index, akkor a Cassandra az összes sort be fogja olvasni, és filterrel fogja kiválasztani WHERE-ben definiált mezőket. Milliós sorszám esetén ez már problémás lehet. 
+
+https://www.datastax.com/2012/01/getting-started-with-cassandra
+
+<br>
+
+
+## Materialized Views
+http://cassandra.apache.org/doc/4.0/cql/mvs.html<br>
+
+https://opencredo.com/everything-need-know-cassandra-materialized-views/<br>
+
+A Materialized view az eredeti tálba egy részhalmazának, vagy az egész tálba egy olyan másolata, ahol más kulcsok alapján tesszük kereshetővé ugyan azt az adathalmazt. Ez akkor jó, ha van egy táblánk amit A és B oszlop szerint is keresni akarunk, ilyenkor csinálunk egy táblát, ahol A a kulcs, és egy Materialized view-t, ahol a B a kulcs. Ennek az a nagy előnye azzal szemben, mint ha erre két valódi táblát definiálnánk, hogy mikor az igazi táblába szúrunk be, akkor a materialized view-t is frissíteni fogja a Cassandra, nem nekünk kell manuálisan megcsinálni. 
+
+
+Az MW-ban a kulcsokra nagyon komoly megkötés van: 
+- az alap tábla összes kulcsát tartalmaznia kell
+- csak egy olyan plusz kulcsot tartalmazhat, ami nem volt kulcs az alaptáblában. 
+
+> **NOTE:** Az MW-ben az alaptábla partícionáló kulcsából általában Clustering kulcsot csinálunk, és az egyik korábban nem kulcs mezőt használjuk föl mint particionáló kulcs, amire a lekérdezéseket akarjuk írni. Tehát a megkötés csak annyi, hogy minden alaptáblabeli kulcs maradjon kulcs, de a típusukat meg szabad változtatni.
+
+
+
+Ezzel biztosítjuk azt, hogy az MW minden egyes sora pontosan egy sornak felel meg az alaptáblában. Pl adott a következő alaptáblánk: 
+```
+CREATE TABLE t (
+    k int,
+    c1 int,
+    c2 int,
+    v1 int,
+    v2 int,
+    PRIMARY KEY (k, c1, c2)
+)
+```
+
+
+Akkor a következő MW-k valid kulccsal rendelkeznek: 
+```
+CREATE MATERIALIZED VIEW mv1 AS
+    SELECT * FROM t WHERE k IS NOT NULL AND c1 IS NOT NULL AND c2 IS NOT NULL
+    PRIMARY KEY (c1, k, c2)  
+```
+Itt a c1 lépett elő partitioning kulccsá és a korábbi partitioning kulcsból (k) Clustering kulcs lett. 
+
+A **not null** a lekérdezésben kötelező elem minden olyan oszlopon, amiből kulcs lesz az MW-ben, hogy elkerüljük a null kulcsok beszúrást. 
+
+```
+CREATE MATERIALIZED VIEW mv1 AS
+    SELECT * FROM t WHERE k IS NOT NULL AND c1 IS NOT NULL AND c2 IS NOT NULL
+    PRIMARY KEY (v1, k, c1, c2)
+```
+
+
+
+Mire  kell figyelni: <br>
+
+- Avoid too large partitions
+- Choose your partition key in a way that distributes the data correctly, avoiding cluster hotspots (the partition key like days of the week is not a good one as it leads to temporal hotspots)
+
+<br>
+
+<br>
+
+
+# Architektúra
+
+
+## Alapfogalmak
+
+
+### Gossip (pletykák)
+
+
+
+
+### Snitches
+A snitch protokoll segítségével térképezi föl egy node, hogy milyen messze vannak tőle az általa ismert node-ok, hogy ha egy műveletben koordinátor node-ként vesz részt, meg tudja határozni hogy melyik node-okról olvasson (a legközelebbi) és melyik node-okra írjon. 
+
+
+
+
+
+### Lightweight Transactions (check-and-set)
+Cassandra-ban nem létezik a hagyományos értelembe vett tranzakció kezelés, csak az úgynevezett pehelysúlyú tranzakció (LWT) ami azt biztosítja, hogy egy olvasás és az azt követő írás egy tranzakcióban lesz (**linearizable consistency**). Az olvasással ellenőrizzük, hogy az adott adat szerepel e már az adatbázisban, és ha nem, akkor bírjuk. Ez LWT csak egy partíción belül működik és elég költséges művelet, mivel a végrehajtásához a Cassandra a Paxos nevű konszenzus algoritmust futtatja. A konszenzus kialakításához a partíciót tároló replikák többségének konszenzusra kell jutnia az adott tranzakciót illetően.
+
+
+
+
+
+## Node-ok csoportosítása
+Cassandrában a node-okat két szinten csoportosíthatjuk: Rack és Data Cener. 
+
+- **Rack**: A rack-ben olyan nodo-kat csoportosítunk, amik tényleg egy fizikai rack-ben vannak, tehát ezek vannak a "legközelebb" egymáshoz. 
+- **Data Center**: Egy datacenter-ben azokat Rack-eket csoportosítjuk, amik fizikailag egy szerverfarmon vannak. 
+
+![docs/ClipCapIt-181106-205504.PNG](docs/ClipCapIt-181106-205504.PNG) 
+<!-- <img src="docs/ClipCapIt-181106-205504.PNG" width="400"-->
+
+Alapértelmezetten minden node-unk a **RACK1**-be fog tartozni, és a **DC1** datacenterbe. 
+
+
+### Seed Nodes
+Minden egyes node-nak amit hozzáadnunk a cluster-hez szüksége van egy referencia node-ra, amitől le tudja kérdezni a cluster topológiáját (élő és halott node-ok, távolság..). Ezeket hívják seed-node-nak. 
+
+Minden egyes data-center-ben legalább két seed-node-ot kell létrehozni. A nem seed-node -knak a seed-nodeokat a cassandra.yaml fájlban kell statikusan beállítani. Alapértelmezetten csak a localhost van hozzáadva a listához: 
+```
+- seeds: "127.0.0.1"
+```
+
+
+# Telepítés
+
+ # docker run --name cassandra -p 9042:9042 -d cassandra
+
+A parancssori Cassandra kliens része a telepítőnek, a bin mappában ül. Ezért indítunk még egy cassandra konténert, és abból fogunk csatlakozni a "cassandra" nevű konténerhez a 9042-es porton. 
+ # docker run -it --rm cassandra /bin/bash
+
+
+Majd indítsuk el a **cqlsh** programot: cqlsh host port
+```
+root@0ce39e38988a:/# cqlsh 192.168.0.101 9042
+Connected to Test Cluster at create keyspace dev
+[cqlsh 5.0.1 | Cassandra 3.11.3 | CQL spec 3.4.4 | Native protocol v4]
+Use HELP for help.
+cqlsh
+```
+
+....
+
+...
+
+
+# CQL (Cassandra Query Language) alapok
+https://www.datastax.com/2012/01/getting-started-with-cassandra
+
+
+## Keyspace és cluster info
+```
+cqlsh:adamDESCRIBE KEYSPACE adam;
+
+CREATE KEYSPACE adam WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
+
+CREATE TABLE adam.emp (
+    empid int PRIMARY KEY,
+    emp_dept text,
+    emp_first text,
+    emp_last text
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+ ...
+```
+
+
+```
+cqlsh:adamDESCRIBE TABLE adam.emp;
+
+CREATE TABLE adam.emp (
+    empid int PRIMARY KEY,
+    emp_dept text,
+...
+```
+
+
+
+## Alap query
+
+Adatbázis létrehozása: 
+```
+ cqlshcreate keyspace adam with replication = {'class':'SimpleStrategy','replication_factor':1};
+```
+
+Tábla létrehozása: 
+```
+ cqlshuse adam;
+ cqlsh:adamcreate table emp (empid int primary key, emp_first varchar, emp_last varchar, emp_dept varchar);
+```
+
+Adat beszúrása:
+```
+ cqlsh:adaminsert into emp (empid, emp_first, emp_last, emp_dept)  values (1,'fred','smith','eng');
+```
+
+> **WARNING:** A primary key értékét beszúrás után soha többet nem lehet megváltoztatni, mivel az határozza meg, hogy melyik node-ra kerül a row
+
+
+
+Lekérdezés index-ra: 
+```
+cqlsh:adamSELECT * FROM adam.emp;
+ empid | emp_dept | emp_first | emp_last
+-------+----------+-----------+----------
+     1 |      eng |      fred |    smith
+     2 |      eng |      fred |    smith
+```
+
+
+Lekérdezés filterrel:
+```
+cqlsh:adamSELECT * FROM adam.emp WHERE emp_last = 'smith' ALLOW FILTERING;
+
+ empid | emp_dept | emp_first | emp_last
+-------+----------+-----------+----------
+     1 |      eng |      fred |    smith
+     2 |      eng |      fred |    smith
+```
+
+
+
+
+## Listák és Map-ek
+
+
+### Sets
+A set esetében mivel egy elem többször is előfordulhat, hatékonyabb mint a lista, ahol egy elem beszúrásához az egész listát végig kell olvasni. 
+
+ cqlsh:adamALTER TABLE user ADD emails set<text>;
+
+
+```
+cqlsh:adamUPDATE user SET emails = {
+        ... 'mary@example.com', 'mary2@example.com' } WHERE first_name = 'Mary';
+```
+```
+cqlsh:adamSELECT emails FROM user WHERE first_name = 'Mary';
+
+ emails
+-------------------------------------------
+ {'mary2@example.com', 'mary@example.com'}
+
+(1 rows)
+```
+
+
+
+### List
+```
+cqlsh:adamALTER TABLE user ADD
+        ... phone_numbers list<text>;
+cqlsh:adamUPDATE user SET phone_numbers = [
+        ... '1-800-999-9999' ] WHERE first_name = 'Mary';
+cqlsh:adamSELECT phone_numbers FROM user WHERE
+        ... first_name = 'Mary';
+
+ phone_numbers
+--------------------
+ ['1-800-999-9999']
+```
+```
+UPDATE user SET phone_numbers[0] =
+'480-111-1111' WHERE first_name = 'Mary';
+```
+
+
+
+### Map
+```
+cqlsh:adamALTER TABLE user ADD
+        ... login_sessions map<timeuuid, int>;
+cqlsh:adamUPDATE user SET login_sessions =
+        ... { now(): 13, now(): 18} WHERE first_name = 'Mary';
+cqlsh:adamSELECT login_sessions FROM user WHERE
+        ... first_name = 'Mary';
+
+ login_sessions
+--------------------------------------------------------------------------------------
+ {601a2e20-c8e3-11e8-8684-6d2c86545d91: 13, 601a2e21-c8e3-11e8-8684-6d2c86545d91: 18}
+```
+
+
+
+### User defined type
+```
+cqlsh:adamCREATE TYPE address (street text, city text, state text, zip_code int);
+
+cqlsh:adamALTER TABLE user ADD addresses map<text, frozen<address>>;
+
+cqlsh:adamUPDATE user SET addresses = addresses + {'home': { street: '7712 E. Broadway', city: 'Tucson',
+        ... state: 'AZ', zip_code: 85715} } WHERE first_name = 'Mary';
+cqlsh:adam
+cqlsh:adamSELECT addresses FROM user WHERE first_name = 'Mary';
+
+ addresses
+--------------------------------------------------------------------------------------
+ {'home': {street: '7712 E. Broadway', city: 'Tucson', state: 'AZ', zip_code: 85715
 
 
 ```
@@ -869,19 +885,22 @@ CREATE INDEX indexOnCol4 ON adam.test1 (col4);
 Egy lekérdezésben vagy az összes particionáló kulcsot szerepeltetjük, vagy csak indexelt oszlopokat. Tehát két lehetőségünk van:<br>
 
 1. csak a paritcionáló kulcs(ok): 
+```
  SELECT * FROM adam.test1 WHERE col1 = 'k1'
 (Persze ezt kiegészíthettük volna Clustering kulcsokkal)
-
+```
  
-2. csak az index: 
+1. csak az index: 
+``` 
  SELECT * FROM adam.test1 WHERE col4 = 'C'
-
+```
 
 Alap esetben sem a particionáló kulcsokra, sem az indexekre nem használhatjuk a <, <=, >, >= operációkat, csak az =, IN ('k1', 'k2',..). 
+
 > **WARNING:** Az IN használata erősen ellenjavallott performancia okokból, de ha már használjuk, akkor az IN értékkészletét alacsonyan kell tartani.
 
 
-(A másodlagos indexre megengedett a <,> operáció, ha a SASI implementációt használjuk)
+(A másodlagos indexre megengedett a <,operáció, ha a SASI implementációt használjuk)
 
 
 
@@ -903,42 +922,42 @@ Ha tartományra kérdezünk le, akkor a kisebb mint és nagyobb mint (vagy ford�
 
 
 ![docs/ClipCapIt-181015-221508.PNG](docs/ClipCapIt-181015-221508.PNG) 
-<!-- <img src="docs/ClipCapIt-181015-221508.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181015-221508.PNG" width="400"-->
 
 Helyes, mert az egyetlen egy particionáló kulcs szerepel, és az első Clustering kulcsra írtunk fel '<' feltétel. 
  SELECT * FROM adam.test1 WHERE col1 = 'k1' AND col2 < 'Z'
 
 
 ![docs/ClipCapIt-181015-221508.PNG](docs/ClipCapIt-181015-221508.PNG) 
-<!-- <img src="docs/ClipCapIt-181015-221508.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181015-221508.PNG" width="400"-->
 
 Helyes, pert benne van a particionáló kulcs, és mivel a col3 szerepel a WHERE-ben, a col2 is ott van, ahol csak az '=' restriction-t használtuk. Mivel a col3 az utolsó olyan Clustering kulcs, amit szerepel a WEHRE-ben, ezért ott használhattuk a '>' megkötést. 
- SELECT * FROM adam.test1 WHERE col1 = 'k1' AND col2 = 'Z' AND col3 > 'A'
+ SELECT * FROM adam.test1 WHERE col1 = 'k1' AND col2 = 'Z' AND col3 'A'
 
 
 ![docs/ClipCapIt-181015-221508.PNG](docs/ClipCapIt-181015-221508.PNG) 
-<!-- <img src="docs/ClipCapIt-181015-221508.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181015-221508.PNG" width="400"-->
 
 Helyes, mert a tartományra lekérdezés a végén van, és a nagyobb mint-kisebb mint operációkban ugyan az az oszlop (Clustering kulcs) szerepel, ráadásul a legvégén, különben nem lenne helyes. 
- SELECT * FROM adam.test1 WHERE col1 = 'k1' AND col2 = 'Z' AND col3 > 'A' AND col3 < 'Z'
+ SELECT * FROM adam.test1 WHERE col1 = 'k1' AND col2 = 'Z' AND col3 'A' AND col3 < 'Z'
 A tartomány több Clustering kulcsra is vonatkozhat, még akkor is ha aszimmetrikus, tehát ez is helyes: 
- SELECT * FROM adam.test1 WHERE col1 = 'k1' AND (col2 , col3) > ('A','A') AND col2 < 'Z'
+ SELECT * FROM adam.test1 WHERE col1 = 'k1' AND (col2 , col3) ('A','A') AND col2 < 'Z'
 
 
 
 
 ![docs/ClipCapIt-181015-221536.PNG](docs/ClipCapIt-181015-221536.PNG) 
-<!-- <img src="docs/ClipCapIt-181015-221536.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181015-221536.PNG" width="400"-->
 
 Helytelen, mert a col3 Clustering kulcs szerepel, de a col2 nem, pedig a kulcsok definiálásakor a col2 előbb volt mint a col3.
- SELECT * FROM adam.test1 WHERE col1 = 'k1' AND col3 > 'A'
+ SELECT * FROM adam.test1 WHERE col1 = 'k1' AND col3 'A'
 
 
 ![docs/ClipCapIt-181015-221536.PNG](docs/ClipCapIt-181015-221536.PNG) 
-<!-- <img src="docs/ClipCapIt-181015-221536.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181015-221536.PNG" width="400"-->
 
 Helytelen, mert a col2-re nem az '=' operátort használjuk, pedig megadtuk a col2 utáni soron következő kulcsot is a col3-at. Mindig csak a legutolsó kulcs-ra használhatunk az '='-től eltérő operációt. 
- SELECT * FROM adam.test1 WHERE col1 = 'k1' AND col2 > 'Z' AND col3 > 'A'
+ SELECT * FROM adam.test1 WHERE col1 = 'k1' AND col2 'Z' AND col3 'A'
 
 
 
@@ -975,7 +994,7 @@ A datastax (a Cassandra gyártója) biztosít egy ingyenes GUI-t ami remek segí
 Install: https://docs.datastax.com/en/developer/devcenter/doc/devcenter/dcInstallation.html
 
 ![docs/ClipCapIt-181013-142901.PNG](docs/ClipCapIt-181013-142901.PNG) 
-<!-- <img src="docs/ClipCapIt-181013-142901.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181013-142901.PNG" width="400"-->
 
 
 
@@ -987,7 +1006,7 @@ Sokféle grafikus eszközzel csatlakozhatunk a Cassandra adatbázishoz. A legtö
 
 
 ![docs/ClipCapIt-180930-154548.PNG](docs/ClipCapIt-180930-154548.PNG) 
-<!-- <img src="docs/ClipCapIt-180930-154548.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-180930-154548.PNG" width="400"-->
 
 
 
@@ -998,7 +1017,7 @@ Sokféle grafikus eszközzel csatlakozhatunk a Cassandra adatbázishoz. A legtö
 Az adatmodell megtervezését az alábbi példán keresztül fogjuk bemutatni. Ez egy leegyszerűsített modellje egy utazásközvetítő weboldalnak ami összegyűjti a különböző utazási irodák ajánlatait, amik több utazást is kínálnak, és az utasokat egy utazáson belül is több szállodában szállásolják el. 
 
 ![docs/ClipCapIt-181010-232642.PNG](docs/ClipCapIt-181010-232642.PNG) 
-<!-- <img src="docs/ClipCapIt-181010-232642.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181010-232642.PNG" width="400"-->
 
 Az RDBMS modellt úgy gyártanánk el ebből, hogy minden téglalapból csinálnánk egy táblát, majd létrehoznánk idegen kulcsokat a vonalak mentén a számosságot figyelembe véve.
 
@@ -1021,7 +1040,7 @@ Itt azonban query-first megközelítést kell alkalmazni. Első lépésben a ké
 Ha megvannak a lekérdezések, akkor a lekérdezésekből egy folyamat ábrát kell rajzolni, hogy megtudjuk hogy melyik lekérdezés eredménye szolgálhat input-ként egy másik lekérdezésnek: 
 
 ![docs/ClipCapIt-181010-232613.PNG](docs/ClipCapIt-181010-232613.PNG) 
-<!-- <img src="docs/ClipCapIt-181010-232613.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181010-232613.PNG" width="400"-->
 
 
 
@@ -1042,7 +1061,7 @@ Ha egy táblába bele mutat egy nyíl akkor az egy olyan lekérdezés, amit az a
 Íme az utazási iroda teljes adatbázis modellje, azaz Chebotka diagramja: 
 
 ![docs/ClipCapIt-181011-220118.PNG](docs/ClipCapIt-181011-220118.PNG) 
-<!-- <img src="docs/ClipCapIt-181011-220118.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181011-220118.PNG" width="400"-->
 
 
 
@@ -1051,6 +1070,7 @@ Ha egy táblába bele mutat egy nyíl akkor az egy olyan lekérdezés, amit az a
 Láthatjuk, hogy sem a hotelnek, sem a customer-eknek nincs saját táblája, ami elkerülhetetlen lett volna  RDBMS-ben, itt viszont mivel egyik query sem azonosított ilyen igényt, ezért nem is készült ilyen tábla (query first megközelítés) 
 
 Ami még fontos, hogy a Q1-hez és a Q2 lekérdezésekhez tartozó táblákban a particionáló kulcs szöveges, ez az amit a felhasználó megad a felületen. A többi lekérdezésnek már van upstream lekérdezése, ahonnan kipottyannak számára a megfelelő ID-k.
+
 > **NOTE:** A Chebotka logikai diagramon még nincsenek adattípusok meghatározva, az ábrán egy adott mező (pl customerName) lehet hogy később egy user defined adat típussal lesz megvalósítva (pl. First Name, Last Name) 
 
 
@@ -1059,14 +1079,14 @@ Ami még fontos, hogy a Q1-hez és a Q2 lekérdezésekhez tartozó táblákban a
 A Fizikai Chebotka diagramon már pontosan meghatározzuk az egyes mező típusokat, akár összetett, user defined típusokat is létrehozhatunk. Jelölése az alábbi: 
 
 ![docs/500px-ClipCapIt-181011-215422.PNG](docs/500px-ClipCapIt-181011-215422.PNG) 
-<!-- <img src="docs/500px-ClipCapIt-181011-215422.PNG" width="500"> -->
+<!-- <img src="docs/500px-ClipCapIt-181011-215422.PNG" width="500"-->
 
 
 
 A fenti felsorolásban láthatjuk hogy ***név*** formátumban kell a User Defined Type -ra hivatkozni. A UDT fizikai modelljében is két csillag közé kell rakni a nevet: 
 
 ![docs/ClipCapIt-181011-221836.PNG](docs/ClipCapIt-181011-221836.PNG) 
-<!-- <img src="docs/ClipCapIt-181011-221836.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181011-221836.PNG" width="400"-->
 
 A UDT-nak nincsenek kulcsai, mert nem önálló táblák. 
 
@@ -1075,7 +1095,7 @@ A UDT-nak nincsenek kulcsai, mert nem önálló táblák.
 Ezen a diagramon már nem szerepelnek a lekérdezések, pusztán a tábla szerkezetek. A tábla model tetején be kell jelölni, hogy az adott tábla melyik keyspace-be fog kerülni. Mi két keyspace-t hoztunk létre, egyet az utazásoknak, egyet pedig a foglalásoknak: 
 
 ![docs/ClipCapIt-181011-221228.PNG](docs/ClipCapIt-181011-221228.PNG) 
-<!-- <img src="docs/ClipCapIt-181011-221228.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181011-221228.PNG" width="400"-->
 
 
 
@@ -1085,7 +1105,7 @@ Ezen a diagramon már nem szerepelnek a lekérdezések, pusztán a tábla szerke
 A fizikai modellben az MW neveit dőlt betűkkel jelöljük, és egy szaggatott vonalú nyíllal kötjük össze a base táblával a Chebotka modellben:
 
 ![docs/ClipCapIt-181011-230249.PNG](docs/ClipCapIt-181011-230249.PNG) 
-<!-- <img src="docs/ClipCapIt-181011-230249.PNG" width="400"> -->
+<!-- <img src="docs/ClipCapIt-181011-230249.PNG" width="400"-->
 
 
 Láthatjuk, hogy az alaptáblában a TourId particionáló kulcs volt, az MW-ben viszont már csak Clustering key, ezzel teljesítettük a megkötést, hogy az alap tábla összes kulcsának szerepelnie kell az MW kulcsai között.
@@ -1098,13 +1118,13 @@ Láthatjuk, hogy az alaptáblában a TourId particionáló kulcs volt, az MW-ben
 ## Partíció mérete
 Egy partíció, vagyis azon cellák összessége, aminek ugyan az a particionáló kulcs csoportja, nem lehet nagyobb mint **2 milliárd cella / partíció**. Az egy partícióba eső cellák számát így lehet kiszámolni: 
 
-N<sub>v</sub> = N<sub>r</sub>*( N<sub>c</sub> − N<sub>pk</sub> − N<sub>s</sub>) + N<sub>s</sub>
+N<sub>v</sub= N<sub>r</sub>*( N<sub>c</sub− N<sub>pk</sub− N<sub>s</sub>) + N<sub>s</sub>
 
-- N<sub>v</sub> = össz cella szám, ezt akarjuk kiszámolni, ez nem lehet több mint 2 milliárd. 
-- N<sub>r</sub> = az összes sorok száma a partícióban 
-- N<sub>pk</sub> = primary kulcs oszlopok száma 
-- N<sub>c</sub> = az oszlopok száma a partícióban
-- N<sub>s</sub> = statikus oszlopok
+- N<sub>v</sub= össz cella szám, ezt akarjuk kiszámolni, ez nem lehet több mint 2 milliárd. 
+- N<sub>r</sub= az összes sorok száma a partícióban 
+- N<sub>pk</sub= primary kulcs oszlopok száma 
+- N<sub>c</sub= az oszlopok száma a partícióban
+- N<sub>s</sub= statikus oszlopok
 
 
 Mikor a tábla szerkezetet kitaláljuk, fontos, hogy előre megbecsüljük, hogy mi lesz az **N<sub>v</sub>**. Fontos hogy a legrosszabb esetet számoljuk ki beleszámolva a jövőbeli elképzelt növekedést is. Ha ez átlépné az 1 milliárdot, akkor be kell vezessünk újabb particionáló kulcsokat is.
@@ -1175,7 +1195,7 @@ public class CassandraConnector {
 				b.withSSL();
 			}
 
-			if (username != null && username.trim().length() > 0 && withSSL) {
+			if (username != null && username.trim().length() 0 && withSSL) {
 				b.withCredentials(username, password);
 			}			
 
