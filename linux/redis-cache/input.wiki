@@ -1,0 +1,165 @@
+http://wiki.berki.org/index.php/Redis_-NoSQL_database
+
+
+:[[File:ClipCapIt-161106-201924.PNG]]
+
+=Bemutatás=
+'''Redis 3.2.5''' - a legújabb stabil verzió a cikk írásakor
+
+A Radius egy memória alapú adatstruktúra adatbázis. Nagyon sokféle struktúrát támogat, nem csak string-eket. (Set, Map, Hash, List). Az elosztott működést is támogatja, és képes lemezre menteni a memória cache tartalmat.
+
+Ezt írják  magukról: <br>
+"Redis is an open source (BSD licensed), in-memory data structure store, used as database, cache and message broker. It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries. Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster."
+
+=Telepítés=
+A redis az EPEL repozitoriban van benne, ezt hozzá kell adjuk a YUM-hoz ha még nem lenne benne: 
+<pre>
+# wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+# rpm -ivh epel-release-6-8.noarch.rpm
+</pre>
+
+
+Majd telepítsük föl a redis-t. 
+<pre>
+# yum install redis
+</pre>
+
+
+Létrejött fájlok: 
+* /etc/redis.conf: A redis központi konfigurációs fájlja, mi is ebben fogjuk a szükséges konfigurációt elvégezni. 
+* /etc/redis-sentinel.conf: A redis központi monitorozó eszköze. Figyeli az esetlegesen fellépő hibákat, és megpróbál automatikusan beavatkozni. 
+* /var/log/redis: Log fájl helye
+* /etc/logrotate.d/redis: A logrotate-thez is hozzáadta a telepítő a szükséges konfigurációt. 
+* /var/lib/redis: Ide fogja kiírni a redis a memóriában összegyűlt adatbázist a konfigurációban meghatározott gyakorisággal.
+
+=Konfiguráció=
+
+===Hálózati beállítások===
+Amennyiben lehetséges, a '''NETWORK''' állítsuk be, hogy a redis csak a lokális hálózaton hallgatózzon és csak egy porton biztonsági megfontolásból. 
+<br>/etc/redis.conf
+<pre>
+bind 127.0.0.1
+port 6379
+</pre>
+
+
+===Memória használat===
+Mivel cache-ként szeretnénk használni a redis-t, és nem adatbázisként, maximálni fogjuk, hogy mennyi memóriát használhat el a rendszermemóriából, mivel nem történik tragédia, ha egy új cache bejegyzés már nem fér bele a memóriába. 
+
+http://redis.io/topics/lru-cache
+
+A '''LIMITS''' szekcióban állítsuk be, hogy mennyi memóriát használhat maximálisan a redis, és hogy mit tegyen, milyen policy-t alkalmazzon, ha már nincs szabad hely. 6 féle memória kezelési stratégia közül választhatunk. Mi a '''allkeys-lru''' stratégiát fogjuk használni, ami egy algoritmus alapján megkeresi a legkevésbé használt kulcsokat, és azokat kitörli. A többi stratégiával ellentétben ez mindig kitöröl egy kulcsot, ha a memória már megtelt és új INSERT kérés érkezik. 
+<br>/etc/redis.conf
+<pre>
+maxmemory 5GB
+maxmemory-policy allkeys-lru
+</pre>
+
+===Adatbázis  mentése===
+
+A memóriában lévő adatbázis mentésével kapcsolatos beállítások a SNAPSHOTTING szekcióban vannak a redis.conf fájlban. A save paraméterrel adhatjuk meg hogy hány másodperc és hány módosítás elteltével írja ki lemezre a memória cache tartalmát a redis: 
+<pre>
+save 900 1
+save 300 10
+save 60 10000
+</pre>
+Mind két paraméternek teljesülnie kell, tehát az első esetben 900 másodperc és legalább 1 módosítás után  lementi a cache-t lemezre. 
+
+Az adatbázis fájl neve és helye: 
+<pre>
+dbfilename dump.rdb
+dir /var/lib/redis/
+</pre>
+
+Próbáljuk  ki. Adjuk ki a redis-cli parancssori eszköznek a save parancsot, ekkor ki kell hogy írja a memória tartalmát a lemezre: 
+<pre>
+# redis-cli save
+OK
+</pre>
+
+Láthatjuk, hogy a /var/lib/redis/ mappában a dump.rdb dátuma frissült:
+<pre>
+# ll /var/lib/redis
+-rw-r--r--. 1 redis redis 4894 Nov  6 18:24 dump.rdb
+</pre>
+
+===Adatbázisok száma===
+Az alap konfiguráció 16 adatbázist hoz létre, a kliensek 0-tól 15-ig hivatkozhatnak számmal ezekre az adatbázisokra. A 0. adatbázis az alapértelmezett. 
+<pre>
+databases 16
+</pre>
+
+Majd a webes admin GUI-ban látni fogjuk, hogy 16 adatbázis közül választhatunk.
+
+===Indítás===
+<pre>
+# service redis start
+# chkconfig redis on
+</pre>
+
+=Redis monitorozása és failover=
+A redis szerverek monitorozására a '''redis-sentinel''' program szolgál, ami feltelepült a redis yum installációjával együtt. 
+
+http://redis.io/topics/sentinel
+
+Valójában nagy, klászteres környezetben van értelme a sentinel használatának. 
+
+A /etc/redis-sentinel.conf fájlban található alap beállítások megfelelőek. A localhost-on a 6379-es porton fog csatlakozni a redesi szerverhez. 
+<pre>
+sentinel monitor mymaster 127.0.0.1 6379 2
+</pre>
+
+Indítsuk el:
+<pre>
+# service redis-sentinel start
+Starting redis-sentinel:                                   [  OK  ]
+
+# chkconfig redis-sentinel on
+</pre>
+
+=Webes admin felület (phpRedisAdmin)=
+
+Nagyon sok féle Redis grafikus admin eszköz létezik, ezek között vannak desktop alkalmazások és különféle webes eszközök. Mi egy nagyon egyszerű, és elterjedt webes GUI-t fogunk használni a '''phpRedisAdmin'''-t. 
+
+A phpRedisAdmin-t git-böl lehet letölteni két lépésben. Lépjünk bele abba appache által látott mappába, ahova a phpRedisAdmin-t telepíteni szeretnénk, majd az alábbi két git repót kell klónozzuk:
+<pre>
+# cd /var/www/virtual/admin
+# git clone https://github.com/ErikDubbelboer/phpRedisAdmin.git
+# cd phpRedisAdmin
+# git clone https://github.com/nrk/predis.git vendor
+</pre>
+
+Nevezzük át a sample konfigurációs fájlt: 
+<pre>
+# cp includes/config.sample.inc.php includes/config.inc.php
+</pre>
+
+
+:[[File:ClipCapIt-161106-185704.PNG]]
+
+===SELinux===
+
+A httpd az alap rendszabás szerint nem olvashatja a 6379 portot. Ezért megváltoztatjuk a port típusát. Erre amúgy is szükség lenne, ha php klienssel akarnánk a Redis-hez kapcsolódni. 
+<pre>
+# semanage port -a -t http_port_t -p tcp 6379
+</pre>
+
+=Backup és resotre=
+
+
+=Kliensek=
+
+==PHP kliens==
+A php klienst YUM-al tudjuk feltelepíteni. 
+
+<pre>
+# yum install php-pecl-redis
+</pre>
+
+Ekkor a /etc/php.d/ mappába létrejön a 50-redis.ini fájl, ami include-álja a redis.so:
+<pre>
+extension = redis.so
+</pre>
+
+
+==Java kliens==

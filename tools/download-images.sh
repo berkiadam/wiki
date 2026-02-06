@@ -2,10 +2,10 @@
 set -euo pipefail
 
 # ---- KONFIGURÁCIÓ ----
-DOC_ROOT="../linux/WPA-wifi-pwd"
+DOC_ROOT="../linux/elasticsearch"  # a gyökerétől számítva, ahol a docs könyvtár létre lesz hozva
 DOCS_DIR="$DOC_ROOT/docs"
 
-URL="http://wiki.berki.org/index.php/WPA_jelsz%C3%B3_felt%C3%B6r%C3%A9se"
+URL="http://wiki.berki.org/index.php/Centralized_logging_in_swarm"
 BASE="http://wiki.berki.org"
 
 # ----------------------

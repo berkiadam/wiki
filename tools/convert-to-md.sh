@@ -2,7 +2,7 @@
 
 # Bemeneti és kimeneti fájlok
 
-FOLDER="linux/WPA-wifi-pwd"
+FOLDER="linux/elasticsearch"
 WIKI_FILE="input.wiki"
 MD_FILE="output_tmp.md"
 MD_FINAL="index.md"
