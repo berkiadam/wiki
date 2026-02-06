@@ -1,4 +1,4 @@
-[<< Vissza](../index.md) | [![](../../tools/docs/english-falg.png) Switch to English](index-en.md) | 
+[<< Vissza](../index.md) | [![](../../tools/docs/english-falg.png) Switch to English](index-en.md) 
 
 <hr>
 <br>
@@ -7,25 +7,25 @@
 
 - [Mi az a Selenium 3](#mi-az-a-selenium-3)
 - [WebDriver](#webdriver)
-  - [Driver letöltése](#driver-letöltése)
-  - [WebDriver teszt írása](#webdriver-teszt-írása)
-  - [Teszt futtatása](#teszt-futtatása)
-  - [HtmlUnitDriver](#htmlunitdriver)
+    - [Driver letöltése](#driver-let%C3%B6lt%C3%A9se)
+    - [WebDriver teszt írása](#webdriver-teszt-%C3%ADr%C3%A1sa)
+    - [Teszt futtatása](#teszt-futtat%C3%A1sa)
+    - [HtmlUnitDriver](#htmlunitdriver)
 - [Selenium IDE](#selenium-ide)
-  - [Selenium IDE 3 tesztek](#selenium-ide-3-tesztek)
-  - [Selenium IDE alternatívák (Katalon)](#selenium-ide-alternatívák-katalon)
+    - [Selenium IDE 3 tesztek](#selenium-ide-3-tesztek)
+    - [Selenium IDE alternatívák Katalon](#selenium-ide-alternat%C3%ADv%C3%A1k-katalon)
 - [GRID 2.0](#grid-20)
-  - [Bevezető](#bevezető)
-  - [Cluster létrehozása](#cluster-létrehozása)
-    - [HUB](#hub)
-    - [Node](#node)
-  - [Remote driver](#remote-driver)
-  - [Teszt futtatása](#teszt-futtatása-1)
-  - [Szofisztikált node konfiguráció (képességek)](#szofisztikált-node-konfiguráció-képességek)
-    - [Konfiguráció létrehozása](#konfiguráció-létrehozása)
-    - [Node-ok indítása](#node-ok-indítása)
-    - [Teszt elkészítése](#teszt-elkészítése)
-    - [Teszt futtatása](#teszt-futtatása-2)
+    - [Bevezető](#bevezet%C5%91)
+    - [Cluster létrehozása](#cluster-l%C3%A9trehoz%C3%A1sa)
+        - [HUB](#hub)
+        - [Node](#node)
+    - [Remote driver](#remote-driver)
+    - [Teszt futtatása](#teszt-futtat%C3%A1sa)
+    - [Szofisztikált node konfiguráció képességek](#szofisztik%C3%A1lt-node-konfigur%C3%A1ci%C3%B3-k%C3%A9pess%C3%A9gek)
+        - [Konfiguráció létrehozása](#konfigur%C3%A1ci%C3%B3-l%C3%A9trehoz%C3%A1sa)
+        - [Node-ok indítása](#node-ok-ind%C3%ADt%C3%A1sa)
+        - [Teszt elkészítése](#teszt-elk%C3%A9sz%C3%ADt%C3%A9se)
+        - [Teszt futtatása](#teszt-futtat%C3%A1sa)
 
 <!-- /TOC -->
 

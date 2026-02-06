@@ -1,5 +1,5 @@
 
-[<< Vissza](../index.md) | [![](../../tools/docs/english-falg.png) Switch to English](index-en.md) | 
+[<< Vissza](../index.md) | [![](../../tools/docs/english-falg.png) Switch to English](index-en.md)
 
 <hr>
 

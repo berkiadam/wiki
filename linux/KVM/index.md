@@ -1,4 +1,4 @@
-[<< Vissza](../index.md) | [![](../../tools/docs/english-falg.png) Switch to English](index-en.md) | 
+[<< Vissza](../index.md) | [![](../../tools/docs/english-falg.png) Switch to English](index-en.md) 
 
 <hr>
 
@@ -6,30 +6,30 @@
 <!-- TOC -->
 
 - [Alapok](#alapok)
-    - [Virtualizációs eszközök](#virtualiz%C3%A1ci%C3%B3s-eszk%C3%B6z%C3%B6k)
-        - [KVM](#kvm)
-        - [Qemu](#qemu)
-        - [KVM vs qemu](#kvm-vs-qemu)
-        - [Virtual Box](#virtual-box)
-    - [Virtualizációt kezelő eszközök](#virtualiz%C3%A1ci%C3%B3t-kezel%C5%91-eszk%C3%B6z%C3%B6k)
-        - [libvirt](#libvirt)
-        - [virsh](#virsh)
-        - [Virtual Machine Manager app](#virtual-machine-manager-app)
-        - [Gnome boxes](#gnome-boxes)
+  - [Virtualizációs eszközök](#virtualizációs-eszközök)
+    - [KVM](#kvm)
+    - [Qemu](#qemu)
+    - [KVM vs qemu](#kvm-vs-qemu)
+    - [Virtual Box](#virtual-box)
+  - [Virtualizációt kezelő eszközök](#virtualizációt-kezelő-eszközök)
+    - [libvirt](#libvirt)
+    - [virsh](#virsh)
+    - [Virtual Machine Manager (app)](#virtual-machine-manager-app)
+    - [Gnome boxes](#gnome-boxes)
 - [Manage machines with virsh](#manage-machines-with-virsh)
-    - [List machine](#list-machine)
-        - [List VMs](#list-vms)
-        - [VM info](#vm-info)
-    - [Create machines](#create-machines)
+  - [List machine](#list-machine)
+    - [List VMs](#list-vms)
+    - [VM info](#vm-info)
+  - [Create machines](#create-machines)
 - [Manage networks](#manage-networks)
-        - [List all](#list-all)
-        - [List IP addresses of the guest](#list-ip-addresses-of-the-guest)
-        - [Add new network](#add-new-network)
+    - [List all](#list-all)
+    - [List IP addresses of the guest](#list-ip-addresses-of-the-guest)
+    - [Add new network](#add-new-network)
 - [Manage sorages](#manage-sorages)
-        - [Pools](#pools)
-        - [List Volumes](#list-volumes)
-        - [Volumes of VM](#volumes-of-vm)
-    - [Mount host folder on guest](#mount-host-folder-on-guest)
+    - [Pools](#pools)
+    - [List Volumes](#list-volumes)
+    - [Volumes of VM](#volumes-of-vm)
+  - [Mount host folder on guest](#mount-host-folder-on-guest)
 
 <!-- /TOC -->
 
