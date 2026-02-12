@@ -16,6 +16,21 @@ https://www.realoem.com/bmw/enUS/partgrp?id=5V71-EUR-06-2019-G20-BMW-320dX
 https://www.realoem.com/bmw/enUS/partgrp?id=5V71-EUR-04-2019-G20-BMW-320dX&mg=11
 
 
+# Olajok
+
+## Motorolaj
+
+![](docs/image-2026-02-10-11-59-46.png)
+
+![](docs/image-2026-02-10-11-57-57.png) ![](docs/image-2026-02-10-11-58-12.png)
+
+> **NOTE**: A SAE 0W-20 és SAE-5W-20 viszkozitási osztály nem alkalmas dízelmotorokhoz.
+Magas viszkozitási osztályok esetén nőhet a tüzelőanyag-fogyasztás. A jóváhagyott olajspecifikációkról és a motorolajok viszkozitási osztályairól a gyártó szervizpartnereinél, más szervizpartnereknél vagy minősített szakműhelyekben kérhető bővebb információ.
+
+>**NOTE:** A BMW Longlife-12 FE olajspecifikáció nem alkalmas a 25d, 35d, 40d és 50d dízelmotorokhoz.
+
+Mennyiség: 5.5 liter
+
 
 # Intake manifold parts
 
