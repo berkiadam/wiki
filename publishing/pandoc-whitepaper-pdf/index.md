@@ -48,18 +48,20 @@ Ezekre mind LATEX-ben mind HTML css-ben lehet egyedi formázást adni.
 
 Ha nincsenek benne SVG képek, akkor ezt használjuk !!! A css alapú PDF generátorokkal sokkal de sokkal könnyebb a formázás. A CSS-ben minden porcikája átállítható a PDF-nek. Latexben NEM. 
 
-
+```
 $ sudo dnf install weasyprint
 
 $ pandoc README.md -o output.pdf --filter mermaid-filter --css docs/style.css --pdf-engine=weasyprint
+```
 
-
+```
 /* docs/style.css */
 
 @page {
     size: A4; /* Vagy 'letter', 'A3', vagy egyedi méret: 210mm 297mm */
     margin: 2cm; /* Margók beállítása */
 }
+```
 
 ~~~
 ```mermaid
@@ -68,9 +70,14 @@ graph LR
 ...
 ~~~
 
+```
 MERMAID_FILTER_FORMAT=svg pandoc README.md -o output.pdf --filter mermaid-filter --css docs/style.css --pdf-engine=weasyprint
+```
+vagy
 
+```
 MERMAID_FILTER_FORMAT=svg pandoc README.md -o output.pdf --filter mermaid-filter --css docs/style.css --pdf-engine=weasyprint --number-sections --toc 
+```
 
 ---
 
