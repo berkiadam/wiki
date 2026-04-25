@@ -194,3 +194,18 @@ https://www.autodoc.hu/jarmu-alkatreszek/kerek-kerekrogzites-10313/bmw/3er-reihe
 
 
 * **M14 / SW17**
+
+# Intake manifold
+
+
+Gyári sorozatszám: 11618579245
+
+
+* https://www.leebmann24.com/hu/en/component/intake-manifold-agr-with-flap-control-117694#15
+* https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=11_7694
+
+
+<br>
+
+* BOGAP B1712122 Szívócső modul
+* https://www.autodoc.hu/bogap/24071157
