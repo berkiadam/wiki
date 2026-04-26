@@ -49,3 +49,32 @@ LR110291 (helyettesíti: LR073729, LR084362)
 3. Komplett EGR egység (szelep + hűtő):
 
 LR188347 (utódok: LR139674, LR156783 stb.)
+
+
+# Telefon tartó: 
+
+* Tartó: https://www.atachmounts.com/Universal-Qi-Wireless-Charging-Phone-Holder_p_1602.html
+* Mount: https://www.atachmounts.com/Land-Rover-Range-Rover-Evoque-Phone-Mount_p_423.html?srsltid=AfmBOoqgEzv0fG-SwQLXFt0Opi7Fxw33_BELAH29G_M260Bsxz0AuC-X
+
+
+
+# Cup holder
+
+https://www.aliexpress.com/item/1005008928089370.html
+
+![](docs/2026-04-26-23-19-59.png)
+
+
+# Side step, running board
+
+Csak olyan jó, ami nem dynamic-ra való !!!, mert ez egy sima HSE. 
+A "Pure" szóra kell keresni, olyan nem lesz hogy HSE. 
+
+- Dynamic side steps → VPLVP0208
+- Pure side steps → VPLVP0225
+  
+<br>
+
+- https://www.ebay.co.uk/itm/325525614571
+- https://4x4ni.com/products/range-rover-evoque-l538-prestige-pure-2011-2019-oe-style-running-boards-side-steps-pair
+- https://www.ebay.co.uk/itm/126787774911
