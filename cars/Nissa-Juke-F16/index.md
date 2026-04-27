@@ -1,3 +1,10 @@
+
+# Adatok
+
+* VIN: SJNFAAF16U1006473
+
+
+
 ![](docs/image-2025-12-21-12-01-05.png)
 
 5W-30 C3 -> 4.1 Liter
