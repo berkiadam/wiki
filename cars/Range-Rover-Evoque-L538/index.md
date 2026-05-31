@@ -8,6 +8,9 @@ Gyártmány, típus: LAND ROVER RANGE ROVER EVOQUE RangeEvoque 2.0 Td4 HSE (Auto
 Alvázszám: SALVA2BN4GH165917
 Évjárat: 2016/8
 * Motor: 150 LE-s (2.0 TD4 / AJ20D4 Ingenium)
+  - [Új motor keresés / vásárlás (New Engine)](file:///home/adam/repositories/Other/berkiadam-github/wiki/cars/Range-Rover-Evoque-L538/new-engine.md)
+  - [Motorfelújítás / alkatrész készletek (Engine Rebuild)](file:///home/adam/repositories/Other/berkiadam-github/wiki/cars/Range-Rover-Evoque-L538/rebuild-engine.md)
+
 
 https://landrover.oempartsonline.com/v-2016-land-rover-range-rover-evoque--hse--2-0l-l4-gas
 
