@@ -146,7 +146,30 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGPu6qE_MjN1t
 - AP42.20-P-4262AK Parking brake - adjusting cable slack adjuster -> 818. oldal
 
 
+### Alkatrészek kézifék
 
+[https://partsouq.com katalogus: kézifék](https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGcqLmX79vexcv93-CPtMTQ8PfpmJeam4mmld3b6P_r5-Hpu7ys6urm_f37-uO5vpvx39vf7vjs7sbP3J6cmZjknZ6cxcvW0Mzo0ozbipDVv6KMg4rEjJXG35uVyYzIipOcmJ6SxoSb2-_Ti9qNkoi1tMeCjcGLlJucmMbMyYzIipOfm5uZxc-Y0NnNwe7UitzVw8f56-yYmJaYmcbIr5yZnpucnIqG1ZSGjJWKmJiWmJnG28mM3MuLlI2KhtWUjoyVipiMg4rJmdvfjJme64yDityU29-MnorUAAAAAIC2Rmw%3D%24&vid=0&cid=27681&uid=44215&q=WDD1690311J266223)
+
+![](docs/2026-06-15-00-49-15.png)
+
+
+- 100:  A 169 420 17 85
+- 110:  A 169 420 11 85
+- 120:  A 169 420 12 85
+
+<br>
+
+# Ablakmosó (washer system)
+
+
+[https://partsouq.com: washer system](https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwEFMSAOdkJHXFJkRnkWLV1JaW5wAQ4DAhA_DERCcWZyfnhwIiU1c3N_ZGRiY3ogJwJoRkJGd2F1d19WRQcFAAF9BAcFXFJPSVVxSxVCEwlMJjsVGhNdFQxfRgIMUBVREwoFAQYDWx0CR1FxARgET0YuG15DFAsSdXsTH0wJXg0HBAUBGhNUTFpNAwUFBQBLT0ULCDxMFEcSDRRmdypRSg4GAgEGfAMFWFJOBBQdElpVEwlMUUoOBgIBFRoTQA1CRhUUHRJaXRMJTFFeGxRSXhUMEwVYIl4bFEdTFQwTAkwdAAAAAJYNddk%3D%24&vid=0&cid=27705&uid=1556&q=WDD1690311J266223)
+
+
+![](docs/2026-06-15-00-53-41.png)
+
+- 70: A 169 860 01 92
+
+<br>
 
 # Csomagtartó nyitó gomb
 
