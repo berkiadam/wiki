@@ -192,3 +192,22 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGPu6qE_MjN1t
 ## Üzemanyag betöltő cső
 
 - AR47.10-P-7541AK Remove/install filler neck of fuel tank -> 903. oldal
+
+
+
+# Klíma nyomás szenzor 
+
+* Workshop manual: 1673. oldal -> AR83.30-P-5430AK  -  Remove/install refrigerant pressure sensor
+
+* A2110000283
+* N 000000 001478  (75-ös kód) – HEXALOBULAR BOLT (Egy M6x25-ös csavar, ami lefogja a szenzort a szárítószűrőhöz).
+* A 013 997 39 45  (67-es kód) – SEALING RING (Egy 9x1.8-as tömítőgyűrű, ami a szenzor és a szárítószűrő között tömít).
+
+https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGiloep0eXg-_XD4d6xivruzsnXpqmkpbeYq-Pl1sHV2d_XhYKS1NTYw8PFxN2HgKXP4eXh0MbS0Pjx4qCip6bao6Ci-_Xo7vLW7LLltK7rgZyyvbT6sqv44aWr97L2tK2ipqCs_Lql5dHtteSzrLaLivm8s_-1qqKvofD-97L2tK2hpaWn-vCm7ufz_9DqtOLr_fnH1dKmpqimp_j2kaKnoKWiorS466q4squ0pqaopqf45fey4vW1qrO0uOuqsLKrtKayvbT3p-Xhsqeg1bK9tOKq5eGyoLTqAAAAANss6UM%3D%24&vid=0&cid=27685&uid=39599&q=WDD1690311J266223
+
+![](docs/image-2026-06-20-01-18-48.png)
+
+![](docs/image-2026-06-20-01-19-18.png)
+
+
+* sensor: https://www.autodoc.hu/ridex/13632152

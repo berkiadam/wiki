@@ -8,6 +8,7 @@
   - Nyomaték: kb. 400 Nm
 - Váltó: 8 fokozatú automata (ZF 8HP)
 - Karosszéria-kód: G20 (a 7. generációs 3-as BMW, 2018-tól)
+- Váltó: ZF 8HP51 A BMW saját jelölése általában: GA8HP51Z
 
 # Linkek
 
@@ -218,3 +219,11 @@ sorozatszám: 13718580252
 https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&diagId=13_2085#13718580252
 
 ![](docs/2026-05-31-22-12-25.png)
+
+
+# Váltó olaj: 
+
+- https://www.autodoc.hu/zf-getriebe/8824048
+- https://alkatreszek.hu/1087_298_365_0068_1?st=1087.298.365
+
+ZF GETRIEBE 1087.298.365
