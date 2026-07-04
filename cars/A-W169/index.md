@@ -211,3 +211,42 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGiloep0eXg-_
 
 
 * sensor: https://www.autodoc.hu/ridex/13632152
+
+# Bajuszkapcsoló (Kormánykapcsoló)
+
+* Cikkszám: A 169 545 02 10 (TURN SIGNAL SWITCH)
+* [Partsouq link](https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwFZbXxSKh4bAA44GiVKcQEVNTIsXVJfXkxjUBgeLTouIiQsfnlpLy8jODg-PyZ8e140Gh4aKz0pKwMKGVtZXF0hWFtZAA4TFQktF0keT1UQemdJRk8BSVADGl5QDEkNT1ZZXVtXBUFeHioWTh9IV01wcQJHSAROUVhdXAoLDEkNT1ZaXl5cBA5dFRwIBCsRTxkQBgI8LildXVNdXAMNallcW15ZWU9DEFFDSVBPXV1TXVwDHgxJGQ5OUUhPQxBRS0lQT11JRk8MXB4aSVxbLklGTxlRHhpJW08RAAAAAE6n2_s%3D%24&vid=0&cid=27687&uid=20387&q=WDD1690311J266223)
+
+### Workshop manual
+
+* **AR54.25-P-2800AK** Remove/install combination switch: 977. oldal
+* **AR54.25-P-2802AK** Remove/install steering column module
+
+**Figyelmeztetések a szereléshez:**
+* Az akkumulátort mindenképp le kell kötni, mivel a légzsákot is ki kell venni a kormányból!
+* A kormányszög-jeladó (Clock spring) a kormányoszlop-modulban van. Nagyon fontos, hogy szétszedett állapotban **ne forgasd el**, mert a szalagkábel elszakadhat vagy elállítódhat, ami után csak gyári géppel (XENTRY) lehet újrakalibrálni.
+
+![](docs/2026-06-28-00-06-33.png)
+
+# Műszeregység (Kombiinstrument) és LCD kijelző
+
+A műszerfal közepén (a kilométeróra és a fordulatszámmérő között) található LCD kijelző cseréje.
+
+* LCD kijelző eBay link: [Mercedes W169 LCD Display (1A1695400448)](https://www.ebay.com/itm/332878813966)
+
+* Pooling hook (140589023300): https://www.joom.com/hu/products/67106b7ad8d5cc01f2ad15b3
+
+### Workshop manual
+
+* **AR54.30-P-6015AK** Remove/install instrument cluster (Műszeregység kiszerelése/beszerelése): 989. oldal
+
+**Tudnivalók a kiszereléshez:**
+* A műszeregységet (óracsoportot) a helyéről hivatalosan két speciális Mercedes kampós kihúzó szerszámmal (Instrument cluster removal hooks) kell kihúzni. Ezeket a műszeregység két szélén lévő apró résekbe kell betolni, 90 fokkal elfordítani (hogy bepattanjanak a ház mögé), és óvatosan, váltakozva meghúzni.
+* TILOS csavarhúzóval vagy műanyag feszítővel a műszerfal szélét feszegetni, mert a puha műszerfalborítás azonnal és maradandóan megsérül!
+* Magára az LCD kijelző cseréjére a műszeregység belsejében nincs hivatalos Mercedes leírás (mivel a gyár csak egyben cseréli a komplett óracsoportot), de a kiszerelt egység hátulján lévő csavarok/klipek oldása után az előlap levehető, és a szalagkábel (ribbon cable) oldásával a kijelző viszonylag egyszerűen cserélhető.
+
+**Hasznos videók a cseréhez:**
+* [Műszeregység kiszerelése a kampókkal](https://www.youtube.com/results?search_query=Mercedes+Tacho+ausbauen+A169) *(Youtube keresőszó: "Mercedes Tacho ausbauen A169")*
+* [LCD kijelző szalagkábelének cseréje (Minitools videó)](https://www.youtube.com/results?search_query=W169+instrument+cluster+display+replacement) *(Youtube keresőszó: "W169 instrument cluster display replacement")*
+
+
