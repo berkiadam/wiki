@@ -36,8 +36,6 @@ Range Rover Sport 2011 TDV6 3.0
 	- [Air intake pipe to second turbo](#air-intake-pipe-to-second-turbo)
 	- [Rézpaszta](#rézpaszta)
 	- [Accessory/Auxiliary Drive Belt / Hosszbordás szíj](#accessoryauxiliary-drive-belt--hosszbordás-szíj)
-	- [Hűtőfolyadék](#hűtőfolyadék)
-		- [Márkák](#márkák)
 	- [Timing belt](#timing-belt)
 		- [Workshop manual](#workshop-manual)
 		- [OEM számok:](#oem-számok)
@@ -92,12 +90,13 @@ Range Rover Sport 2011 TDV6 3.0
 	- [AOS (Air - Oil separator)](#aos-air---oil-separator)
 	- [Cache Can system](#cache-can-system)
 - [Vegyes](#vegyes)
+	- [CONNECTION - WATER OUTLET](#connection---water-outlet)
 
 
 
 # Info
 
-- VIN: SALLSAAG4BA290861
+- VIN: [SALLSAAG4BA290861](https://www.autodoc.hu/metalcaucho/16276396)
 - motor Gen 1 TDV6 (2009–2012) 306DT
   - Nyomaték: 600 Nm @ 2000 rpm
   - Teljesítmény: 254 LE (188 kW) @ 4000 rpm
@@ -549,42 +548,6 @@ Szerszám:
 
 
 
-## Hűtőfolyadék
-- Szabvány: Land Rover STJLR.651.5003
-- Manual szerint: Castrol SF, 12 liter, 6 liter fagyálló kell -> G12+ 50/50 keverékben. 
-- Landycar szerint: ALU G12 rózsaszín
-
-A Fagyálókat minden gyártó máshogy jelöl, a VW jelölés nagyon elterjedt, a VW használja a G11-13 számozást: 
-
-![docs/ClipCapIt-240421-003650.PNG](docs/ClipCapIt-240421-003650.PNG) 
-<!-- <img src="docs/ClipCapIt-240421-003650.PNG" width="400"> -->
-
-
-Kompatibilitási táblázat: 
-
-![docs/ClipCapIt-240421-003432.PNG](docs/ClipCapIt-240421-003432.PNG) 
-<!-- <img src="docs/ClipCapIt-240421-003432.PNG" width="400"> -->
-
-
-
-
-### Márkák
-- KRAFT G12/G12+ K0061012 Fagyálló
-	- https://www.autodoc.hu/kraft/20648218
-	- használatra kész
-	- 4.234 Ft / 5 liter
-
-
-- LIQUI MOLY 8810 Fagyálló : Előre kevert, piros, G12+, 
-	- https://www.autodoc.hu/liqui-moly/10370449
-	- PDF: https://www.liqui-moly-eg.com/media/datasheets/8810.pdf
-	- autodoc: https://www.autodoc.hu/liqui-moly/10370449#fagyallo
-	- 13.765 Ft / 5 liter
-
-- MANNOL 4115-5 - AF13++, piros koncentrátum, G12
-	- https://www.autodoc.hu/mannol/15767889
-	- https://www.mannol.de/products/operating-and-service-fluids/antifreeze-and-coolants/mannol-antifreeze-af13-40-c
-	- 9.250 Ft / liter
 
 
 ## Timing belt
@@ -1316,3 +1279,13 @@ Ez egy fajta szűrő, csomó járattal, amin áthalad a forró gáz a crankcase-
 # Vegyes
 
 * Fuel Filler Cap: RFC396
+
+
+## CONNECTION - WATER OUTLET
+For Land Rover Discovery, Range Rover, Range Rover Sport and others
+
+Part Number: LR073372
+
+https://www.autodoc.hu/metalcaucho/16276396
+
+![](docs/2026-07-04-23-45-06.png)

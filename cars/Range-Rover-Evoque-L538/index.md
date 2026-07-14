@@ -82,3 +82,7 @@ A "Pure" szóra kell keresni, olyan nem lesz hogy HSE.
 - https://www.ebay.co.uk/itm/325525614571
 - https://4x4ni.com/products/range-rover-evoque-l538-prestige-pure-2011-2019-oe-style-running-boards-side-steps-pair
 - https://www.ebay.co.uk/itm/126787774911
+
+# Car play
+
+* https://roadtop.com/products/for-land-rover-jaguar?utm_source=chatgpt.com

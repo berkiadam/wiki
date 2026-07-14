@@ -241,3 +241,40 @@ Ezt írja felhasználói kézikönyv:
 
 <br>
 
+
+## Hűtőfolyadék
+- Szabvány: Land Rover STJLR.651.5003
+- Manual szerint: Castrol SF, 12 liter, 6 liter fagyálló kell -> G12+ 50/50 keverékben. 
+- Landycar szerint: ALU G12 rózsaszín
+
+A Fagyálókat minden gyártó máshogy jelöl, a VW jelölés nagyon elterjedt, a VW használja a G11-13 számozást: 
+
+![docs/ClipCapIt-240421-003650.PNG](../misc/docs/ClipCapIt-240421-003650.PNG) 
+<!-- <img src="docs/ClipCapIt-240421-003650.PNG" width="400"> -->
+
+
+Kompatibilitási táblázat: 
+
+![docs/ClipCapIt-240421-003432.PNG](../misc/docs/ClipCapIt-240421-003432.PNG) 
+<!-- <img src="docs/ClipCapIt-240421-003432.PNG" width="400"> -->
+
+
+
+
+### Márkák
+- KRAFT G12/G12+ K0061012 Fagyálló
+	- https://www.autodoc.hu/kraft/20648218
+	- használatra kész
+	- 4.234 Ft / 5 liter
+
+
+- LIQUI MOLY 8810 Fagyálló : Előre kevert, piros, G12+, 
+	- https://www.autodoc.hu/liqui-moly/10370449
+	- PDF: https://www.liqui-moly-eg.com/media/datasheets/8810.pdf
+	- autodoc: https://www.autodoc.hu/liqui-moly/10370449#fagyallo
+	- 13.765 Ft / 5 liter
+
+- MANNOL 4115-5 - AF13++, piros koncentrátum, G12
+	- https://www.autodoc.hu/mannol/15767889
+	- https://www.mannol.de/products/operating-and-service-fluids/antifreeze-and-coolants/mannol-antifreeze-af13-40-c
+	- 9.250 Ft / liter

@@ -33,6 +33,9 @@
   - [Folyamat](#folyamat)
     - [Break bleed with iCarsfot](#break-bleed-with-icarsfot)
     - [Manual break bleeding](#manual-break-bleeding)
+- [EPB actuator](#epb-actuator)
+  - [komplett modul](#komplett-modul)
+  - [Felújító készlet:](#felújító-készlet)
 
 <br>
 
@@ -405,3 +408,21 @@ Lépések:
 5. A segítő kezdje el pumpálni a fékpedált, és mik közbe figyeljük, hogy jönnek e ki még buborékok. 
 6. Ha már nem jön buborék, akkor a segítő tartsa lenyomva a pedált, és mi eközbe zárjuk vissza a szelepet, nehogy levegőt szívjon vissza. 
 7. Csináljuk meg a fenti sorrendben az összes keréken. 
+
+
+# EPB actuator 
+
+serial: LR072318
+
+## komplett modul 
+
+![](docs/2026-07-05-00-02-42.png)
+
+https://www.ebay.com/itm/156582040300
+
+
+## Felújító készlet: 
+
+https://www.ebay.com/itm/14387005617
+
+![](docs/2026-07-05-00-07-18.png)
