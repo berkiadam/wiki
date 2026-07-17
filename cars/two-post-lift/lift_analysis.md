@@ -1,9 +1,9 @@
 # Kétoszlopos csápos emelő elemzés – berkiagarage
 
-A megadott igények alapján elemeztük az [index.md](file:///home/adam/repositories/Other/berkiadam-github/wiki/cars/two-post-lift/index.md) fájlban található 4 terméket. Az alábbi szempontokat vettük figyelembe:
+A megadott igények alapján elemeztük az [index.md](file:///home/adam/repositories/Other/berkiadam-github/wiki/cars/two-post-lift/index.md) fájlban található 5 terméket. Az alábbi szempontokat vettük figyelembe:
 - **Ár:** Legyen a lehető legolcsóbb (500 000 Ft körüli bruttó keret).
 - **Tápellátás:** 230 V (egyfázisú).
-- **Teherbírás:** Legalább 2,5 tonna (mind a négy gép 4T vagy 4,2T teherbírású, így ez teljesül).
+- **Teherbírás:** Legalább 2,5 tonna (mind az öt gép 4T vagy 4,2T teherbírású, így ez teljesül).
 - **Elérhetőség és alkatrész-ellátás:** Magyarországi szállítás, alkatrész-háttér.
 - **Kültéri használat:** Fontos biztonsági figyelmeztetések.
 
@@ -11,17 +11,17 @@ A megadott igények alapján elemeztük az [index.md](file:///home/adam/reposito
 
 ## Összehasonlító táblázat
 
-| Paraméter | 1. ECOBLU 4T (220V) | 2. ECOBLU 4T (380V) | 3. REDATS L-205F (230V) | 4. GeboTools 4T (230V) |
-| :--- | :--- | :--- | :--- | :--- |
-| **Webáruház** | [selectauto.hu](https://selectauto.hu/csapos-auto-emelok/7478-2-oszlopos-emelo-4-tonna-ecoblu-220v-5949128281487.html) | [selectauto.hu](https://selectauto.hu/csapos-auto-emelok/7477-2-oszlopos-emelo-4-tonna-ecoblu-380v-5949128281494.html) | [gebotools.hu](https://gebotools.hu/products/ketoszlopos-csapos-auto-emelo-4-2t-elektrohidraulikus-kezi-kioldassal-230v-redats) | [gebotools.hu](https://gebotools.hu/products/ketoszlopos-csapos-emelo-kezi-zarkioldassal-4t-230v-ingyen-olaj) |
-| **Bruttó Ár** | **449 150 Ft** | 457 300 Ft | 575 183 Ft | 543 433 Ft |
-| **Tápfeszültség**| **230 V (1 fázis)** | 380 V (3 fázis) ❌ | **230 V (1 fázis)** | **230 V (1 fázis)** |
-| **Teherbírás** | 4000 kg | 4000 kg | 4200 kg | 4000 kg |
-| **Zárkioldás** | Kétoldali manuális | Kétoldali manuális | Kétoldali manuális | **Egypontos manuális** |
-| **Olaj a csomagban**| Nincs (külön kell venni) | Nincs | Nincs | **Ajándék hidraulika olaj** |
-| **Szállítás** | ~32 100 Ft | ~32 100 Ft | Súly alapján (kosárban) | Súly alapján (kosárban) |
-| **Alkatrész** | Saját márka (közepes) | Saját márka (közepes) | **Kiváló (lengyel REDATS)** | Saját márka (közepes) |
-| **Státusz** | **Megfelel (Legolcsóbb)** | **NEM FELEL MEG** ❌ | **Drága (Túllépi a keretet)**| **Megfelel (Kényelmesebb)** |
+| Paraméter | 1. ECOBLU 4T (220V) | 2. ECOBLU 4T (380V) | 3. REDATS L-205F (230V) | 4. GeboTools 4T (230V) | 5. Kraft&Dele 4T (230V) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Webáruház** | [selectauto.hu](https://selectauto.hu/csapos-auto-emelok/7478-2-oszlopos-emelo-4-tonna-ecoblu-220v-5949128281487.html) | [selectauto.hu](https://selectauto.hu/csapos-auto-emelok/7477-2-oszlopos-emelo-4-tonna-ecoblu-380v-5949128281494.html) | [gebotools.hu](https://gebotools.hu/products/ketoszlopos-csapos-auto-emelo-4-2t-elektrohidraulikus-kezi-kioldassal-230v-redats) | [gebotools.hu](https://gebotools.hu/products/ketoszlopos-csapos-emelo-kezi-zarkioldassal-4t-230v-ingyen-olaj) | [allegro.hu](https://allegro.hu/termek/ketoszlopos-elektrohidraulikus-autoemelo-kraft-dele-4000-kg-teherbiras-230-v-1fe081f7-10a5-4238-9351-275ffff09114) |
+| **Bruttó Ár** | **449 150 Ft** | 457 300 Ft | 575 183 Ft | 543 433 Ft | **495 575 Ft** |
+| **Tápfeszültség**| **230 V (1 fázis)** | 380 V (3 fázis) ❌ | **230 V (1 fázis)** | **230 V (1 fázis)** | **230 V (1 fázis)** |
+| **Teherbírás** | 4000 kg | 4000 kg | 4200 kg | 4000 kg | 4000 kg |
+| **Zárkioldás** | Kétoldali manuális | Kétoldali manuális | Kétoldali manuális | **Egypontos manuális** | Félautomata (manuális) |
+| **Olaj a csomagban**| Nincs (külön kell venni) | Nincs | Nincs | **Ajándék hidraulika olaj** | Nincs információ |
+| **Szállítás** | ~32 100 Ft | ~32 100 Ft | Súly alapján (kosárban) | Súly alapján (kosárban) | **Ingyenes (Allegro Smart)** |
+| **Alkatrész** | Saját márka (közepes) | Saját márka (közepes) | **Kiváló (lengyel REDATS)** | Saját márka (közepes) | Kraft&Dele (lengyel piac) |
+| **Státusz** | **Megfelel (Legolcsóbb)** | **NEM FELEL MEG** ❌ | **Drága (Túllépi a keretet)**| **Megfelel (Kényelmesebb)** | **Megfelel (Jó alternatíva)** |
 
 ---
 
@@ -53,6 +53,14 @@ A megadott igények alapján elemeztük az [index.md](file:///home/adam/reposito
 - **Ár:** Bruttó **543 433 Ft** + szállítás. Mivel a csomag **ajándék hidraulika olajat** is tartalmaz (kb. 15-20 ezer Ft értékben), a valós árelőny a Select Auto-hoz képest kisebb (~50 000 Ft különbség).
 - **Zárkioldás:** **Egypontos kézi zárkioldás**. Ez azt jelenti, hogy leengedéskor nem kell átmenni a túloldalra, egyetlen kar meghúzásával mindkét oszlop zárja kiold. Ez sokkal kényelmesebb munkavégzést tesz lehetővé.
 - **Figyelem:** A termékleírásban van egy ellentmondás (*"A tápellátás 380 V-os"* szerepel a folyó szövegben, miközben a cím és a specifikáció *230 V*-ot ír). Vásárlás előtt ezt telefonon egyeztetni kell a Gebo Tools-szal (+36 21 300 7649).
+
+### 5. Kraft&Dele 4T (230V) – Allegro
+> [!TIP]
+> **Erős versenytárs az ingyenes szállítás miatt.**
+- **Ár:** Bruttó **495 575 Ft**. Mivel az Allegro Smart keretében a szállítás valószínűleg ingyenes (vagy nagyon kedvezményes), végeredményben szinte ugyanannyiba kerül, mint a Select Auto-s ECOBLU (ami 449e Ft + 32e Ft szállítás = 481e Ft).
+- **Tápellátás és teherbírás:** 230 V, 4000 kg. Tökéletesen megfelel az elvárásoknak.
+- **Kezelés:** Félautomata (kétoldali manuális zárkioldás). Leengedéskor mindkét oszlophoz oda kell menni.
+- **Összegzés:** Ár-érték arányban kiváló alternatíva. A Kraft&Dele egy ismert márka a lengyel piacon, így az alkatrész-ellátása (pl. tömítések, görgők) valószínűleg hosszú távon is megoldott. Érdemes megfontolni az ECOBLU helyett!
 
 ---
 
