@@ -68,12 +68,30 @@ Workshop manual: 1091. oldal
 
 ### Lépés 1: Elektromos ellenőrzés (Circuit TSOV és TSVP)
 Mivel a hibatároló elektromos szakadást jelez (P22CF-71), az áramkört kell kimérni a gyári kapcsolási rajzok alapján.
-1.  **Vezérlő szolenoid keresése:** A vákuumvezérlő szolenoidok a motor elején, a vezérműszíj burkolatán vagy annak közelében találhatóak (három kis műanyag szelep elektromos csatlakozóval és vékony gumicsövekkel). A TSOV-hoz tartozó vezérlő áramkör a **Circuit TSOV**.
-2.  **Csatlakozó vizsgálata:** Húzd le a szolenoid csatlakozóját. Keresd a korrózió, oxidáció, zöldes lerakódás vagy kilazult pinek nyomait.
-3.  **Vezetékköteg ellenőrzése:** Vizsgáld meg a szolenoidhoz vezető vezetékeket. Gyakori hiba, hogy a kábelköteg kidörzsölődik valamilyen fém alkatrészen vagy a motor burkolatán. Mérj szakadást és zárlatot (testre vagy tápra) az ECM és a szolenoid csatlakozója között.
-4.  **Szolenoid ellenállás mérése:** Egy multiméterrel mérd meg a szolenoid tekercsének ellenállását.
-    *   A normál érték általában **15 és 35 Ohm** között van.
-    *   Ha a műszer **szakadást (OL / végtelen ellenállást)** mutat, a szolenoid belső tekercse megszakadt, a szolenoidot ki kell cserélni.
+
+1.  **Vezérlő szolenoidok elhelyezkedése:**
+    *   A mágnesszelepek a motor elején, a menetirány szerinti bal oldalon (szemben állva az autóval a **jobb kezed felől**), a bal oldali szelepfedél burkolat felett (**LH front cylinder cover assembly**) találhatóak egy közös konzolon.
+    *   **Turbina elzáró mágnesszelep (TSOV szolenoid):** Ez a **belső** (*innermost*, a motor közepe felé eső) szelep. Ez vezérli a másodlagos turbó beömlőszelepét, ez a hibakód elsődleges alanya.
+    *   **Kompresszor elzáró mágnesszelep (CSOV szolenoid):** Ez a **külső** (*outermost*, a sárvédő felé eső) szelep a konzolon.
+
+2.  **Szolenoid ellenállás mérése (A leggyorsabb teszt):**
+    *   Húzd le a szolenoid csatlakozóját.
+    *   Egy multiméterrel mérd meg a szolenoid tekercsének ellenállását a két pinje között.
+    *   A normál érték **15 és 35 Ohm** között van.
+    *   Ha a műszer **szakadást (OL / végtelen ellenállást)** mutat, a szolenoid belső tekercse megszakadt, a szolenoidot ki kell cserélni. Ekkor a feszültségmérés felesleges, megvan a hiba oka.
+
+3.  **A "0.5V-os csapda" és a feszültségmérés menete:**
+    *   **Figyelem:** Az ECM nem folyamatos egyenárammal, hanem **PWM (impulzusszélesség-modulált)** jellel vezérli a szelepet. Gyújtáson vagy alapjáraton a szelep zárt állapotot kap, így a mért átlagfeszültség mindössze **kb. 0,5 V**. Ezt könnyű tévesen kábel- vagy ECM-hibának hinni!
+    *   **Tápellátás ellenőrzése:** Gyújtáson (ignition ON) a csatlakozó egyik lábán meg kell lennie az állandó **12 V** tápfeszültségnek a karosszéria-testhez (GND) képest mérve (ezt a biztosítéktábláról kapja).
+    *   **Vezérlés ellenőrzése (Launch / SDD használatával):** 
+        *   Csatlakoztasd a diagnosztikai műszert.
+        *   Lépj be a **Beavatkozó tesztek (Actuator Tests)** menüpontba, és indítsd el a TSOV szelep tesztjét.
+        *   Mérj rá a lehúzott csatlakozó két érintkezője (pinje) közé: a feszültségnek a teszt aktiválásakor fel kell ugrania a nyitó parancsnak megfelelő szintre (átlagosan **~4,5 V**-ra vagy a mérési módszertől függően 12 V-ra), majd deaktiváláskor visszaesnie 0,5 V-ra.
+
+4.  **Csatlakozó és kábelköteg vizsgálata:**
+    *   Ellenőrizd a csatlakozót korrózió, oxidáció, zöldes lerakódás vagy kilazult pinek szempontjából.
+    *   Vizsgáld meg a szolenoidhoz vezető vezetékeket (**Circuit TSOV**). Gyakori hiba, hogy a kábelköteg kidörzsölődik valamilyen fém alkatrészen vagy a motor burkolatán. Mérj szakadást és zárlatot (testre vagy tápra) az ECM és a szolenoid csatlakozója között.
+
 5.  **Pozícióérzékelő áramkör (Circuit TSVP):** Ellenőrizd a 3-pólusú pozícióérzékelő tápellátását és jelvezetékét az ECM felé szakadásra, rövidzárlatra és magas ellenállásra.
 
 ### Lépés 2: A vákuumrendszer és a csövek ellenőrzése

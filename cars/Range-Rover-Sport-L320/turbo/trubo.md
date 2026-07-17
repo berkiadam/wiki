@@ -67,3 +67,29 @@ https://www.advancedfactors.co.uk/turbocharger-rh-11683-c --> **ezen van GEN1 é
   - BR Turbo BRX4629 Turbo középrész: https://www.autodoc.hu/br-turbo/24264564
 - turborebuild.co.uk:
   - https://www.turborebuild.co.uk/genuine-melett-uk-turbo-chra-land-rover-jaguar-30d-garrett-gt1444z-778401-0004-6-8-10-778402-0004-6-8
+
+
+
+
+# Vákum vezérlés (jobb oldali, másodlagos, fix vane turbó)
+
+Workshop manual: powertrain - 1091. oldal 
+
+https://landrover.scuderiacarparts.com/part-finder/landrover/range-rover-sport/oe/522/6081/121589
+
+
+![](docs/image-2026-07-17-21-46-48.png)
+
+
+* 7H148 -	LR116598:	SOLENOID - CSOV -  A Turbina elzárószelep szolenoidja (Turbo Control Solenoid) – ez a felelős a P22CF-71 hibakódért, amin jelenleg dolgozunk.
+* 9K378 -	LR021929, LR076235	SOLENOID - A Kompresszor elzárószelep szolenoidja (CSOV Solenoid).
+* 9F945	- LR116599	SOLENOID - EGR 
+
+
+Vákum teszter: 
+
+![](docs/image-2026-07-17-22-11-17.png)
+
+YATO Kézi vákuum- és nyomáspumpa készlet fékrendszerhez, -1–3 bar, 22 részes (YT-0674)
+
+https://www.elefantszerszam.hu/YATO-Kezi-vakumszivattyu-22db-YT-0674
