@@ -1,0 +1,1777 @@
+Manualslib.de - Die globale Handbuchbibliothek
+
+Anleitungen / Marken / LINCOS Anleitungen / Hebebühnen / STD-5145 Serie / Bedienungsanleitung / PDF
+
+
+
+
+LINCOS STD-5145 SERIE
+BEDIENUNGSANLEITUNG Pdf-Herunterladen
+
+
+
+
+Schnellverbindungen
+Elektromotor
+Elektrischer Anschluss
+Inhaltsverzeichnis
+Inhaltsverzeichnis
+Aufbewahrung der Bedienungsanleitung
+Verhalten im Störfall
+Sicherheitshinweise für den Betreiber
+Warnungen
+Garantie
+Technische Wartung
+Verpackung
+Anheben und Bewegen
+Aufbewahrung
+Lieferung und Prüfung des Packets
+Abmessungen und die Hauptparameter
+Elektromotor
+Pumpe
+Hydraulische pumpe
+Hydrauliköl
+Allgemeine Sicherheitshinweise
+SICHERHEITSTECHNISCHE VORSCHRIFTE
+Sicherheitseinrichtungen
+Sicherheits- und Warnschilder
+Das zur Installantion benötigte Werkzeug
+Angemessenheit des Aufstellortes
+Beleuchtung
+Bodenverhältnisse
+Der Ort der Installation
+Installation der Säulen
+Installation der synchronisierenden Drahtseile
+Anschluss des Hydraulik-Systems
+Elektrischer Anschluss
+Installation der Tragarme
+Inbetriebnahme und Kontrolle
+Kontrolle bevor der Inbetriebnahme
+Inbetriebnahme
+Kontrolle vor dem ersten Betrieb
+Installation des Endschalters
+Kontrolle unter Belastung
+Steuerung
+Heben
+Senken
+Manueller Notablass
+Elektrohydraulische 2-Säulen Hebebühne mit Grundrahmen
+Allgemeine Wartung
+Periodische Wartung
+Andere ManualsLib-Projekte
+ BEDIENUNGSANLEITUNG FÜR INSTALLATION,
+        BEDIENUNG UND WARTUNG
+
+
+
+
+             STD-5145X
+
+ELEKTRO-HYDRAULISCHE 2-SÄULEN
+ HEBEBÜHNE MIT GRUNDRAHMEN
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                         STD-5145X                  2
+
+Sehr geehrter Kunde! Danke, dass Sie unser Produkt ausgewählt haben!
+
+Bitte lesen Sie die Bedienungsanleitung sorgfältig bevor Sie die Hebebühne in Betrieb nehmen. Es ist
+Ihre Aufgabe, dass Sie die Anleitungen zur sicheren Benutzung und Betrieb der Maschine
+durchstudieren, sowie im Klaren sind über die während der Benutzung der Maschine vorhandenen
+Gefahren.
+
+
+Warnung! Nehmen Sie die Maschine nicht in Betrieb bevor Sie die Bedienungsanleitung
+gelesen haben, und bevor Sie den Benutzvorgang nicht kennen. Bewahren Sie die
+Bedienungsanleitung. Geben Sie besonders Acht auf die Sicherheitshinweise. Die
+Nichtbeachtung der Sicherheitsvorschriften kann zur Personenschäden oder Schäden an der
+Maschine oder Maschinenteilen führen. Geben Sie Acht auf die Sicherheitshinweise und
+Warnungsschilder auf der Maschine. Es ist verboten diese zu entfernen oder zu entstellen.
+
+
+Die Angaben in der Bedienungsanleitung sind überprüft. Trotzdem, ist es nicht ausschliessbar, dass
+vielleicht Fehler in der Bedienungsanleitung vorhanden sind. Die Bedienungsanleitung wurde für
+Personen angefertigt, die mit der Fahrzeugprüfung und -Reparatur befugt sind, und die entsprechende
+technische Kenntnisse besitzen. Wir haben das Recht technische sowie Inhaltsänderungen
+vorzunehmen.
+
+
+
+Die Symbolen und Zeichen in der Bedienungsanleitung und deren Bedeutung:
+
+
+
+               Vorgang beansprucht Vorsicht und Achtung!
+
+
+
+               Verboten!
+               Informationen, die vollständig eingehalten werden müssen oder streng verboten sind
+               durchzuführen.
+
+
+               Warnung vor potentiellen Gefahrquellen!
+               Gefahr der Personenschäden oder schweren Sachschadens!
+
+
+  FETT
+               Die fettgedruckten Sektionen beinhalten wichtige Informationen.
+GEDRUCKT
+
+
+
+
+               Warnung!
+
+               Lesen Sie aufmerksam die Bedienungsanleitung bevor Sie die Hebebühne
+               installieren und bedienen!
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                 STD-5145X        3
+
+INHALTSVERZEICHNIS
+
+1.       Allgemeines                                                  4
+1.1      Aufbewahrung der Bedienungsanleitung                         4
+1.2      Verhalten im Störfall                                        4
+1.3      Sicherheitshinweise für den Betreiber                        5
+1.4      Warnungen                                                    5
+2.       Produktidentifikation                                        6
+2.1      Garantie                                                     6
+2.2      Technische Wartung                                           6
+3.       Verpackung, Transportierung und Aufbewahrung                 7
+3.1      Verpackung                                                   7
+3.2      Anheben und Bewegen                                          7
+3.3      Aufbewahrung                                                 7
+3.4      Lieferung und Prüfung des Packets                            7
+4.       Beschreibung der Hebebühne                                   8
+5.       Technische Daten                                             9
+5.1      Abmessungen und die Hauptparameter                           9
+5.2      Elektromotor                                                 9
+5.3      Pumpe                                                        9
+5.4      Hydraulische pumpe                                           11
+5.5      Hydrauliköl                                                  11
+6.       Sicherheit                                                   16
+6.1      Allgemeine Sicherheitshinweise                               16
+6.2      Sicherheitseinrichtungen                                     18
+6.3      Sicherheits- und Warnschilder                                20
+7.       Installation                                                 21
+7.1      Das zur Installantion benötigte Werkzeug                     21
+7.2      Angemessenheit des Aufstellortes                             21
+7.3      Beleuchtung                                                  21
+7.4      Bodenverhältnisse                                            21
+7.5      Der Ort der Installation                                     22
+7.6      Installation der Säulen                                      22
+7.7      Installation der synchronisierenden Drahtseile               24
+7.8      Anschluss des Hydraulik-Systems                              24
+7.9      Elektrischer Anschluss                                       25
+7.10     Installation der Tragarme                                    25
+7.11     Inbetriebnahme und Kontrolle                                 26
+7.11.1   Kontrolle bevor der Inbetriebnahme                           26
+7.11.2   Inbetriebnahme                                               26
+7.11.3   Kontrolle vor dem ersten Betrieb                             27
+7.12     Installation des Endschalters                                27
+7.13     Kontrolle unter Belastung                                    27
+8.       Betrieb                                                      28
+8.1      Steuerung                                                    30
+8.2      Heben                                                        31
+8.3      Senken                                                       31
+8.4      Manueller Notablass                                          31
+9.       Wartung                                                      33
+9.1      Allgemeine Wartung                                           33
+9.2      Periodische Wartung                                          34
+10.      Fehlersuche                                                  35
+11.      Aufzeichnungen des Betreibers                                38
+12.      Installationsprotokoll                                       39
+         Garantie                                                     40
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                        STD-5145X                  4
+
+
+1. ALLGEMEINES
+
+AUFMERKSAM DURCHLESEN BEVOR INBETRIEBNAHME
+
+Dieses Kapitel beschreibt die Sicherheitsvorschriften für den bestimmungsgemässen Gebrauch der
+Hebebühne, sowie zum Vorbeugung von Personenschäden oder Sachschaden. Bei der
+Zusammenstellung der Bedienungsanleitung haben Fachleute, die die Hebebühne bedienen und
+warten, teilgenomen. Die Bedienungsanleitung ist ein fester Bestandteil der Hebebüne und ist
+aufzubewahren während der ganzen Lebensdauer der Hebebühne, neben der Maschine.
+
+Lesen Sie jedes Kapitel der Bedienungsanleitung vor dem Auspacken und der Inbetriebnahme, weil
+sie über folgendes wichtige Informationen enthält:
+    • Personenschutz
+    • Schutz der Hebebühne
+    • Schutz des angehobenen Fahrzeugs
+
+Der Hersteller und der Händler trägt keine Verantwortung für den Sachschaden und
+Personenschäden die von dem nicht bestimmungsgemässen Gebrauch stammen. Weiterhin tragen
+wir keine Verantwortung für die Personenschäden, Fahrzeug- oder Hebebühne-Schaden, die
+entstanden sind wegen Ausserachtlassung der Bedienungsanleitunginhalts. Bewegen, Lieferung,
+Aufbau, Installation, Kalibration, Wartung, Reparatur, Veränderung und Abbau der Hebebühne sind
+ausschliesslich vom geschulten Fachpersonal vom Händler oder vom Hersteller authorisierten Service
+Centern durchzuführen.
+
+Der Hersteller und Händler tragen keine Verantwortung für Personenschäden und
+Sachschaden, die daher stammen, dass kein entsprechend geschulter Fachmann eins der
+oben beschrieben Vorgängen durchgeführt hat.
+
+Es ist verboten für Personen die den Inhalt der Bedienungsanleitung nicht kennen, die Hebebühne zu
+bedienen.
+
+Die Einhaltung der örtlichen Unfallschutz- und Arbeitsschut-Regelungen zu versichern ist die
+Verantwortung des Betreibers.
+
+
+1.1 Aufbewahrung der Bedienungsanleitung
+
+Im Zusammenhang mit der Aufbewahrung der Bedienungsanleitung is folgendes zu empfehlen:
+    1. Bewahren Sie die Bedienungsanleitung in der Nähe der Hebebühne, an einer gut sichtbaren,
+    erreichbaren Stelle.
+    2. Schutzen Sie die Bedienungsanleitung vor Feuchtigkeit, Öl, bewahren Sie sie an einer
+    sauberen, trockenen Stelle.
+    3. Während der Benutzung, schützen Sie die Bedienungsanleitung vor Schaden.
+    4. Es ist verboten für Personen die den Inhalt der Bedienungsanleitung nicht kennen, die
+    Hebebühne zu bedienen.
+
+Die Bedienungsanleitung ist ein fester Bestandteil der Hebebühne, beim Verkauf muss sie an den
+neuen Betreiber weitergegeben werden!
+
+
+1.2 Verhalten im Störfall
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                           STD-5145X                   5
+
+             Im Falle von Fehlfunktion der Hebebühne, folgen Sie den Anleitungen in den
+             folgenden Kapiteln.
+
+
+
+1.3 Sicherheitshinweise für den Betreiber
+
+Der Betreiber darf während der Bedienung der Maschine nicht unter Einfluss von Alkohol,
+Beruhigungsmittel oder Drogen stehen.
+
+
+             Vor der Inbetriebnahme muss der Betreiber die Position und Betriebvorgang der
+             Steuerelemente erlernen, die im Kapitel " Bedienung " beschrieben sind.
+
+
+
+
+1.4 Warnungen
+
+             Nicht genehmigte Veränderungen befreien den Hersteller und Händler von
+             jeglicher Verantwortung und Garantiepflicht. Entfernen Sie oder machen die
+             Sicherheitseinrichtungeng nicht betriebsunfähig, denn das kann zur Verletzung
+             der Sicherheitsvorschriften führen.
+
+
+
+             Jeglicher Betrieb der abweicht vom Inhalt der Bedienungsanleitung, und von dem,
+             was von dem Hersteller genehmigt ist, ist streng verboten!
+
+
+
+             Gebrauch von nicht Original-Ersatzteilen kann zur Personenschäden und
+             Sachschaden führen.
+
+
+
+
+    GARANTIERKLÄRUNG UND DIE ERKLÄRUNG ZUR BEGRENZTEN VERANTWORTUNG
+
+Der Hersteller hat die Bedienungsanleitung mit entsprechender Sorgfalt zusammengestellt.
+
+Der Hersteller und der Händler sind nicht verplichtet im Falle von Personenschäden und
+Sachschaden, die entstanden sind im Folge von missbräuchlichem Gebrauch, des nicht Einhalten von
+Sicherheitsvorschriften, Veränderungen und unfachlichem Betreiben, die im Garantieerklärung
+beschriebenen einzuhalten. Weiterhin, tragen wir keine Verantwortung für Personenschäden und
+Schaden am Fahrzeug oder der Hebebühne, die entstanden sind im Folge von Ausserachtlassung
+des Inhalts der Bedienunganleitung.
+Weiterhin tragen der Hersteller und der Händler keine Verantwortung für die Personenschäden und
+Sachschaden, die im Folge des nicht Einhalten von nationalen und internationalen gesetzlichen
+Arbeits- und Unfallschutz Vorschriften entstanden sind. Der Betreiber ist persönlich verantwortlich für
+das Einhalten dieser Vorschriften
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                         STD-5145X                  6
+                                           ZUM LESER
+
+Wir haben mit ensprechender Sorgfalt darauf geachtet dass die Bedienungsanleitung genaue, volle
+und neueste Informationen enthält. Der Hersteller und der Händler tragen keine Verantwortung für die
+möglichen Fehler in der Bedienungsanleitung und haben das Recht wegen Produktentwicklung
+Änderungen vorzunehmen.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                        STD-5145X                7
+2. PRODUKTIDENTIFIKATION
+Die technischen Daten der Hebebühne finden Sie am Maschinenschild an der hinteren Seite der
+Säule mit der Pumpe.
+
+
+
+
+                                          Modellnummer
+
+                  Typ                             Logo des Händlers
+                  Modellnummer
+                  Seriennummer
+
+                  maximale Arbeitslast            CE-Kennzeichnung
+                  Herstellungsdatum
+
+                  Phasennummer
+                  Nettogewicht                    Antriebsleistung
+                  Antriebsspannung       Phase    Frekvenz
+                                            Hersteller
+
+                                             Händler
+
+
+
+
+            Benutzen Sie die Daten am Maschinenschild beim Kontaktaufnahme mit dem
+            Hersteller, Händler. Das Entfernen des Maschinenschildes ist streng verboten!
+
+
+Der Hersteller hat das Recht die Maschinen zu entwickeln oder kleinere ästetische Veränderungen
+vorzunehmen, die zwar andere Merkmale haben als die in der Bedienunganleitung, aber die
+Hauptfunktionen nicht beeinflussen.
+
+
+2.1 Garantie
+
+Die Garantiezeit beträgt 12 Monate ab dem Datum des Verkaufs.
+
+Die Garantie wird sofort aufgehoben wenn an der Maschine nicht genehmigte Veränderungen
+vollgezogen werden.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                          STD-5145E                  8
+Die Garantiefehler nachzuweisen ist nur ein vom Hersteller, Händler beauftragter Fachservice
+berechtigt.
+
+
+
+2.2 Technische Wartung
+
+Mit Service und Wartungsfragen, mit denen sich die Bedienunganleitung nicht beschäftigt, wenden Sie
+sich an den Händler
+
+
+3. VERPACKUNG, TRANSPORTIERUNG UND AUFBEWAHRUNG
+
+Verpackung, bewegen, Heben, Lieferung und Auspacken der Hebebühne darf nur eine Person
+durchführen, die in der Bedienungsanleitung beschriebene Kenntnisse besitzt.
+
+
+3.1 Verpackung
+
+Im verpackten Zustand besteht die Hebebühne aus folgenden 3 Teilen:
+
+    • Die mechanischen Elementen der Hebebühne (Säulen, hydraulische Zylinder, Hubschlitten,
+    Tragarme,   Grundrahmen,      Gummiblock   mit      3    verschiedenen Höhenverstellungen)
+    zusammengepackt, auf einen Stahlrahmen befestigt, in Folie eingepackt
+    • Hydrauliche Pumpeneingheit im Kartonkasten
+    • Elektrischer Bedienpult im Kartonkasten
+
+
+
+
+                                            Zeichnung 1.
+
+
+3.2 Anheben und Bewegen
+
+Zum Heben und Bewegung der Hebebühne benutzen Sie Hebetechnik mit entsprechender
+Tragfähigkeit und Befestigungsmöglichkeiten (Kran, Gabelstapler). Sichern Sie die Kiste mit Rücksicht
+auf die Grösse, Gewicht, Schwerpunkt und die zerbrechlichen Teile, so dass sie nicht runterfällt.
+
+3.3 Aufbewahrung
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                        STD-5145E                 9
+Die Hebebühne ist an einer verdeckten, trockenen Stelle aufzubewahren, vor direktem Sonnenlicht
+geschützt, bei Temperatur zwischen -10oC und +40oC.
+
+3.4 Lieferung und Prüfung des Packets
+
+Nach der Lieferung überprüfen Sie den während der Lieferung und des Aufbewahrens enstandenen
+möglichen Schaden, kontrollieren Sie, dass alles was vom Hersteller angegeben ist auch im Packet
+vorhanden ist. Im Falle vom Schaden oder Mangel nehmen Sie mit dem Kurier das Protokoll auf, dann
+benachrichtigen Sie den Händler.
+Das Auspacken muss mit entsprechender Sorgfalt durchgeführt werden im Bezug auf Personen
+(halten Sie die nötige Distanz ein beim Durchschneiden der Riemen) und Maschinenteilen (achten Sie
+dass einige Teile nicht aus dem Rahmen fallen).
+
+4. BESCHREIBUNG DER HEBEBÜHNE
+Die Hebebühne is für das Anheben von Fahrzeugen geeigenet, die maximale Tragfähigkeit,
+einschliesslich der zusätlichen Last auf dem Fahrzeug, steht auf dem Maschinenschild. Das
+Übertreten dieses Grenzwertes ist streng verboten.
+
+Die wichtigeren Teile der Hebebühne (Zeichnung 2.):
+
+Die Hebebühne besteht aus zwei Säulen (1), zwei Hubschlitten (2) und zwei Tragarmen (3), die
+Säulen sind am Grundrahmen befestigt. Das Überfahrblech (4) beschützt das Stahlseil, den
+hydraulischen Schlauch und die elektrische Leitung.
+
+Das Heben wird mit der Taste auf dem Bedienpult gesteuert, die die hydraulische Pumpe (6)
+kontrolliert. Die Pumpe pumpt hydraulische Öl in die Zylinder. Beide Hubschlaitten haben eine
+Sicherheitsarretierung (7), die durch einen Elektromagnet (8) gesteuert werden.
+
+Ablassen der Hebebühne wird auch per Tastendruck gesteuert, die Hebebühne sinkt unter dem
+Gewicht des angehobenen Fahrzeugs. Die Hubschlitten werden von Drahtseilsystem synchronisiert.
+Die Sicherheitsarretierung der Tragarme verriegelt sich automatisch, wenn die Hebebühne angehoben
+wird. Am Bedienpult finden Sie den Endschalter, mit dem Sie die maximale Hubhöhe einstellen
+können.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                              STD-5145E      10
+
+
+
+
+                                       Zeichnung 2.
+
+5. TECHNISCHE DATEN
+
+5.1 Abmessungen und die Hauptparameter (siehe Zeichnung 3.)
+
+Modell                                                  STD-5145E
+Tragfähigkeit                                           4,5 Tonnen
+Maximale Hubhöhe                                         1850mm
+Minimale Höhe                                             100mm
+Gesamtlänge                                              2860mm
+Gesamtbreite                                             3410mm
+Hubzeit                                               50 Sekunden
+Senkzeit                                              50 Sekunden
+Geräuschpegel                                          75 dB(A)/1m
+Betriebstemperatur                                    -10oC - +40oC
+Durchschnittlicher Verpackunsgewicht                       610kg
+Installationsort                                        Innenraum
+Sichherheitsverriegelung Typ                           Magnetspule
+
+
+
+5.2 Elektromotor
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                          STD-5145E                    11
+Typ
+Antriebsspannung                                230V / 220V – 1Ph             400V / 380V – 3Ph
+Antriebsleistung                                     2,2 kW                        2,6 kW
+Polzahl                                                 2                             4
+Drehzahl                                            2800 rpm                      1375 rpm
+Motorgehäuse Typ                                                       B14
+Schutzklasse                                                          IP 54
+
+Der Anschluss des Elektromotors muss dem Schalt-Diagram (Zeichnung 5.) entsprechend geschehen.
+Die Drehrichtung des Motors steht am Maschinenschild. Vor der Benutzung überprüfen Sie dass die
+Stromquelle vor Ort der Spezifikation der Hebebühne entspricht. Falls die Spannungsschwankungen
+grösser sind las 10%, ist es empfohlen einen Spannungsstabilizator zu benutzen um die elektrischen
+Teile der Hebebühne zu schützen.
+
+
+5.3 Pumpe
+
+Typ                                                                 Zahnrad
+Strömungsgeschwindigkeit                            2,0 cm3/g                       4,8 cm3/g
+Beständiger Betriebsdruck                                       170 bar – 190 bar
+Maximaler Druck                                                      210 bar
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                         STD-5145E   12
+
+
+
+
+                                   Zeichnung 3.
+
+5.4 Hydraulische pumpe (Zeichnung 4. )
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                         STD-5145E                13
+
+
+
+
+                                             Zeichnung 4.
+
+5.5 Hydrauliköl
+
+Es ist empfohlen Hydrauliköl zu benutzen, das den ISO 6743/4 Standard entspricht (HM Klasse).
+
+Standard                         Parameter                         Wert
+
+ASTM D 1298                      Dichte bei 20 oC                  0.8 kg/l
+
+ASTM D 445                       Viskosität bei 40 oC              32 cSt
+
+ASTM D 445                       Viskosität bei 100 oC             5.43 cSt
+
+ASTM D 2270                      Viskositätsindex                  104 No
+
+ASTM D 97                        Pourpoint                          30 oC
+
+ASTM D 92                        Siedepunkt                        215 oC
+
+ASTM D 644                       Verseifungszahl                   0.5 mg KOH/g
+
+
+
+Es wird empfohlen, das Hydrauliköl Nummer 32 zu besorgen, das in Hydraulikgeschäften vorhanden
+ist.
+
+
+
+             Ölwechsel muss jährlich erfolgen!
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                              STD-5145E   14
+                      Hydraulik-Diagramm (Zeichnung 5.)
+
+
+
+
+                A10   Fallschirm Ventil
+                A9    Hauptzylinder
+                A8    Senkventil
+                A7    Einwegventil
+                A6    Ablassventil
+                A5    Zahnrad-Pumpe
+                A4    Rückschlagventil
+                A3    Hydrauliktank
+                A2    Ölfilter
+                A1    Motor
+                11    Ablassgeschwindigkeitsregelung
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                               STD-5145E   15
+                   Schalt-Diagramm – 400V (Zeichnung 6/a. )
+
+
+
+
+                 QS    Stromschalter
+                  M    Motor
+                 TC    Transformator
+                 KM    Kontaktschalter
+                 YV    Elektromagnetisches Ablassventil
+                 SB1   DruckTaste zum Heben
+                 SB2   DruckTaste zum Senken
+                 SB3   SenkTaste der Sicherheitsarretierung
+                 HL    Stormversongungs-Indikator
+                 DT1   Elektromagnet 1
+                 DT2   Elektromagnet 2
+                 SQ    Endschalter
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                      STD-5145E            16
+                         Schalt-Diagramm – 230V (Zeichnung 6/b. )
+
+
+
+
+                       QF1    Stromschalter
+                        M     Motor
+                       ST     Überhitzungs-Schutzrelais
+                        T     Transformator
+                       KM     Kontaktschalter
+                       YV     Elektromagnetisches Ablassventil
+                       SB1    DruckTaste zum Heben
+                       SB2    DruckTaste zum Senken
+                       SB3    SenkTaste der Sicherheitsarretierung
+                       HL     Stormversongungs-Indikator
+                       DT1    Elektromagnet 1
+                       DT2    Elektromagnet 2
+                       SQ     Endschalter
+
+
+
+6. SICHERHEIT
+Lesen Sie das Kapitel aufmerksam und völlig, weil es wichtige Informationen enthält über die
+Sicherheit des Betreibers und der Person die die Wartung übersieht.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                       STD-5145E                17
+              Die Hebebühne ist ausschliesslich für Heben von Fahrzeugen, für Innengebrauch
+              geeignet. Jegliche Abweichung im Gebrauch und Aussengebrauch ist streng
+              verboten!
+
+
+Für den Schutz des Betreibers und sich in der Nähe aufhaltender Personen muss während des
+Betriebs der Hebebühne eine 1 Meter weite Sicherheitszone freigehaltet werden. Die Steuerung der
+Hebebühne muss ausschliesslich mit dem Bedienpult in der Sicherheitszone geschehen. Das
+Personal kann sich nur unter dem angehobenen Fahrzeug befinden, wenn das Fahrzeug in
+entsprechender Höhe ist und die Sicherheitsraster arretiert sind.
+
+
+              Benutzen Sie die Hebebühne niemals wenn die Sicherheitsraster nicht oder nicht
+              entsprechend funktionieren. Betrieb ohne Sicherheitsraster kann zu schweren
+              Personenschäden, tödlichen Unfällen, und schwerem Sachschaden führen.
+
+
+
+
+6.1 Allgemeine Sicherheitshinweise
+
+
+Der Benutzer, Betreiber und Warter der Hebebühne muss die vor Ort gültige Arbeitsschutz und
+Unfallschutz Sicherheitsvorschriften einhalten.
+
+
+Ausserdem ist Folgendes einzuhalten:
+
+   •   Trennen oder schalten Sie niemals die hydraulischen und pneumatischen
+       Sicherheitseinrichtungen ab.
+   • Halten Sie die Sicherheitshinweise die in der Bedienungsanleitung und auf dem
+   Maschinenschild stehen, ein.
+   • Der Betreiber und andere Personen müssen während des Hebens die Sicherheitszone
+   einhalten..
+   • Während des Hebens muss der Motor des Fahrzeugs immer abgestellt, die Handbremse
+       eingezogen, und der Gangschalter in der Park-Position sein.
+   • Übertreten Sie niemals die in der Bedienungsanleitung und auf dem Maschinenschild
+       angedeutete maximale Tragfähigkeit.
+   • Während des Betriebs der Hebebühne darf sich keine Person auf den Tragarmen, sowie dem
+   Überfahrblech aufhalten.
+
+
+SICHERHEITSTECHNISCHE VORSCHRIFTE
+SICHERHEITSTECHNISCHE VORSCHRIFTE DER INBETRIEBNAHME
+
+   1. Die Hebebühne ist nicht geeignet für Betrieb im Freien, sowie nassen oder
+   explosiongefährdeten Räumen. Installation und Betrieb darf nur in trockenen Räumen geschehen.
+
+   1. Auswahl des Aufstellortes, die Qualität des Betonbodens, und de Belastung der Hebebühne
+   sind die Verantwortung des Betreibers. Vor der Installation muss die Belastbarkeit des Bodens
+   entweder durch die entspechende Dokumentation oder mit Kontrolle geprüft werden. Falls nötig,
+   muss ein neuer, den Forderungen entsprechender Boden hergerichtet werden. Installieren Sie die
+   Hebebühne niemals auf Asphalt.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                        STD-5145E                18
+  2. Um die Hebebühne elektrisch anzuschliessen, muss der Kabel mit einem Kabelstecker
+  versehen werden. Wenn die Hebebühne mit einem fixen Anschluss stromversorgt werden soll,
+  muss ein, den Forderungen der Elektrik-installation entsprechend geschulter Fachmann
+  Durchführen. Bei dem Anschliessen sind die örtlichen Regelungen einzuhalten.
+
+SICHERHEITSTECHNISCHE VORSCHRIFTE DES BETRIEBS
+
+  3. Die Bedienungsanleitung der Hebebühne muss immer an einer erreichbaren stelle
+  aufbewahrt werden, der Betreiber muss deren Inhalt befolgen. Die gesetzlichen
+  Unfallschutzregelungen sind einzuhalten und geniessen Priorität der Anleitung gegenüber.
+
+  4. Mit der Hebebühne dürfen keine Personen gehoben werden und es ist verboten auf die
+  Säulen zu klettern.
+
+  5. Die Hebebühne darf nur von befugten Personen betriebn werden, die ihren 18. Lebensjahr
+  erlangt haben.
+
+  6. In der Nähe der Hebebühne dürfen sich keine unbefugte Personen aufhalten, oder störende
+  Objekte sein. Die Arbeitszone der Hebebühne muss frei gelassen werden, Hindernisse müssen
+  entfernt werden. In der Hebezone dürfen sich während der Arbeit keine unbefugte Personen
+  aufhalten. Die Gefahrenzone muss sofort verlassen werden, wenn das Fahrzeug sich zu lehnen
+  beginnt.
+
+  7. Regelrechter Betrieb der Hebebühne muss versichert werden. Die maximale Tragfähigkeit
+  der Hebebühne darf niemals überstritten werden!
+
+  8. Die Hebebühne und deren Umgebung müssen sauber gehaltet werden. Die elektrischen
+  Einrichtungen müssen vom Wasser und Nässe geschützt werden.
+
+  9. Auffahrten auf die Hebebühne kann nur bei in die unterste Position gebrachten Tragarmen
+  geschehen. Für sicheres und stabiles Heben, heben Sie das Fahrzeug immer bei den vom
+  Fahrzeughersteller angegebenen Gewichtspunkten an. Mit der Hebebühne dar nur das ganze
+  Fahrzeug gehoben werden, sie ist nicht geeignet zum Heben einzelner Teile. Das Gewicht des
+  Fahrzeugs darf die maximale Tragfähigkeit der Hebebühne nicht übertreten. Während des
+  Hebens und des Senkens müssen die Türen des Fahrzeugs geschlossen sein. An der
+  Hebebühne, den Hubschlitten und dem angehobenen Fahrzeug dürfen keine Teile oder Werkzeug
+  platziert werden.
+
+  10. In der ersten Phase des Hebens, wenn die Auffangteller die Gewichtspunkte des Fahrzeugs
+  erreichen, muss überprüft werden ob die Arretierung der Tragarme regelrecht funktioniert.
+
+  11. Nach einem kurzen Heben ist zu kontrollieren, ob das Auffangen und die Gewichtverteliung
+  des Fahrzeugs sicher ist und den Vorschriften des Fahrzeugsherstellers entspricht.
+
+  12. Bevor Sie mit der Arbeit an dem angehobenen Fahrzeug beginnen, überprüfen Sie dass die
+  Sicherheitsarretierungen eingerastet sind.
+
+  13. Die regelrechter Funktion der Sicherheitsarretierung ständig kontrolliert werden. Die
+  Sicherheitseinrichtungen der Hebebühne ausser Betrieb zu setzen oder deren Funkion zu
+  verändern ist streng verboten. Wenn die Sicherheitseinrichtungen nicht regelrecht funktionieren,
+  ist der Betrieb der Hebebühne streng verboten!
+
+  14. Der Stromschalter ist auch in einem ein Notschalter, im Notfall kann es sofort abgeschaltet
+  werden.
+
+  15. Arbeiten Sie mit besonderer Vorsicht beim laufenden Motor wegen der Vergiftungsgefahr
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                           STD-5145E               19
+    16. Während des Betriebs, halten Sie Ihre Hände und Füsse fern von beweglichen Teilen. Beim
+    Ablassen, passen Sie auf, dass Ihre Füsse nicht unter das Fahrzeug gelangen. Tragen Sie keine
+    freie, breite Kleidung, da es zwischen den beweglichen Teilen eingeklemmt werden, und dadurch
+    zu Verletzungen führen kann.
+
+    17. Nach der Arbeit lassen Sie die Hebebühne immer in die unterste Position ab
+
+    18. Wenn Sie die Maschine ausser Betrieb setzen, schalten Sie sie von der Stromquelle ab,
+    leeren Sie den Öltank und entsorgen Sie das Öl gemäss örtlichhen Vorschriften.
+
+    19. Wenn Sie die Maschine längere Zeit ausser Betrieb setzen, befolgen Sie die nächsten
+    Schritte:
+        a.     Schalten Sie die Maschine von der Stromquelle ab.
+        b.     Leeren Sie den Öltank, und entsorgen Sie das Öl gemäss örtlichhen Vorschriften.
+        c.     Schmieren Sie die beweglichen Teile, die durch Staub und Austrocknen beshädigt
+        werden könnten.
+
+
+6.2 Sicherheitseinrichtungen
+
+Um Überlastung und Konstruktionsschäden zu vermeiden, sind die folgende Sicherheitseinrichtungen
+Teil der Hebebühne.
+
+Maximaldruckventil/Druckbegrenzungsventil:
+
+Eingebaut in die Hydraulikpumpe, verhindert das Heben einer Last, die schwerer ist, als die maximale
+Tragfähigkeit.
+
+
+             Der Druckbegrenzungsventil ist vom Hersteller auf den entsprechenden Wert
+             eingestellt. Verstellen Sie ihn niemals um die Tragfähigkeit zu vergrössern!
+
+
+Sicherheits-Ablassventil:
+
+Beide Arbeitszylinder haben einen Sicherheits-Ablassventil, der das Abstürzen der Hebebühne
+verhindert im Falle einen Schlauchrisses oder einer Störung der Pumpe.
+
+Sicherheitsarretierung:
+
+Der Sicherheits-Raster verhindert das Abstürzen durch ein Leck im Hydraulik-System oder durch
+einen Bruch.
+
+Totmannsteuerung:
+
+Die Funktionen der Steuerelementen werden nur ausgeübt, bis die entsprechender Taste oder
+Schalter in der richtigen Position gehalten wird.
+
+Druckknöpfe:
+
+Damit die Tasten nicht zufällig gedrückt werden, sind sie mit einem Ring versehen.
+
+Synchronisierung der Hubschlitten:
+
+Die synchrone Bewegung der Hubschlitten beim Heben und Ablassen wird von einem speziellen
+Drahtseilsystem gesichert.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                            STD-5145E               20
+Tragarm-Arretierung:
+
+Wenn die Tragarme sich aus der unteren Position herausbewegen, werden sie automatisch arretiert,
+damit sie unter Last sich nicht bewegen.
+
+Überhitzungsschutz:
+
+Falls der Motor sich überhitzen sollte, stellt das Überhitzungsschutz-Relais den Motor ab.
+
+
+
+               Es ist streng verboten, die Sicherheitseinrichtungen ausser Betrieb zu setzen.
+
+               Betrieb ohne Sicherheitseinrichtungen kann zu schweren Personenschäden und
+               Sachschaden führen.
+
+               Beginnen Sie niemals mit der Arbeit am Fahrzeug bevor Sie die Sicherheits-
+               Arretierung nicht kontrolliert haben.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                    STD-5145E               21
+6.3 Sicherheits- und Warnschilder
+
+Die Sicherheitsschilder warnen den Betreiber vor gefährlichen Situationen. Diese Schilder
+müssen auf gut sichtbaren Stellen platziert werden, sie müssen sauber gehalten werden, sowie
+immer sichtbar sein. Wenn die Schilder verblasst oder beschädigt werden, müssen sie
+ausgetauscht werden!
+
+Lesen Sie aufmerksam die Bedeuteung der Schilder abund prägen Sie sich sie ein (Zeichnung
+7.).
+
+
+
+
+                                        Zeichnung 7.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                           STD-5145E                 22
+
+
+7. INSTALLATION
+
+               Die Installation darf nur vom einem vom Hersteller oder Händler befugter,
+               entsprechend geschulter Fachmann durchgeführt werden.
+               Eine Installation, die vom Laien durchgeführt wurde, kann zu schweren
+               Personenschäden und Sachschaden führen.
+
+
+Bevor Sie die Installation beginnen, lesen Sie aufmerksam die Bedienungsanleitung. Die in der
+Anleitung beschrieben Hinweise sind einzuhalten, nur so ist die spätere korrekte Function der
+Hebebühne zu versichern. Falls die Installation nicht nach der Bedienungsanleitung geschieht, verliert
+der Kunde sein Garantie-Recht. Wenn die Installation nicht durch einen Fachmann durchgeführt
+wurde, so bezieht sich die Garantie nur auf Ersatzteile.
+
+7.1 Das zur Installantion benötigte Werkzeug
+
+    •   Schlagschrauber, 16-ter Duchmesser              •   Crowa und Inbus Ratschen Schlüsselsatz
+    •   Drill-Bits für Beton                            •   Spanneisen
+    •   Hammer                                          •   Markierschnur
+    •   Wasserwaage                                     •   Torx Schraubendreher
+    •   Gabel-Ring Schlüsselsatz                        •   Schlitz Schraubendreher
+    •   Französischer Schlüssel                         •   Bandmass
+
+7.2 Angemessenheit des Aufstellortes
+
+Die Hebebühne ist nicht für Aussengebrauch geeignet, sowie in nassen Räumen und Räumen mit
+Explosionsgefahr. Der Raum muss hoch genug sein, um die maximale Hubhöhe zusammen mit dem
+angehobenen Fahrzeug zuzulassen. Studieren Sie die Grundpläne des Gebäudes, um klarzustellen,
+wo die elektrischen Leitungen und die Wasserröhre verlaufen, die bei der Installation der Säulen
+beschädigt werden könnten. Prüfen Sie auch die Umgebung der Hebebühne - um während der
+Installation und des Betriebs der Hebebühne die anderen Maschinen nicht zu beschädigen.
+Der Aufstellort darf nicht neben Waschhallen, Lackierstellen, Lösemittel- oder Lacklagerungen sein.
+Aufstellen neben explosions- und brandgefährdeten Räumen ist streng verboten. Die entsprechenden
+Sicherheits- und Gesundheits-Standards z.B. im Bezug auf minimale Entfernung zu der Wand oder
+anderen Maschinen, Notausgänge und so weiter, müssen eingehalten werden.
+
+
+7.3 Beleuchtung
+Die Beleuchtung muss laut den vor Ort gültigen Vorschriften erfolgen. Die Umgebung der Hebebühne
+muss gut und ebenmässig beleuchtet sein.
+
+
+7.4 Bodenverhältnisse
+
+Die Hebebühne muss auf ebenem und festem Boden installiert werden. Der Unterboden muss fähig
+sein maximale Lastwerte zu tragen, auch in ungünstigen Arbeitsbedingungen. Im Falle einer
+Installation auf einer gehobener Fläche muss die maximale Tragfähigkeit des Unterbodens
+berücksichtigt werden. Der Boden muss dem D20/25 Standard entsprechen (3000PSI - 2.1 kg/mm
+Kraft), ausgeglichen und min. 15 cm tief sein. Falls der Boden diesen Forderungen nicht entspricht,
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                         STD-5145E                23
+muss ein neuer Boden angefertigt werden. Wenn ein neuer Betonboden gefertigt wird, muss der
+Beton mindestens 20 Tage lang trocknen. Wenn die Hebebühne auf Stahlbeton Unterboden installiert
+wird, muss die Tragfähigkeit des Bodens geprüft werden.
+Warnung: die Installation der Hebebühne auf einen ungeeigneten Boden kann zu schweren Schäden
+und Verletzungen führen. Die Hebebühne darf auf keinen Fall auf Bitumen oder in der Nähe von
+Dehnungsfugen installiert werden.
+
+
+              Die Boden-Vorschrifte sind einzuhalten. Die Installation der Hebebühne auf einen
+              ungeeigneten Boden kann zu schweren Schäden und Verletzungen führen.
+
+
+              Es ist empfehlbar für einen regelrechte Installation einen Wasserstand zu
+              benutzen. Kleinere Differenzen der Bodenebene können mit den richtigen
+              Unterlegscheiben ausgebügelt werden. Jede grössere Hangneigung wird die
+              Arbeit der Hebebühne beeinflussen. Wenn der Unterboden eine fragliche
+              Hangneigung hat (mehr als 3mm von Seite zur Seite oder 5mm in der vollen
+              Länge der Hebebühne), sollte man in Erwägung ziehen, eine neue Betonschicht
+              zu giessen.
+
+7.5 Der Ort der Installation
+
+        •       Nachdem die Hebebühne aus der Verpackung entfernt wurde, bringen Sie Sie zum
+     Ort der Installation. Entfernen sie das verbeibende Verpackungsmaterial und die Schrauben, die
+     die zwei Säulen zusammenhalten. Prüfen Sie, dass alle Teile vorhanden sind, wenn Teile
+     fehlen, wenden Sie sich an den Händler.
+        •       Die Installation und die Inbetriebnahme darf nur von einem geschulten Fachmann
+     durchgeführt werden.
+        •       Die Hebebühne muss auf einem ebenen Betonboden installiert werden. Der Beton
+     muss mindestens 15 cm tief sein, die Fixirerpunkte müssen mindestens 1.5m vom Rand des
+     Bodens liegen.
+        •       Der Betonboden muss ebenmässig und glatt sein.
+
+
+
+
+                                           Zeichnung 8
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                         STD-5145E                24
+   • Zeichnen Sie mit einem Markierschnur die Platzierung der Säulen mit der Hilfe von Zeichnung
+   8.
+   • Stellen Sie die Säulen auf ihre Plätze und markieren Sie mit Stift oder Kreide Stellen der
+   Bohrungen und der Basen.
+   • Prüfen Sie noch einmal die Platzierung der Basen der Säulen, kontrollieren Sie dass sie
+   zueinander parallel und zum Boden imrechten Winkel stehen.
+
+7.6 Installation der Säulen
+
+   • Beginnen Sie mit der Säule mit dem Bedienpult. Heben Sie die Säule mittels Hebetechnik aus
+   dem Rahmen und stellen Sie die Säule auf eine Unterlage aus Holz. Achten Sie beim Heben
+   darauf, dass die Säulen nicht beschädigt werden. Danach wird der Hebeband unter dem Kopfteil
+   der Säule durchgesteckt und die Säule wird in senkrechte Stellung gebracht. Die Säule wird an
+   die markiertre Stelle gestellt, noch bevor sie mit den Fixierbolzen festgeschraubt wird.
+
+   • Benutzen Sie die Basis der Säule als Muster, und bohren Sie mit einem Bohrungseinsatz mit
+   18 mm Durchmesser 150mm tiefe Löcher. Achten sie darauf, die Löcher im rechten Winkel, mit
+   einer Bohrung zu fertigen, für eine sichere Befestigung. Nach dem Bohren reinigen Sie die Löcher
+   vom Staub mit Druckluft oder einer Drahtbürste. Überprüfen Sie, dass die Säulen zueinander
+   parallel stehen, die Säulen müssen auf der Kreidenlinie stehen.
+
+   • Schrauben Sie die Dichtungsringe und die Mütter an die Ankerbolzen. Platzieren Sie in jedes
+   Bohrloch einen Ankerbolzen und hammern Sie es ein, bis der Bolzen den Boden des Lochs
+   erreicht.
+
+   • Wenn Sie zum Ausgleichen einen Peil benutzen werden, achten Sie darauf, dass Sie einen
+   genügend langen Ankerbolzen nehmen. Wenn Peile benutzt werden müssen, platzieren Sie sie
+   so, dass die Säulen gerade stehen nach dem die Schrauben festgezogen sind.
+
+   • Wenn die Ankerbolzen und die Peile an ihrem Platz sind, ziehen Sie die Muttern fest.
+   Benutzen Sie auf keinen Fall einen Schlagschrauber oder ähliches Werkzeug dazu! Das
+   Überfahrblech wird neben der erster aufgestellten Säule ausgelegt, danach wird die zweite Säule
+   den Kreidenlinien und dem Überfahrblech passend aufgerichtet.
+
+   • Bevor Sie die die Bolzen und die Muttern endgültig festziehen, überprüfen Sie den Stand der
+   Säulen nach Zeichnung 8. Überprüfen Sie die Richstheit der Säulen mit einer Wasserwaage. Falls
+   nötig, korrigieren Sie den Stand mit Peilen. Nachdiesem müssen die Ankerbolzen mir dem nötigen
+   Drehmoment festgezogen werden. Benutzen Sie dafür niemals einen Schlagschrauber!
+
+
+
+
+              Es ist sehr wichtig, die Abmessungen einzuhalten! Abweichungen können zu
+              schweren, selbst tödlichen Verletzungen und Sachschaden führen.
+
+
+
+
+7.7 Installation der synchronisierenden Drahtseile
+
+   •   Heben Sie beide Hubschlitten auf ca. 1 Meter Höhe und befestigen Sie sie.
+
+   • Überprüfen Sie, dass die mechanische Verriegelung eingeschaltet ist, bevor Sie die
+   Drahtseile platzieren. Wichtig ist, dass die Hubschlitten in der gleicher Höhe sind.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                          STD-5145E                 25
+  • Führen Sie die Drahtseile durch wie auf Zeichnung 9 angezeigt. Überprüfen Sie, dass das
+  Seil in die Riemenscheiben hineingelegt wird. Überprüfen Sie die Platzierung der Drahtseile
+  nochmal.
+
+  •   Ziehen Sie die Mutter am Enden der Drahtseile gleich fest mit dem mitgeliefertem Schlüssel.
+
+             Die Spannung der Drahtseile muss wöchentlich kontrolliert werden. Wenn die
+             Drahtseile nicht gleich straff sind, wird das Heben nicht gleichmäßig erfolgen.
+             Die Einstellung der Spannung darf nur mit eing-eschalteten Sicherheits-
+             verriegelungen erfolgen.
+
+
+
+
+                                           Zeichnung 9.
+
+7.8 Anschluss des Hydraulik-Systems
+
+  •        Installieren Sie die Pumpeneinheit auf die Hauptsäule und schrauben Sie sie mithilfe der
+  beigelieferten Schrauben fest.
+
+  •       Verbinden Sie die Hydraulikschläuche mit der Stromversorgungseinheit, dem Verteiler und
+  dem Hydraulikzylinder, wie es in der Zeichnung 10 angezeigt wird. Schließen Sie die Schläuche
+  an, dann ziehen Sie die Rohrverbindungen an. Achten Sie auf die Sauberkeit der Schläuche und
+  Verbindungen. Der kürzere Schlauch verbindet die Stromversorgungseinheit und den
+  Arbeitszylinder der Säule mit dem Bedienpult. Der längere Schlauch verbindet die zwei
+  Arbeitszylinder. Um den längeren Schlauch anzuschließen, drehen Sie das Überfahrblech um, und
+  befestigen Sie den Schlauch mit den beigelieferten Klebeschildchen.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                         STD-5145E                 26
+
+
+
+
+                                          Zeichnung 10.
+
+7.9 Elektrischer Anschluss
+
+              Der Anschluss darf nur von einem qualifiziertem Elektriker durchgeführt werden.
+              Für den Anschluss gelten die örtlichen Vorschriften und Gesetze.
+              Vergewissern Sie sich, dass die Stromspannung
+              der Maschinenspezifikation entspricht.
+              Überprüfen Sie den richtigen Anschluss der Phasen. Ein falscher Anschluss
+              kann zu Motorschaden führen, für den der Hersteller keine Verantwortung trägt.
+              Lassen Sie die Hydraulikeinheit NIEMALS ohne Öl laufen. Die Pumpe kann
+              beschädigt werden. Die Pumpeneinheit muss auf einer trockenen
+              Stelle aufbewahrt werden.
+              Das Bedienpult muss immer trocken gehalten werden. Durch Wasser oder
+              andere Flüssigkeiten, z.B. Lösemittel kann Schaden entstehen, dass kein
+              Garantiefehler ist.
+
+
+   •   Befestigen Sie mithilfe der beigelieferten Schrauben das Bedienpult an die Hauptsäule.
+
+   • Führen Sie die vom Hersteller an die Säulen angeschlossene Leitungen unter dem
+   Überfahrblech durch. Überprüfen Sie, dass die Leitungen nicht mit beweglichen Teilen in
+   Berührung kommen. Schliessen Sie die Enden der Kabel an.
+
+   •   Schliessen Sie die hydraulische Pumpeneinheit an, mit Hilfe von Zeichnung 6.
+
+   • Überprüfen Sie die richtige Phasenverbindung und die Erdung der Hebebühne. Überprüfen
+   Sie den Anschluss der Elektromagnete an die Leitungen.
+
+7.10 Installation der Tragarme
+
+   •   Schmieren Sie das Gewinde in den Tragarmen und die Bolzen ein.
+
+   • Wie Zeichnung 11. anzeigt, müssen Sie die Tragarme auf die Hubschlitten gehoben werden.
+   Die kurzen Arme müssen nach vorne und die langen Arme nach hinten zeigen. Überprüfen Sie
+   das die Tragarme gut positioniert und stabil befestigt sind.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                           STD-5145E                 27
+   • Überprüfen Sie die Funktion der Sicherheitsarretierung der Tragarme. Falls nötig, stellen Sie
+   die Arretierung ein (Zeichnung 12).
+
+
+
+
+                                                                     Zeichnung 12.
+                Zeichnung11.
+
+
+7.11 Inbetriebnahme und Kontrolle
+
+            Lassen Sie die hydraulische Pumpe niemals ohne Öl laufen, da die Pumpe
+            beschädigt werden kann.
+            Heben Sie kein Fahrzeug bevor Sie die Hebebühne gründlich kontrolliert haben.
+
+
+            Während der Installation muss auch das Sicherheits-Ablassventil in den
+            beiden Arbeitszylindern eingestellt werden (unten am Hauptzylinder und an der
+            Seite des Behelfszylinders).
+
+
+
+7.11.1 Kontrolle bevor der Inbetriebnahme
+
+   •   Überprüfen Sie, dass die Säulen senkrecht stehen, und dass die Tragarme waagerecht sind.
+
+   •   Überprüfen Sie, dass die Bolzen gut festgezogen sind.
+
+   •   Überprüfen Sie, dass die Spannung der Stromquelle der Maschinenspezifikation entspricht.
+
+   •   Überprüfen Sie, dass der elektricher Anschluss nach Zeichnung 6. geschehen ist.
+
+   •   Überprüfen Sie die hydraulischen Anschlüsse.
+
+   •   Überprüfen Sie, dass in der Sicherheitszone keine Personen oder störende Objekte sind.
+
+
+7.11.2 Inbetriebnahme
+
+   • Füllen Sie den Tank mit zirka 10 liter Hydrauliköl auf (die Qualität des Öls ist im Kapitel 5.5.
+   beschrieben). Benutzen Sie beim Auffüllen den Messtab am Deckel - der Ölpegel muss zwischen
+   der Minimum und der Maximum Markierung sein. Achten Sie darauf, dass kein Schmutz in den
+   Tank gelangt. Drehen Sie den Hauptschalter um.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                            STD-5145E             28
+   • Überprüfen Sie den Betrieb der Pumpe, indem Sie den Taste zum Heben drücken (wenn der
+   Ölpegel im Tank sinkt, ist die Phasenverbindung richtig), Falls der Motor komische Geräusche von
+   sich gibt, stellen Sie ihn sofort ab, und überprüfen Sie den elektrischen Anschluss.
+
+   • Drücken sie die Taste zum Heben, und heben Sie die Hebebühne auf die Maximalhöhe.
+   Wenn die Zylinder ausgezogen sind, lassen Sie die Taste los, sonst können die Pumpe und die
+   Zylinder beschädigt werden.
+
+   • Drücken Sie die Taste zum Senken und lassen Sie die Hebebühne auf die Minimalhöhe
+   runterfahren. Wiederholen Sie das maximale Heben und Senken mindestens dreimal um das
+   System zu entlüften und in den Zylindern den richtigen Öldruck zu erreichen.
+
+
+7.11.3 Kontrolle vor dem ersten Betrieb
+
+Vor dem Betrieb, überprüfen Sie:
+
+   • Die Spannung der Drahtseile (beim Heben signalisiert Klicken, dass die Arretierung
+   eingeschaltet ist. Das Klicken muss zeitgleich aus beiden Säulen kommen).
+
+   •   Den regelrechten Betrieb der Sicherheits-Vorrichtungen und der Arretierung der Hubschlitten.
+
+   •   Den Ölpegel im Öltank, falls nötig, füllen Sie das Öl nach.
+
+   •   Den Betrieb der Arbeitszylinder.
+
+   •   Dass kein Leck im Hydrauliksystem vorhanden ist.
+
+   •   Dass die Hebebühne beim Hochfahren die Maximalhöhe erreicht.
+
+7.12 Installation des Endschalters
+
+              Der Anschluss darf nur von einem qualifiziertem Elektriker durchgeführt werden.
+              Für den Anschluss gelten die örtlichen Vorschriften und Gesetze. Ein inkorrekter
+              Anschluss kann zu schweren, selbst tödlichen Verletzungen und
+              Sachschaden führen.
+
+
+   • Befestigen      Sie   den     vormontierten
+   Endschalter mit den mitgelieferten Schrauben
+   an der Säule mit dem Bedienpult, wie auf
+   Zeichnung 13 angezeigt.
+
+   • Heben Sie die Hubschlitten auf
+   zirka 1900mm Höhe und überprüfen Sie
+   ob der Schalter das Heben stoppt.
+
+   • Wenn Sie den Endschalter nicht auf der
+   richtigen Höhe montiert haben, setzen Sie ihn
+   um. Der Endschalter muss noch vor dem
+   kompletten Ausziehen der Arbeitszylinder .
+
+                                                                     Zeichnung 13.
+
+7.13 Kontrolle unter Belastung
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                          STD-5145E                29
+            Warnung: Bitte befolgen Sie die Anleitungen im nächsten Paragraf gründlich, um
+            Schaden an der Hebebühne vorzubeugen.
+
+
+Achtung: Heben Sie kein Fahrzeug mit der Hebebühne bevor Sie alle Kontrollen durchgeführt haben.
+Zur Kontrolle heben und senken Sie die Tragarme ohne Belastung und vergewissern Sie sich, dass
+die Sicherheitsarretierung regelrecht funktioniert, und die Zylinder entlüftet sind.
+
+Bevor Sie die Hebebühne benutzen, achten Sie immer auf die regelrechte Funktion der Bühne, sowie
+deren Elementen. Die Hebebühne darf nicht benutzt werden, bevor die Installation und die Kontrollen
+komplett durchgeführt sind, und alle Arretierungen und Befestigungen überprüft worden sind. Nach
+der Inbetriebnahme müssen alle nötigen Stellen geschmiert werden (Gleitstellen, Ketten, Roller). Die
+Hebebühne muss mindestens einmal hoch und runter gefahren werden, dann falls nötig, schmieren
+Sie die Stellen nach. Danach wird der Sicherheitsabdeckung montiert.
+
+Platzieren Sie ein Test-Gewicht auf die Hebebühne und fahren Sie die Hebebühne 2-3 mal hoch
+und runter. Dazwischen:
+
+   •   Überprüfen Sie die im 7.11.3 Kapitel aufgezählten Punkte.
+
+   •   Überprüfen Sie, ob beim Betrieb keine ungewönliche Geräusche zu hören sind.
+
+
+8. BETRIEB
+
+Die Hebebühne darf in nur in trockenen inneren Räumen benutzt werden, da sie für diese entworfen
+wurde. Es ist verboten die Hebebühne im Freien zu betreiben, sowie in explosionsgefährdeten
+Umgebung aufzustellen.
+
+Die Hebebühne ist für das Heben von PKWs und LKWs geeiegnet (verschiedene Tragfähigkeit der
+einzelnen Typen kann man im Kapitel „Technische Daten“ und von dem Maschinenschild ablesen).
+
+Die Hebebühne besteht aus folgenden Teilen:
+    o Säulen aus Stahlplatten mit Hubschlitten
+    o Hydraulisches System
+    o Ausgleichendes Drahseil
+    o Elektrisches System
+
+Säulen und Hubschliten
+Die Säule ist eine Stahlstruktur mit zwei Bahnen. In den Bahnen geschieht die senkrechte Bewegung
+der Hubschlitten mittels der hydraulischen Zylinder. Um die synchrone Bewegung zu versichern,
+wurden die Hubschlitten auf Drahtseile montiert und verbunden.
+Die Hubschlitten und die Säulen sind mit Sicherheitsrastern versehen, die das Abstürzen verhindern.
+Diese werden beim Heben des Fahrzeugs durch Tastendruck eingerastet. Das schützt das Fahrzeug
+vom Absturz und entlastet die Arbeitszylinder. Beim Einschalten der Sicherheitsarretierungen sinkt
+die Hebebühne einige Zentimeter, um die feste Einrastung zu erreichen.
+
+Hydraulisches System
+Die hydraulische Einheit der Hebebühne besteht aus: Elektromotor mit Pumpe, Öltank, hydraulischer
+Zylinder und Verteiler. Der Elektromotor wird mittels Tastendruck betrieben, das Drehmoment des
+Motors bringt die Pumpe in Bewegung durch die eingebaute Kupplung. Die Pumpe saugt durch das
+Ölfilter das Öl auf und bildet Druck im System.
+Das System bringt das Öl in den Verteiler. Aus dem Verteiler wird das Öl durch das
+Druckbegrenzungsventil in die zwei Zylinder gebracht, die in die Säulen eingebaut sind. Das
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                          STD-5145E                 30
+Druckbegrenzungsventil ist auf die maximale Tragfähigkeit der Hebebühne eingestellt. Dieses darf
+unter keinen Umständen verstellt werden. Die Kapazität des Öltanks der hydraulischen Einheit ist
+10 Liter. Das Senken wird durch das elektrisch betriebenes Ventil gesteuert.
+
+Die Befestigungsschrauben an den Säulen müssen mit dem Drehmoment festgezogen werden, das
+vom dem Schraubenhersteller angegeben wurde.
+
+Die Hebebühne entspricht in jeder Hinsicht den Anforderungen der gültigen Standarte und
+Vorschriften. Die örtlichen Regelungen des Betriebs von Hebebühnen müssen restlos eingehalten
+werden.
+
+
+Die Hebebühne darf nur von entsprechend geschulten, psychisch und physisch fähigen
+Personen betrieben werden, die ihren 18. Lebensjahr erlangt haben. Über die Bildung des
+Bedienpersonals muss ein Protokoll aufgenommen werden.
+
+
+Vor dem Betrieb:
+    a.         Vor dem Betrieb überprüfen Sie die Schläuche und Anschlüsse, ob kein Leck
+    vorhanden ist.
+
+   b.          Benutzen Sie die Hebebühne nicht, wenn die Sicherheitsarretierung nicht funktioniert.
+
+   c.          Heben Sie das Fahrzeug nicht, wenn die Gewichtspunkte nicht richtig positioniert
+   sind. Für Schaden und Verletzungen, die aus Missachtung dessen stammen, haften der Hersteller
+   und der Händler nicht.
+
+   d.          Der Betreiber muss sich in der Sicherheitszone aufhalten während des Betriebs.
+
+   e.          Lassen Sie die Tragarme einige Male hoch und runter fahren, damit keine Luft in den
+   Zylindern bleibt. Wenn in den Zylindern Luft bleiben wird, führt das zu unebenmäßigem Heben.
+
+
+
+
+           Betreiben Sie die Hebebühne niemals wenn darunter Personen oder Objekte sind.
+
+           Übertreten Sie die maximale Tragfähigkeit niemals.
+
+           Vergewissern Sie sich immer, dass Sicherheitsraster arretiert sind, bevor Sie mit
+           der Arbeit am Fahrzeug beginnen.
+
+           Um das Fahrzeug sicher zu heben, überprüfen Sie immer die Gummiteller auf den
+           Tragarmen, und benutzen Sie die beigelieferten Adapter, um die Höhe
+           zu verstellen.
+
+           Wenn ein Bolzen sich löst oder ein Teil der Hebebühne sich als defekt erweist,
+           BENUTZEN SIE DIE HEBEBÜHNE NICHT, bevor die Reparatur nicht vollendet ist.
+
+           Lassen Sie den elektrischen Bedienpult nicht nass werden, schützen Sie ihn vor
+           Staub und Öl!
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                          STD-5145E               31
+8.1 Steuerung
+
+
+
+
+                                      Zeichnung 14. – Bedienpult
+
+
+   1. Stromschalter
+
+Der Stromschalter kann in zwei Positionen gebracht werden:
+    •           0 Position: der Stromkreis der Hebebühne ist nicht stromversorgt
+    •           1 Position: der Stromkreis der Hebebühne ist stromversorgt, die Hebebühne ist
+    eingeschaltet.
+
+
+   2. Stromversorgungsindikator
+
+Wenn die Lampe leuchtet, steht der Stromkreis der Hebebühne unter Strom.
+
+
+   3. Taste zum Heben - UP
+
+Wenn die Taste gedrückt wird, betreibt der Stromkreis der Hebebühne den Motor und das
+Hydrauliksystem um die Tragarme zu heben.
+
+
+   4. Taste zum Senken - DOWN
+
+Wenn die Taste gedrückt wird, lösen sich die Sicherheitsarretierungen, das elektromagnetische
+Sicherheitsventil öffnet sich und die Tragarme beginnen auf Sicherheitshöhe zu sinken.
+
+
+   5. Sicherheitsarretierung Taste
+
+Wenn die Taste gedrückt wird, öffnet sich das elektromagnetische Sicherheitsventil und die Tragarme
+beginnen auf Sicherheitshöhe zu sinken.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                         STD-5145E                32
+
+8.2 Heben
+
+   • Vergewissern Sie sich, dass das Bedienpersonal die Bedienungsanleitung gelesen und
+   verstanden hat.
+
+   • Die Hubschlitten und die darauf befestigte Tragarme müssen in der untersten Position sein. In
+   dieser Stellung sind die Sicherheitsarretierungen der Tragarme nicht eingerastet und die
+   Tragarme können frei gedreht werden. Die Tragarme müssen parallel der Auffahrtsrichtung
+   gedreht werden. Stellen Sie das Fahrzeug im Mittelpunkt zwischen den Tragarmen
+
+   • Die Tragarme werden nach den Vorschriften den Fahrzeugherstellers unter
+   den Gewichtspunkten des Fahrzeugs platziert. Die Tragarme mit den Auffangtellern, auf
+   welchen Gummiplatten sind, können teleskopisch ausgezogen und unter das Fahrzeug
+   geschoben werden. Die Tragarme müssen so eingestellt werden, dass dem Schwerpunkt des
+   Fahrzeugs zwischen den Adaptern ist.
+
+   • Heben Sie die Tragarme mit der UP Taste (3), bis die Adapter das Fahrzeug berühren und
+   vergewissern Sie sich, dass die Auffangteller unter den Gewichtspunkten sind. Überprüfen Sie,
+   dass die Sicherheitsarretierung der Tragarme deren Ausweichung verhindern, ob sie in dieser
+   Stellung genügend Sicherheit bieten.
+
+   • Mit der UP Taste (3) heben Sie das Fahrzeug auf die gewünschte Höhe und stützen Sie es.
+   Nachdem die gewünschte Höhe erreicht ist, drücken Sie die Sicherheitsarretierung Taste (5), um
+   die Arretierung einzurasten. Damit werden die Hubschlitten so gesenkt, dass die Arretierung sich
+   nicht löst.
+
+   • Bevor Sie mit der Arbeit an dem angehobenen Fahrzeug beginnen, überprüfen Sie, dass die
+   Sicherheitsarretierung sich eingerastet hat.
+
+
+8.3 Senken
+
+   • Vor dem Senken, vergewissern Sie sich, das in der Sicherheitszone sich keine Personen
+   aufhalten, und unter dem Fahrzeug keine störende Objekte liegen.
+
+   • Um die Hebebühne zu senken, drücken Sie die UP Taste (3) und heben Sie die Hubschlitten
+   um 2-3 cm. So wird die Sicherheitsarretierung gelöst. Der Raster löst sich und verhindert das
+   Senken der Hubschlitten nicht mehr.
+
+   •   Drücken Sie die DOWN Taste (4). Das Senken beginnt innerhalb 2 Sekunden.
+
+   • Halten Sie die Taste, bis die gewünschte Höhe erreicht wird, dann lassen Sie die Taste los.
+   Die Hubschlitten müssen in die unterste Position abgelassen werden, damit sich die
+   Sicherheitsarretierung der Tragarme automatisch löst, und die Arme gedreht werden können.
+   Nachdem die Tragarme ausgedreht worden sind, können Sie das Fahrzeug von der Hebebühne
+   runterbringen.
+
+
+8.4 Manueller Notablass
+
+Im Falle von Stromausfall oder Defekts des Bedienpults, lassen Sie die Plattformen manuell ab,
+wie es unten beschrieben wird, mit Hilfe von Zeichnungen 15. und 6.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                        STD-5145E               33
+            Dieser Vorgang darf nur von einem geschultem Fachmann durchgeführt werden.
+
+            Nicht regelrechter und unbefugter Betrieb der manuellen Notablasspumpe kann
+            zu schwerem Material- und Personenschaden, sowie Schaden an der
+            Hebebühne führen, für welchen der Hersteller und der Händler keine
+            Verantwortung tragen und keine Garantie bieten.
+
+
+
+Das Notablassen muss schnell durchgeführt werden, da die Elektromagnete durch
+Überhitzen beschädigt werden können!
+
+Schalten Sie die Stromquelle ab. Bereiten Sie einen
+12V oder 24V Akkumulator vor. Entfernen Sie die
+Kunststoffhaube der Ablassschraube (Zeichnung 15.–
+2).
+
+
+Die Sicherheitsarretierung ist eingerastet, sie muss
+gelöst werden, bevor die Hebebühne gesenkt wird:
+
+   • Benutzen Sie die manuelle Ablasspumpe
+   (Zeichnung 15.– 1). Drehen Sie den Arm der
+   Pumpe aus dem oberen Gewinde raus und drehen
+   Sie ihn in das seitliche Gewinde ein, so dass der
+   Arm seitlich steht. Pumpen Sie den Arm, bis die
+   Hubschlitten sich aus der Sicherheitsarretierung
+   lösen.
+
+   • Öffnen Sie das Bedienpult mittels einen Torx
+   Schraubendrehers.                                                     Zeichnung 15.
+
+   • Mit Hilfe von Zeichnung 6., trennen Sie die
+   Leitungen Nummer 23., 24., 25. und 26.
+
+   • Verbinden Sie die Enden der Leitung 23. mit
+   der Leitung 25. und die Enden der Leitung 24. mit
+   der Leitung 26.
+
+   •   Schließen Sie die zwei Leitungen an die Polen des Akkumulators.
+
+   • Als das Elektromagnet, das die Sicherheitsarretierung öffnet, sich löst, werden Sie einen
+   charaktereigenen Geräusch hören.
+
+
+Um die Hebebühne zu senken:
+
+   • Öffnen Sie das elektromagnetische Ablassventil indem Sie die Ablassschraube (Zeichnung 15
+   – 2.) gegen den Uhrzeigeseinn drehen (mit dieser Schraube kann auch die Geschwindigkeit des
+   Senkens eingestellt werden).
+
+   •   Lassen Sie die Hebebühne völlig runter.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                        STD-5145E               34
+            Nachdem Sie die Hebebühne komplett gesenkt haben, entfernen Sie die Leitungen
+            sofort vom Akkumulator, da die Elektromagnete sich überhitzen, und dadurch
+            beschädigt werden könnten.
+
+            Achten Sie darauf, dass Sie die Leitungen in richtiger Reihenfolge wieder
+            verbinden.
+
+            Falls Sie die Leitungen in falscher Reihenfolge verbinden, können schwere
+            Materialschaden sowie Personenschaden entstehen, für welche der Hersteller und
+            der Händler keine Verantwortung tragen und keine Garantie bieten.
+
+
+            Nach dem manuellen Notablass stellen Sie die Ablassschraube (Zeichnung 15 – 2.)
+            in die normale Position. Die Hebebühne kann nicht heben bevor die
+            Ablassschraube nicht komplett festgezogen ist.
+
+
+
+9. WARTUNG
+
+            Nur geschultes Fachpersonal, das mit der Hebebühne vertraut ist, darf die
+            Wartung durchführen.
+
+Um die Hebebühne regelrecht zu warten:
+• Benutzen Sie immer Original-Ersatzteile, sowie Werkzeuge, die der nötigen Arbeit entsprechen.
+• Befolgen Sie die planmäßige Wartung und führen Sie die periodischen Kontrollen durch, die in
+   der Bedienungsanleitung beschrieben sind.
+• Ersuchen Sie den Grund für mögliche Störungen, wie z. B. zu viel Lärm, Überhitzung, Ölleck, und
+   so weiter.
+
+            Bevor Sie mit der Wartung oder mit Reparaturen beginnen, schalten Sie die
+            Stromquelle ab, versehen Sie den Stromschalter mit einem Vorhängeschloss, und
+            verwahren sie den Schlüssel an einem sicheren Ort, damit unbefugte Personen die
+            Hebebühne nicht einschalten können.
+
+
+Die Garantie bezieht sich nicht auf Schaden die im Folge von einer nicht fachlichen Anwendung,
+Überlastung der Maschine, Außerachtlassung des Inhalts der Bedienungsanleitung, Benutzung
+von nicht genehmigtem Zubehör, unbefugten Reparaturen und Veränderungen, normalen
+Abnutzung, bzw. während der Lieferung entstanden sind. Der Garantieanspruch wird
+eingereicht aufgrund des Maschinencodes und der Seriennummer. Bei regelrechter Wartung
+und Betrieb funktioniert die Maschine einwandfrei und hat eine lange Lebenszeit.
+Die unten aufgelistete Wartungsintervallen beziehen sich auf den normalen Betrieb. Sie hängen
+von der Intensität des Betriebs ab.
+
+
+9.1 Allgemeine Wartung
+
+Die Hebebühne muss mindestens einmal monatlich regelrecht gereinigt werden, mit selbst-
+reinigenden Tüchern. Schmieren Sie alle Gelenkbolzen mindestens einmal wöchentlich ein.
+
+
+
+            Wasser, Waschmittel oder brennbare Flüssigkeit zu benutzen ist streng verboten!
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                       STD-5145E                35
+Überprüfen Sie, dass die Stangen in den Hydraulikzylindern immer sauber und unbeschädigt sind,
+weil der Gegenfall zu Ölaustreten, und als Folge zu möglichen Störfällen führen kann.
+
+9.2 Periodische Wartung
+
+                                   • Überprüfen Sie jeden Morgen bevor Betrieb die Funktion
+                                   der Sicherheitsarretierungen – hören Sie zu, ob die
+                                   Arretierungen synchron arbeiten.
+
+                                   • Überprüfen Sie       die   hydraulischen   Anschlüsse    und
+                                   Schläuche auf Leck.
+Tägliche Kontrolle und
+                                   • Überprüfen Sie die Kettenanschlüsse, die Anschlüsse der
+Wartung
+                                   Drahtseile, die elektrischen Leitungen und die Schalter.
+
+                                   • Überprüfen Sie die Schrauben und Muttern und wenn nötig,
+                                   ziehen Sie sie fest.
+
+                                   • Überprüfen Sie die Befestigungen und Arretierungen der
+                                   Tragarme.
+
+
+                                   •   Überprüfen Sie die Sauberkeit der beweglichen Teile.
+
+                                   • Überprüfen Sie die Sicherheitsarretierung, wie es oben
+                                   beschrieben wird.
+
+Wöchentliche Wartung               • Überprüfen Sie den Ölpegel: heben Sie die Hubschlitten auf
+                                   Maximalhöhe. Wenn Sie die Maximalhöhe nicht erreichen
+                                   können, muss das Öl nachgefüllt werden.
+
+                                   • Überprüfen Sie die Schrauben und Muttern und wenn nötig,
+                                   ziehen Sie sie fest.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                    STD-5145E                36
+                                • Überprüfen Sie die Schrauben, Bolzen und Muttern und
+                                wenn nötig, ziehen Sie sie fest. Überprüfen Sie die gerade
+                                Position der Säulen.
+
+                                • Überprüfen Sie das hydraulische System, dessen
+                                Anschlüsse und Dichtungen, wenn nötig, ziehen Sie die lockere
+                                Anschlüsse fest.
+
+                                • Überprüfen Sie und reinigen Sie die Arbeitszylinder.
+                                Überprüfen Sie den Ölstand im Öltank, wenn nötig, füllen Sie
+                                das Öl nach. Achten Sie darauf dasselbe Öl zu benutzen und
+                                vermeiden Sie, hydraulische Öle zu vermischen.
+Monatliche Wartung
+                                • Überprüfen Sie die Schmierung der beweglichen Teile.
+                                Wenn nötig, schmieren Sie die Teile ein.
+
+                                • Überprüfen Sie die Befestigungen der Hubschlitten, der
+                                Tragarme und Ketten, wenn nötig, tauschen Sie sie gegen
+                                Originalteile aus. Überprüfen Sie die Spannung der
+                                synchronisierenden Drahtseile und wenn sie nicht gleich straff
+                                sind, stellen Sie sie ein.
+
+                                • Überprüfen Sie die Bolzen der Tragarme, ob sie sicher
+                                befestigt sind. Überprüfen Sie die Höhenadapter und die
+                                Auffangteller, wenn nötig, tauschen Sie sie aus.
+
+
+                                • Alle Teile der Hebebühne müssen in Augenschein
+Alle drei Monate überprüfen
+                                genommen und defekte Teile ausgetauscht werden.
+
+
+
+                                • Überprüfen Sie alle Teile der Hebebühne auf Verletzungen.
+
+                                • Überprüfen sie synchronisierende Drahtseile auf Abnutzung
+                                –wenn dies mehr als 5 % ist, tauschen Sie die Seile aus.
+
+                                • Lassen Sie einen Fach-Elektriker das elektrische System
+Jährliche Wartung
+                                überprüfen (Motor, Endschalter, Bedienpult).
+
+                                • Leeren Sie den hydraulischen Tank. Füllen Sie es mit
+                                Qualitäts-Öl auf. Reinigen Sie das Ölfilter. Altöl muss laut
+                                örtlichen Vorschriften entsorgt werden. Achten Sie darauf,
+                                dass Sie verschiedene Öle nicht vermischen.
+
+
+
+Die Wartung durchzuführen ist die Aufgabe und die Verantwortung des
+Betreibers.
+
+10. FEHLERSUCHE
+
+FEHLER                   MÖGLICHE URSACHE                 LÖSUNG
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                   STD-5145E               37
+Die Hebebühne           a) Der Stromschalter ist nicht      a) Schalten Sie den
+funktioniert nicht         eingeschaltet                       Stromschalter ein
+
+                        b) Kein Strom vorhanden             b) Überprüfen Sie die
+                                                               Stromquelle
+                        c) Die elektrischen Leitungen
+                           sind unterbrochen                c) Schliessen Sie die
+                                                               Leitungen an
+                        d) Die Sicherungen sind
+                           durchgebrannt                    d) Überprüfen Sie, ob die
+                                                               Spannung der Stromquelle
+                                                               der Maschinenspetifikation
+                                                               entspricht
+
+                                                            e) Tauschen Sie die
+                                                               Sicherungen aus
+Die Hebebühne hebt      a) Die      Hebebühne         ist   a) Überprüfen     Sie    das
+nicht                      überlastet                          Gewicht des Fahrzeugs
+
+                        b) Die    Drehrichtung       des    b) Tauschen Sie die Phasen
+                           Motors ist falsch                   aus    beim   elektrischen
+                                                               Anschluss aus
+                        c) Nicht genug       Hydrauliköl
+                           vorhanden                        c) Füllen Sie das Öl nach
+
+                        d) Die UP Taste is defekt           d) Überprüfen Sie die UP
+                                                               Taste und ihr Anschluss.
+                        e) Der Druckbegrezungsventil           Wenn nötig, austauschen
+                           ist verstoppft oder defekt
+                                                            e) Reinigen Sie das Ventil,
+                        f)   Das Ablassventil schliesst        wenn es verschmutzt ist.
+                             sich nicht                        Wenn das Ventil beschädigt
+                                                               ist, austauschen
+                        g) Der Filter am Saugschlauch
+                           der Pumpe ist verschmutzt        f) Schließen und reinigen Sie
+                                                               das     Ventil,   wenn    es
+                        h) Luft im Hydrauliksystem             verschmutzt ist. Wenn das
+                                                               Ventil    beschädigt     ist,
+                                                               austauschen
+                                                            g) Überprüfen und falls nötig,
+                                                               reinigen Sie den Filter
+                                                            h) Entlüften       Sie     das
+                                                               Hydrauliksystem
+Die Tragfähigkeit ist   a) Die Pumpe ist defekt             a) Überprüfen und wenn nötig,
+nicht ausreichend                                              tauschen Sie die Pumpe
+                        b) Ölaustreten                im       aus
+                           Hydrauliksystem
+                                                            b) Überprüfen Sie das System
+                                                               auf Austreten, ziehen Sie
+                                                               die Anschlüsse nach
+
+
+Die Tragarme fahren     a) Das      elektromagnetische      a) Überprüfen Sie, ob die
+nicht runter wenn die      Ablassventil     funktioniert       Maschine stromversorgt ist,
+DOWN Taste gedrückt        nicht regelrecht                    und überprüfen Sie den
+wird                                                           Magnet auf Schaden (falls
+                        b) Das      elektromagnetische         beschädigt, austauschen)
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                        STD-5145E                38
+                                Sicherheitsventil         ist      b) Überprüfen Sie, ob die
+                                eingeklemmt                           Maschine stromversorgt ist,
+                                                                      und überprüfen Sie den
+                             c) Die     synchronisierenden            Magnet auf Schaden (falls
+                                Drahtseile sind nicht gleich          beschädigt, austauschen)
+                                straff                             c) Überprüfen            und
+                                                                      synchronisieren Sie die
+                                                                      Drahtseile
+Problem                   Mögliche Ursache                      Lösung
+Die Maschine hebt nicht      a) Luft im Hydrauliksystem            d) Entlüften     Sie       das
+ebenmässig                                                            Hydrauliksystem t
+                             b) Die beweglichen Teile sind
+                                nicht genug eingeschmiert          a) Schmieren      Sie      die
+                                                                      beweglichen Teile ein
+                             c) Die gleitenden Teile sind
+                                defekt                             b) Tauschen sie die defekten
+                                                                      Teile aus
+Der Motor haltet nicht       c) Der            Maximalhöhe         d) Überprüfen,   und   wenn
+an, wenn die Tragarme           Endschalter     funktioniert          nötig, tauschen Sie den
+die         Maximalhöhe         nicht                                 Schalter aus
+erreicht haben
+
+KONTROLLE
+
+Während der Herstellung wurde jede einzelne Hebebühne geprüft, statisch und
+dynamische Kontrollen, sowie Kontrollen den elektrischer, hydraulische und
+pneumatischer Systemen wurden vollzogen.
+
+Die Hebebühne muss bei dem Betreiber regelmäßig, laut den vor Ort gültigen
+Vorschriften überprüft werden
+
+Falls trotz der aufgezählten Probleme, deren Ursachen und Lösungen die
+Hebebühne nicht korrekt funktioniert, nehmen Sie Kontakt mit dem Händler auf.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen      STD-5145E   39
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                         STD-5145E            40
+
+                   AUFZEICHNUNGEN DES BETREIBERS
+
+
+
+
+BITTE FÜLLEN SIE AUF DEM MASCHINENSCHILD STEHENDE MODELLNUMMERN EIN:
+
+
+
+MASCHINENCODE:
+
+SERIENNUMMER:
+
+HERSTELLUNGSDATUM:
+
+
+
+
+NACH DER INSTALLATION SIND FOLGENDE PERSONEN BEFUGT DIE HEBEBÜHNE ZU
+BENUTZEN, NACH AUSBILDUNG VON EINER DARAUF BEFUGTEN PERSON:
+
+
+1.
+
+
+2.
+
+
+3.
+
+
+4.
+
+
+5.
+
+
+6.
+
+
+7.
+
+
+8.
+
+
+9.
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                            STD-5145E            41
+10.
+
+
+
+                          INSTALLATIONSPROTOKOLL
+
+
+
+
+MASCHINENCODE:
+
+
+SERIENNUMMER:
+
+
+BETREIBER:
+
+
+ORT DES BETRIEBS:
+
+
+DATUM DER INBETRIEBNAHME:
+
+
+
+
+      HIERMIT ERKLÄRE ICH, DASS DIE OBEN ERWÄHNTE MASCHINE DEN VORSCHRIFTEN
+                        GEMÄSS, FACHLICH INSTALLIERT WURDE.
+
+
+      ALLE FUNKTIONEN UND SICHERHEITSEINRICHTUNGEN WURDEN ÜBERPRÜFT UND
+                                 AUSPROBIERT.
+
+      DIE MASCHINE FUNKTIONIERT REGELRECHT AUS JEDER SICHT UND DEN GÜLTIGEN
+              UNFALL- UND ARBEITSSCHUTZ VORSCHRIFTEN ENTSPRECHEND.
+
+
+
+
+                                          MIT DER INSTALLATION BEFUGTER
+                                                    TECHNIKER
+Elektrohydraulische 2-Säulen
+Hebebühne mit Grundrahmen                                          STD-5145E                42
+
+      DATUM DER INSTALLATION                                     BETREIBER
+
+
+
+
+                                        GARANTIE
+
+1. Die Garantie beträgt 12 Monate ab dem Datum des Verkaufs (beim Garantieanspruch muss man
+   zum Garantieschein den Kaufbeleg beilegen).
+
+2. Die Garantie bezieht sich nicht auf Schaden die im Folge von einer nicht fachlichen
+   Anwendung, Überlastung der Maschine, Außerachtlassung des Inhalts der Bedienungsanleitung,
+   Benutzung von nicht genehmigtem Zubehör, unbefugten Reparaturen und Veränderungen,
+   normalen Abnutzung, bzw. während der Lieferung entstanden sind. Die Garantie bezieht sich auch
+   nicht auf folgendes Zubehör: Bürsten, Dichtungen, und regelmäßig ersetzbare Teile.
+
+3. Der Hersteller und der Händler tragen keine Verantwortung für Personenschäden und
+   Sachschaden die im Folge von Abweichung von dem Inhalt der Bedienungsanleitung, unbefugten
+   Veränderungen enttanden sind.
+
+4. Falls die Reparatur kein Garantiefall ist, muss der Käufer jegliche Kosten (die Reparatur selbst,
+   Lieferung in bzw. aus der Werkstatt) tragen.
+
+5. Beim Garantieanspruch muss man den Garantieschein und den Kaufbeleg aufzeigen.
+
+6. Die Garantiezeit wird mit der Zeit verlängert, die die Maschine im Service Center war. Auch wenn
+   der Defekt an der Maschine ein Garantiefall ist, muss der Inhaber die Lieferkosten tragen.
+
+
+
+   MODELLNUMMER DES
+       PRODUKTS
+
+       NUMMER DES
+       KAUFBELEGS
+
+
+
+
+          DATUM                          Stempel                      UNTERSCHRIFT
+                              Importeur: LINCOS d.o.o.
+                               Steuernummer.: SI56623593
+                       Bankkontennummer: SI56 1010 0005 1418 337
+                            Celovška cesta 492, 1210 Ljubljana
+                                   Tel: +43720 778186
+                                    email: shop@lincos.at
+                                    Herstellungsort: China
+Andere ManualsLib-Projekte
+  www.manualslib.com
+
+
+  www.manualslib.de
+
+
+  www.manualslib.es
+
+
+  www.manualslib.fr
+
+
+  www.manualslib.nl
+
+
+  www.manualslib.mx
+
+
+  www.manualslib.tech 30+ Sprachen
+
