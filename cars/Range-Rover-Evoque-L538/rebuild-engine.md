@@ -128,3 +128,38 @@ Az alábbi magyarországi gépműhelyek rendelkeznek a szükséges technológiá
 > [!TIP]
 > **Munkafolyamat javaslat:** A csapágyak és dugattyúk megrendelése előtt juttassátok el a főtengelyt és a blokkot a választott gépműhelybe. Kérjétek a főtengely és a blokk mikro-mérését, valamint mágneses repedésvizsgálatát. Csak akkor rendeljétek meg az alkatrészeket (pl. a csapágy túlméretet), amikor a gépműhely írásban megadta a pontos megmunkálási méreteket!
 
+
+------------------
+
+## 5. Szerszámok 
+
+- Injektor - porlasztó lehúzó pneumatikus prés: 
+  - https://gebotools.hu/products/injektor-porlaszto-lehuzo-pneumatikus-pres
+  - ![](docs/2026-08-02-00-55-31.png)
+- Motortartó - motor felfüggesztő
+  - https://gebotools.hu/products/motor-tarto-680-kg
+  - ![](docs/2026-08-02-00-56-21.png)
+- Sebességváltó emelő
+  - https://gebotools.hu/products/sebessegvalto-emelo-500-kg
+  - ![](docs/2026-08-02-00-57-25.png)
+- Motorkiemelő zsiráf 2 t + motortartó állvány 450 kg + motortartó gerenda
+  - https://gebotools.hu/products/motorkiemelo-zsiraf-2-x-motortarto-allvany-motortarto-gerenda
+  - ![](docs/2026-08-02-00-58-00.png)
+- Dugattyúgyűrű szerelő 60 – 175 mm
+  - https://gebotools.hu/products/szegmens-aplikator-60-175-mm
+  - ![](docs/2026-08-02-00-58-58.png)
+- Belső mikrométer összehasonlító órával 50 - 160 mm
+  - https://gebotools.hu/products/belso-mikrometer-osszehasonlito-oraval-50-160-mm
+  - ![](docs/2026-08-02-00-59-43.png)
+- Mikrométer 50 - 75 mm
+  - https://gebotools.hu/products/mikrometer-50-75-mm
+  - ![](docs/2026-08-02-01-00-24.png)
+- Autó szelEPRugó összenyomó
+  - https://gebotools.hu/products/auto-szeleprugo-osszenyomo
+  - ![](docs/2026-08-02-01-01-03.png)
+- Szelep eltávolító eszköz
+  - https://gebotools.hu/products/szelep-bonto-eszkoz
+  - ![](docs/2026-08-02-01-02-23.png)
+- Camshaft Timing Tool Set
+  - https://www.ebay.com/itm/406558884907
+  - ![](docs/2026-08-02-01-05-52.png)

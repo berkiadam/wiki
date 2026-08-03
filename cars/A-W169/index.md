@@ -1,4 +1,12 @@
-* motorháztető szellőzőrács, Front Hood Breather Grille: 
+
+
+# Adatok
+
+VIN: WDD1690311J282556
+
+
+
+# motorháztető szellőzőrács, Front Hood Breather Grille: 
   * bal: 1698360018, 
   * közép: 1698300175, 
   * jobb: 1698300075
@@ -217,8 +225,16 @@ https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwGiloep0eXg-_
 * Cikkszám: A 169 545 02 10 (TURN SIGNAL SWITCH)
 * [Partsouq link](https://partsouq.com/en/catalog/genuine/unit?c=MB201810&ssd=%24%2AKwFZbXxSKh4bAA44GiVKcQEVNTIsXVJfXkxjUBgeLTouIiQsfnlpLy8jODg-PyZ8e140Gh4aKz0pKwMKGVtZXF0hWFtZAA4TFQktF0keT1UQemdJRk8BSVADGl5QDEkNT1ZZXVtXBUFeHioWTh9IV01wcQJHSAROUVhdXAoLDEkNT1ZaXl5cBA5dFRwIBCsRTxkQBgI8LildXVNdXAMNallcW15ZWU9DEFFDSVBPXV1TXVwDHgxJGQ5OUUhPQxBRS0lQT11JRk8MXB4aSVxbLklGTxlRHhpJW08RAAAAAE6n2_s%3D%24&vid=0&cid=27687&uid=20387&q=WDD1690311J266223)
 
+
+* Youtube videó: 
+  * https://www.youtube.com/watch?v=vmA2bT00m8s
+  * https://www.youtube.com/watch?v=rjMzX_3w5B8
+  
+
 ### Workshop manual
 
+* **AR91.60-P-0660AK** Remove/install airbag unit on the steering wheel: 1830. oldal
+* **AR46.10-P-0100AK** Remove/install steering wheel: 862. oldal
 * **AR54.25-P-2800AK** Remove/install combination switch: 977. oldal
 * **AR54.25-P-2802AK** Remove/install steering column module
 
