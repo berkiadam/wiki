@@ -266,4 +266,91 @@ A műszerfal közepén (a kilométeróra és a fordulatszámmérő között) tal
 * [Műszeregység kiszerelése a kampókkal](https://www.youtube.com/results?search_query=Mercedes+Tacho+ausbauen+A169) *(Youtube keresőszó: "Mercedes Tacho ausbauen A169")*
 * [LCD kijelző szalagkábelének cseréje (Minitools videó)](https://www.youtube.com/results?search_query=W169+instrument+cluster+display+replacement) *(Youtube keresőszó: "W169 instrument cluster display replacement")*
 
+---
 
+# Kuplunk tárcsa: 
+
+https://partsouq.com/en/catalog/genuine/unit?c=Mercedes-Benz&ssd=%24%2AKwFpXUx2DTFvMQoDFjRhZzElBQIcbWJvbnxTYCguHQoeEhQcTklZHx8TCAgODxZMS24EKi4qGw0ZGzM6KWtpbG0RaGtpMD4jJTkdJ3kuf2UgSld5dn8xeWAzKm5gPHk9f2ZpbWtoM3FuLhomfi94Z31AQTJ3eDR-YWlpbDE8PHk9f2Zqbm5sMjxtJSw4NBshfykgNjIMHhltbWNtbDM9Wmlsa25paX9zIGFzeWB_bW1jbWwzLjx5KT5-YXh_cyBhe3lgf215dn88bC4qeWxrHnl2fylhLip5a38hAAAAAGRIxDE%3D%24&vid=0&cid=27671&uid=34330&q=WDD1690311J266223
+
+
+
+https://www.autodoc.hu/sachs/782294
+
+* SACHS Kit plus CSC 3000 990 050 Kuplung, szett
+* 
+![](docs/image-2026-08-13-16-12-40.png)
+
+
+* kuplung: 215 mm
+* a 169.031 + M266.920 kézi váltója: 716.5
+* 24 fog
+* 5 sebességes manuálishoz
+* A150 169.031 / M266.920 alkalmazás
+* váltó sorozatszám 1207598-ig
+
+
+
+Workshop manual: **AR25.10-P-0050AK Remove/install clutch**, 419. old
+
+## Típus:
+
+Autó típusa: 169.0311  --> Alvázszámból jön --> **Model 169.031/032 / 331/332**
+
+![](docs/image-2026-08-13-16-22-01.png)
+
+
+## Nyomatékok: 
+
+![](docs/image-2026-08-13-16-22-46.png)
+
+
+## Szerszámok
+
+### Centering tool
+
+https://www.autodoc.parts/hazet/9260559?utm_source=chatgpt.com
+
+![](docs/image-2026-08-13-16-32-38.png)
+
+
+### Rataining lock
+
+https://garazstechnika.hu/lendkerek-rogzito-mercedes-benz-las-7106
+
+![](docs/image-2026-08-13-16-36-26.png)
+
+
+---
+
+# Kuplunk munkahenger
+
+https://partsouq.com/en/catalog/genuine/unit?c=Mercedes-Benz&ssd=%24%2AKwFzR1ZsFyt1KxAZDC57fSs_HxgGd3h1dGZJejI0BxAECA4GVFNDBQUJEhIUFQxWUXQeMDQwARcDASkgM3FzdncLcnFzKiQ5PyMHPWM0ZX86UE1jbGUrY3opMHR6JmMnZXxzd3FyLGt0NAA8ZDVifWdaWyhtYi5ke3l_fC0gJmMnZXxwdHR2KCN3PzYiLgE7ZTM6LCgWBAN3d3l3diknQHN2cXRzc2VpOntpY3pld3d5d3YpNCZjMyRke2JlaTp7YWN6ZXdjbGUmdjQwY3ZxBGNsZTN7NDBjcWU7AAAAAMQLg78%3D%24&vid=0&cid=27674&uid=98956&q=WDD1690311J266223
+
+
+![](docs/image-2026-08-13-17-08-55.png)
+
+
+## Workshop manual
+
+* AR25.20-P-0070AK - Bleed clutch operating system: **422. oldal**
+* AR25.20-P-0102P - Check master cylinder for clutch operating system (clutch removed) - 19.7.07: **424. oldal**
+* AR25.20-P-0100AK - Remove/install master cylinder: **426. oldal**
+
+## Sorozatszámok: 
+
+* **A1692900312** - CYLINDER	10	MASTER CYLINDER	001	To Chassis: J 546814 To Date: 24/10/2007
+* Fékolaj: DOT 4 plus
+
+
+## Alkatrészek: 
+
+https://www.autodoc.hu/trw/7623444
+
+![](docs/image-2026-08-13-17-14-43.png)
+
+
+<br><br>
+
+https://www.autodoc.hu/febi-bilstein/1881410
+
+![](docs/image-2026-08-13-17-19-00.png)
