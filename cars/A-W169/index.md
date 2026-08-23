@@ -277,7 +277,9 @@ https://partsouq.com/en/catalog/genuine/unit?c=Mercedes-Benz&ssd=%24%2AKwFpXUx2D
 https://www.autodoc.hu/sachs/782294
 
 * SACHS Kit plus CSC 3000 990 050 Kuplung, szett
-* 
+  * **CSC** = Concentric Slave Cylinder
+  * vagyis benne van a kuplunkg oldali dugattyú is. 
+  
 ![](docs/image-2026-08-13-16-12-40.png)
 
 
@@ -290,7 +292,18 @@ https://www.autodoc.hu/sachs/782294
 
 
 
+Látszik, hogy a kuplung slave dugattyúból két cső jön ki, az egyik a légtelenítő szelep, a másik pedig a hidralika cső: 
+![](docs/image-2026-08-24-00-57-51.png)
+
+
+
 Workshop manual: **AR25.10-P-0050AK Remove/install clutch**, 419. old
+
+
+## Youtube:
+* https://www.youtube.com/watch?v=Np_N8DM0pHg
+* https://www.youtube.com/watch?v=LhB9P-NQUJY
+
 
 ## Típus:
 
