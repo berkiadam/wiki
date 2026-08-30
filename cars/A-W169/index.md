@@ -321,12 +321,20 @@ Autó típusa: 169.0311  --> Alvázszámból jön --> **Model 169.031/032 / 331/
 
 ### Centering tool
 
+workshop manual: 
+* gyári szám: **000 589 47 31 00**
+* oldal: 421
+
 https://www.autodoc.parts/hazet/9260559?utm_source=chatgpt.com
 
 ![](docs/image-2026-08-13-16-32-38.png)
 
 
 ### Rataining lock
+
+workshop manual: 
+* gyári szám: **166589004000**
+* oldal: 421
 
 https://garazstechnika.hu/lendkerek-rogzito-mercedes-benz-las-7106
 
