@@ -268,13 +268,15 @@ A műszerfal közepén (a kilométeróra és a fordulatszámmérő között) tal
 
 ---
 
-# Kuplunk tárcsa: 
+# Kuplunk szerkezet: 
+
+## Kuplung tárcsa
 
 https://partsouq.com/en/catalog/genuine/unit?c=Mercedes-Benz&ssd=%24%2AKwFpXUx2DTFvMQoDFjRhZzElBQIcbWJvbnxTYCguHQoeEhQcTklZHx8TCAgODxZMS24EKi4qGw0ZGzM6KWtpbG0RaGtpMD4jJTkdJ3kuf2UgSld5dn8xeWAzKm5gPHk9f2ZpbWtoM3FuLhomfi94Z31AQTJ3eDR-YWlpbDE8PHk9f2Zqbm5sMjxtJSw4NBshfykgNjIMHhltbWNtbDM9Wmlsa25paX9zIGFzeWB_bW1jbWwzLjx5KT5-YXh_cyBhe3lgf215dn88bC4qeWxrHnl2fylhLip5a38hAAAAAGRIxDE%3D%24&vid=0&cid=27671&uid=34330&q=WDD1690311J266223
 
 
 
-https://www.autodoc.hu/sachs/782294
+
 
 * SACHS Kit plus CSC 3000 990 050 Kuplung, szett
   * **CSC** = Concentric Slave Cylinder
@@ -291,6 +293,19 @@ https://www.autodoc.hu/sachs/782294
 * váltó sorozatszám 1207598-ig
 
 
+Gyári szám: **A0212507401**
+
+Autodoc: https://www.autodoc.hu/sachs/782294
+
+
+
+
+## CLUTCH RELEASE BEARING
+
+https://partsouq.com/en/catalog/genuine/unit?c=Mercedes-Benz&ssd=%24%2AKwFlUUB6AT1jPQYPGjhtaz0pCQ4QYW5jYnBfbCQiEQYSHhgQQkVVExMfBAQCAxpAR2IIJiImFwEVFz82JWdlYGEdZGdlPDIvKTURK3Uic2ksR1F1enM9dWxgaj40L3t0NnJtZGdmNjBhKSMRK3Uic2ksQlF1enM5dWxkYTg0MHUxc2pmZWliPjNhKSA0OBctcyUsOj4AEhVhYW9hYD8xVmVgZ2JlZXN_LG1_dWxzYWFvYWA_IjB1JTJybXRzfyxtd3Vsc2F1enMwYCImdWBnEnV6cyVtIiZ1Z3MtAAAAABstMZs%3D%24&vid=0&cid=1904326580&uid=5264&q=WDD1690311J266223
+
+
+![](docs/image-2026-08-24-23-54-51.png)
 
 Látszik, hogy a kuplung slave dugattyúból két cső jön ki, az egyik a légtelenítő szelep, a másik pedig a hidralika cső: 
 ![](docs/image-2026-08-24-00-57-51.png)
@@ -300,16 +315,21 @@ Látszik, hogy a kuplung slave dugattyúból két cső jön ki, az egyik a légt
 Workshop manual: **AR25.10-P-0050AK Remove/install clutch**, 419. old
 
 
+Gyári szám: **A0022501815**
+
+
+Autó típusa: 169.0311  --> Alvázszámból jön --> **Model 169.031/032 / 331/332**
+
+![](docs/image-2026-08-13-16-22-01.png)
+
+
 ## Youtube:
 * https://www.youtube.com/watch?v=Np_N8DM0pHg
 * https://www.youtube.com/watch?v=LhB9P-NQUJY
 
 
-## Típus:
 
-Autó típusa: 169.0311  --> Alvázszámból jön --> **Model 169.031/032 / 331/332**
 
-![](docs/image-2026-08-13-16-22-01.png)
 
 
 ## Nyomatékok: 
@@ -328,6 +348,8 @@ workshop manual:
 https://www.autodoc.parts/hazet/9260559?utm_source=chatgpt.com
 
 ![](docs/image-2026-08-13-16-32-38.png)
+
+* https://www.autodoc.hu/yato/15216958
 
 
 ### Rataining lock
