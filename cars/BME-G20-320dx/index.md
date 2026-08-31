@@ -32,6 +32,16 @@ Magas viszkozitási osztályok esetén nőhet a tüzelőanyag-fogyasztás. A jó
 
 Mennyiség: 5.5 liter
 
+## Pontosan milyet kell vanni: 
+
+Kell egy 5 literes és egy 1 literes flakon: 
+
+* TotalEnergies Quartz Ineo Longlife 5W-30 motorolaj 5L
+  * https://www.olajwebshop.hu/totalenergies-quartz-ineo-longlife-5w-30-motorolaj-5-l
+  * https://www.olajwebshop.hu/totalenergies-quartz-ineo-longlife-5w-30-motorolaj-1-l
+  * Lényeg: van neki BMW LL-04-es minősítése 
+* 
+
 
 # Intake manifold parts
 
