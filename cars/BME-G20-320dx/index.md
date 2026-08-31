@@ -10,12 +10,23 @@
 - Karosszéria-kód: G20 (a 7. generációs 3-as BMW, 2018-tól)
 - Váltó: ZF 8HP51 A BMW saját jelölése általában: GA8HP51Z
 
+
+<br>
+<br>
+
+---
+
 # Linkek
 
 https://www.realoem.com/bmw/enUS/partgrp?id=5V71-EUR-06-2019-G20-BMW-320dX
 
 https://www.realoem.com/bmw/enUS/partgrp?id=5V71-EUR-04-2019-G20-BMW-320dX&mg=11
 
+
+<br>
+<br>
+
+---
 
 # Olajok
 
@@ -40,8 +51,43 @@ Kell egy 5 literes és egy 1 literes flakon:
   * https://www.olajwebshop.hu/totalenergies-quartz-ineo-longlife-5w-30-motorolaj-5-l
   * https://www.olajwebshop.hu/totalenergies-quartz-ineo-longlife-5w-30-motorolaj-1-l
   * Lényeg: van neki BMW LL-04-es minősítése 
-* 
+  
 
+## Leengedő csavar: 
+
+* BMW 11137535106
+* Mérete: M12 × 1,5, kb. 16 mm menethossz, 17 mm-es fej.
+* ELRING 455.740 Olajleeresztő csavar -> https://www.autodoc.hu/elring/7938759
+
+
+<br>
+<br>
+
+---
+
+# Szűrők: 
+
+### Olajszűrő: 
+
+* BMW OE 11428575211
+* MANN-FILTER HU 6014/1 z -> https://www.autodoc.hu/mann-filter/14433133#olajszuro
+  
+
+### Légszűrő:
+
+* BMW OE 13 71 8 580 429
+* MANN-FILTER C 27 061 -> https://www.autodoc.hu/mann-filter/24950580
+
+
+### Kabin szúrő
+
+* BMW 64 11 9 382 886
+* MEYLE 312 320 0027 -> https://www.autodoc.hu/meyle/15828000
+
+<br>
+<br>
+
+---
 
 # Intake manifold parts
 
@@ -56,6 +102,12 @@ Kell egy 5 literes és egy 1 literes flakon:
 
 Gyári sorozatszám: 
 ![](docs/2025-10-16-18-20-08.png)
+
+
+<br>
+<br>
+
+---
 
 
 # Actuator
@@ -80,6 +132,9 @@ Bosch 8570791 01 / 10213510
 
 
 <br>
+<br>
+
+---
 
 # Fékek
 
@@ -146,7 +201,10 @@ Alkatrészek:
 ![](docs/2025-11-17-22-18-56.png)
 
 
+<br>
+<br>
 
+---
 
 # Turbo
 
@@ -176,6 +234,11 @@ https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&dia
 - 18	Preformed seal		1			11617796622	$6.65	
 
 
+<br>
+<br>
+
+---
+
 # Radiator shutter
 
 Codes:
@@ -198,6 +261,10 @@ https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&dia
 - lower: Brose C93091-108 BMW P/N 111466512
 - upper: Brose C93092-113 BMW P/N 111466416
 
+<br>
+<br>
+
+---
 
 # Kerék csavar
 
@@ -205,6 +272,11 @@ https://www.autodoc.hu/jarmu-alkatreszek/kerek-kerekrogzites-10313/bmw/3er-reihe
 
 
 * **M14 / SW17**
+
+<br>
+<br>
+
+---
 
 # Intake manifold
 
@@ -221,6 +293,10 @@ Gyári sorozatszám: 11618579245
 * BOGAP B1712122 Szívócső modul
 * https://www.autodoc.hu/bogap/24071157
 
+<br>
+<br>
+
+---
 
 # Egr breather ventilation line hose
 
@@ -230,6 +306,10 @@ https://www.realoem.com/bmw/enUS/showparts?id=5V71-EUR-06-2019-G20-BMW-320dX&dia
 
 ![](docs/2026-05-31-22-12-25.png)
 
+<br>
+<br>
+
+---
 
 # Váltó olaj: 
 
