@@ -14,3 +14,4 @@
 - [Olaj pumpa](oil-pump/index.md)
 - [Turbó](turbo/trubo.md)
 - [LR times okosságok](lr-times-knowledge/index.md)
+- [Cabin heater](cabin-heater/index.md)
