@@ -7,3 +7,4 @@
 - [Autók](cars/index.md)
 - [AutoCad](autocad/index.md)
 - [Publishing](publishing/index.md)
+- [Welding](welding/index.md)
